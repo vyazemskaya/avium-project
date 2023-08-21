@@ -149,9 +149,9 @@
         .content_btn {
           display: none;
           &.mobile {
+            width: auto;
             display: flex;
             margin: 0 auto;
-            padding: 2.4rem 9.6rem;
           }
         }
         .content_top {
@@ -159,44 +159,54 @@
           padding-bottom: 4rem;
         }
         .content_bottom {
-          .swiper-slide {
-            .slide_palettes {
-              width: 50rem;
-              margin: 0 auto;
-              .palettes_photo {
-                img {
-                  width: 37rem;
-                  height: 37rem;
-                }
-                &.important {
-                  &::before {
+          .swiper {
+            height: 57rem;
+            margin-bottom: 0;
+            .swiper-pagination {
+              position: static;
+              width: 21rem;
+              margin: 6rem auto 0;
+            }
+            .swiper-slide {
+              .slide_palettes {
+                width: 50rem;
+                margin: 0 auto;
+                .palettes_photo {
+                  img {
                     width: 37rem;
                     height: 37rem;
                   }
-                }
-                &.exclusive {
-                  width: 37rem;
-                  height: 37rem;
-                  img {
-                    width: 21rem;
+                  &.important {
+                    &::before {
+                      width: 37rem;
+                      height: 37rem;
+                    }
+                  }
+                  &.exclusive {
+                    width: 37rem;
+                    height: 37rem;
+                    img {
+                      width: 21rem;
+                    }
                   }
                 }
-              }
-              .palettes_name {
-                p {
-                  font-size: 4rem;
+                .palettes_name {
+                  p {
+                    font-size: 4rem;
+                  }
                 }
               }
             }
           }
           .content_bottom-box {
             .information_slider {
+              width: 50rem;
               display: flex;
               flex-direction: column;
               align-items: center;
               justify-content: center;
               gap: 4rem;
-              margin-bottom: 8rem;
+              margin: 0 auto 8rem;
               .content_dots-box {
                 .dots {
                   display: none;

@@ -2103,8 +2103,8 @@ section {
     gap: 8rem;
   }
   .conceptColor__section-second .container .conceptColor__section-content .content_left .content_btn-mobile {
-    display: block;
-    padding: 2.4rem 9.6rem;
+    width: auto;
+    display: flex;
     text-align: center;
   }
   .conceptColor__section-second .container .conceptColor__section-content .content_right .content_title {
@@ -2252,43 +2252,53 @@ section {
     display: none;
   }
   .conceptColor__section-third .container .conceptColor__section-content .content_btn.mobile {
+    width: auto;
     display: flex;
     margin: 0 auto;
-    padding: 2.4rem 9.6rem;
   }
   .conceptColor__section-third .container .conceptColor__section-content .content_top {
     flex-direction: column;
     padding-bottom: 4rem;
   }
-  .conceptColor__section-third .container .conceptColor__section-content .content_bottom .swiper-slide .slide_palettes {
+  .conceptColor__section-third .container .conceptColor__section-content .content_bottom .swiper {
+    height: 57rem;
+    margin-bottom: 0;
+  }
+  .conceptColor__section-third .container .conceptColor__section-content .content_bottom .swiper .swiper-pagination {
+    position: static;
+    width: 21rem;
+    margin: 6rem auto 0;
+  }
+  .conceptColor__section-third .container .conceptColor__section-content .content_bottom .swiper .swiper-slide .slide_palettes {
     width: 50rem;
     margin: 0 auto;
   }
-  .conceptColor__section-third .container .conceptColor__section-content .content_bottom .swiper-slide .slide_palettes .palettes_photo img {
+  .conceptColor__section-third .container .conceptColor__section-content .content_bottom .swiper .swiper-slide .slide_palettes .palettes_photo img {
     width: 37rem;
     height: 37rem;
   }
-  .conceptColor__section-third .container .conceptColor__section-content .content_bottom .swiper-slide .slide_palettes .palettes_photo.important::before {
+  .conceptColor__section-third .container .conceptColor__section-content .content_bottom .swiper .swiper-slide .slide_palettes .palettes_photo.important::before {
     width: 37rem;
     height: 37rem;
   }
-  .conceptColor__section-third .container .conceptColor__section-content .content_bottom .swiper-slide .slide_palettes .palettes_photo.exclusive {
+  .conceptColor__section-third .container .conceptColor__section-content .content_bottom .swiper .swiper-slide .slide_palettes .palettes_photo.exclusive {
     width: 37rem;
     height: 37rem;
   }
-  .conceptColor__section-third .container .conceptColor__section-content .content_bottom .swiper-slide .slide_palettes .palettes_photo.exclusive img {
+  .conceptColor__section-third .container .conceptColor__section-content .content_bottom .swiper .swiper-slide .slide_palettes .palettes_photo.exclusive img {
     width: 21rem;
   }
-  .conceptColor__section-third .container .conceptColor__section-content .content_bottom .swiper-slide .slide_palettes .palettes_name p {
+  .conceptColor__section-third .container .conceptColor__section-content .content_bottom .swiper .swiper-slide .slide_palettes .palettes_name p {
     font-size: 4rem;
   }
   .conceptColor__section-third .container .conceptColor__section-content .content_bottom .content_bottom-box .information_slider {
+    width: 50rem;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
     gap: 4rem;
-    margin-bottom: 8rem;
+    margin: 0 auto 8rem;
   }
   .conceptColor__section-third .container .conceptColor__section-content .content_bottom .content_bottom-box .information_slider .content_dots-box .dots {
     display: none;
@@ -2381,6 +2391,7 @@ section {
     transform: translateX(2rem);
   }
   .conceptColor__section-fourth .container .conceptColor__section-content .content_right .content_btn-mobile {
+    width: auto;
     visibility: visible;
     margin: 0 auto;
     transform: translateY(-15rem);
@@ -5754,6 +5765,18 @@ body .swiper .swiper-pagination .swiper-pagination-bullet:nth-child(4) {
   height: 1rem;
   background-color: #a1a1a1;
 }
+body .swiper .swiper-pagination .swiper-pagination-bullet:nth-child(5) {
+  border-radius: 50%;
+  width: 1.5rem;
+  height: 1.5rem;
+  background-color: #e6e6e6;
+}
+body .swiper .swiper-pagination .swiper-pagination-bullet:nth-child(6) {
+  border-radius: 50%;
+  width: 1.5rem;
+  height: 1.5rem;
+  background-color: #d5d5d5;
+}
 body .section-title {
   font-size: 5.5rem;
   font-weight: 700;
@@ -6034,6 +6057,14 @@ body .swiper_philosophy-section-second {
   body .swiper .swiper-pagination .swiper-pagination-bullet:nth-child(4) {
     width: 1.5rem;
     height: 1.5rem;
+  }
+  body .swiper .swiper-pagination .swiper-pagination-bullet:nth-child(5) {
+    width: 1.8rem;
+    height: 1.8rem;
+  }
+  body .swiper .swiper-pagination .swiper-pagination-bullet:nth-child(6) {
+    width: 1.8rem;
+    height: 1.8rem;
   }
   body .btn {
     width: 100%;

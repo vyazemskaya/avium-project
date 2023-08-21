@@ -34,6 +34,9 @@ const swiperConceptColorSection3 = new Swiper(
       nextEl: '.swiper-button-next',
       prevEl: '.swiper-button-prev',
     },
+    pagination: {
+      el: '.swiper-pagination_section-3',
+    },
   }
 );
 
@@ -63,6 +66,7 @@ const swiperDetailsCertificates = new Swiper('.swiper_certificates', {
   },
 });
 
+
 const swiperPhilosophySection2 = new Swiper(
   '.swiper_philosophy-section-second',
   {
@@ -81,7 +85,7 @@ const swiperPhilosophySection2 = new Swiper(
   }
 );
 
-if (document.querySelector('.philosophy__section-second')) {
+if(document.querySelector('.philosophy__section-second')) {
   const aesthetics = document.getElementById('aesthetics'),
     innovation = document.getElementById('innovation'),
     quality = document.getElementById('quality');

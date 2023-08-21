@@ -71,8 +71,8 @@
           justify-content: center;
           gap: 8rem;
           .content_btn-mobile {
-            display: block;
-            padding: 2.4rem 9.6rem;
+            width: auto;
+            display: flex;
             text-align: center;
           }
         }
