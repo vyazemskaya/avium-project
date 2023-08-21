@@ -469,6 +469,9 @@ section {
   margin-bottom: 3rem;
   transform: translateX(-22rem);
 }
+.details__section-first .container .details__section-content .content_left .content_title-box .content_dots-box .dots.mobile {
+  display: none;
+}
 .details__section-first .container .details__section-content .content_left .content_title-box .content_name-box .name {
   width: 22.8rem;
 }
@@ -800,7 +803,10 @@ section {
     gap: 0rem;
     margin-bottom: 4rem;
   }
-  .details__section-first .container .details__section-content .content_left .content_title-box .content_dots-box {
+  .details__section-first .container .details__section-content .content_left .content_title-box .content_dots-box .dots {
+    display: none;
+  }
+  .details__section-first .container .details__section-content .content_left .content_title-box .content_dots-box .dots.mobile {
     display: none;
   }
   .details__section-first .container .details__section-content .content_left .content_title-box .content_name-box {
@@ -809,12 +815,20 @@ section {
     gap: 4rem;
     align-items: center;
     justify-content: space-between;
+    position: relative;
   }
-  .details__section-first .container .details__section-content .content_left .content_title-box .content_name-box .name {
-    display: none;
+  .details__section-first .container .details__section-content .content_left .content_title-box .content_name-box::before {
+    content: "";
+    position: absolute;
+    top: 4rem;
+    left: -2rem;
+    border-radius: 50%;
+    width: 1.3rem;
+    height: 1.3rem;
+    background-color: #d5d3d3;
   }
   .details__section-first .container .details__section-content .content_left .content_title-box .content_name-box .name.mobile {
-    display: block;
+    display: none;
   }
   .details__section-first .container .details__section-content .content_left .content_title-box .content_name-box .info_amount {
     display: block;
@@ -5737,8 +5751,12 @@ body video::-webkit-media-controls-start-playback-button {
   appearance: none;
   -webkit-appearance: none;
 }
+body .swiper {
+  overflow: visible;
+}
 body .swiper .swiper-pagination {
   width: 10rem;
+  height: 2rem;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -5747,11 +5765,19 @@ body .swiper .swiper-pagination {
 body .swiper .swiper-pagination .swiper-pagination-bullet {
   margin: 0;
   opacity: 1;
+  position: relative;
 }
-body .swiper .swiper-pagination .swiper-pagination-bullet-active {
-  --webkit-outline: 1px solid #53565a;
-  outline: 1px solid #53565a;
-  outline-offset: 1px;
+body .swiper .swiper-pagination .swiper-pagination-bullet-active::before {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  z-index: 5;
+  width: calc(100% + 0.5rem);
+  height: calc(100% + 0.5rem);
+  border: 1px solid #53565a;
+  border-radius: 50%;
+  transform: translate(-50%, -50%);
 }
 body .swiper .swiper-pagination .swiper-pagination-bullet:nth-child(1) {
   border-radius: 50%;
@@ -5776,18 +5802,6 @@ body .swiper .swiper-pagination .swiper-pagination-bullet:nth-child(4) {
   width: 1rem;
   height: 1rem;
   background-color: #a1a1a1;
-}
-body .swiper .swiper-pagination .swiper-pagination-bullet:nth-child(5) {
-  border-radius: 50%;
-  width: 1.5rem;
-  height: 1.5rem;
-  background-color: #e6e6e6;
-}
-body .swiper .swiper-pagination .swiper-pagination-bullet:nth-child(6) {
-  border-radius: 50%;
-  width: 1.5rem;
-  height: 1.5rem;
-  background-color: #d5d5d5;
 }
 body .section-title {
   font-size: 5.5rem;
@@ -6058,6 +6072,10 @@ body .swiper_philosophy-section-second {
   body .swiper .swiper-pagination .swiper-pagination-bullet {
     margin: 0;
   }
+  body .swiper .swiper-pagination .swiper-pagination-bullet-active::before {
+    width: calc(100% + 1rem);
+    height: calc(100% + 1rem);
+  }
   body .swiper .swiper-pagination .swiper-pagination-bullet:nth-child(1) {
     width: 1.8rem;
     height: 1.8rem;
@@ -6071,16 +6089,8 @@ body .swiper_philosophy-section-second {
     height: 1.8rem;
   }
   body .swiper .swiper-pagination .swiper-pagination-bullet:nth-child(4) {
-    width: 1.5rem;
-    height: 1.5rem;
-  }
-  body .swiper .swiper-pagination .swiper-pagination-bullet:nth-child(5) {
-    width: 1.8rem;
-    height: 1.8rem;
-  }
-  body .swiper .swiper-pagination .swiper-pagination-bullet:nth-child(6) {
-    width: 1.8rem;
-    height: 1.8rem;
+    width: 1.4rem;
+    height: 1.4rem;
   }
   body .btn {
     width: 100%;

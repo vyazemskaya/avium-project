@@ -21,6 +21,13 @@
           gap: 3rem;
           margin-bottom: 3rem;
           transform: translateX(-22rem);
+          .content_dots-box {
+            .dots {
+              &.mobile {
+                display: none;
+              }
+            }
+          }
           .content_name-box {
             .name {
               width: 22.8rem;
@@ -370,7 +377,12 @@
             gap: 0rem;
             margin-bottom: 4rem;
             .content_dots-box {
-              display: none;
+              .dots {
+                display: none;
+                &.mobile {
+                  display: none;
+                }
+              }
             }
             .content_name-box {
               width: 100%;
@@ -378,10 +390,20 @@
               gap: 4rem;
               align-items: center;
               justify-content: space-between;
+              position: relative;
+              &::before {
+                content: '';
+                position: absolute;
+                top: 4rem;
+                left: -2rem;
+                border-radius: 50%;
+                width: 1.3rem;
+                height: 1.3rem;
+                background-color: #d5d3d3;
+              }
               .name {
-                display: none;
                 &.mobile {
-                  display: block;
+                  display: none;
                 }
               }
               .info_amount {
