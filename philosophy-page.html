@@ -1,0 +1,589 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Avium</title>
+    <link rel="stylesheet" href="scss/style.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
+    />
+  </head>
+  <body>
+    <header class="header">
+      <div class="container">
+        <img class="logotype" src="img/header/logotype.svg" alt="logotype" />
+        <ul class="menu">
+          <li><a href="#">Цвет года</a></li>
+          <li><a href="#">Решение</a></li>
+          <li><a href="#">Палитры</a></li>
+          <li><a href="#">Сотрудничество</a></li>
+          <li><a href="#">Философия</a></li>
+          <li><a href="#">Купить</a></li>
+        </ul>
+        <ul class="icons">
+          <li class="icon">
+            <img
+              class="feedback-icon"
+              src="img/header/feedback-icon.svg"
+              alt="feedback"
+            />
+          </li>
+          <li class="icon">
+            <img src="img/header/cart-icon.svg" alt="cart" />
+          </li>
+        </ul>
+        <div class="burger">
+          <input id="burger-toggle" type="checkbox" />
+          <label class="burger-btn" for="burger-toggle">
+            <span></span>
+          </label>
+
+          <ul class="burgerbox">
+            <li class="burger-item">Цвет года</li>
+            <li class="burger-item">Решения</li>
+            <li class="burger-item">Палитры</li>
+            <li class="burger-item">Сотрудничество</li>
+            <li class="burger-item">Философия</li>
+            <li class="burger-item">Купить</li>
+            <li class="burger-item">Корзина</li>
+            <li class="feedback-item">
+              <p>У Вас есть вопросы, напишите нам!</p>
+              <img
+                class="feedback-icon"
+                style="width: 6rem; height: 6rem"
+                src="./img/header/feedback-icon.svg"
+                alt=""
+              />
+            </li>
+          </ul>
+        </div>
+        <div class="overlay">
+          <div class="modal">
+            <img
+              class="modal_close-icon"
+              src="./img/header/modal_close.svg"
+              alt=""
+            />
+            <div class="modal_content">
+              <h4 class="modal_title">У вас есть вопросы?</h4>
+              <p class="modal_text">
+                Заполните форму и наш менеджер свяжется с Вами.
+              </p>
+              <div class="modal_contact-form">
+                <div class="input_box">
+                  <label>ФИО</label>
+                  <input placeholder="ФИО" type="text" />
+                </div>
+                <div class="inputs_box">
+                  <div class="input_box">
+                    <label>Телефон</label>
+                    <input placeholder="Телефон" type="text" />
+                  </div>
+                  <div class="input_box">
+                    <label>Email</label>
+                    <input placeholder="Email" type="text" />
+                  </div>
+                </div>
+                <div class="input_box">
+                  <label>Ваш вопрос</label>
+                  <input placeholder="Ваш вопрос" type="text" />
+                </div>
+              </div>
+              <button class="modal_btn btn">Отправить</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </header>
+    <main class="main">
+      <section class="philosophy__section-first">
+        <div class="container">
+          <div class="philosophy__section-background">
+            <img
+              src="./img/philosophy_section-first/section_first-background.webp"
+              alt=""
+            />
+          </div>
+          <div class="philosophy__section-content">
+            <h3 class="content_title">Перфекционизм</h3>
+            <p class="content_text">
+              Мы&nbsp;убеждены, что идеал может и&nbsp;должен быть достигнут.
+              Качество, эстетика и&nbsp;результат для нас являются синонимами,
+              и&nbsp;мы&nbsp;никогда не&nbsp;устанем совершенствоваться
+              в&nbsp;развитии этих параметров и&nbsp;поиске новых решений.
+            </p>
+          </div>
+          <img
+            style="width: 18.5rem"
+            src="./img/philosophy_section-first/decoration-desktop.svg"
+            alt=""
+            class="decoration"
+          />
+          <img
+            style="width: 14.4rem"
+            src="./img/philosophy_section-first/decoration-mobile.svg"
+            alt=""
+            class="decoration mobile"
+          />
+        </div>
+      </section>
+
+      <section class="philosophy__section-second">
+        <div class="container">
+          <div class="philosophy__section-content">
+            <h2 class="content_title outlined-text">Наша миссия</h2>
+            <p class="content_text">
+              Быть флагманом технической и&nbsp;эстетической мысли в&nbsp;России
+              и&nbsp;мире, повышать уровень жизни,предлагая лучшие отделочные
+              материалы и&nbsp;не&nbsp;размениваясь на&nbsp;компромиссы.
+            </p>
+            <div class="contents">
+              <div class="content_left">
+                <div class="swiper swiper_philosophy-section-second">
+                  <div class="swiper-wrapper">
+                    <div class="swiper-slide">
+                      <div class="slide_section-2">
+                        <div class="circle">
+                          <div class="circle_icon-mobile">
+                            <img
+                              style="width: 14rem"
+                              src="./img/philosophy_section-second/icon_innovation.svg"
+                              alt=""
+                              class="icon"
+                            />
+                          </div>
+                        </div>
+                        <h4 class="content_subtitle">
+                          Инновационные разработки
+                        </h4>
+                      </div>
+                    </div>
+                    <div class="swiper-slide">
+                      <div class="slide_section-2">
+                        <div class="circle">
+                          <div class="circle_icon-mobile">
+                            <img
+                              style="width: 9rem"
+                              src="./img/philosophy_section-second/icon_aesthetics.svg"
+                              alt=""
+                              class="icon"
+                            />
+                          </div>
+                        </div>
+                        <h4 class="content_subtitle">Эстетика и технологии</h4>
+                      </div>
+                    </div>
+                    <div class="swiper-slide">
+                      <div class="slide_section-2">
+                        <div class="circle">
+                          <div class="circle_icon-mobile">
+                            <img
+                              style="width: 17rem"
+                              src="./img/philosophy_section-second/icon_quality.svg"
+                              alt=""
+                              class="icon"
+                            />
+                          </div>
+                        </div>
+                        <h4 class="content_subtitle">Гарантируемое качество</h4>
+                      </div>
+                    </div>
+                  </div>
+                  <div
+                    class="swiper-pagination swiper-pagination_section-2"
+                  ></div>
+                </div>
+                <button class="content_btn btn">Решение Avium</button>
+              </div>
+              <div class="content_right">
+                <div class="circle">
+                  <img
+                    class="circle_logotype"
+                    src="./img/philosophy_section-second/section_second-logotype.svg"
+                    alt=""
+                  />
+                  <div id="aesthetics" class="icon icon_first">
+                    <img
+                      class="icon_aesthetics"
+                      src="./img/philosophy_section-second/icon_aesthetics.svg"
+                      alt=""
+                    />
+                  </div>
+                  <div id="innovation" class="icon icon_second active">
+                    <img
+                      src="./img/philosophy_section-second/icon_innovation.svg"
+                      alt=""
+                    />
+                  </div>
+                  <div id="quality" class="icon icon_third">
+                    <img
+                      src="./img/philosophy_section-second/icon_quality.svg"
+                      alt=""
+                    />
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="philosophy__section-third">
+        <div class="container">
+          <div class="philosophy__section-content">
+            <div class="content_top">
+              <div class="content_left">
+                <img
+                  src="./img/philosophy_section-third/section_third-logotype.svg"
+                  alt=""
+                />
+              </div>
+              <div class="content_right">
+                <h4 class="content_title outlined-text">Кто придумал</h4>
+                <p class="content_text">
+                  Компания Inviktus&nbsp;&mdash; одна из&nbsp;первостепенных
+                  на&nbsp;рынке премиальных строительных материалов,
+                  <br />занимающаяся импортом на&nbsp;рынок&nbsp;РФ.
+                </p>
+              </div>
+            </div>
+            <div class="content_bottom">
+              <div class="circles">
+                <div class="circles_left">
+                  <span class="circle small"></span>
+                  <span class="circle medium"></span>
+                  <span class="circle medium"></span>
+                  <span class="circle large"></span>
+                </div>
+                <div class="swiper swiper_philosophy-section-3">
+                  <div class="swiper-wrapper circles_center">
+                    <div class="swiper-slide">
+                      <div class="slide_section-3">
+                        <div class="circle_box">
+                          <div style="background-color: #a8b7b6" class="circle">
+                            <p class="circle_year">2008</p>
+                          </div>
+                          <p class="circle_text y-2008">
+                            Компания начиналась с оптовых продаж красок для
+                            интерьера
+                          </p>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="swiper-slide">
+                      <div class="slide_section-3">
+                        <div class="circle_box">
+                          <div style="background-color: #a3bcd8" class="circle">
+                            <p class="circle_year">2009</p>
+                          </div>
+                          <p class="circle_text y-2009">
+                            Заключение первого эксклюзивного контракта на прямой
+                            импорт продукции завода Kerakoll в г.Москва
+                          </p>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="swiper-slide">
+                      <div class="slide_section-3">
+                        <div class="circle_box">
+                          <div style="background-color: #cababa" class="circle">
+                            <p class="circle_year">2010</p>
+                          </div>
+                          <p class="circle_text y-2010">
+                            Трансформация компании после первого валютного
+                            кризиса. Создание группы, в которую вошли молодые,
+                            целеустремлённые компании из других регионов
+                          </p>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="swiper-slide">
+                      <div class="slide_section-3">
+                        <div class="circle_box">
+                          <div style="background-color: #a8b7b6" class="circle">
+                            <p class="circle_year">2014</p>
+                          </div>
+                          <p class="circle_text y-2014">
+                            Inviktus получает международное признание
+                            крупнейшего продавца России и всей Восточной Европы
+                            (по продукту жидкая керамика Fugalite Eco Kerakoll)
+                          </p>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="swiper-slide">
+                      <div class="slide_section-3">
+                        <div class="circle_box">
+                          <div style="background-color: #a6a7cb" class="circle">
+                            <p class="circle_year">2019</p>
+                          </div>
+                          <p class="circle_text y-2019">
+                            Заключение эксклюзивного контракта с концерном
+                            Cromology и начало дистрибьюции премиум краски
+                            Tollens, вдохновившей нас на создание своей
+                            собственной профессиональной линейки
+                          </p>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="swiper-slide">
+                      <div class="slide_section-3">
+                        <div class="circle_box">
+                          <div style="background-color: #3b479d" class="circle">
+                            <p style="color: #fff" class="circle_year">2022</p>
+                          </div>
+                          <p class="circle_text white y-2022">
+                            Inviktus - лидер премиального сегмента с большим
+                            портфелем лучших брендов и обширной клиентской базой
+                          </p>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="circles_right">
+                  <span class="circle large"></span>
+                  <span class="circle medium"></span>
+                  <span class="circle medium"></span>
+                  <span class="circle small"></span>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="dots mobile">
+            <span class="dots_medium color_1"></span>
+            <span class="dots_large color_2"></span>
+            <span class="dots_medium color_2"></span>
+            <span class="dots_small color_3"></span>
+          </div>
+        </div>
+      </section>
+
+      <section class="philosophy__section-fourth">
+        <div class="container">
+          <div class="philosophy__section-content">
+            <h4 class="content_title">Компания Inviktus сегодня</h4>
+            <div class="content_boxes">
+              <div class="content_box">
+                <div class="content_img">
+                  <img
+                    src="./img/philosophy_section-fourth/section_fourth-icon_reliability.svg"
+                    alt=""
+                  />
+                </div>
+                <p class="content_subtitle">Надёжность</p>
+                <p class="content_text">
+                  Качественные продукты, технические консультации, налаженные
+                  бизнес-процессы, позволяющие сосредоточиться
+                  на&nbsp;творчестве, а&nbsp;не&nbsp;на&nbsp;решении
+                  организационных моментов.
+                </p>
+              </div>
+              <div class="content_box">
+                <div class="content_img">
+                  <img
+                    src="./img/philosophy_section-fourth/section_fourth-icon_innovation.svg"
+                    alt=""
+                  />
+                </div>
+                <p class="content_subtitle">Новаторство</p>
+                <p class="content_text">
+                  Всегда поиске новых технологий и&nbsp;оптимальных решений
+                  задач. Аналитика мировых трендов и&nbsp;внимание
+                  к&nbsp;деталям.
+                </p>
+              </div>
+              <div class="content_box">
+                <div class="content_img">
+                  <img
+                    class="confidence"
+                    src="./img/philosophy_section-fourth/section_fourth-icon_confidence.svg"
+                    alt=""
+                  />
+                </div>
+                <p class="content_subtitle">Уверенность</p>
+                <p class="content_text">
+                  Высокий уровень квалификации и&nbsp;большой опыт работы
+                  от&nbsp;импортера до&nbsp;производителя со&nbsp;знанием всех
+                  деталей позволяют оптимизировать процессы и&nbsp;обеспечивать
+                  наилучший уровень сервиса.
+                </p>
+              </div>
+              <div class="content_box">
+                <div class="content_img">
+                  <img
+                    src="./img/philosophy_section-fourth/section_fourth-icon_community.svg"
+                    alt=""
+                  />
+                </div>
+                <p class="content_subtitle">Сообщество</p>
+                <p class="content_text">
+                  Мы&nbsp;объединяем вокруг себя ведущих профессионалов,
+                  обеспечивая их&nbsp;поддержкой и&nbsp;обмениваясь опытом.
+                </p>
+              </div>
+            </div>
+            <div class="content_button-box">
+              <div class="dots dots_large-decorations">
+                <span class="dots-smaller dots-color_lighter"></span>
+                <span class="dots-smaller dots-color_light"></span>
+                <span class="dots-small dots-color_dark"></span>
+                <span class="dots-medium dots-color_poluton"></span>
+                <span class="dots-large dots-color_light"></span>
+                <span class="dots-medium dots-color_lighter"></span>
+              </div>
+              <button class="content_btn btn">Сотрудничество</button>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="philosophy__section-fifth">
+        <div class="container">
+          <div class="philosophy__section-content">
+            <div class="content_left">
+              <h4 class="content_subtitle">профессиональное</h4>
+              <h1 class="content_title outlined-text">Производство</h1>
+              <h2 class="content_title mobile">Производство</h2>
+              <p class="content_text">
+                Инновационные технологии позволили нам создать краски,
+                превосходящие зарубежные аналоги, и&nbsp;мы&nbsp;стали первыми,
+                у&nbsp;кого это получилось.
+              </p>
+            </div>
+            <div class="content_right">
+              <div class="content_img-box">
+                <img
+                  class="image-iso"
+                  src="./img/philosophy_section-fifth/section_fifth-photo_iso.webp"
+                  alt=""
+                />
+                <img
+                  class="image-ecolabel"
+                  src="./img/philosophy_section-fifth/section_fifth-photo_ecolabel.webp"
+                  alt=""
+                />
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="philosophy__section-sixth">
+        <div class="container-video">
+          <video id="video-collection" autoplay playsinline muted>
+            <source
+              src="./img/philosophy_section-sixth/section_sixth-video.mp4"
+            />
+          </video>
+        </div>
+        <div class="container">
+          <div class="philosophy__section-background">
+            <img
+              src="./img/philosophy_section-sixth/section_sixth-background.webp"
+              alt=""
+            />
+          </div>
+          <div class="philosophy__section-content">
+            <div class="content_btn">
+              <p class="content_text">Смотреть</p>
+              <img
+                class="content_icon"
+                src="./img/philosophy_section-sixth/section_sixth-icon.svg"
+                alt=""
+              />
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+    <footer class="footer">
+      <div class="container">
+        <img
+          style="width: 17rem"
+          class="footer_logotype"
+          src="img/footer/footer_logotype-desktop.svg"
+          alt="logotype"
+        />
+        <div class="footer_content">
+          <span class="title">Тот самый идеальный цвет</span>
+          <ul class="lists_info">
+            <ul class="list_left">
+              <li class="list_item">Философия</li>
+              <li class="list_item">Решения</li>
+              <li class="list_item">Цвет года</li>
+            </ul>
+            <ul class="list_right">
+              <li class="list_item">Сотрудничество</li>
+              <li class="list_item">Дилерам</li>
+              <li class="list_item">Дизайнерам</li>
+              <li class="list_item">Купить</li>
+            </ul>
+          </ul>
+          <div class="contacts">
+            <ul class="lists_contacts">
+              <li class="contacts_item">
+                <i class="contact_icon"
+                  ><img src="img/footer/footer_email-icon.svg" alt="email icon"
+                /></i>
+                <p class="contact_text">info@inviktus.ru</p>
+              </li>
+              <li class="contacts_item">
+                <i class="contact_icon"
+                  ><img src="img/footer/footer_phone-icon.svg" alt="phone icon"
+                /></i>
+                <p class="contact_text">8 (800) 350 69 63</p>
+              </li>
+              <li class="contacts_item">
+                <i class="contact_icon"
+                  ><img
+                    src="img/footer/footer_inst-icon.svg"
+                    alt="instagram icon"
+                /></i>
+                <p class="contact_text">avium.paint</p>
+              </li>
+            </ul>
+            <div class="contacts_inviktus">
+              <img src="img/footer/inviktus_logotype.svg" alt="Inviktus" />
+            </div>
+          </div>
+        </div>
+        <img
+          class="footer_logotype-mobile"
+          src="img/footer/footer_logotype-mobile.svg"
+          alt=""
+        />
+        <img
+          class="decoration_left"
+          src="img/footer/footer_decoration_left.svg"
+          alt="decoration"
+        />
+        <img
+          class="decoration_right"
+          src="img/footer/footer_decoration_right.svg"
+          alt="decoration"
+        />
+        <img
+          class="decoration_mobile"
+          src="img/footer/footer_decoration-mobile-v2.svg"
+          alt=""
+        />
+      </div>
+    </footer>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+    <script src="./js/jquery.js"></script>
+    <script src="./js/jquery.nice-select.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.js"></script>
+    <script src="js/wow.min.js"></script>
+    <script src="js/swiper.js"></script>
+    <script src="js/main.js"></script>
+  </body>
+</html>

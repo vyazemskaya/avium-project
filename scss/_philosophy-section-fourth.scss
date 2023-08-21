@@ -1,0 +1,95 @@
+.philosophy__section-fourth {
+  .container {
+    .philosophy__section-content {
+      .content_title {
+        color: #000;
+        font-size: 5rem;
+        font-style: normal;
+        font-weight: 700;
+        text-transform: uppercase;
+        margin-bottom: 9rem;
+      }
+      .content_boxes {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 3.2rem;
+        margin-bottom: 9rem;
+        .content_box {
+          display: flex;
+          flex-direction: column;
+          justify-content: flex-start;
+          gap: 3rem;
+          .content_img {
+            img {
+              width: 10rem;
+              &.confidence {
+                width: 10.5rem;
+              }
+            }
+          }
+          .content_subtitle {
+            color: #000;
+            font-size: 3rem;
+            font-weight: 400;
+            line-height: 4rem;
+          }
+          .content_text {
+            color: #000;
+            font-size: 2rem;
+            font-weight: 300;
+            line-height: 2.8rem;
+          }
+        }
+      }
+      .content_button-box {
+        display: flex;
+        align-items: center;
+        justify-content: flex-end;
+        gap: 5rem;
+      }
+    }
+  }
+}
+
+@media (max-width: 48em) {
+  .philosophy__section-fourth {
+    margin-bottom: 12rem;
+    .container {
+      .philosophy__section-content {
+        .content_title {
+          width: 58rem;
+          margin-bottom: 8rem;
+        }
+        .content_boxes {
+          grid-template-columns: repeat(1, 1fr);
+          gap: 8rem;
+          margin-bottom: 8rem;
+          .content_box {
+            gap: 4rem;
+            .content_img {
+              img {
+                width: 12rem;
+              }
+            }
+            .content_subtitle {
+              font-size: 5rem;
+            }
+            .content_text {
+              font-size: 3rem;
+              line-height: 4rem;
+            }
+          }
+        }
+        .content_button-box {
+          .dots {
+            display: none;
+          }
+          .content_btn {
+            width: auto;
+            margin: 0 auto;
+          }
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,228 @@
+.philosophy__section-third {
+  background-color: #f3f4f7;
+  padding-bottom: 40.4rem;
+  margin-bottom: 4.5rem;
+  clip-path: polygon(0% 0%, 100% 0%, 100% 100%, 0% 100%);
+  .container {
+    width: 100%;
+    position: relative;
+    .philosophy__section-content {
+      .content_top {
+        display: flex;
+        align-items: flex-end;
+        gap: 8.7rem;
+        padding: 5rem 22.7rem;
+        margin-bottom: 11.5rem;
+        .content_left {
+          img {
+            width: 39.5rem;
+          }
+        }
+        .content_right {
+          .content_title {
+            color: #f3f4f7;
+            font-size: 5rem;
+            font-weight: 700;
+            margin-bottom: 4rem;
+          }
+          .content_text {
+            color: #000;
+            font-size: 3rem;
+            font-weight: 400;
+            line-height: 4rem;
+          }
+        }
+      }
+      .content_bottom {
+        padding: 0 5.6rem;
+        .circles {
+          display: flex;
+          gap: 7.3rem;
+          .circles_left,
+          .circles_right {
+            display: flex;
+            align-items: center;
+            gap: 8.1rem;
+            .circle {
+              background-color: #fff;
+              border: 1px solid #a1a1a1;
+              border-radius: 50%;
+              box-shadow: 0.2rem 0.4rem 1rem #e6e6e6;
+              &.small {
+                width: 2rem;
+                height: 2rem;
+              }
+              &.medium {
+                width: 2.5rem;
+                height: 2.5rem;
+              }
+              &.large {
+                width: 3.5rem;
+                height: 3.5rem;
+              }
+            }
+          }
+          .circles_center {
+            display: flex;
+            align-items: center;
+            gap: 7.3rem;
+            .swiper-slide {
+              width: 10rem;
+              .circle_box {
+                position: relative;
+                .circle {
+                  display: flex;
+                  align-items: center;
+                  justify-content: center;
+                  width: 10rem;
+                  height: 10rem;
+                  border-radius: 50%;
+                  transition: transform 0.2s;
+                  .circle_year {
+                    color: #000;
+                    font-size: 2rem;
+                    font-weight: 700;
+                  }
+                  &:hover {
+                    transform: scale(2);
+                  }
+                }
+                .circle_text {
+                  padding: 1rem;
+                  position: absolute;
+                  top: 20rem;
+                  left: 50%;
+                  transform: translateX(-50%);
+                  opacity: 0;
+                  pointer-events: none;
+                  color: #000;
+                  font-size: 2rem;
+                  font-weight: 300;
+                  text-align: center;
+                  &.y-2008 {
+                    width: 40.8rem;
+                  }
+                  &.y-2009 {
+                    width: 63rem;
+                  }
+                  &.y-2010 {
+                    width: 63.4rem;
+                  }
+                  &.y-2014 {
+                    width: 63.4rem;
+                  }
+                  &.y-2019 {
+                    width: 75.6rem;
+                  }
+                  &.y-2022 {
+                    width: 44.4rem;
+                  }
+                }
+                &:hover .circle_text {
+                  opacity: 1;
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+    &::after {
+      content: '';
+      position: absolute;
+      left: 0;
+      bottom: -40.45rem;
+      width: 100%;
+      height: 20rem;
+      clip-path: polygon(0% 0%, 50% 50%, 100% 100%, 0% 100%);
+      background-color: #fff;
+    }
+    .dots {
+      display: none;
+    }
+  }
+}
+
+@media (max-width: 48em) {
+  .philosophy__section-third {
+    overflow: hidden;
+    padding-top: 6rem;
+    padding-bottom: 54.6rem;
+    .container {
+      .philosophy__section-content {
+        .content_top {
+          flex-direction: column;
+          align-items: flex-start;
+          padding: 0;
+          gap: 4rem;
+          margin-bottom: 6rem;
+          .content_left {
+            img {
+              width: 32rem;
+            }
+          }
+        }
+        .content_bottom {
+          padding: 0;
+          .circles {
+            .circles_left,
+            .circles_right {
+              display: none;
+            }
+            .circles_center {
+              width: 67rem;
+              gap: 0;
+              .swiper-slide {
+                width: 40rem;
+                margin: 0;
+                .circle_box {
+                  margin: 0;
+                  .circle {
+                    width: 20rem;
+                    height: 20rem;
+                    .circle_year {
+                      font-size: 5rem;
+                    }
+                    &:hover {
+                      transform: scale(1.8);
+                    }
+                  }
+                  .circle_text {
+                    top: 35rem;
+                    font-size: 3rem;
+                    text-align: left;
+                    &.y-2008,
+                    &.y-2009,
+                    &.y-2011,
+                    &.y-2014,
+                    &.y-2019,
+                    &.y-2022 {
+                      width: 67rem;
+                    }
+                  }
+                }
+                &.swiper-slide-prev,
+                &.swiper-slide-next {
+                  .circle_box {
+                    pointer-events: none;
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+      &::after {
+        height: 18rem;
+        bottom: -55rem;
+      }
+      .dots {
+        display: flex;
+        position: absolute;
+        top: 75rem;
+        left: 50%;
+        transform: translateX(-50%);
+      }
+    }
+  }
+}

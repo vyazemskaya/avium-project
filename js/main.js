@@ -395,3 +395,28 @@ if (document.querySelector('.details__section-first')) {
     });
   }
 }
+
+//////////////////////////////Философия//////////////////////////////////
+
+if (document.querySelector('.philosophy__section-sixth')) {
+  document.getElementById('video-collection').addEventListener('ended', () => {
+    document.querySelector(
+      '.philosophy__section-sixth .container-video'
+    ).style.display = 'none';
+    document.querySelector(
+      '.philosophy__section-sixth .container'
+    ).style.display = 'block';
+  });
+
+  document
+    .querySelector('.philosophy__section-sixth .container .content_btn')
+    .addEventListener('click', () => {
+      document.querySelector(
+        '.philosophy__section-sixth .container-video'
+      ).style.display = 'block';
+      document.getElementById('video-collection').play();
+      document.querySelector(
+        '.philosophy__section-sixth .container'
+      ).style.display = 'none';
+    });
+}

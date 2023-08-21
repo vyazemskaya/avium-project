@@ -1,0 +1,88 @@
+.philosophy__section-fifth {
+  margin-bottom: 11.5rem;
+  .container {
+    .philosophy__section-content {
+      display: flex;
+      .content_left {
+        width: 89.4rem;
+        .content_subtitle {
+          color: #53565a;
+          font-size: 5rem;
+          font-weight: 700;
+          margin-bottom: 2.4rem;
+        }
+        .content_title {
+          font-size: 9rem;
+          font-weight: 700;
+          text-transform: uppercase;
+          margin-bottom: 4rem;
+          &.mobile {
+            display: none;
+          }
+        }
+        .content_text {
+          font-size: 3rem;
+          font-weight: 400;
+          line-height: 4rem;
+        }
+      }
+      .content_right {
+        display: flex;
+        flex: 1 0;
+        align-items: flex-start;
+        justify-content: flex-end;
+        .content_img-box {
+          display: flex;
+          align-items: flex-end;
+          gap: 7rem;
+          .image-iso {
+            width: 13rem;
+            height: 10.5rem;
+          }
+          .image-ecoalabel {
+            width: 13.5rem;
+          }
+        }
+      }
+    }
+  }
+}
+
+@media (max-width: 48em) {
+  .philosophy__section-fifth {
+    .container {
+      .philosophy__section-content {
+        flex-direction: column;
+        gap: 8rem;
+        .content_left {
+          width: 100%;
+          .content_title {
+            display: none;
+            &.mobile {
+              display: block;
+              font-size: 6rem;
+            }
+          }
+          .content_text {
+            font-size: 3rem;
+          }
+        }
+        .content_right {
+          .content_img-box {
+            flex: 1 0;
+            justify-content: space-around;
+            gap: 0;
+            .image-iso {
+              width: 26rem;
+              height: 21rem;
+            }
+            .image-ecolabel {
+              width: 27rem;
+              height: 32rem;
+            }
+          }
+        }
+      }
+    }
+  }
+}
