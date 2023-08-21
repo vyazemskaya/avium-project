@@ -4969,7 +4969,7 @@ section {
   }
   .solution__section-second .container .solution__section-content .content_top {
     flex-direction: column-reverse;
-    gap: 8rem;
+    gap: 4rem;
     margin-bottom: 12rem;
   }
   .solution__section-second .container .solution__section-content .content_top .content_left {
@@ -5714,9 +5714,6 @@ body video::-webkit-media-controls-start-playback-button {
   appearance: none;
   -webkit-appearance: none;
 }
-body .swiper {
-  overflow: visible;
-}
 body .swiper .swiper-pagination {
   width: 10rem;
   display: flex;
@@ -5762,6 +5759,11 @@ body .section-title {
   font-weight: 700;
   text-transform: uppercase;
   color: #53565a;
+}
+body .overlay {
+  background-color: rgba(53, 54, 58, 0.3);
+  -webkit-backdrop-filter: blur(1rem);
+          backdrop-filter: blur(1rem);
 }
 body .btn {
   display: flex;

@@ -62,7 +62,6 @@ body {
   }
 
   .swiper {
-    overflow: visible;
     .swiper-pagination {
       width: 10rem;
       display: flex;
@@ -110,6 +109,11 @@ body {
     font-weight: 700;
     text-transform: uppercase;
     color: #53565a;
+  }
+
+  .overlay {
+    background-color: rgba(53, 54, 58, 0.3);
+    backdrop-filter: blur(1rem);
   }
 
   .btn {
