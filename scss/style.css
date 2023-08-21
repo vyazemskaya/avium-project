@@ -2451,9 +2451,9 @@ section {
     margin-bottom: 3rem;
   }
   .cooperation__section-first .container .cooperation__section-background img {
-    height: 80rem;
-    -o-object-position: -65rem;
-       object-position: -65rem;
+    height: 76rem;
+    -o-object-position: -55rem;
+       object-position: -55rem;
   }
   .cooperation__section-first .container .cooperation__section-content {
     width: 67rem;
@@ -2767,7 +2767,7 @@ section {
   margin-bottom: 0;
 }
 .decisions__section-second .container .decisions__section-content {
-  transform: translateY(-20rem);
+  transform: translateY(-16rem);
 }
 .decisions__section-second .container .decisions__section-content .content_top {
   margin-bottom: 11.5rem;
@@ -3785,9 +3785,9 @@ section {
     margin-bottom: 3rem;
   }
   .purchase__section-first .container .purchase__section-background img {
-    -o-object-position: -55rem;
-       object-position: -55rem;
-    height: 80rem;
+    -o-object-position: -50rem;
+       object-position: -50rem;
+    height: 76rem;
   }
   .purchase__section-first .container .purchase__section-content {
     padding: 0 4rem;
