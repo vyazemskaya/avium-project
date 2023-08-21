@@ -1,0 +1,532 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Avium</title>
+    <link rel="stylesheet" href="scss/style.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
+    />
+  </head>
+  <body>
+    <header class="header">
+      <div class="container">
+        <img class="logotype" src="img/header/logotype.svg" alt="logotype" />
+        <ul class="menu">
+          <li><a href="#">Цвет года</a></li>
+          <li><a href="#">Решение</a></li>
+          <li><a href="#">Палитры</a></li>
+          <li><a href="#">Сотрудничество</a></li>
+          <li><a href="#">Философия</a></li>
+          <li><a href="#">Купить</a></li>
+        </ul>
+        <ul class="icons">
+          <li class="icon">
+            <img
+              class="feedback-icon"
+              src="img/header/feedback-icon.svg"
+              alt="feedback"
+            />
+          </li>
+          <li class="icon">
+            <img src="img/header/cart-icon.svg" alt="cart" />
+          </li>
+        </ul>
+        <div class="burger">
+          <input id="burger-toggle" type="checkbox" />
+          <label class="burger-btn" for="burger-toggle">
+            <span></span>
+          </label>
+
+          <ul class="burgerbox">
+            <li class="burger-item">Цвет года</li>
+            <li class="burger-item">Решения</li>
+            <li class="burger-item">Палитры</li>
+            <li class="burger-item">Сотрудничество</li>
+            <li class="burger-item">Философия</li>
+            <li class="burger-item">Купить</li>
+            <li class="burger-item">Корзина</li>
+            <li class="feedback-item">
+              <p>У Вас есть вопросы, напишите нам!</p>
+              <img
+                class="feedback-icon"
+                style="width: 6rem; height: 6rem"
+                src="./img/header/feedback-icon.svg"
+                alt=""
+              />
+            </li>
+          </ul>
+        </div>
+        <div class="overlay">
+          <div class="modal">
+            <img
+              class="modal_close-icon"
+              src="./img/header/modal_close.svg"
+              alt=""
+            />
+            <div class="modal_content">
+              <h4 class="modal_title">У вас есть вопросы?</h4>
+              <p class="modal_text">
+                Заполните форму и наш менеджер свяжется с Вами.
+              </p>
+              <div class="modal_contact-form">
+                <div class="input_box">
+                  <label>ФИО</label>
+                  <input placeholder="ФИО" type="text" />
+                </div>
+                <div class="inputs_box">
+                  <div class="input_box">
+                    <label>Телефон</label>
+                    <input placeholder="Телефон" type="text" />
+                  </div>
+                  <div class="input_box">
+                    <label>Email</label>
+                    <input placeholder="Email" type="text" />
+                  </div>
+                </div>
+                <div class="input_box">
+                  <label>Ваш вопрос</label>
+                  <input placeholder="Ваш вопрос" type="text" />
+                </div>
+              </div>
+              <button class="modal_btn btn">Отправить</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </header>
+    <main>
+      <section class="veripery__section-first">
+        <div class="container">
+          <div class="veripery__section-background">
+            <video class="background-desktop" autoplay muted>
+              <source
+                src="./img/veripery_section-first/section_first-videov2.mp4"
+                type="video/mp4"
+              />
+            </video>
+            <video class="background-mobile" autoplay muted>
+              <source
+                src="./img/veripery_section-first/section_first-video-mobilev2.mp4"
+                type="video/mp4"
+              />
+            </video>
+          </div>
+          <div
+            class="veripery__section-content wow animate__fadeIn animate__delay-5s"
+          >
+            <div class="content_title wow animate__fadeIn">
+              <h3>Коллекция</h3>
+              <h3><strong>VerY peri</strong></h3>
+            </div>
+            <p class="content_text wow animate__fadeIn" data-wow-delay="5.5s">
+              Разработана для создания идеального восприятия каждого оттенка
+              в&nbsp;интерьере, формирующая одинаковую реакцию глаза
+              на&nbsp;цвет в&nbsp;любое время года и&nbsp;в&nbsp;любой ситуации.
+            </p>
+            <div
+              class="content_color-text wow animate__fadeIn"
+              data-wow-delay="5.7s"
+            >
+              <p><strong>32</strong> цвета</p>
+            </div>
+          </div>
+        </div>
+      </section>
+      <section class="veripery__section-second">
+        <div class="container">
+          <div class="veripery__section-content">
+            <div class="content_image-block">
+              <img
+                class="content_img"
+                src="./img/veripery_section-second/section_second-photo.webp"
+                alt="photo"
+              />
+            </div>
+            <div class="content_info">
+              <h2 class="content_title outlined-text">Цвет года 2022</h2>
+              <h4 class="content_subtitle">Знаковая коллекция бренда</h4>
+              <p class="content_text">
+                Мы&nbsp;живем в&nbsp;эпоху перемен. Цвет Very Peri&nbsp;&mdash;
+                это символ глобального духа времени и&nbsp;переходного периода.
+                Палитра AVIUM Veri Peri знаменует год создания бренда
+                и&nbsp;является постоянной.
+              </p>
+              <button class="content_btn btn">Заказать палитру</button>
+            </div>
+          </div>
+        </div>
+      </section>
+      <section class="veripery__section-third">
+        <div class="container">
+          <div class="veripery__section-content">
+            <div class="content_box">
+              <div class="content_left">
+                <div class="color_box">
+                  <div style="background-color: #c7aeb0" class="square"></div>
+                  <div class="square_name">
+                    <p>15-1905</p>
+                    <p>Burnished Lilac</p>
+                  </div>
+                </div>
+                <div class="color_box">
+                  <div style="background-color: #e2bfbe" class="square"></div>
+                  <div class="square_name">
+                    <p>14-1905</p>
+                    <p>Lotus</p>
+                  </div>
+                </div>
+                <div class="color_box">
+                  <div style="background-color: #d3937f" class="square"></div>
+                  <div class="square_name">
+                    <p>16-1330</p>
+                    <p>Muted Clay</p>
+                  </div>
+                </div>
+                <div class="color_box">
+                  <div style="background-color: #ccb77e" class="square"></div>
+                  <div class="square_name">
+                    <p>14-0626</p>
+                    <p>Dried Moss</p>
+                  </div>
+                </div>
+                <div class="color_box">
+                  <div style="background-color: #656eb3" class="square"></div>
+                  <div class="square_name">
+                    <p>17-3938</p>
+                    <p>Very Peri</p>
+                  </div>
+                </div>
+                <div class="color_box">
+                  <div style="background-color: #87a093" class="square"></div>
+                  <div class="square_name">
+                    <p>16-5907</p>
+                    <p>Granite Green</p>
+                  </div>
+                </div>
+                <div class="color_box">
+                  <div style="background-color: #8b4d5e" class="square"></div>
+                  <div class="square_name">
+                    <p>18-1718</p>
+                    <p>Hawthotn Rose</p>
+                  </div>
+                </div>
+                <div class="color_box">
+                  <div style="background-color: #a0838f" class="square"></div>
+                  <div class="square_name">
+                    <p>17-1605</p>
+                    <p>Elderberry</p>
+                  </div>
+                </div>
+              </div>
+              <div class="content_right">
+                <h4 class="content_title">Уравновешивание</h4>
+                <p class="content_text">
+                  Комплиментарная палитра цветов, в&nbsp;которой естественный
+                  баланс тёплых и&nbsp;холодных тонов поддерживает
+                  и&nbsp;усиливает друг друга. Яркость PANTONE Very Peri
+                  усиливается в&nbsp;этой искусно откалиброванной палитре,
+                  привнося ощущение живости и&nbsp;визуальной вибрации.
+                </p>
+              </div>
+            </div>
+            <div class="content_box">
+              <div class="content_left">
+                <div class="color_box">
+                  <div style="background-color: #479a6d" class="square"></div>
+                  <div class="square_name">
+                    <p>16-6127</p>
+                    <p>Greenbriar</p>
+                  </div>
+                </div>
+                <div class="color_box">
+                  <div style="background-color: #75a252" class="square"></div>
+                  <div class="square_name">
+                    <p>16-0237</p>
+                    <p>Foliage</p>
+                  </div>
+                </div>
+                <div class="color_box">
+                  <div style="background-color: #446c33" class="square"></div>
+                  <div class="square_name">
+                    <p>18-0135</p>
+                    <p>Treerop</p>
+                  </div>
+                </div>
+                <div class="color_box">
+                  <div style="background-color: #d0c056" class="square"></div>
+                  <div class="square_name">
+                    <p>446C33</p>
+                    <p>Celery</p>
+                  </div>
+                </div>
+                <div class="color_box">
+                  <div style="background-color: #b4842f" class="square"></div>
+                  <div class="square_name">
+                    <p>17-0949</p>
+                    <p>Chai Tea</p>
+                  </div>
+                </div>
+                <div class="color_box">
+                  <div style="background-color: #8d5a97" class="square"></div>
+                  <div class="square_name">
+                    <p>18-3533</p>
+                    <p>Dewberry</p>
+                  </div>
+                </div>
+                <div class="color_box">
+                  <div style="background-color: #656eb3" class="square"></div>
+                  <div class="square_name">
+                    <p>17-3938</p>
+                    <p>Very Peri</p>
+                  </div>
+                </div>
+                <div class="color_box">
+                  <div style="background-color: #a1cbca" class="square"></div>
+                  <div class="square_name">
+                    <p>14-4809</p>
+                    <p>Eggshell Blue</p>
+                  </div>
+                </div>
+              </div>
+              <div class="content_right">
+                <h4 class="content_title">Целебный источник</h4>
+                <p class="content_text">
+                  Целостное и&nbsp;гармоничное сочетание оттенков, пропитанных
+                  природой. Подчеркивает совместимость зелёного
+                  с&nbsp;добродушным PANTONE 1&nbsp;Very Peri и&nbsp;целебные
+                  свойства этих восхитительно тонких и&nbsp;питательных
+                  оттенков.
+                </p>
+              </div>
+            </div>
+            <div class="content_box">
+              <div class="content_left">
+                <div class="color_box">
+                  <div style="background-color: #29282d" class="square"></div>
+                  <div class="square_name">
+                    <p>19-4007</p>
+                    <p>Antracite</p>
+                  </div>
+                </div>
+                <div class="color_box">
+                  <div style="background-color: #635c60" class="square"></div>
+                  <div class="square_name">
+                    <p>18-3908</p>
+                    <p>Volcanic Glass</p>
+                  </div>
+                </div>
+                <div class="color_box">
+                  <div style="background-color: #7d6661" class="square"></div>
+                  <div class="square_name">
+                    <p>18-1312</p>
+                    <p>Deep Taupe</p>
+                  </div>
+                </div>
+                <div class="color_box">
+                  <div style="background-color: #aea292" class="square"></div>
+                  <div class="square_name">
+                    <p>16-1105</p>
+                    <p>Plaza Taupe</p>
+                  </div>
+                </div>
+                <div class="color_box">
+                  <div style="background-color: #dcd4d2" class="square"></div>
+                  <div class="square_name">
+                    <p>13-0002</p>
+                    <p>White Sand</p>
+                  </div>
+                </div>
+                <div class="color_box">
+                  <div style="background-color: #907963" class="square"></div>
+                  <div class="square_name">
+                    <p>17-1115</p>
+                    <p>Petrified Oak</p>
+                  </div>
+                </div>
+                <div class="color_box">
+                  <div style="background-color: #f2f0eb" class="square"></div>
+                  <div class="square_name">
+                    <p>11-4201</p>
+                    <p>Cloud Dancer</p>
+                  </div>
+                </div>
+                <div class="color_box">
+                  <div style="background-color: #656eb3" class="square"></div>
+                  <div class="square_name">
+                    <p>17-3938</p>
+                    <p>Very Peri</p>
+                  </div>
+                </div>
+              </div>
+              <div class="content_right">
+                <h4 class="content_title">Звезда шоу</h4>
+                <p class="content_text">
+                  Динамическое присутствие PANTONE Very Peri проявляется
+                  в&nbsp;Звезде шоу, поскольку мы&nbsp;окружаем этот самый
+                  счастливый и&nbsp;самый теплый из&nbsp;всех синих оттенков
+                  палитрой классических и&nbsp;нейтральных оттенков, чья
+                  элегантность и&nbsp;сдержанный стиль передают послание
+                  вневременной изысканности.
+                </p>
+              </div>
+            </div>
+            <div class="content_box">
+              <div class="content_left">
+                <div class="color_box">
+                  <div style="background-color: #d77e70" class="square"></div>
+                  <div class="square_name">
+                    <p>17-1341</p>
+                    <p>Tawny Orange</p>
+                  </div>
+                </div>
+                <div class="color_box">
+                  <div style="background-color: #656eb3" class="square"></div>
+                  <div class="square_name">
+                    <p>17-3938</p>
+                    <p>Very Peri</p>
+                  </div>
+                </div>
+                <div class="color_box">
+                  <div style="background-color: #b6926b" class="square"></div>
+                  <div class="square_name">
+                    <p>15-1040</p>
+                    <p>Iced Coffee</p>
+                  </div>
+                </div>
+                <div class="color_box">
+                  <div style="background-color: #d75079" class="square"></div>
+                  <div class="square_name">
+                    <p>18-2133</p>
+                    <p>Pink Flambe</p>
+                  </div>
+                </div>
+                <div class="color_box">
+                  <div style="background-color: #e288b6" class="square"></div>
+                  <div class="square_name">
+                    <p>15-2718</p>
+                    <p>Fuchsia Pink</p>
+                  </div>
+                </div>
+                <div class="color_box">
+                  <div style="background-color: #ea435d" class="square"></div>
+                  <div class="square_name">
+                    <p>17-1755</p>
+                    <p>Paradise Pink</p>
+                  </div>
+                </div>
+                <div class="color_box">
+                  <div style="background-color: #f0c273" class="square"></div>
+                  <div class="square_name">
+                    <p>13-0932</p>
+                    <p>Cornsilk</p>
+                  </div>
+                </div>
+                <div class="color_box">
+                  <div style="background-color: #85a0a9" class="square"></div>
+                  <div class="square_name">
+                    <p>16-4411</p>
+                    <p>Tourmaline</p>
+                  </div>
+                </div>
+              </div>
+              <div class="content_right">
+                <h4 class="content_title">Развлечения</h4>
+                <p class="content_text">
+                  Развлечения, веселая и&nbsp;причудливая история неудержимого
+                  веселья и&nbsp;непосредственности усиливается беззаботной
+                  уверенностью и&nbsp;радостным настроением PANTONE Very Peri,
+                  мерцающего синего оттенка, игривость которого олицетворяет
+                  раскованное выражение и&nbsp;экспериментирование.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+    <footer class="footer">
+      <div class="container">
+        <img
+          style="width: 17rem"
+          class="footer_logotype"
+          src="img/footer/footer_logotype-desktop.svg"
+          alt="logotype"
+        />
+        <div class="footer_content">
+          <span class="title">Тот самый идеальный цвет</span>
+          <ul class="lists_info">
+            <ul class="list_left">
+              <li class="list_item">Философия</li>
+              <li class="list_item">Решения</li>
+              <li class="list_item">Цвет года</li>
+            </ul>
+            <ul class="list_right">
+              <li class="list_item">Сотрудничество</li>
+              <li class="list_item">Дилерам</li>
+              <li class="list_item">Дизайнерам</li>
+              <li class="list_item">Купить</li>
+            </ul>
+          </ul>
+          <div class="contacts">
+            <ul class="lists_contacts">
+              <li class="contacts_item">
+                <i class="contact_icon"
+                  ><img src="img/footer/footer_email-icon.svg" alt="email icon"
+                /></i>
+                <p class="contact_text">info@inviktus.ru</p>
+              </li>
+              <li class="contacts_item">
+                <i class="contact_icon"
+                  ><img src="img/footer/footer_phone-icon.svg" alt="phone icon"
+                /></i>
+                <p class="contact_text">8 (800) 350 69 63</p>
+              </li>
+              <li class="contacts_item">
+                <i class="contact_icon"
+                  ><img
+                    src="img/footer/footer_inst-icon.svg"
+                    alt="instagram icon"
+                /></i>
+                <p class="contact_text">avium.paint</p>
+              </li>
+            </ul>
+            <div class="contacts_inviktus">
+              <img src="img/footer/inviktus_logotype.svg" alt="Inviktus" />
+            </div>
+          </div>
+        </div>
+        <img
+          class="footer_logotype-mobile"
+          src="img/footer/footer_logotype-mobile.svg"
+          alt=""
+        />
+        <img
+          class="decoration_left"
+          src="img/footer/footer_decoration_left.svg"
+          alt="decoration"
+        />
+        <img
+          class="decoration_right"
+          src="img/footer/footer_decoration_right.svg"
+          alt="decoration"
+        />
+        <img
+          class="decoration_mobile"
+          src="img/footer/footer_decoration-mobile-v2.svg"
+          alt=""
+        />
+      </div>
+    </footer>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+    <script src="./js/jquery.js"></script>
+    <script src="./js/jquery.nice-select.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.js"></script>
+    <script src="./js/wow.min.js"></script>
+    <script src="./js/main.js"></script>
+  </body>
+</html>

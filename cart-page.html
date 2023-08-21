@@ -1,0 +1,534 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Avium</title>
+    <link rel="stylesheet" href="./scss/style.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
+    />
+  </head>
+  <body>
+    <header class="header">
+      <div class="container">
+        <img class="logotype" src="img/header/logotype.svg" alt="logotype" />
+        <ul class="menu">
+          <li><a href="#">Цвет года</a></li>
+          <li><a href="#">Решение</a></li>
+          <li><a href="#">Палитры</a></li>
+          <li><a href="#">Сотрудничество</a></li>
+          <li><a href="#">Философия</a></li>
+          <li><a href="#">Купить</a></li>
+        </ul>
+        <ul class="icons">
+          <li class="icon">
+            <img
+              class="feedback-icon"
+              src="img/header/feedback-icon.svg"
+              alt="feedback"
+            />
+          </li>
+          <li class="icon">
+            <img src="img/header/cart-icon.svg" alt="cart" />
+          </li>
+        </ul>
+        <div class="burger">
+          <input id="burger-toggle" type="checkbox" />
+          <label class="burger-btn" for="burger-toggle">
+            <span></span>
+          </label>
+
+          <ul class="burgerbox">
+            <li class="burger-item">Цвет года</li>
+            <li class="burger-item">Решения</li>
+            <li class="burger-item">Палитры</li>
+            <li class="burger-item">Сотрудничество</li>
+            <li class="burger-item">Философия</li>
+            <li class="burger-item">Купить</li>
+            <li class="burger-item">Корзина</li>
+            <li class="feedback-item">
+              <p>У Вас есть вопросы, напишите нам!</p>
+              <img
+                class="feedback-icon"
+                style="width: 6rem; height: 6rem"
+                src="./img/header/feedback-icon.svg"
+                alt=""
+              />
+            </li>
+          </ul>
+        </div>
+        <div class="overlay">
+          <div class="modal">
+            <img
+              class="modal_close-icon"
+              src="./img/header/modal_close.svg"
+              alt=""
+            />
+            <div class="modal_content">
+              <h4 class="modal_title">У вас есть вопросы?</h4>
+              <p class="modal_text">
+                Заполните форму и наш менеджер свяжется с Вами.
+              </p>
+              <div class="modal_contact-form">
+                <div class="input_box">
+                  <label>ФИО</label>
+                  <input placeholder="ФИО" type="text" />
+                </div>
+                <div class="inputs_box">
+                  <div class="input_box">
+                    <label>Телефон</label>
+                    <input placeholder="Телефон" type="text" />
+                  </div>
+                  <div class="input_box">
+                    <label>Email</label>
+                    <input placeholder="Email" type="text" />
+                  </div>
+                </div>
+                <div class="input_box">
+                  <label>Ваш вопрос</label>
+                  <input placeholder="Ваш вопрос" type="text" />
+                </div>
+              </div>
+              <button class="modal_btn btn">Отправить</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </header>
+    <main>
+      <section class="cart__section-first">
+        <div class="container">
+          <div class="cart__section-content">
+            <h3 class="content_title">Ваша корзина</h3>
+            <div class="content_names-category">
+              <p>Товар</p>
+              <p>Расход</p>
+              <p>Кол-во</p>
+              <p>Стоимость</p>
+            </div>
+            <div class="content_products">
+              <div class="product-box">
+                <div class="product_photo">
+                  <div
+                    style="background-color: #f7f8fa"
+                    class="product_photo-background"
+                  ></div>
+                  <img
+                    style="width: 19rem"
+                    src="./img/cart_section-first/section_first-product_photo-1.webp"
+                    alt=""
+                  />
+                </div>
+                <div class="product_info">
+                  <p class="names_category-mobile">Товар</p>
+                  <p class="product_title">Avium Top Mat</p>
+                  <p class="product_info-text">
+                    Экстраматовая, водоэмульсионная краска
+                  </p>
+                  <p class="product_info-color">
+                    Цвет: <strong>F01 Clean White</strong>
+                  </p>
+                  <img
+                    class="product_icon-delete mobile"
+                    src="./img/cart_section-first/section_first-product_icon-delete.svg"
+                    alt=""
+                  />
+                </div>
+                <div class="product_photo mobile">
+                  <div
+                    style="background-color: #f7f8fa"
+                    class="product_photo-background"
+                  ></div>
+                  <img
+                    src="./img/cart_section-first/section_first-product_photo-1.webp"
+                    alt=""
+                  />
+                </div>
+                <div class="product_expenses">
+                  <p class="names_category-mobile">Расход</p>
+                  <div class="product_expenses-box">
+                    <p class="product_expenses-text">10-12м2/л</p>
+                  </div>
+                </div>
+                <div class="product_box-inner">
+                  <div class="product_count">
+                    <p class="names_category-mobile">Кол-во</p>
+                    <div class="product_counter">
+                      <span class="product_count-minus">
+                        <img
+                          src="./img/cart_section-first/section_first-product_count-minus.svg"
+                          alt=""
+                        />
+                      </span>
+                      <input
+                        class="product_count-input"
+                        type="number"
+                        value="01"
+                      />
+                      <span class="product_count-plus">
+                        <img
+                          src="./img/cart_section-first/section_first-product_count-plus.svg"
+                          alt=""
+                        />
+                      </span>
+                    </div>
+                  </div>
+                  <div class="product_price">
+                    <p class="names_category-mobile">Стоимость</p>
+                    <p class="product_price-text">6 000 ₽</p>
+                  </div>
+                </div>
+                <img
+                  class="product_icon-delete"
+                  src="./img/cart_section-first/section_first-product_icon-delete.svg"
+                  alt=""
+                />
+              </div>
+              <div class="product-box">
+                <div class="product_photo">
+                  <div
+                    style="background-color: #f7f8fa"
+                    class="product_photo-background"
+                  ></div>
+                  <img
+                    style="width: 19rem"
+                    src="./img/cart_section-first/section_first-product_photo-2.webp"
+                    alt=""
+                  />
+                </div>
+                <div class="product_info">
+                  <p class="names_category-mobile">Товар</p>
+                  <p class="product_title">Avium Ceiling</p>
+                  <p class="product_info-text">
+                    Экстраматовая, водоэмульсионная краска
+                  </p>
+                  <p class="product_info-color">
+                    Цвет: <strong>F02 Savoy White</strong>
+                  </p>
+                  <img
+                    class="product_icon-delete mobile"
+                    src="./img/cart_section-first/section_first-product_icon-delete.svg"
+                    alt=""
+                  />
+                </div>
+                <div class="product_photo mobile">
+                  <div
+                    style="background-color: #f7f8fa"
+                    class="product_photo-background"
+                  ></div>
+                  <img
+                    src="./img/cart_section-first/section_first-product_photo-2.webp"
+                    alt=""
+                  />
+                </div>
+                <div class="product_expenses">
+                  <p class="names_category-mobile">Расход</p>
+                  <div class="product_expenses-box">
+                    <p class="product_expenses-text">10-12м2/л</p>
+                  </div>
+                </div>
+                <div class="product_box-inner">
+                  <div class="product_count">
+                    <p class="names_category-mobile">Кол-во</p>
+                    <div class="product_counter">
+                      <span class="product_count-minus">
+                        <img
+                          src="./img/cart_section-first/section_first-product_count-minus.svg"
+                          alt=""
+                        />
+                      </span>
+                      <input
+                        class="product_count-input"
+                        type="number"
+                        value="03"
+                      />
+                      <span class="product_count-plus">
+                        <img
+                          src="./img/cart_section-first/section_first-product_count-plus.svg"
+                          alt=""
+                        />
+                      </span>
+                    </div>
+                  </div>
+                  <div class="product_price">
+                    <p class="names_category-mobile">Стоимость</p>
+                    <p class="product_price-text">9 000 ₽</p>
+                  </div>
+                </div>
+                <img
+                  class="product_icon-delete"
+                  src="./img/cart_section-first/section_first-product_icon-delete.svg"
+                  alt=""
+                />
+              </div>
+            </div>
+          </div>
+          <div id="cart_fixed-block" class="cart-content">
+            <div class="content_info-price">
+              <p class="price_title">Итого</p>
+              <p class="price_value">16200</p>
+            </div>
+            <button class="content-btn btn">Оформить</button>
+          </div>
+        </div>
+      </section>
+      <section class="cart__section-second">
+        <div class="container">
+          <div class="cart__section-content">
+            <h3 class="content_title">Оформление заказа</h3>
+            <div class="contents">
+              <div class="content_left">
+                <h4 class="content_subtitle">Контактная информация</h4>
+                <div class="content_form-box">
+                  <div class="content_inputs-box">
+                    <div class="input_box">
+                      <label>Фамилия</label>
+                      <input placeholder="Фамилия" type="text" />
+                    </div>
+                    <div class="input_box">
+                      <label>Имя</label>
+                      <input placeholder="Имя" type="text" />
+                    </div>
+                  </div>
+                  <div class="content_inputs-box">
+                    <div class="input_box">
+                      <label>Отчество</label>
+                      <input placeholder="Отчество" type="text" />
+                    </div>
+                    <div class="input_box">
+                      <label>Номер телефона</label>
+                      <input placeholder="Номер телефона" type="text" />
+                    </div>
+                  </div>
+                  <div class="content_inputs-box">
+                    <div class="input_box">
+                      <label>E-mail</label>
+                      <input placeholder="E-mail" type="text" />
+                    </div>
+                    <div class="input_box">
+                      <label>Индекс</label>
+                      <input placeholder="Индекс" type="text" />
+                    </div>
+                  </div>
+                  <div class="select_box">
+                    <label>Город</label>
+                    <select class="desktop">
+                      <option value="" selected disabled>Город</option>
+                    </select>
+                  </div>
+                  <div class="input_box">
+                    <label>Адрес</label>
+                    <input placeholder="Адрес" type="text" />
+                  </div>
+                </div>
+                <div class="content_radio-box">
+                  <div class="radio_content">
+                    <h3 class="radio_title">Доставка</h3>
+                    <div class="radio_content-box">
+                      <div class="radio_box">
+                        <input
+                          id="delivery_way-first"
+                          class="custom_radio"
+                          type="radio"
+                          name="group_first"
+                        />
+                        <label for="delivery_way-first">
+                          <div>
+                            <p>Самовывоз</p>
+                            <span>Бесплатно</span>
+                          </div>
+                        </label>
+                      </div>
+                      <div class="radio_box">
+                        <input
+                          id="delivery_way-second"
+                          class="custom_radio"
+                          type="radio"
+                          name="group_first"
+                        />
+                        <label for="delivery_way-second">
+                          <div>
+                            <p>Курьером</p>
+                            <span>от 1 100 ₽</span>
+                          </div>
+                        </label>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="radio_content">
+                    <h3 class="radio_title">Оплата</h3>
+                    <div class="radio_content-box payment">
+                      <div class="radio_box">
+                        <input
+                          id="payment_way-first"
+                          class="custom_radio"
+                          type="radio"
+                          name="group_second"
+                        />
+                        <label class="payment-label" for="payment_way-first"
+                          ><p>Безналичный расчет</p></label
+                        >
+                      </div>
+                      <div class="radio_box">
+                        <input
+                          id="payment_way-second"
+                          class="custom_radio"
+                          type="radio"
+                          name="group_second"
+                        />
+                        <label class="payment-label" for="payment_way-second"
+                          ><p>Наличными при получении</p></label
+                        >
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="content_right">
+                <div id="cart" class="content_price-box">
+                  <div class="input_box">
+                    <label>Введите промокод</label>
+                    <input type="text" />
+                  </div>
+                  <div class="information_box">
+                    <div class="information_item">
+                      <div class="item_text">5 товаров на сумму</div>
+                      <div class="item_line"></div>
+                      <div class="item_price">15 000 ₽</div>
+                    </div>
+                    <div class="information_item">
+                      <div class="item_text">Доставка</div>
+                      <div class="item_line"></div>
+                      <div class="item_price">1 200 ₽</div>
+                    </div>
+                    <div class="information_item">
+                      <div class="item_text">Скидка</div>
+                      <div class="item_line"></div>
+                      <div class="item_price">200 ₽</div>
+                    </div>
+                    <div class="information_item">
+                      <div class="item_text"><strong>Итого</strong></div>
+                      <div class="item_line"></div>
+                      <div class="item_price">16 200 ₽</div>
+                    </div>
+                  </div>
+                  <button class="content_btn btn">Оформить заказ</button>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="cart__section-decoration">
+            <img
+              style="width: 32rem"
+              src="./img/cart_section-second/section_second-decoration.webp"
+              alt=""
+            />
+          </div>
+          <div class="overlay">
+            <div class="modal">
+              <img
+                class="modal_close-icon"
+                src="./img/cart_section-second/modal_close.svg"
+                alt=""
+              />
+              <div class="modal_content">
+                <h4 class="modal_title">Спасибо за заказ!</h4>
+                <p class="modal_text">
+                  Заказ оформлен, в ближайшее время с Вами свяжется менеджер.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+    <footer class="footer">
+      <div class="container">
+        <img
+          style="width: 17rem"
+          class="footer_logotype"
+          src="img/footer/footer_logotype-desktop.svg"
+          alt="logotype"
+        />
+        <div class="footer_content">
+          <span class="title">Тот самый идеальный цвет</span>
+          <ul class="lists_info">
+            <ul class="list_left">
+              <li class="list_item">Философия</li>
+              <li class="list_item">Решения</li>
+              <li class="list_item">Цвет года</li>
+            </ul>
+            <ul class="list_right">
+              <li class="list_item">Сотрудничество</li>
+              <li class="list_item">Дилерам</li>
+              <li class="list_item">Дизайнерам</li>
+              <li class="list_item">Купить</li>
+            </ul>
+          </ul>
+          <div class="contacts">
+            <ul class="lists_contacts">
+              <li class="contacts_item">
+                <i class="contact_icon"
+                  ><img src="img/footer/footer_email-icon.svg" alt="email icon"
+                /></i>
+                <p class="contact_text">info@inviktus.ru</p>
+              </li>
+              <li class="contacts_item">
+                <i class="contact_icon"
+                  ><img src="img/footer/footer_phone-icon.svg" alt="phone icon"
+                /></i>
+                <p class="contact_text">8 (800) 350 69 63</p>
+              </li>
+              <li class="contacts_item">
+                <i class="contact_icon"
+                  ><img
+                    src="img/footer/footer_inst-icon.svg"
+                    alt="instagram icon"
+                /></i>
+                <p class="contact_text">avium.paint</p>
+              </li>
+            </ul>
+            <div class="contacts_inviktus">
+              <img src="img/footer/inviktus_logotype.svg" alt="Inviktus" />
+            </div>
+          </div>
+        </div>
+        <img
+          class="footer_logotype-mobile"
+          src="img/footer/footer_logotype-mobile.svg"
+          alt=""
+        />
+        <img
+          class="decoration_left"
+          src="img/footer/footer_decoration_left.svg"
+          alt="decoration"
+        />
+        <img
+          class="decoration_right"
+          src="img/footer/footer_decoration_right.svg"
+          alt="decoration"
+        />
+        <img
+          class="decoration_mobile"
+          src="img/footer/footer_decoration-mobile-v2.svg"
+          alt=""
+        />
+      </div>
+    </footer>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+    <script src="./js/jquery.js"></script>
+    <script src="./js/jquery.nice-select.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.js"></script>
+    <script src="js/wow.min.js"></script>
+    <script src="js/swiper.js"></script>
+    <script src="js/main.js"></script>
+  </body>
+</html>

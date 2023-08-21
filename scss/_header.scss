@@ -1,0 +1,287 @@
+.header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 100;
+  width: 100%;
+  height: 9.1rem;
+  padding: 2.2rem 0 1.6rem 0;
+  background: #f7f8fa;
+  .container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    .logotype {
+      width: 17rem;
+      height: 5.3rem;
+    }
+    .menu {
+      display: flex;
+      flex-direction: row;
+      gap: 4rem;
+      li {
+        position: relative;
+        a {
+          text-transform: uppercase;
+          color: #53565a;
+          font-size: 2rem;
+          font-weight: 300;
+          transition: font-weight 0.1s ease, color 0.1s ease;
+          &:hover {
+            color: #1d1d1b;
+            font-weight: 400;
+          }
+        }
+      }
+    }
+    .icons {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 2.4rem;
+      .burger {
+        display: none;
+      }
+      .icon {
+        cursor: pointer;
+        img {
+          width: 4rem;
+          height: 4.3rem;
+        }
+      }
+    }
+    .burger {
+      display: none;
+    }
+    .overlay {
+      display: none;
+      position: fixed;
+      left: 0;
+      top: 0;
+      z-index: 100;
+      width: 100%;
+      height: 100%;
+      backdrop-filter: blur(1rem);
+      .modal {
+        max-width: 95.5rem;
+        width: 100%;
+        background-color: #fff;
+        box-shadow: 1px 4px 6px #d5d5d5;
+        border-radius: 6rem;
+        padding: 7rem 10rem;
+        position: absolute;
+        left: 50%;
+        top: 50%;
+        transform: translate(-50%, -50%);
+        .modal_close-icon {
+          width: 2rem;
+          height: 2rem;
+          margin-left: auto;
+          cursor: pointer;
+        }
+        .modal_content {
+          .modal_title {
+            color: #000;
+            font-size: 5rem;
+            font-weight: 700;
+            margin-bottom: 4rem;
+          }
+          .modal_text {
+            max-width: 52rem;
+            color: #000;
+            font-size: 3rem;
+            font-style: normal;
+            font-weight: 400;
+            line-height: 4rem;
+            margin-bottom: 6rem;
+          }
+          .modal_contact-form {
+            display: flex;
+            flex-direction: column;
+            gap: 2.8rem;
+            margin-bottom: 6rem;
+            .inputs_box {
+              display: flex;
+              gap: 2.8rem;
+            }
+            .input_box {
+              display: flex;
+              flex-direction: column;
+              flex: 1 0;
+              color: #000;
+              font-size: 2rem;
+              font-weight: 700;
+              label {
+                color: #929497;
+                font-size: 2rem;
+                font-weight: 300;
+                line-height: 140%;
+              }
+              input {
+                height: 4.6rem;
+                outline: none;
+                border: none;
+                border-bottom: 1px solid #53565a;
+                &::placeholder {
+                  color: transparent;
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
+@media (max-width: 48em) {
+  .header {
+    height: 10.4rem;
+    .container {
+      .logotype {
+        width: 19.9rem;
+        height: 6rem;
+      }
+      .menu,
+      .icons {
+        display: none;
+      }
+      .burger {
+        display: block;
+        .burger-btn {
+          display: flex;
+          align-items: center;
+          position: absolute;
+          top: 1rem;
+          right: 1.5rem;
+          width: 8rem;
+          height: 8rem;
+          cursor: pointer;
+          z-index: 15;
+          & > span,
+          & > span::before,
+          & > span::after {
+            display: block;
+            position: absolute;
+            width: 5rem;
+            height: 0.5rem;
+            border-radius: 6rem;
+            background-color: #53565a;
+            transition-duration: 0.25s;
+          }
+          & > span::before {
+            content: '';
+            top: -1.5rem;
+          }
+          & > span::after {
+            content: '';
+            top: 1.5rem;
+          }
+        }
+        .burgerbox {
+          display: block;
+          position: fixed;
+          visibility: hidden;
+          top: 10.4rem;
+          left: 0;
+          width: 100%;
+          height: 162.5rem;
+          margin: 0;
+          padding: 16rem 11rem;
+          list-style: none;
+          background-color: #fff;
+          z-index: 10;
+          .burger-item {
+            color: #000;
+            font-size: 5rem;
+            font-style: normal;
+            font-weight: 300;
+            line-height: normal;
+            text-transform: uppercase;
+            text-align: center;
+            margin-bottom: 4rem;
+            cursor: pointer;
+          }
+          .feedback-item {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            margin-top: 18rem;
+            p {
+              max-width: 34.6rem;
+              color: #000;
+              font-size: 3rem;
+              font-weight: 400;
+              text-align: center;
+              margin-bottom: 1.5rem;
+            }
+            img {
+              cursor: pointer;
+            }
+          }
+        }
+        #burger-toggle {
+          opacity: 0;
+        }
+        #burger-toggle:checked ~ .burger-btn > span {
+          transform: rotate(45deg);
+        }
+        #burger-toggle:checked ~ .burger-btn > span::before {
+          top: 0;
+          transform: rotate(0);
+        }
+        #burger-toggle:checked ~ .burger-btn > span::after {
+          top: 0;
+          transform: rotate(90deg);
+        }
+        #burger-toggle:checked ~ .burgerbox {
+          visibility: visible;
+          left: 0;
+        }
+      }
+      .overlay {
+        .modal {
+          max-width: 68rem;
+          padding: 4rem;
+          .modal_close-icon {
+            width: 4rem;
+            height: 4rem;
+            margin-bottom: 8rem;
+          }
+          .modal_content {
+            .modal_text {
+              max-width: 100%;
+            }
+            .modal_contact-form {
+              margin-bottom: 8rem;
+              gap: 8rem;
+              .inputs_box {
+                flex-direction: column;
+                gap: 8rem;
+              }
+              .input_box {
+                font-size: 3rem;
+                label {
+                  display: none;
+                  font-size: 3rem;
+                }
+                input {
+                  &::placeholder {
+                    color: #929497;
+                    font-size: 3rem;
+                    font-weight: 300;
+                    line-height: 140%;
+                  }
+                }
+              }
+            }
+            .modal_btn {
+              width: 100%;
+            }
+          }
+        }
+      }
+    }
+  }
+}

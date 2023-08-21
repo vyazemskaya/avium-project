@@ -1,0 +1,183 @@
+.decisions__section-second {
+  margin-bottom: 0;
+  .container {
+    .decisions__section-content {
+      transform: translateY(-20rem);
+      .content_top {
+        margin-bottom: 11.5rem;
+        .content_title {
+          font-size: 9rem;
+          font-weight: 700;
+          text-transform: uppercase;
+          margin-bottom: 9rem;
+        }
+        .content_top-box {
+          display: flex;
+          .content_text-box {
+            max-width: 90rem;
+            display: flex;
+            flex-direction: column;
+            gap: 4rem;
+            .content_subtitle {
+              color: #000;
+              font-size: 5rem;
+              font-weight: 400;
+            }
+            .content_text {
+              color: #000;
+              font-size: 3rem;
+              font-weight: 400;
+              line-height: 4rem;
+            }
+          }
+          .content_button-box {
+            flex: 1 0;
+            display: flex;
+            align-items: flex-start;
+            justify-content: flex-end;
+          }
+        }
+      }
+      .content_bottom {
+        .product_box {
+          display: flex;
+          gap: 9.5rem;
+          position: relative;
+          margin-bottom: 9rem;
+          &:last-child {
+            margin-bottom: 0;
+          }
+          .product_licenses-box {
+            display: flex;
+            gap: 3rem;
+            position: absolute;
+            bottom: 0;
+            right: 0;
+            .licenses_btn {
+              display: flex;
+              align-items: center;
+              justify-content: center;
+              width: 7rem;
+              height: 7rem;
+              border-radius: 50%;
+              background-color: #f5f5f5;
+              box-shadow: 1px 4px 6px #d5d5d5;
+            }
+            &.mobile {
+              display: none;
+            }
+          }
+          .product_left {
+            display: flex;
+            align-items: center;
+            gap: 9.5rem;
+            .product_dots {
+              position: absolute;
+              left: -18rem;
+            }
+            .product_img-box {
+              padding-left: 11.5rem;
+              .product_img {
+                width: 28.4rem;
+              }
+            }
+            .product_btn-mobile {
+              display: none;
+            }
+          }
+          .product_right {
+            flex: 1 0;
+            padding-bottom: 6rem;
+            .product_name {
+              width: 40.5rem;
+              margin-bottom: 4.5rem;
+            }
+            .product_text {
+              color: #000;
+              font-size: 3rem;
+              font-weight: 400;
+              line-height: 4rem;
+            }
+            .product_btn {
+              position: absolute;
+              top: 2rem;
+              right: 0;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+@media (max-width: 48em) {
+  .decisions__section-second {
+    margin-bottom: 12rem;
+    .container {
+      .decisions__section-content {
+        transform: translate(0);
+        .content_top {
+          .content_title {
+            margin-bottom: 0;
+          }
+          .content_top-box {
+            flex-direction: column;
+            gap: 8rem;
+            .content_button-box {
+              display: block;
+              .content_btn {
+                width: 100%;
+              }
+            }
+          }
+        }
+        .content_bottom {
+          .product_box {
+            flex-direction: column-reverse;
+            margin-bottom: 20rem;
+            .product_licenses-box {
+              display: none;
+              position: static;
+              .licenses_btn {
+                width: 10rem;
+                height: 10rem;
+              }
+              &.mobile {
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                justify-content: center;
+              }
+            }
+            .product_left {
+              flex-direction: column;
+              gap: 4rem;
+              .product_dots {
+                display: none;
+              }
+              .product_img-box {
+                width: 100%;
+                display: flex;
+                justify-content: space-between;
+                padding-left: 0;
+                .product_img {
+                  width: 36rem;
+                }
+              }
+              .product_btn-mobile {
+                display: flex;
+                width: 100%;
+              }
+            }
+            .product_right {
+              padding-bottom: 0;
+              .product_btn {
+                display: none;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

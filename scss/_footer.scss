@@ -1,0 +1,176 @@
+.footer {
+  background-color: #53565a;
+  width: 100%;
+  height: 24.5rem;
+  position: relative;
+  .container {
+    display: flex;
+    padding-top: 3.3rem;
+    .footer_logotype {
+      object-fit: contain;
+      height: 21rem;
+      margin-right: 8rem;
+    }
+    .footer_logotype-mobile {
+      display: none;
+    }
+    .footer_content {
+      display: flex;
+      .title {
+        color: #929497;
+        font-size: 2.5rem;
+        font-weight: 400;
+        margin-right: 5.6rem;
+        padding-top: 0.8rem;
+      }
+      .lists_info {
+        display: flex;
+        gap: 8.2rem;
+        margin-right: 8.6rem;
+        padding-top: 1.3rem;
+        .list_left,
+        .list_right {
+          display: flex;
+          flex-direction: column;
+          gap: 1.9rem;
+        }
+        .list_item {
+          cursor: pointer;
+          color: #929497;
+          font-size: 2rem;
+          font-weight: 700;
+          text-transform: uppercase;
+          &:hover {
+            color: #1d1d1b;
+          }
+        }
+      }
+      .contacts {
+        .lists_contacts {
+          display: flex;
+          flex-direction: column;
+          gap: 2rem;
+          margin-bottom: 2.6rem;
+          padding-top: 0.2rem;
+          .contact_icon {
+            img {
+              width: 2rem;
+              height: 2rem;
+            }
+          }
+          .contacts_item {
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            gap: 2.2rem;
+            p {
+              color: #929497;
+              font-size: 2rem;
+              font-weight: 300;
+            }
+          }
+        }
+        .contacts_inviktus {
+          margin-left: 4.8rem;
+          width: 8rem;
+          height: 2.5rem;
+        }
+      }
+    }
+    .decoration_left,
+    .decoration_right {
+      position: absolute;
+    }
+    .decoration_left {
+      width: 50rem;
+      left: -21rem;
+      bottom: 1rem;
+    }
+    .decoration_right {
+      width: 12.1rem;
+      right: 1rem;
+      bottom: 1.4rem;
+    }
+    .decoration_mobile {
+      display: none;
+    }
+  }
+}
+@media (max-width: 48em) {
+  .footer {
+    height: 100%;
+    .container {
+      padding-top: 14rem;
+      position: relative;
+      justify-content: space-between;
+      .footer_logotype {
+        display: none;
+      }
+      .footer_logotype-mobile {
+        display: block;
+        object-fit: cover;
+        object-position: 0 0;
+        width: 20rem;
+        height: 120rem;
+      }
+      .footer_content {
+        width: 33.5rem;
+        flex-direction: column;
+        .title {
+          margin-bottom: 8rem;
+          font-size: 3rem;
+          padding-top: 0;
+        }
+        .lists_info {
+          flex-direction: column;
+          gap: 3.2rem;
+          margin-bottom: 8rem;
+          padding-top: 0;
+          .list_left,
+          .list_right {
+            gap: 3.2rem;
+            .list_item {
+              font-size: 3rem;
+            }
+          }
+        }
+        .contacts {
+          .lists_contacts {
+            margin-bottom: 8rem;
+            gap: 2rem;
+            padding-top: 0;
+            .contacts_item {
+              .contact_icon {
+                img {
+                  width: 4rem;
+                  height: 4rem;
+                }
+              }
+              .contact_text {
+                font-size: 3rem;
+              }
+            }
+          }
+          .contacts_inviktus {
+            margin-left: 0;
+            img {
+              width: 16rem;
+            }
+          }
+        }
+      }
+      .decoration_left,
+      .decoration_right {
+        display: none;
+      }
+      .decoration_mobile {
+        display: block;
+        position: absolute;
+        bottom: 1rem;
+        left: 1rem;
+        width: 69rem;
+        height: 15rem;
+      }
+    }
+  }
+}

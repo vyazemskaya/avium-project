@@ -1,0 +1,53 @@
+.elmar__section-first {
+  .container {
+    width: 100%;
+    position: relative;
+    .elmar__section-content {
+      position: absolute;
+      top: 24.1rem;
+      left: 22.6rem;
+      .content_title {
+        color: #fff;
+        font-size: 5.5rem;
+        font-weight: 300;
+        text-transform: uppercase;
+        display: flex;
+        flex-direction: column;
+        gap: 2.4rem;
+        margin-bottom: 4rem;
+        strong {
+          font-weight: 700;
+        }
+      }
+      .content_text {
+        color: #fff;
+        font-size: 3rem;
+        font-weight: 400;
+        line-height: 4rem;
+        margin-bottom: 9rem;
+      }
+      .content_btn {
+        box-shadow: 1px 4px 10px 0px rgba(88, 88, 88, 0.4);
+      }
+    }
+  }
+}
+
+@media (max-width: 48em) {
+  .elmar__section-first {
+    .container {
+      padding: 0;
+      .elmar__section-background {
+        img {
+          object-fit: cover;
+          object-position: -162rem;
+          height: 147.4rem;
+        }
+      }
+      .elmar__section-content {
+        top: 46.4rem;
+        left: 4rem;
+      }
+    }
+  }
+}

@@ -1,0 +1,115 @@
+.purchase__section-third {
+  .container {
+    .purchase__section-content {
+      .select_box {
+        &.mobile {
+          display: none;
+        }
+      }
+      .content_top {
+        display: flex;
+        justify-content: space-between;
+        gap: 58.7rem;
+        margin-bottom: 4rem;
+      }
+      .content_bottom {
+        display: flex;
+        .content_left {
+          .places_box {
+            height: 55rem;
+            border: 1px solid #f3f4f7;
+            border-left: none;
+            overflow-y: auto;
+            &::-webkit-scrollbar {
+              width: 1.1rem;
+            }
+            &::-webkit-scrollbar-track {
+              background-color: #fff;
+              border: 1px solid #f3f4f7;
+            }
+            &::-webkit-scrollbar-thumb {
+              border-radius: 10rem;
+              background-color: #a1a1a1;
+              border: 0.35rem solid #fff;
+            }
+            .place_info-box {
+              max-width: 47.6rem;
+              padding: 3rem 0;
+              font-size: 2rem;
+              border-bottom: 1px solid #f3f4f7;
+              .place_title {
+                color: #000;
+                font-style: normal;
+                font-weight: 700;
+                margin-bottom: 2rem;
+              }
+              .place_address {
+                color: #000;
+                font-style: normal;
+                font-weight: 300;
+                line-height: 140%;
+                margin-bottom: 1rem;
+              }
+              .place_phone {
+                color: #53565a;
+                font-style: normal;
+                font-weight: 700;
+              }
+            }
+          }
+        }
+        .content_right {
+          flex: 1 0;
+          .purchase_map {
+            width: 100%;
+            height: 100%;
+            background-color: #000;
+            -webkit-filter: grayscale(100%);
+          }
+        }
+      }
+    }
+  }
+}
+
+@media (max-width: 48em) {
+  .purchase__section-third {
+    .container {
+      padding: 0;
+      .purchase__section-content {
+        .select_box {
+          display: none;
+          &.mobile {
+            width: 100%;
+            display: flex;
+            margin-bottom: 4rem;
+            padding: 0 4rem;
+            label {
+              font-size: 3rem;
+            }
+          }
+        }
+        .content_top {
+          padding: 0 4rem;
+        }
+        .content_bottom {
+          flex-direction: column-reverse;
+          gap: 1rem;
+          .content_left {
+            padding: 0 0 0 4rem;
+            .places_box {
+              .place_info-box {
+                font-size: 3rem;
+              }
+            }
+          }
+          .content_right {
+            .purchase_map {
+              height: 110rem;
+            }
+          }
+        }
+      }
+    }
+  }
+}

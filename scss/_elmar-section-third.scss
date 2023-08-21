@@ -1,0 +1,262 @@
+.elmar__section-third {
+  .container {
+    .elmar__section-content {
+      display: flex;
+      flex-direction: column;
+      gap: 20rem;
+      .content_box {
+        display: flex;
+        flex-direction: column;
+        gap: 6rem;
+        .content_top {
+          display: flex;
+          gap: 7.5rem;
+          &-left {
+            display: grid;
+            grid-template-columns: repeat(4, 15.5rem);
+            gap: 3.2rem;
+            .color_box {
+              width: 15.5rem;
+              display: flex;
+              flex-direction: column;
+              gap: 2rem;
+              .square {
+                width: 100%;
+                height: 13.5rem;
+              }
+              .square_name {
+                p {
+                  color: #000;
+                  font-size: 2rem;
+                  font-weight: 700;
+                  text-align: right;
+                }
+              }
+            }
+          }
+          &-right {
+            .content_color-title {
+              margin-bottom: 4rem;
+              position: relative;
+              .chaos {
+                width: 19.2rem;
+              }
+              .permanence {
+                width: 42.3rem;
+              }
+              .clarity {
+                width: 20.5rem;
+              }
+              .waterdrive {
+                width: 38rem;
+              }
+              &.animate__animated {
+                &::before {
+                  content: '';
+                  opacity: 0;
+                  width: 42rem;
+                  height: 8.5rem;
+                  background-color: #fff;
+                  position: absolute;
+                  top: 0;
+                  left: 0;
+                  animation: 1s linear 0s slideBefore;
+                }
+              }
+            }
+            .content_color-text {
+              color: #000;
+              font-size: 3rem;
+              font-weight: 400;
+              line-height: 4rem;
+            }
+          }
+        }
+        .content_bottom {
+          display: flex;
+          gap: 6rem;
+          &-left {
+            width: 50%;
+            .content_driver-text {
+              text-align: right;
+              font-size: 5rem;
+              font-weight: 700;
+            }
+          }
+          &-right {
+            flex: 1 0;
+            position: relative;
+            .content_title {
+              color: #53565a;
+              font-size: 8rem;
+              font-weight: 700;
+              text-transform: uppercase;
+              margin-bottom: 4rem;
+            }
+            .content_text {
+              color: #000;
+              font-size: 3rem;
+              font-weight: 400;
+              line-height: 4rem;
+            }
+            .blob {
+              position: absolute;
+              right: -22.6rem;
+              &.blob-lime {
+                top: -18rem;
+                width: 28rem;
+              }
+              &.blob-grey {
+                top: -6rem;
+                width: 20rem;
+              }
+              &.blob-red {
+                top: -10rem;
+                width: 20rem;
+              }
+              &.blob-blue {
+                top: -14rem;
+                width: 30rem;
+              }
+            }
+            .decoration {
+              position: absolute;
+              &.decoration-1 {
+                top: 0rem;
+                left: -70rem;
+              }
+              &.decoration-2 {
+                top: 20rem;
+                left: -40rem;
+              }
+              &.decoration-3 {
+                top: 20rem;
+                left: -85rem;
+              }
+              &.decoration-4 {
+                top: 35rem;
+                left: -98rem;
+              }
+              &.decoration-5 {
+                top: 10rem;
+                left: -55rem;
+              }
+              &.decoration-6 {
+                top: 0;
+                left: -105rem;
+              }
+              &.decoration-7 {
+                top: 10rem;
+                left: -80rem;
+              }
+              &.decoration-8 {
+                top: 0;
+                left: -85rem;
+              }
+              &.decoration-9 {
+                top: 20rem;
+                left: -60rem;
+              }
+              &.decoration-10 {
+                top: 24rem;
+                left: -35rem;
+              }
+              &.decoration-11 {
+                top: -8rem;
+                left: -100rem;
+              }
+              &.decoration-12 {
+                top: 3rem;
+                left: -65rem;
+              }
+              &.decoration-13 {
+                top: 25rem;
+                left: -30rem;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+@media (max-width: 48em) {
+  .elmar__section-third {
+    .container {
+      .elmar__section-content {
+        gap: 12rem;
+        .content_box {
+          .content_top {
+            flex-direction: column-reverse;
+            &-left {
+              grid-template-columns: repeat(2, 31.2rem);
+              gap: 4rem;
+              .color_box {
+                width: 31.2rem;
+                .square {
+                  height: 25rem;
+                }
+                .square_name {
+                  p {
+                    font-size: 3rem;
+                  }
+                }
+              }
+            }
+          }
+          .content_bottom {
+            flex-direction: column;
+            gap: 0;
+            &-left {
+              width: 100%;
+              .content_driver-text {
+                text-align: left;
+              }
+            }
+            &-right {
+              .content_title {
+                font-size: 5.8rem;
+              }
+              .blob {
+                position: absolute;
+                right: -4rem;
+                &.blob-lime {
+                  top: -12rem;
+                  width: 21rem;
+                }
+                &.blob-grey {
+                  top: -8rem;
+                  width: 16rem;
+                }
+                &.blob-red {
+                  top: -12rem;
+                  width: 16rem;
+                }
+                &.blob-blue {
+                  top: -10rem;
+                  width: 21rem;
+                }
+              }
+              .decoration {
+                display: none;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+@keyframes slideBefore {
+  from {
+    opacity: 1;
+    transform: translate(0, 0);
+  }
+  to {
+    opacity: 1;
+    width: 0;
+    transform: translate(42rem, 0);
+  }
+}

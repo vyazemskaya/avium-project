@@ -1,0 +1,71 @@
+.elmar__section-second {
+  .container {
+    .elmar__section-content {
+      display: flex;
+      gap: 6rem;
+      .content_left {
+        width: 79.7rem;
+        .content_title {
+          font-size: 8rem;
+          font-weight: 700;
+          text-transform: uppercase;
+          margin-bottom: 4rem;
+        }
+        .content_subtitle {
+          color: #000;
+          font-size: 5rem;
+          font-weight: 700;
+          margin-bottom: 4rem;
+        }
+        .content_text {
+          color: #000;
+          font-size: 3rem;
+          font-weight: 400;
+          line-height: 4rem;
+          margin-bottom: 9rem;
+        }
+      }
+      .content_right {
+        flex: 1 0;
+        .circle {
+          width: 67.1rem;
+          height: 67.1rem;
+          border-radius: 50%;
+          background-color: #fff;
+          border: 1px solid #a1a1a1;
+          box-shadow: 0.2rem 0.4rem 1rem 0.3rem #e6e6e6;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          .inner_circle-video {
+            object-fit: cover;
+            width: 58rem;
+            height: 58rem;
+            border-radius: 50%;
+          }
+        }
+      }
+    }
+  }
+}
+
+@media (max-width: 48em) {
+  .elmar__section-second {
+    .container {
+      .elmar__section-content {
+        flex-direction: column;
+        gap: 8rem;
+        .content_left {
+          width: 100%;
+          .content_title {
+            font-size: 7.2rem;
+            margin-bottom: 0;
+          }
+          .content_btn {
+            width: 100%;
+          }
+        }
+      }
+    }
+  }
+}

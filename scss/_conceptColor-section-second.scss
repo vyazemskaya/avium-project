@@ -1,0 +1,93 @@
+.conceptColor__section-second {
+  margin-bottom: 0;
+  .container {
+    padding-bottom: 20rem;
+    .conceptColor__section-content {
+      display: flex;
+      gap: 18.1rem;
+      .content_left {
+        .circle {
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          width: 57rem;
+          height: 57rem;
+          box-shadow: 2px 4px 10px 3px #e6e6e6;
+          border: 1px solid #a1a1a1;
+          border-radius: 50%;
+          .circle_img {
+            width: 49rem;
+            height: 49rem;
+            border-radius: 50%;
+            object-fit: cover;
+          }
+        }
+        .content_btn-mobile {
+          display: none;
+        }
+      }
+      .content_right {
+        .content_subtitle {
+          color: #53565a;
+          font-size: 5rem;
+          font-weight: 700;
+        }
+        .content_title {
+          font-size: 9rem;
+          font-weight: 700;
+          text-transform: uppercase;
+          margin-bottom: 4rem;
+        }
+        .content_text {
+          color: #000;
+          font-size: 3rem;
+          font-weight: 400;
+          line-height: 4rem;
+          margin-bottom: 9rem;
+        }
+      }
+    }
+  }
+  &::after {
+    content: '';
+    width: 100%;
+    height: 15.7rem;
+    position: absolute;
+    clip-path: polygon(100% 100%, 100% 0%, 49.6% 0%);
+    background-color: #fff;
+  }
+}
+
+@media (max-width: 48em) {
+  .conceptColor__section-second {
+    .container {
+      .conceptColor__section-content {
+        flex-direction: column-reverse;
+        gap: 0;
+        .content_left {
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+          justify-content: center;
+          gap: 8rem;
+          .content_btn-mobile {
+            display: block;
+            padding: 2.4rem 9.6rem;
+            text-align: center;
+          }
+        }
+        .content_right {
+          .content_title {
+            font-size: 7rem;
+          }
+          .content_btn {
+            display: none;
+          }
+        }
+      }
+    }
+    &::after {
+      clip-path: polygon(100% 50%, 100% 0%, 50% 0%);
+    }
+  }
+}

@@ -1,0 +1,305 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Avium</title>
+    <link rel="stylesheet" href="scss/style.css" />
+  </head>
+  <body>
+    <header class="header">
+      <div class="container">
+        <img class="logotype" src="img/header/logotype.svg" alt="logotype" />
+        <ul class="menu">
+          <li><a href="#">Цвет года</a></li>
+          <li><a href="#">Решение</a></li>
+          <li><a href="#">Палитры</a></li>
+          <li><a href="#">Сотрудничество</a></li>
+          <li><a href="#">Философия</a></li>
+          <li><a href="#">Купить</a></li>
+        </ul>
+        <ul class="icons">
+          <li class="icon">
+            <img
+              class="feedback-icon"
+              src="img/header/feedback-icon.svg"
+              alt="feedback"
+            />
+          </li>
+          <li class="icon">
+            <img src="img/header/cart-icon.svg" alt="cart" />
+          </li>
+        </ul>
+        <div class="burger">
+          <input id="burger-toggle" type="checkbox" />
+          <label class="burger-btn" for="burger-toggle">
+            <span></span>
+          </label>
+
+          <ul class="burgerbox">
+            <li class="burger-item">Цвет года</li>
+            <li class="burger-item">Решения</li>
+            <li class="burger-item">Палитры</li>
+            <li class="burger-item">Сотрудничество</li>
+            <li class="burger-item">Философия</li>
+            <li class="burger-item">Купить</li>
+            <li class="burger-item">Корзина</li>
+            <li class="feedback-item">
+              <p>У Вас есть вопросы, напишите нам!</p>
+              <img
+                class="feedback-icon"
+                style="width: 6rem; height: 6rem"
+                src="./img/header/feedback-icon.svg"
+                alt=""
+              />
+            </li>
+          </ul>
+        </div>
+        <div class="overlay">
+          <div class="modal">
+            <img
+              class="modal_close-icon"
+              src="./img/header/modal_close.svg"
+              alt=""
+            />
+            <div class="modal_content">
+              <h4 class="modal_title">У вас есть вопросы?</h4>
+              <p class="modal_text">
+                Заполните форму и наш менеджер свяжется с Вами.
+              </p>
+              <div class="modal_contact-form">
+                <div class="input_box">
+                  <label>ФИО</label>
+                  <input placeholder="ФИО" type="text" />
+                </div>
+                <div class="inputs_box">
+                  <div class="input_box">
+                    <label>Телефон</label>
+                    <input placeholder="Телефон" type="text" />
+                  </div>
+                  <div class="input_box">
+                    <label>Email</label>
+                    <input placeholder="Email" type="text" />
+                  </div>
+                </div>
+                <div class="input_box">
+                  <label>Ваш вопрос</label>
+                  <input placeholder="Ваш вопрос" type="text" />
+                </div>
+              </div>
+              <button class="modal_btn btn">Отправить</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </header>
+    <main>
+      <section class="purchase__section-first">
+        <div class="container">
+          <div class="purchase__section-background">
+            <img
+              src="./img/purchase_section-first/section_first-background.webp"
+              alt="background"
+            />
+          </div>
+          <div class="purchase__section-content">
+            <div class="content_title">
+              <p>представительствa<br /><strong>по всей стране</strong></p>
+            </div>
+            <p class="content_text">
+              Вы&nbsp;дизайнер или хотите, чтобы краска поставлялась в&nbsp;ваш
+              регион? Оставьте заявку и&nbsp;наши менеджеры свяжутся
+              с&nbsp;Вами.
+            </p>
+            <button class="content_btn btn">Сотрудничество</button>
+          </div>
+          <img
+            style="width: 26.4rem"
+            class="decoration_left"
+            src="./img/purchase_section-first/section_first-decoration_left.svg"
+            alt=""
+          />
+          <img
+            style="width: 16.2rem"
+            class="decoration_right"
+            src="./img/purchase_section-first/section_first-background_right.svg"
+            alt=""
+          />
+          <img
+            style="width: 14.4rem"
+            class="decoration_mobile"
+            src="./img/purchase_section-first/section_first-decoration_mobile.svg"
+            alt=""
+          />
+        </div>
+      </section>
+      <section class="purchase__section-second">
+        <div class="container">
+          <div class="purchase__section-content">
+            <h3 class="section-title content_title">Контакты</h3>
+            <div class="content_box">
+              <button class="content_btn btn">Главный офис:</button>
+              <div class="information_box">
+                <div class="info">
+                  <img
+                    class="info_icon"
+                    src="./img/purchase_section-second/section_second-geo_icon.svg"
+                    alt="icon"
+                  />
+                  <p class="info_text">Москва, Ленинградское шоссе, 102</p>
+                </div>
+                <div class="info">
+                  <img
+                    class="info_icon"
+                    src="./img/purchase_section-second/section_second-feedback_icon.svg"
+                    alt="icon"
+                  />
+                  <p class="info_text">8 800 350 69 63</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <section class="purchase__section-third">
+        <div class="container">
+          <div class="purchase__section-content">
+            <div class="content_top">
+              <h3 class="section-title content_title">Где купить?</h3>
+              <div class="select_box">
+                <label>Выберите город</label>
+                <select>
+                  <option value=""></option>
+                </select>
+              </div>
+            </div>
+            <div class="content_bottom">
+              <div class="content_left">
+                <div class="places_box">
+                  <div class="place_info-box">
+                    <p class="place_title">Салон StylishRoom</p>
+                    <p class="place_address">
+                      г. Симферополь, ул. Маяковского, д. 14, 295051
+                    </p>
+                    <p class="place_phone">+7 978 524 89 27</p>
+                  </div>
+                  <div class="place_info-box">
+                    <p class="place_title">Салон StylishRoom</p>
+                    <p class="place_address">
+                      г. Симферополь, ул. Маяковского, д. 14, 295051
+                    </p>
+                    <p class="place_phone">+7 978 524 89 27</p>
+                  </div>
+                  <div class="place_info-box">
+                    <p class="place_title">Салон StylishRoom</p>
+                    <p class="place_address">
+                      г. Симферополь, ул. Маяковского, д. 14, 295051
+                    </p>
+                    <p class="place_phone">+7 978 524 89 27</p>
+                  </div>
+                  <div class="place_info-box">
+                    <p class="place_title">Салон StylishRoom</p>
+                    <p class="place_address">
+                      г. Симферополь, ул. Маяковского, д. 14, 295051
+                    </p>
+                    <p class="place_phone">+7 978 524 89 27</p>
+                  </div>
+                </div>
+              </div>
+              <div class="content_right">
+                <div class="select_box mobile">
+                  <select>
+                    <option value="" disabled selected>Выберите город</option>
+                    <option value="">Москва</option>
+                  </select>
+                </div>
+                <div id="purchase_map" class="purchase_map"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+    <footer class="footer">
+      <div class="container">
+        <img
+          style="width: 17rem"
+          class="footer_logotype"
+          src="img/footer/footer_logotype-desktop.svg"
+          alt="logotype"
+        />
+        <div class="footer_content">
+          <span class="title">Тот самый идеальный цвет</span>
+          <ul class="lists_info">
+            <ul class="list_left">
+              <li class="list_item">Философия</li>
+              <li class="list_item">Решения</li>
+              <li class="list_item">Цвет года</li>
+            </ul>
+            <ul class="list_right">
+              <li class="list_item">Сотрудничество</li>
+              <li class="list_item">Дилерам</li>
+              <li class="list_item">Дизайнерам</li>
+              <li class="list_item">Купить</li>
+            </ul>
+          </ul>
+          <div class="contacts">
+            <ul class="lists_contacts">
+              <li class="contacts_item">
+                <i class="contact_icon"
+                  ><img src="img/footer/footer_email-icon.svg" alt="email icon"
+                /></i>
+                <p class="contact_text">info@inviktus.ru</p>
+              </li>
+              <li class="contacts_item">
+                <i class="contact_icon"
+                  ><img src="img/footer/footer_phone-icon.svg" alt="phone icon"
+                /></i>
+                <p class="contact_text">8 (800) 350 69 63</p>
+              </li>
+              <li class="contacts_item">
+                <i class="contact_icon"
+                  ><img
+                    src="img/footer/footer_inst-icon.svg"
+                    alt="instagram icon"
+                /></i>
+                <p class="contact_text">avium.paint</p>
+              </li>
+            </ul>
+            <div class="contacts_inviktus">
+              <img src="img/footer/inviktus_logotype.svg" alt="Inviktus" />
+            </div>
+          </div>
+        </div>
+        <img
+          class="footer_logotype-mobile"
+          src="img/footer/footer_logotype-mobile.svg"
+          alt=""
+        />
+        <img
+          class="decoration_left"
+          src="img/footer/footer_decoration_left.svg"
+          alt="decoration"
+        />
+        <img
+          class="decoration_right"
+          src="img/footer/footer_decoration_right.svg"
+          alt="decoration"
+        />
+        <img
+          class="decoration_mobile"
+          src="img/footer/footer_decoration-mobile-v2.svg"
+          alt=""
+        />
+      </div>
+    </footer>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+    <script src="./js/jquery.js"></script>
+    <script src="./js/jquery.nice-select.js"></script>
+    <script src="https://api-maps.yandex.ru/2.1/?apikey=ваш API-ключ&lang=ru_RU"></script>
+    <script src="./js/wow.min.js"></script>
+    <script src="./js/main.js"></script>
+  </body>
+</html>

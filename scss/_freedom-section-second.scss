@@ -1,0 +1,130 @@
+.freedom__section-second {
+  .container {
+    position: relative;
+    .freedom__section-content {
+      width: 65rem;
+      .content_title {
+        font-size: 9rem;
+        font-weight: 700;
+        text-transform: uppercase;
+        margin-bottom: 4rem;
+      }
+      .content_text {
+        width: 61.4rem;
+        color: #000;
+        font-size: 3rem;
+        font-weight: 400;
+        line-height: 4rem;
+        margin-bottom: 9rem;
+      }
+    }
+    .section_pallete {
+      position: absolute;
+      top: 17rem;
+      left: 86.1rem;
+      .pallete_circle {
+        width: 35rem;
+        animation: freedom-spin-animate 30s linear 0s infinite;
+      }
+      .pallete_triangle {
+        width: 35rem;
+        position: absolute;
+        top: 0;
+        left: 0;
+      }
+      .pallete_text {
+        color: #000;
+        font-size: 3rem;
+        font-weight: 400;
+        position: absolute;
+        &.text-1 {
+          top: 0;
+          left: -15rem;
+        }
+        &.text-2 {
+          top: 0;
+          right: -25rem;
+        }
+        &.text-3 {
+          bottom: 6rem;
+          left: -27rem;
+        }
+        &.text-4 {
+          bottom: 6rem;
+          right: -27rem;
+        }
+        &.text-5 {
+          width: 52.4rem;
+          bottom: -10rem;
+          left: -10rem;
+        }
+        &.text-6 {
+          top: 50%;
+          left: 50%;
+          transform: translate(-50%, -50%);
+        }
+      }
+    }
+  }
+}
+
+@media (max-width: 48em) {
+  .freedom__section-second {
+    margin-bottom: 12rem;
+    .container {
+      .freedom__section-content {
+        width: 100%;
+        .content_text {
+          margin-bottom: 74rem;
+        }
+        .content_btn {
+          width: 100%;
+        }
+      }
+      .section_pallete {
+        top: 60%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        .pallete_circle {
+          width: 44.4rem;
+        }
+        .pallete_triangle {
+          width: 44.4rem;
+        }
+        .pallete_text {
+          &.text-1 {
+            top: -2rem;
+            left: -3rem;
+          }
+          &.text-2 {
+            top: -2rem;
+            right: -10rem;
+          }
+          &.text-3 {
+            bottom: -3rem;
+            left: -10rem;
+          }
+          &.text-4 {
+            bottom: -3rem;
+            right: -10rem;
+          }
+          &.text-5 {
+            text-align: center;
+            width: 35.6rem;
+            bottom: -12rem;
+            left: 5rem;
+          }
+        }
+      }
+    }
+  }
+}
+
+@keyframes freedom-spin-animate {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}

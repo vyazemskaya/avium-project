@@ -1,0 +1,421 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Avium</title>
+    <link rel="stylesheet" href="scss/style.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
+    />
+  </head>
+  <body>
+    <header class="header">
+      <div class="container">
+        <img class="logotype" src="img/header/logotype.svg" alt="logotype" />
+        <ul class="menu">
+          <li><a href="#">Цвет года</a></li>
+          <li><a href="#">Решение</a></li>
+          <li><a href="#">Палитры</a></li>
+          <li><a href="#">Сотрудничество</a></li>
+          <li><a href="#">Философия</a></li>
+          <li><a href="#">Купить</a></li>
+        </ul>
+        <ul class="icons">
+          <li class="icon">
+            <img
+              class="feedback-icon"
+              src="img/header/feedback-icon.svg"
+              alt="feedback"
+            />
+          </li>
+          <li class="icon">
+            <img src="img/header/cart-icon.svg" alt="cart" />
+          </li>
+        </ul>
+        <div class="burger">
+          <input id="burger-toggle" type="checkbox" />
+          <label class="burger-btn" for="burger-toggle">
+            <span></span>
+          </label>
+
+          <ul class="burgerbox">
+            <li class="burger-item">Цвет года</li>
+            <li class="burger-item">Решения</li>
+            <li class="burger-item">Палитры</li>
+            <li class="burger-item">Сотрудничество</li>
+            <li class="burger-item">Философия</li>
+            <li class="burger-item">Купить</li>
+            <li class="burger-item">Корзина</li>
+            <li class="feedback-item">
+              <p>У Вас есть вопросы, напишите нам!</p>
+              <img
+                class="feedback-icon"
+                style="width: 6rem; height: 6rem"
+                src="./img/header/feedback-icon.svg"
+                alt=""
+              />
+            </li>
+          </ul>
+        </div>
+        <div class="overlay">
+          <div class="modal">
+            <img
+              class="modal_close-icon"
+              src="./img/header/modal_close.svg"
+              alt=""
+            />
+            <div class="modal_content">
+              <h4 class="modal_title">У вас есть вопросы?</h4>
+              <p class="modal_text">
+                Заполните форму и наш менеджер свяжется с Вами.
+              </p>
+              <div class="modal_contact-form">
+                <div class="input_box">
+                  <label>ФИО</label>
+                  <input placeholder="ФИО" type="text" />
+                </div>
+                <div class="inputs_box">
+                  <div class="input_box">
+                    <label>Телефон</label>
+                    <input placeholder="Телефон" type="text" />
+                  </div>
+                  <div class="input_box">
+                    <label>Email</label>
+                    <input placeholder="Email" type="text" />
+                  </div>
+                </div>
+                <div class="input_box">
+                  <label>Ваш вопрос</label>
+                  <input placeholder="Ваш вопрос" type="text" />
+                </div>
+              </div>
+              <button class="modal_btn btn">Отправить</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <main>
+      <section class="conceptColor__section-first">
+        <div class="container">
+          <div class="conceptColor__section-background">
+            <img
+              src="./img/conceptColor_section-first/section_first-background.webp"
+              alt="background"
+            />
+          </div>
+          <div class="conceptColor__section-content">
+            <h3 class="content_title">Концепция цвета</h3>
+            <p class="content_text">
+              В&nbsp;основе создания цветовых коллекций AVIUM заложен принцип
+              баланса между психологическим восприятием цвета
+              и&nbsp;техническими особенностями краски.
+            </p>
+          </div>
+          <img
+            style="width: 24rem"
+            class="decoration"
+            src="./img/conceptColor_section-first/decoration.svg"
+            alt=""
+          />
+        </div>
+      </section>
+
+      <section class="conceptColor__section-second">
+        <div class="container">
+          <div class="conceptColor__section-content">
+            <div class="content_left">
+              <div class="circle">
+                <video class="circle_img" autoplay playsinline loop muted>
+                  <source
+                    src="./img/conceptColor_section-second/section_second-videov2.mp4"
+                    type="video/mp4"
+                  />
+                </video>
+              </div>
+              <button class="content_btn-mobile btn">Решения</button>
+            </div>
+            <div class="content_right">
+              <h4 class="content_subtitle">инновационные</h4>
+              <h2 class="content_title outlined-text">Технологии</h2>
+              <p class="content_text">
+                Благодаря уникальному составу AVIUM, окрашенные поверхности
+                обретают потрясающую глубину восприятия, ярко выраженную
+                натуралистичность и&nbsp;насыщенность цвета.
+              </p>
+              <button class="content_btn btn">Решения</button>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="conceptColor__section-third">
+        <div class="container">
+          <div class="conceptColor__section-content">
+            <div class="content_top">
+              <div class="content_left">
+                <div class="content_title-box">
+                  <h4 class="content_subtitle">актуальные</h4>
+                  <h2 class="content_title outlined-text">Палитры</h2>
+                </div>
+                <p class="content_text">
+                  Разработаны экспертами на&nbsp;основе мировых тенденций
+                  в&nbsp;колористике, чтобы вы&nbsp;могли воплотить свои идеи
+                  в&nbsp;современных дизайнерских решениях.
+                </p>
+              </div>
+              <div class="content_right">
+                <button class="content_btn btn">Заказать палитру</button>
+              </div>
+            </div>
+            <div class="content_bottom">
+              <div class="swiper swiper_conceptColor-section-third">
+                <div class="swiper-wrapper">
+                  <div class="swiper-slide">
+                    <div class="slide_palettes">
+                      <div class="palettes_photo important">
+                        <img
+                          src="./img/conceptColor_section-third/freedom.png"
+                          alt=""
+                        />
+                      </div>
+                      <div class="palettes_name">
+                        <img
+                          src="./img/conceptColor_section-third/palettes_freedom-name.svg"
+                          alt=""
+                        />
+                      </div>
+                    </div>
+                  </div>
+                  <div class="swiper-slide">
+                    <div class="slide_palettes">
+                      <div class="palettes_photo important">
+                        <img
+                          src="./img/conceptColor_section-third/pantone.png"
+                          alt=""
+                        />
+                      </div>
+                      <div class="palettes_name">
+                        <img
+                          src="./img/conceptColor_section-third/palettes_pantone-name.svg"
+                          alt=""
+                        />
+                      </div>
+                    </div>
+                  </div>
+                  <div class="swiper-slide">
+                    <div class="slide_palettes">
+                      <div class="palettes_photo important">
+                        <img
+                          src="./img/conceptColor_section-third/forever.png"
+                          alt=""
+                        />
+                      </div>
+                      <div class="palettes_name">
+                        <img
+                          src="./img/conceptColor_section-third/palettes_forever-name.svg"
+                          alt=""
+                        />
+                      </div>
+                    </div>
+                  </div>
+                  <div class="swiper-slide">
+                    <div class="slide_palettes">
+                      <div class="palettes_photo exclusive pantone">
+                        <img
+                          src="./img/conceptColor_section-third/palettes_pantoneblack-photo.svg"
+                          alt=""
+                        />
+                      </div>
+                      <div class="palettes_name">
+                        <p>Pantone</p>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="swiper-slide">
+                    <div class="slide_palettes">
+                      <div class="palettes_photo exclusive ncs">
+                        <img
+                          src="./img/conceptColor_section-third/palettes_ncs-photo.svg"
+                          alt=""
+                        />
+                      </div>
+                      <div class="palettes_name">
+                        <p>NCS</p>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="swiper-slide">
+                    <div class="slide_palettes">
+                      <div class="palettes_photo exclusive ral">
+                        <img
+                          src="./img/conceptColor_section-third/palettes_ral-photo.svg"
+                          alt=""
+                        />
+                      </div>
+                      <div class="palettes_name">
+                        <p>RAL</p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="swiper-button-next">
+                  <img
+                    style="width: 4.9rem; height: 4.9rem"
+                    src="./img/conceptColor_section-third/palettes_next-slide.svg"
+                    alt=""
+                  />
+                </div>
+                <div class="swiper-button-prev">
+                  <img
+                    style="width: 4.9rem; height: 4.9rem"
+                    src="./img/conceptColor_section-third/palettes_prev-slide.svg"
+                    alt=""
+                  />
+                </div>
+              </div>
+              <div class="content_bottom-box">
+                <div class="information_slider">
+                  <div class="content_dots-box">
+                    <div class="dots">
+                      <span class="dots_verysmall color_1"></span>
+                      <span class="dots_verysmall color_2"></span>
+                      <span class="dots_small color_3"></span>
+                      <span class="dots_medium color_4"></span>
+                      <span class="dots_large color_2"></span>
+                      <span class="dots_medium color_1"></span>
+                    </div>
+                    <div class="dots mobile">
+                      <span class="dots_medium color_1"></span>
+                      <span class="dots_large color_2"></span>
+                      <span class="dots_medium color_2"></span>
+                      <span class="dots_small color_3"></span>
+                    </div>
+                  </div>
+                  <p>Нажми на палитру, чтобы узнать подробнее</p>
+                </div>
+                <button class="content_btn mobile btn">Заказать палитру</button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="conceptColor__section-fourth">
+        <div class="container">
+          <div class="conceptColor__section-content">
+            <div class="content_left">
+              <div class="content_title-box">
+                <h4 class="content_subtitle outlined-text">50 000+ цветов</h4>
+                <h2 class="content_title">Свобода выбора</h2>
+              </div>
+              <p class="content_text">
+                AVIUM не&nbsp;зависит от&nbsp;марки колеровочного оборудования.
+                С&nbsp;заботой об&nbsp;удобстве наших клиентов
+                мы&nbsp;разработали рецептуры колировки AVIUM по&nbsp;наиболее
+                популярным палитрам и&nbsp;системам.
+              </p>
+              <button class="btn content_btn">Палитры</button>
+            </div>
+            <div class="content_right">
+              <img
+                class="content_img"
+                src="./img/conceptColor_section-fourth/section_fourth-photo.webp"
+                alt="photo"
+              />
+              <button class="content_btn-mobile btn">Палитра</button>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+    <footer class="footer">
+      <div class="container">
+        <img
+          style="width: 17rem"
+          class="footer_logotype"
+          src="img/footer/footer_logotype-desktop.svg"
+          alt="logotype"
+        />
+        <div class="footer_content">
+          <span class="title">Тот самый идеальный цвет</span>
+          <ul class="lists_info">
+            <ul class="list_left">
+              <li class="list_item">Философия</li>
+              <li class="list_item">Решения</li>
+              <li class="list_item">Цвет года</li>
+            </ul>
+            <ul class="list_right">
+              <li class="list_item">Сотрудничество</li>
+              <li class="list_item">Дилерам</li>
+              <li class="list_item">Дизайнерам</li>
+              <li class="list_item">Купить</li>
+            </ul>
+          </ul>
+          <div class="contacts">
+            <ul class="lists_contacts">
+              <li class="contacts_item">
+                <i class="contact_icon"
+                  ><img src="img/footer/footer_email-icon.svg" alt="email icon"
+                /></i>
+                <p class="contact_text">info@inviktus.ru</p>
+              </li>
+              <li class="contacts_item">
+                <i class="contact_icon"
+                  ><img src="img/footer/footer_phone-icon.svg" alt="phone icon"
+                /></i>
+                <p class="contact_text">8 (800) 350 69 63</p>
+              </li>
+              <li class="contacts_item">
+                <i class="contact_icon"
+                  ><img
+                    src="img/footer/footer_inst-icon.svg"
+                    alt="instagram icon"
+                /></i>
+                <p class="contact_text">avium.paint</p>
+              </li>
+            </ul>
+            <div class="contacts_inviktus">
+              <img src="img/footer/inviktus_logotype.svg" alt="Inviktus" />
+            </div>
+          </div>
+        </div>
+        <img
+          class="footer_logotype-mobile"
+          src="img/footer/footer_logotype-mobile.svg"
+          alt=""
+        />
+        <img
+          class="decoration_left"
+          src="img/footer/footer_decoration_left.svg"
+          alt="decoration"
+        />
+        <img
+          class="decoration_right"
+          src="img/footer/footer_decoration_right.svg"
+          alt="decoration"
+        />
+        <img
+          class="decoration_mobile"
+          src="img/footer/footer_decoration-mobile-v2.svg"
+          alt=""
+        />
+      </div>
+    </footer>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+    <script src="./js/jquery.js"></script>
+    <script src="./js/jquery.nice-select.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.js"></script>
+    <script src="./js/wow.min.js"></script>
+    <script src="./js/swiper.js"></script>
+    <script src="./js/main.js"></script>
+  </body>
+</html>
