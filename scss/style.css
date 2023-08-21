@@ -4874,9 +4874,6 @@ section {
 .solution__section-first .container .solution__section-content .content_btn {
   width: auto;
 }
-.solution__section-first .container .solution__section-content .content_btn .shadow {
-  box-shadow: 1px 4px 10px 0px rgba(88, 88, 88, 0.4);
-}
 
 @media (max-width: 48em) {
   .solution__section-first {
@@ -5815,6 +5812,9 @@ body .btn {
   box-shadow: 1px 4px 4px 0px #d5d5d5;
   padding: 1.4rem 4.8rem;
   text-transform: uppercase;
+}
+body .btn.shadowEffect {
+  box-shadow: 1px 4px 10px 0px rgba(88, 88, 88, 0.4);
 }
 body .btn:hover {
   color: #ffffff;

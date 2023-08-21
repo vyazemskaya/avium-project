@@ -420,3 +420,17 @@ if (document.querySelector('.philosophy__section-sixth')) {
       ).style.display = 'none';
     });
 }
+
+//////////////////////////////Коллекция Forever Solution//////////////////////////////////
+
+if (document.querySelector('.solution__section-first')) {
+  document
+    .querySelectorAll('.solution__background-video video')
+    .forEach((element) => {
+      element.addEventListener('ended', () => {
+        document
+          .querySelector('.solution__section-first .content_btn')
+          .classList.remove('shadowEffect');
+      });
+    });
+}
