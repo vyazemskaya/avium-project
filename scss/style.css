@@ -3697,8 +3697,6 @@ section {
 .cooperation__section-first .container .cooperation__section-background img {
   -o-object-fit: cover;
      object-fit: cover;
-  -webkit-clip-path: polygon(0% 0%, 100% 0%, 100% 100%, 0% 100%);
-          clip-path: polygon(0% 0%, 100% 0%, 100% 100%, 0% 100%);
 }
 .cooperation__section-first .container .cooperation__section-content {
   width: 75rem;
