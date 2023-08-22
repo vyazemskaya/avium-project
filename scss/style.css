@@ -7025,6 +7025,9 @@ body video::-webkit-media-controls-start-playback-button {
   appearance: none;
   -webkit-appearance: none;
 }
+body .swiper {
+  overflow: visible;
+}
 body .swiper .swiper-pagination {
   width: 10rem;
   height: 2rem;
