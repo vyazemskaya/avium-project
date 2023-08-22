@@ -111,3 +111,10 @@
     }
   }
 }
+
+.swiper_main-section-1 .swiper-slide {
+  opacity: 0 !important;
+}
+.swiper_main-section-1 .swiper-slide.swiper-slide-active {
+  opacity: 1 !important;
+}

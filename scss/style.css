@@ -11899,3 +11899,10 @@ body .swiper_main-section-4 .slide-section-4 {
     flex-direction: column-reverse;
   }
 } /*# sourceMappingURL=style.css.map */
+
+.swiper_main-section-1 .swiper-slide {
+  opacity: 0 !important;
+}
+.swiper_main-section-1 .swiper-slide.swiper-slide-active {
+  opacity: 1 !important;
+}
