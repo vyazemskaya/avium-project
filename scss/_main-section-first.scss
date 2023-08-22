@@ -1,0 +1,113 @@
+.main__section-first {
+  background-image: url('../img/main_section-first/section_one-background.jpg');
+  background-repeat: no-repeat;
+  background-size: 100% 95.9rem;
+  margin-bottom: 0;
+  overflow: hidden;
+  .container {
+    width: 100%;
+    position: relative;
+    .main__section-content {
+      display: flex;
+      padding-left: 22.7rem;
+      padding-bottom: 14.5rem;
+      .content_left {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        height: 100%;
+        margin-right: 15.3rem;
+        .title {
+          display: flex;
+          flex-direction: column;
+          gap: 2.4rem;
+          margin-bottom: 9rem;
+          margin-top: 36.2rem;
+          h3 {
+            color: #000000;
+            font-size: 5.5rem;
+            font-weight: 300;
+            text-transform: uppercase;
+            &:nth-child(2) {
+              font-weight: 700;
+            }
+          }
+        }
+      }
+      .content_right {
+        animation: slide-in 3s ease forwards;
+        z-index: 1;
+        img {
+          z-index: 1;
+          width: 80.8rem;
+          height: 89.1rem;
+        }
+      }
+    }
+    .decoration_left,
+    .decoration_right {
+      position: absolute;
+    }
+    .decoration_left {
+      top: 0;
+      left: 0;
+    }
+    .decoration_right {
+      top: -7rem;
+      right: -4.5rem;
+      z-index: 0;
+    }
+    .decoration_mobile {
+      display: none;
+    }
+  }
+}
+
+@media (max-width: 48em) {
+  .main__section-first {
+    background-size: contain;
+    .container {
+      .main__section-content {
+        flex-direction: column-reverse;
+        gap: 6rem;
+        padding-left: 0;
+        padding-bottom: 12rem;
+        .content_left {
+          align-items: center;
+          justify-content: center;
+          text-align: center;
+          margin-right: 0;
+          .title {
+            margin-top: 0;
+            margin-bottom: 6rem;
+            h3 {
+              font-size: 5.8rem;
+            }
+          }
+        }
+        .content_right {
+          width: 100%;
+          position: relative;
+          margin-left: -50vw;
+          left: 50%;
+          img {
+            object-fit: cover;
+            object-position: 0 -10rem;
+            height: 78.6rem;
+          }
+        }
+      }
+      .decoration_left,
+      .decoration_right {
+        display: none;
+      }
+      .decoration_mobile {
+        display: block;
+        position: absolute;
+        z-index: 20;
+        top: 1.2rem;
+        right: 1.2rem;
+      }
+    }
+  }
+}

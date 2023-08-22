@@ -1,0 +1,130 @@
+.main__section-third {
+  background-color: #f3f4f7;
+  margin-bottom: 0;
+  clip-path: polygon(100% 0%, 100% 100%, 0% 100%, 0% 15%);
+  overflow: hidden;
+  .container {
+    .main__section-content {
+      padding: 37.5rem 0 20rem 0;
+      position: relative;
+      .swiper-pagination_section-3 {
+        position: absolute;
+        bottom: 12rem;
+        left: 112rem;
+      }
+      .left_block {
+        margin-right: 10.2rem;
+        .text {
+          font-size: 5rem;
+          font-weight: 700;
+          margin-bottom: 1.5rem;
+          text-transform: uppercase;
+          color: #f3f4f7;
+        }
+        .title {
+          width: 75.2rem;
+          font-weight: 700;
+          margin-bottom: 6.5rem;
+          .title_span {
+            font-size: 9rem;
+            text-transform: uppercase;
+            color: #929497;
+          }
+          .subtitle_span {
+            position: absolute;
+            top: 20rem;
+            margin-left: 1rem;
+            font-size: 4.5rem;
+            text-transform: lowercase;
+            color: #f3f4f7;
+          }
+        }
+        .subtitle {
+          font-size: 5rem;
+          font-weight: 300;
+          color: #000000;
+          margin-bottom: 9rem;
+          position: absolute;
+        }
+        .btn {
+          margin-top: 22.2rem;
+        }
+      }
+      .right_block {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+        transform: translateY(-20%);
+        .img_block {
+          width: 61.8rem;
+          height: 61.8rem;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          border-radius: 61.8rem;
+          border: 1px solid #a1a1a1;
+          background: rgba(255, 255, 255, 0);
+          box-shadow: 2px 4px 10px 3px #e6e6e6;
+          margin-bottom: 5.4rem;
+          img {
+            width: 53.4rem;
+            height: 53.4rem;
+          }
+        }
+        .btn_mobile {
+          display: none;
+        }
+      }
+    }
+  }
+}
+@media (max-width: 48em) {
+  .main__section-third {
+    clip-path: polygon(100% 0%, 100% 100%, 0% 100%, 0% 10%);
+    .container {
+      .main__section-content {
+        padding: 25rem 0 8rem;
+        .swiper-pagination_section-3 {
+          bottom: 11.5rem;
+          left: 27rem;
+        }
+        .left_block {
+          margin-right: 0;
+          .title {
+            width: 69rem;
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+            margin-bottom: 4rem;
+            .title_span {
+              text-align: start;
+              font-size: 6.4rem;
+            }
+            .subtitle_span {
+              position: static;
+            }
+          }
+          .subtitle {
+            font-size: 5rem;
+            height: 12rem;
+            position: static;
+            margin-bottom: 4rem;
+          }
+          button {
+            display: none;
+          }
+        }
+        .right_block {
+          transform: none;
+          .img_block {
+            margin-bottom: 8rem;
+          }
+          .btn_mobile {
+            display: flex;
+          }
+        }
+      }
+    }
+  }
+}

@@ -434,3 +434,72 @@ if (document.querySelector('.solution__section-first')) {
       });
     });
 }
+
+//////////////////////////////Главная//////////////////////////////////
+
+if (document.querySelector('.main__section-fifth')) {
+  document
+    .querySelector('.main__section-fifth .btn')
+    .addEventListener('click', () => {
+      document.querySelector('.main__section-fifth .overlay').style.display =
+        'block';
+      document.body.style.overflow = 'hidden';
+    });
+
+  document
+    .querySelector('.main__section-fifth .overlay .modal_close-icon')
+    .addEventListener('click', () => {
+      document.querySelector('.main__section-fifth .overlay').style.display =
+        'none';
+      document.body.style.overflow = 'visible';
+    });
+}
+
+if (document.querySelector('.main__section-sixth')) {
+  const circlesCenter = document.querySelector(
+    '.main__section-sixth .circles_center'
+  );
+  const circles = document.querySelectorAll(
+    '.main__section-sixth .circles_center .circle .circle_inside'
+  );
+  const circlesActions = document.querySelectorAll(
+    '.main__section-sixth .circles_center .circle .circle_action'
+  );
+  let currentIndex = 0;
+  let cycleInterval;
+
+  function activateCircle(index) {
+    if (index >= 0 && index < circles.length) {
+      circles.forEach((circle) => circle.classList.remove('active'));
+      currentIndex = index;
+      circles[currentIndex].classList.add('active');
+    }
+  }
+
+  function autoCycle() {
+    activateCircle(currentIndex);
+    currentIndex = (currentIndex + 1) % circles.length;
+  }
+
+  function stopCycle() {
+    clearInterval(cycleInterval);
+  }
+
+  circlesCenter.addEventListener('mouseout', () => {
+    circles[currentIndex].classList.remove('active');
+  });
+
+  circlesActions.forEach((circle, index) => {
+    circle.addEventListener('mouseover', () => {
+      stopCycle();
+      activateCircle(index);
+    });
+
+    circle.addEventListener('click', () => {
+      stopCycle();
+      activateCircle(index);
+    });
+  });
+
+  cycleInterval = setInterval(autoCycle, 1500);
+}

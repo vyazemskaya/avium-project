@@ -29,15 +29,8 @@
             }
           }
           .content_name-box {
-            .name {
-              width: 22.8rem;
-              &.mobile {
-                display: none;
-                color: #000;
-                font-size: 6rem;
-                font-weight: 700;
-                text-transform: uppercase;
-              }
+            .content_name {
+              font-size: 8.7rem;
             }
             .info_amount {
               display: none;
@@ -401,10 +394,8 @@
                 height: 1.3rem;
                 background-color: #d5d3d3;
               }
-              .name {
-                &.mobile {
-                  display: none;
-                }
+              .content_name {
+                font-size: 8rem;
               }
               .info_amount {
                 display: block;

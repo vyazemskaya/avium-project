@@ -1,0 +1,317 @@
+.main__section-sixth {
+  margin-bottom: 3.4rem;
+  .container {
+    width: 100%;
+    padding: 20rem 7.8rem 20rem;
+    .main__section-content {
+      text-align: center;
+      .title {
+        font-size: 5rem;
+        font-weight: 700;
+        text-transform: uppercase;
+        margin-bottom: 4rem;
+      }
+      .subtitle {
+        font-size: 3rem;
+        font-weight: 300;
+        margin-bottom: 20rem;
+      }
+      .circles {
+        display: flex;
+        justify-content: space-between;
+        gap: 8.6rem;
+        .circles_left,
+        .circles_right {
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          gap: 8.1rem;
+          span {
+            border: 1px solid #a1a1a1;
+            box-shadow: 2px 4px 10px #e6e6e6;
+            background-color: #fff;
+            border-radius: 50%;
+            &.dot_20px {
+              width: 2rem;
+              height: 2rem;
+            }
+            &.dot_25px {
+              width: 2.5rem;
+              height: 2.5rem;
+            }
+            &.dot_35px {
+              width: 3.5rem;
+              height: 3.5rem;
+            }
+            &.dot_40px {
+              width: 4rem;
+              height: 4rem;
+            }
+            &.dot_50px {
+              width: 5rem;
+              height: 5rem;
+            }
+          }
+        }
+        .circles_center {
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          gap: 7.3rem;
+          cursor: pointer;
+          gap: 7.3rem;
+          .circle {
+            position: relative;
+            border-radius: 50%;
+            width: 10rem;
+            height: 10rem;
+            .circle_action {
+              position: absolute;
+              left: 50%;
+              top: 50%;
+              z-index: 5;
+              width: calc(100% + 7rem);
+              height: 100%;
+              transform: translate(-50%, -50%);
+            }
+            &:nth-child(1) {
+              width: 6.7rem;
+              height: 6.6rem;
+              background-color: #d0c7b8;
+              .circle_inside {
+                width: 6.7rem;
+                height: 6.6rem;
+                background-color: #d0c7b8;
+                &.active {
+                  width: 30rem;
+                  height: 30rem;
+                  z-index: 1;
+                  .circle_text {
+                    opacity: 1;
+                  }
+                }
+              }
+            }
+            &:nth-child(2) {
+              background-color: #ccc9c0;
+              width: 8.9rem;
+              height: 8.8rem;
+              .circle_inside {
+                background-color: #ccc9c0;
+                width: 8.9rem;
+                height: 8.8rem;
+                &.active {
+                  width: 30rem;
+                  height: 30rem;
+                  z-index: 1;
+                  .circle_text {
+                    opacity: 1;
+                  }
+                }
+              }
+            }
+            &:nth-child(3) {
+              background-color: #edece7;
+              width: 10rem;
+              height: 10rem;
+              .circle_inside {
+                background-color: #edece7;
+                width: 10rem;
+                height: 10rem;
+                &.active {
+                  width: 30rem;
+                  height: 30rem;
+                  z-index: 1;
+                  .circle_text {
+                    opacity: 1;
+                  }
+                }
+              }
+            }
+            &:nth-child(4) {
+              background-color: #d0c7b8;
+              width: 7.7rem;
+              height: 7.8rem;
+              .circle_inside {
+                background-color: #d0c7b8;
+                width: 7.7rem;
+                height: 7.8rem;
+                &.active {
+                  width: 30rem;
+                  height: 30rem;
+                  z-index: 1;
+                  .circle_text {
+                    opacity: 1;
+                  }
+                }
+              }
+            }
+            &:nth-child(5) {
+              background-color: #ccc9c0;
+              width: 8.9rem;
+              height: 8.8rem;
+              .circle_inside {
+                background-color: #ccc9c0;
+                width: 8.9rem;
+                height: 8.8rem;
+                &.active {
+                  width: 30rem;
+                  height: 30rem;
+                  z-index: 1;
+                  .circle_text {
+                    opacity: 1;
+                  }
+                }
+              }
+            }
+            &:nth-child(6) {
+              background-color: #edece7;
+              width: 7.7rem;
+              height: 7.8rem;
+              .circle_inside {
+                background-color: #edece7;
+                width: 7.7rem;
+                height: 7.8rem;
+                &.active {
+                  width: 30rem;
+                  height: 30rem;
+                  z-index: 1;
+                  .circle_text {
+                    opacity: 1;
+                  }
+                }
+              }
+            }
+            .circle_inside {
+              position: absolute;
+              top: 50%;
+              left: 50%;
+              transform: translate(-50%, -50%);
+              display: flex;
+              align-items: center;
+              justify-content: center;
+              overflow: hidden;
+              transition: width 0.3s ease, height 0.3s ease;
+              border-radius: 50%;
+              .circle_text {
+                width: 100rem;
+                position: absolute;
+                top: 50%;
+                left: 50%;
+                transform: translate(-50%, -50%);
+                color: #000;
+                text-align: center;
+                font-size: 3rem;
+                font-weight: 700;
+                text-align: center;
+                opacity: 0;
+                transition: opacity 0.3s ease;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
+@media (max-width: 48em) {
+  .main__section-sixth {
+    .container {
+      padding: 16rem 6rem 20rem;
+      .main__section-content {
+        .subtitle {
+          margin-bottom: 12.8rem;
+        }
+        .circles {
+          .circles_left,
+          .circles_right {
+            display: none;
+          }
+          .circles_center {
+            gap: 4rem;
+            .circle {
+              &:nth-child(1) {
+                width: 6rem;
+                height: 6rem;
+                .circle_inside {
+                  width: 3rem;
+                  height: 3rem;
+                  &.active {
+                    width: 20rem;
+                    height: 20rem;
+                  }
+                }
+              }
+              &:nth-child(2) {
+                width: 7.6rem;
+                height: 7.6rem;
+                .circle_inside {
+                  width: 3.8rem;
+                  height: 3.8rem;
+                  &.active {
+                    width: 20rem;
+                    height: 20rem;
+                  }
+                }
+              }
+              &:nth-child(3) {
+                width: 8rem;
+                height: 8rem;
+                .circle_inside {
+                  width: 4rem;
+                  height: 4rem;
+                  &.active {
+                    width: 20rem;
+                    height: 20rem;
+                  }
+                }
+              }
+              &:nth-child(4) {
+                width: 6.8rem;
+                height: 6.8rem;
+                .circle_inside {
+                  width: 3.4rem;
+                  height: 3.4rem;
+                  &.active {
+                    width: 20rem;
+                    height: 20rem;
+                  }
+                }
+              }
+              &:nth-child(5) {
+                width: 7.6rem;
+                height: 7.6rem;
+                .circle_inside {
+                  width: 3.8rem;
+                  height: 3.8rem;
+                  &.active {
+                    width: 20rem;
+                    height: 20rem;
+                  }
+                }
+              }
+              &:nth-child(6) {
+                width: 6.8rem;
+                height: 6.8rem;
+                .circle_inside {
+                  width: 3.4rem;
+                  height: 3.4rem;
+                  &.active {
+                    width: 20rem;
+                    height: 20rem;
+                  }
+                }
+              }
+              .circle_inside {
+                .circle_text {
+                  font-size: 2.4rem;
+                  font-weight: 700;
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

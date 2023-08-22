@@ -1,0 +1,118 @@
+.main__section-fourth {
+  background-color: #f3f4f7;
+  margin-bottom: 0;
+  overflow: hidden;
+  .container {
+    width: 100%;
+    .main__section-content {
+      padding-top: 20rem;
+      padding-bottom: 28rem;
+      .swiper-pagination_section-4 {
+        position: absolute;
+        bottom: -21rem;
+        left: 41rem;
+      }
+      .left_block {
+        position: relative;
+        .image_block {
+          position: relative;
+          transform: translateX(-10%) translateY(50%);
+          .photo_after {
+            width: 98.4rem;
+            height: 42.3rem;
+          }
+          .photo_before {
+            position: absolute;
+            top: -30rem;
+            right: 0;
+            width: 85rem;
+            height: 85rem;
+          }
+        }
+      }
+      .right_block {
+        .title {
+          color: #f3f4f7;
+          font-size: 9rem;
+          font-weight: 700;
+          text-transform: uppercase;
+          margin-bottom: 4.9rem;
+        }
+        .pots-value {
+          font-size: 14.6rem;
+          margin-bottom: 6.5rem;
+          padding-left: 0.6rem;
+          // &.celling {
+          //   transform: translateY(-0.5rem);
+          // }
+          // &.mat {
+          //   transform: translateY(-1.9rem);
+          // }
+        }
+        .text_block {
+          display: flex;
+          flex-direction: column;
+          font-size: 3rem;
+          font-weight: 300;
+          gap: 4rem;
+          padding-left: 0.6rem;
+        }
+      }
+    }
+  }
+}
+@media (max-width: 48em) {
+  .main__section-fourth {
+    background-color: #f3f4f7;
+    .container {
+      .main__section-content {
+        padding-top: 8rem;
+        padding-bottom: 14rem;
+        .swiper-pagination_section-4 {
+          bottom: -5rem;
+          left: 28rem;
+        }
+        .left_block {
+          position: relative;
+          padding-bottom: 8rem;
+          .image_block {
+            transform: translateX(-10%) translateY(-10%);
+            .photo_after {
+              width: 73.8rem;
+              height: 26.8rem;
+            }
+            .photo_before {
+              width: 65rem;
+              height: 65rem;
+              top: -24rem;
+              right: -8rem;
+            }
+            &.celling {
+              .photo_after {
+                transform: translateY(-2rem);
+              }
+              .photo_before {
+                top: -25.5rem;
+              }
+            }
+          }
+        }
+        .right_block {
+          margin-bottom: 26.4rem;
+          .title {
+            color: #f3f4f7;
+            margin-bottom: 4rem;
+            font-size: 7.2rem;
+          }
+          .pots-value {
+            font-size: 14.2rem;
+            margin-bottom: 4rem;
+          }
+          .text_block {
+            gap: 2rem;
+          }
+        }
+      }
+    }
+  }
+}

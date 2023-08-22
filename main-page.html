@@ -1,0 +1,1116 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Avium</title>
+    <link rel="stylesheet" href="./scss/style.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
+    />
+  </head>
+  <body>
+    <header class="header">
+      <div class="container">
+        <img class="logotype" src="img/header/logotype.svg" alt="logotype" />
+        <ul class="menu">
+          <li><a href="#">Цвет года</a></li>
+          <li><a href="#">Решение</a></li>
+          <li><a href="#">Палитры</a></li>
+          <li><a href="#">Сотрудничество</a></li>
+          <li><a href="#">Философия</a></li>
+          <li><a href="#">Купить</a></li>
+        </ul>
+        <ul class="icons">
+          <li class="icon">
+            <img
+              class="feedback-icon"
+              src="img/header/feedback-icon.svg"
+              alt="feedback"
+            />
+          </li>
+          <li class="icon">
+            <img src="img/header/cart-icon.svg" alt="cart" />
+          </li>
+        </ul>
+        <div class="burger">
+          <input id="burger-toggle" type="checkbox" />
+          <label class="burger-btn" for="burger-toggle">
+            <span></span>
+          </label>
+
+          <ul class="burgerbox">
+            <li class="burger-item">Цвет года</li>
+            <li class="burger-item">Решения</li>
+            <li class="burger-item">Палитры</li>
+            <li class="burger-item">Сотрудничество</li>
+            <li class="burger-item">Философия</li>
+            <li class="burger-item">Купить</li>
+            <li class="burger-item">Корзина</li>
+            <li class="feedback-item">
+              <p>У Вас есть вопросы, напишите нам!</p>
+              <img
+                class="feedback-icon"
+                style="width: 6rem; height: 6rem"
+                src="./img/header/feedback-icon.svg"
+                alt=""
+              />
+            </li>
+          </ul>
+        </div>
+        <div class="overlay">
+          <div class="modal">
+            <img
+              class="modal_close-icon"
+              src="./img/header/modal_close.svg"
+              alt=""
+            />
+            <div class="modal_content">
+              <h4 class="modal_title">У вас есть вопросы?</h4>
+              <p class="modal_text">
+                Заполните форму и наш менеджер свяжется с Вами.
+              </p>
+              <div class="modal_contact-form">
+                <div class="input_box">
+                  <label>ФИО</label>
+                  <input placeholder="ФИО" type="text" />
+                </div>
+                <div class="inputs_box">
+                  <div class="input_box">
+                    <label>Телефон</label>
+                    <input placeholder="Телефон" type="text" />
+                  </div>
+                  <div class="input_box">
+                    <label>Email</label>
+                    <input placeholder="Email" type="text" />
+                  </div>
+                </div>
+                <div class="input_box">
+                  <label>Ваш вопрос</label>
+                  <input placeholder="Ваш вопрос" type="text" />
+                </div>
+              </div>
+              <button class="modal_btn btn">Отправить</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <main>
+      <!-- <section class="section_animate">
+        <div class="section_wrap">
+          <svg
+            id="img-logo"
+            width="560"
+            height="170"
+            viewBox="0 0 560 170"
+            fill="none"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              d="M129.15 124.776C129.5 125.48 129.5 126.536 129.5 127.24C129.5 131.112 126.35 133.928 122.85 133.928C120.4 133.928 117.6 132.168 116.55 129.704L92.05 80.072H58.1C53.9 80.072 50.75 76.2 51.45 71.976C52.15 68.808 54.95 66.696 58.45 66.696H69.65H85.4L64.4 25.864L12.6 129.704C11.55 132.168 8.75 133.928 6.3 133.928C2.8 133.928 0 130.76 0 127.24C0 126.536 0.35 125.48 0.35 124.776L58.8 4.392C59.85 1.928 62.65 0.167999 65.1 0.167999C67.55 0.167999 70.35 1.928 71.4 4.392L129.15 124.776Z"
+              fill="white"
+            />
+            <path
+              d="M218.05 43.112C218.05 44.168 217.7 45.224 217.35 46.28L176.05 129.704C175 131.816 172.2 133.576 169.75 133.576C167.3 133.576 164.5 131.816 163.45 129.704L122.15 46.28C121.8 45.576 121.45 44.168 121.45 43.112C121.45 39.24 124.6 36.072 128.45 36.072C130.9 36.072 133.7 37.832 134.75 39.944L170.1 111.4L205.8 39.944C206.85 37.832 209.65 36.072 212.1 36.072C213.15 36.072 214.2 36.424 215.25 36.776C216.3 38.184 218.05 40.648 218.05 43.112Z"
+              fill="white"
+            />
+            <path
+              d="M255.5 43.112V127.24C255.5 130.76 253.4 133.576 249.9 134.28C245.7 134.984 241.85 131.816 241.85 127.24V43.112C241.85 39.24 245 36.072 248.85 36.072C252.7 36.072 255.5 39.24 255.5 43.112Z"
+              fill="white"
+            />
+            <path
+              d="M380.8 43.112V82.888C380.8 94.856 374.15 110.696 366.1 119.144C357.7 127.592 341.6 133.928 330.05 133.928C301.7 133.928 278.95 111.048 278.95 82.536V43.464C278.95 39.944 281.05 37.128 284.55 36.424C289.1 35.72 292.95 38.888 292.95 43.112V81.832C292.95 101.544 307.65 118.44 327.6 119.848C349.3 121.608 367.85 104.008 367.85 82.536V43.112C367.85 39.24 371 36.072 374.85 36.072C377.65 36.072 380.8 39.24 380.8 43.112Z"
+              fill="white"
+            />
+            <path
+              d="M560 79.368V163.144C560 167.016 556.85 169.832 553 169.832C549.15 169.832 546.35 166.664 546 163.144V80.072C546 64.584 534.45 51.208 519.05 49.8C501.55 48.04 486.5 62.12 486.5 79.368V141.32C486.5 145.192 483.35 148.008 479.5 148.008C475.65 148.008 472.85 144.84 472.5 141.32V80.072C472.5 64.584 460.95 51.208 445.55 49.448C429.1 48.04 414.05 61.768 414.05 79.368V126.184C414.05 129.352 411.95 132.52 408.45 133.224C403.9 133.928 400.05 130.76 400.05 126.536V79.368C400.05 55.432 419.3 36.072 443.1 36.072C450.1 36.072 460.25 39.24 466.2 42.76C470.75 45.576 476.7 51.56 479.15 55.784C481.95 51.208 487.9 45.224 492.1 42.76C498.05 38.888 508.2 36.072 515.2 36.072C540.75 36.072 560 55.432 560 79.368Z"
+              fill="white"
+            />
+          </svg>
+          <span id="tl"></span>
+        </div>
+        <p id="txt">Тот самый идеальный цвет</p>
+        <span id="circle"></span>
+      </section> -->
+
+      <section class="video__section">
+        <div class="section_video">
+          <video autoplay playsinline loop muted>
+            <source
+              src="./img/video_section-first/section_first-videov2.mp4"
+              type="video/mp4"
+            />
+          </video>
+        </div>
+        <div class="container"></div>
+      </section>
+
+      <section class="main__section-first">
+        <div class="container">
+          <div class="main__section-content">
+            <div class="content_left">
+              <div class="title">
+                <h3
+                  data-animate
+                  class="title1_section-1 animate__fadeInLeft animate__delay-1s"
+                  data-wow-delay="0.1s"
+                >
+                  Cоздаём краски
+                </h3>
+                <h3
+                  data-animate
+                  class="title2_section-1 animate__fadeIn"
+                  data-wow-delay="1s"
+                  data-wow-delay="0.2s"
+                >
+                  Превосходящие
+                </h3>
+                <h3
+                  data-animate
+                  class="title3_section-1 animate__fadeIn"
+                  data-wow-delay="1s"
+                  data-wow-delay="0.2s"
+                >
+                  Все аналоги
+                </h3>
+              </div>
+              <button
+                data-animate
+                class="btn btn_section-1 animate__delay-1s"
+                data-wow-delay="0.3s"
+              >
+                Выбери цвет
+              </button>
+            </div>
+            <div class="content_right">
+              <div
+                data-animate
+                class="swiper swiper_main-section-1 animate__fadeInDown animate__delay-1s"
+                data-wow-delay="0.3s"
+              >
+                <div class="swiper-wrapper">
+                  <div class="swiper-slide">
+                    <div class="slider-name">
+                      <img
+                        src="./img/main_section-first/section_one-photo-1.webp"
+                        alt="slider image"
+                      />
+                    </div>
+                  </div>
+                  <div class="swiper-slide">
+                    <div class="slider-name">
+                      <img
+                        src="./img/main_section-first/section_one-photo-2.webp"
+                        alt="slider image"
+                      />
+                    </div>
+                  </div>
+                  <div class="swiper-slide">
+                    <div class="slider-name">
+                      <img
+                        src="./img/main_section-first/section_one-photo-3.webp"
+                        alt="slider image"
+                      />
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <img
+            style="width: 23.5rem"
+            class="decoration_left"
+            src="./img/main_section-first/section_one-decoration_left.svg"
+            alt="decoration left"
+          />
+          <img
+            style="width: 26rem"
+            class="decoration_right"
+            src="./img/main_section-first/section_one-decoration_right.svg"
+            alt="decoration right"
+          />
+          <img
+            style="width: 14.4rem"
+            class="decoration_mobile"
+            src="./img/main_section-first/section_one-decoration_mobile.svg"
+            alt="decoration mobile"
+          />
+        </div>
+      </section>
+
+      <section class="main__section-second">
+        <div class="container">
+          <div class="main__section-content">
+            <h2
+              data-animate
+              class="title_mobile outlined-text animate__fadeInDown animate__delay-1s"
+              data-wow-delay="0.2s"
+            >
+              Первая Smart<br />
+              краска
+            </h2>
+            <div
+              data-animate
+              class="content_left animate__fadeIn animate__delay-1s"
+              data-wow-delay="0.5s"
+            >
+              <img
+                src="./img/main_section-second/section-two-photo-1.webp"
+                alt=""
+              />
+              <div
+                data-animate
+                class="animate__fadeIn animate__delay-1s"
+                data-wow-delay="1s"
+              >
+                <div id="perfect" class="icon icon_third">
+                  <img
+                    src="./img/main_section-second/section_two-icon_perfect.svg"
+                    alt=""
+                  />
+                </div>
+              </div>
+              <div
+                data-animate
+                class="animate__fadeIn animate__delay-1s"
+                data-wow-delay="0.5s"
+              >
+                <div id="comfort" class="icon icon_second active">
+                  <img
+                    src="./img/main_section-second/section_two-icon_comfort.svg"
+                    alt=""
+                  />
+                </div>
+              </div>
+              <div
+                data-animate
+                class="animate__fadeIn animate__delay-1s"
+                data-wow-delay="1s"
+              >
+                <div id="truetron" class="icon icon_first">
+                  <img
+                    src="./img/main_section-second/section_two-icon_truetron.svg"
+                    alt=""
+                  />
+                </div>
+              </div>
+            </div>
+            <div class="content_right">
+              <h2
+                data-animate
+                class="title outlined-text animate__fadeInDown animate__delay-1s"
+                data-wow-delay="0.2s"
+                data-wow-delay="0.2s"
+              >
+                Первая Smart<br />
+                краска
+              </h2>
+              <div class="swiper swiper_main-section-2">
+                <div class="swiper-wrapper">
+                  <div class="swiper-slide">
+                    <div class="slide_section-2">
+                      <h4
+                        data-animate
+                        class="subtitle animate__fadeIn animate__delay-1s"
+                        data-wow-delay="0.5s"
+                      >
+                        Комфорт эксплуатации
+                      </h4>
+                      <p
+                        data-animate
+                        class="text animate__fadeIn animate__delay-1s"
+                        data-wow-delay="0.5s"
+                      >
+                        Удобна и&nbsp;технологична в&nbsp;нанесении при
+                        использовании профессиональных инструментов.
+                        Износоустойчивость. Низкий уровень токсичности
+                      </p>
+                    </div>
+                  </div>
+                  <div class="swiper-slide">
+                    <div class="slide_section-2">
+                      <h4
+                        data-animate
+                        class="subtitle animate__fadeIn animate__delay-1s"
+                        data-wow-delay="0.5s"
+                      >
+                        Технология True Tone
+                      </h4>
+                      <p
+                        data-animate
+                        class="text animate__fadeIn animate__delay-1s"
+                        data-wow-delay="0.5s"
+                      >
+                        Осязаемые, натуралистичные оттенки с&nbsp;эффектом
+                        глубины, передающие ощущение по-настоящему живого,
+                        объёмного цвета
+                      </p>
+                    </div>
+                  </div>
+                  <div class="swiper-slide">
+                    <div class="slide_section-2">
+                      <h4
+                        data-animate
+                        class="subtitle animate__fadeIn animate__delay-1s"
+                        data-wow-delay="0.5s"
+                      >
+                        Совершенство<br />цветопередачи
+                      </h4>
+                      <p
+                        data-animate
+                        class="text animate__fadeIn animate__delay-1s"
+                        data-wow-delay="0.5s"
+                      >
+                        Вся полнота и яркость цветов при любом освещении
+                      </p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <button
+                data-animate
+                class="btn animate__fadeIn animate__delay-1s"
+                data-wow-delay="1s"
+              >
+                Решение Avium
+              </button>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="main__section-third">
+        <div class="container">
+          <div class="main__section-content">
+            <div class="swiper swiper_main-section-3">
+              <div class="swiper-wrapper">
+                <div class="swiper-slide">
+                  <div class="slide-section-3">
+                    <div class="left_block">
+                      <p
+                        data-animate
+                        class="text outlined-text animate__fadeInDown animate__delay-1s"
+                        data-wow-delay="0.2s"
+                      >
+                        Интеллектуальная
+                      </p>
+                      <h2 class="title">
+                        <span class="title_span">Интеграция цвета</span
+                        ><span
+                          data-animate
+                          class="subtitle_span outlined-text animate__fadeIn animate__delay-1s"
+                          data-wow-delay="0.5s"
+                          >в вашу жизнь</span
+                        >
+                      </h2>
+                      <h4
+                        data-animate
+                        class="subtitle animate__fadeIn animate__delay-1s"
+                        data-wow-delay="0.3s"
+                      >
+                        Технология сохранения цвета
+                      </h4>
+                      <button
+                        data-animate
+                        class="btn animate__fadeIn animate__delay-1s"
+                        data-wow-delay="0.3s"
+                      >
+                        Палитры
+                      </button>
+                    </div>
+                    <div class="right_block">
+                      <div
+                        data-animate
+                        class="img_block animate__zoomIn animate__delay-1s"
+                        data-wow-delay="0.3s"
+                      >
+                        <img
+                          src="./img/main_section-third/section_third-photo_1.webp"
+                          alt=""
+                        />
+                      </div>
+                      <button class="btn btn_mobile">Палитры</button>
+                    </div>
+                  </div>
+                </div>
+                <div class="swiper-slide">
+                  <div class="slide-section-3">
+                    <div class="left_block">
+                      <p
+                        data-animate
+                        class="text outlined-text animate__fadeInDown animate__delay-1s"
+                        data-wow-delay="0.2s"
+                      >
+                        Интеллектуальная
+                      </p>
+                      <h2 class="title">
+                        <span class="title_span">Интеграция цвета</span
+                        ><span
+                          data-animate
+                          class="subtitle_span outlined-text animate__fadeIn animate__delay-1s"
+                          data-wow-delay="0.5s"
+                          >в вашу жизнь</span
+                        >
+                      </h2>
+                      <h4
+                        data-animate
+                        class="subtitle animate__fadeIn animate__delay-1s"
+                        data-wow-delay="0.3s"
+                      >
+                        3D глубина восприятия
+                      </h4>
+                      <button
+                        data-animate
+                        class="btn animate__fadeIn animate__delay-1s"
+                        data-wow-delay="0.3s"
+                      >
+                        Палитры
+                      </button>
+                    </div>
+                    <div class="right_block">
+                      <div
+                        data-animate
+                        class="img_block animate__zoomIn animate__delay-1s"
+                        data-wow-delay="0.3s"
+                      >
+                        <img
+                          src="./img/main_section-third/section-third-photo_2.webp"
+                          alt=""
+                        />
+                      </div>
+                      <button class="btn btn_mobile">Палитры</button>
+                    </div>
+                  </div>
+                </div>
+                <div class="swiper-slide">
+                  <div class="slide-section-3">
+                    <div class="left_block">
+                      <p
+                        data-animate
+                        class="text outlined-text animate__fadeInDown animate__delay-1s"
+                        data-wow-delay="0.2s"
+                      >
+                        Интеллектуальная
+                      </p>
+                      <h2 class="title">
+                        <span class="title_span">Интеграция цвета</span
+                        ><span
+                          data-animate
+                          class="subtitle_span outlined-text animate__fadeIn animate__delay-1s"
+                          data-wow-delay="0.5s"
+                          >в вашу жизнь</span
+                        >
+                      </h2>
+                      <h4
+                        data-animate
+                        class="subtitle animate__fadeIn animate__delay-1s"
+                        data-wow-delay="0.3s"
+                      >
+                        SOFT-touch покрытие
+                      </h4>
+                      <button
+                        data-animate
+                        class="btn animate__fadeIn animate__delay-1s"
+                        data-wow-delay="0.3s"
+                      >
+                        Палитры
+                      </button>
+                    </div>
+                    <div class="right_block">
+                      <div
+                        data-animate
+                        class="img_block animate__zoomIn animate__delay-1s"
+                        data-wow-delay="0.3s"
+                      >
+                        <img
+                          src="./img/main_section-third/section_third-photo_3.webp"
+                          alt=""
+                        />
+                      </div>
+                      <button class="btn btn_mobile">Палитры</button>
+                    </div>
+                  </div>
+                </div>
+                <div class="swiper-slide">
+                  <div class="slide-section-3">
+                    <div class="left_block">
+                      <p
+                        data-animate
+                        class="text outlined-text animate__fadeInDown animate__delay-1s"
+                        data-wow-delay="0.2s"
+                      >
+                        Интеллектуальная
+                      </p>
+                      <h2 class="title">
+                        <span class="title_span">Интеграция цвета</span
+                        ><span
+                          data-animate
+                          class="subtitle_span outlined-text animate__fadeIn animate__delay-1s"
+                          data-wow-delay="0.5s"
+                          >в вашу жизнь</span
+                        >
+                      </h2>
+                      <h4
+                        data-animate
+                        class="subtitle animate__fadeIn animate__delay-1s"
+                        data-wow-delay="0.3s"
+                      >
+                        Дружелюбна к воздействию
+                      </h4>
+                      <button
+                        data-animate
+                        class="btn animate__fadeIn animate__delay-1s"
+                        data-wow-delay="0.3s"
+                      >
+                        Палитры
+                      </button>
+                    </div>
+                    <div class="right_block">
+                      <div
+                        data-animate
+                        class="img_block animate__zoomIn animate__delay-1s"
+                        data-wow-delay="0.3s"
+                      >
+                        <img
+                          src="./img/main_section-third/section_third-photo_4.webp"
+                          alt=""
+                        />
+                      </div>
+                      <button class="btn btn_mobile">Палитры</button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div
+                class="swiper-pagination swiper-pagination_section-3 wow animate__fadeIn animate__delay-1s"
+                data-wow-delay="0.3s"
+              ></div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="main__section-fourth">
+        <div class="container">
+          <div class="main__section-content">
+            <div class="swiper swiper_main-section-4">
+              <div class="swiper-wrapper">
+                <div class="swiper-slide">
+                  <div class="slide-section-4">
+                    <div class="left_block">
+                      <div class="image_block">
+                        <img
+                          class="photo_after wow animate__fadeInLeft animate__delay-1s"
+                          data-wow-delay="0.2s"
+                          src="./img/main_section-fourth/section_four-rectangle-1_1.svg"
+                          alt=""
+                        />
+                        <img
+                          class="photo_before wow animate__fadeIn animate__delay-1s"
+                          data-wow-delay="0.2s"
+                          src="./img/main_section-fourth/section_four-photo_1.png"
+                          alt=""
+                        />
+                      </div>
+                    </div>
+                    <div class="right_block">
+                      <h2
+                        class="title outlined-text wow animate__fadeInDown animate__delay-1s"
+                        data-wow-delay="0.2s"
+                      >
+                        Решения
+                      </h2>
+                      <p class="pots-value special-fonts topmat">top mat</p>
+                      <div class="text_block">
+                        <p>Фундаментальная</p>
+                        <p>Устойчивая</p>
+                        <p>Технология сохранения цвета</p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="swiper-slide">
+                  <div class="slide-section-4">
+                    <div class="left_block">
+                      <div class="image_block">
+                        <img
+                          class="photo_after wow animate__fadeInLeft animate__delay-1s"
+                          data-wow-delay="0.2s"
+                          src="./img/main_section-fourth/section_four-rectangle-2_1.svg"
+                          alt=""
+                        />
+                        <img
+                          class="photo_before wow animate__fadeIn animate__delay-1s"
+                          data-wow-delay="0.2s"
+                          src="./img/main_section-fourth/section_four-photo_2.png"
+                          alt=""
+                        />
+                      </div>
+                    </div>
+                    <div class="right_block">
+                      <h2
+                        class="title outlined-text wow animate__fadeInDown animate__delay-1s"
+                        data-wow-delay="0.2s"
+                      >
+                        Решения
+                      </h2>
+                      <p class="pots-value special-fonts primer">primer</p>
+                      <div class="text_block">
+                        <p>Идеальная адгезия</p>
+                        <p>Сокращает расход краски</p>
+                        <p>Сохраняет цветопередачу</p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="swiper-slide">
+                  <div class="slide-section-4">
+                    <div class="left_block">
+                      <div class="image_block celling">
+                        <img
+                          class="photo_after wow animate__fadeInLeft animate__delay-1s"
+                          data-wow-delay="0.2s"
+                          src="./img/main_section-fourth/section_four-rectangle-3_1.svg"
+                          alt=""
+                        />
+                        <img
+                          class="photo_before wow animate__fadeIn animate__delay-1s"
+                          data-wow-delay="0.2s"
+                          src="./img/main_section-fourth/section_four-photo_3.png"
+                          alt=""
+                        />
+                      </div>
+                    </div>
+                    <div class="right_block">
+                      <h2
+                        class="title outlined-text wow animate__fadeInDown animate__delay-1s"
+                        data-wow-delay="0.2s"
+                      >
+                        Решения
+                      </h2>
+                      <p class="pots-value special-fonts celling">celling</p>
+                      <div class="text_block">
+                        <p>
+                          Подчёркивает совершенство<br />
+                          вашего потолка
+                        </p>
+                        <p>
+                          Выравнивающий визуальный<br />
+                          эффект на потолках
+                        </p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="swiper-slide">
+                  <div class="slide-section-4">
+                    <div class="left_block">
+                      <div class="image_block">
+                        <img
+                          class="photo_after wow animate__fadeInLeft animate__delay-1s"
+                          data-wow-delay="0.2s"
+                          src="./img/main_section-fourth/section_four-rectangle-4_1.svg"
+                          alt=""
+                        />
+                        <img
+                          class="photo_before wow animate__fadeIn animate__delay-1s"
+                          data-wow-delay="0.2s"
+                          src="./img/main_section-fourth/section_four-photo_4.png"
+                          alt=""
+                        />
+                      </div>
+                    </div>
+                    <div class="right_block">
+                      <h2
+                        class="title outlined-text wow animate__fadeInDown animate__delay-1s"
+                        data-wow-delay="0.2s"
+                      >
+                        Решения
+                      </h2>
+                      <p class="pots-value special-fonts mat">mat</p>
+                      <div class="text_block">
+                        <p>Несмотря ни на что</p>
+                        <p>Soft-touch</p>
+                        <p>3D глубина цвета</p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="swiper-pagination swiper-pagination_section-4"></div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="main__section-fifth">
+        <div
+          class="container wow animate__fadeInDown animate__delay-1s"
+          data-wow-delay="0.3s"
+          data-wow-offset="400"
+        >
+          <div class="swiper swiper_main-section-5">
+            <div class="swiper-wrapper">
+              <div class="swiper-slide">
+                <div class="slide_section-5">
+                  <img
+                    class="main__section-background"
+                    src="./img/main_section-fifth/seciton_five-background_1.webp"
+                    alt="background"
+                  />
+                </div>
+              </div>
+              <div class="swiper-slide">
+                <div class="slide_section-5">
+                  <img
+                    class="main__section-background"
+                    src="./img/main_section-fifth/section_five-background_2.webp"
+                    alt="background"
+                  />
+                </div>
+              </div>
+              <div class="swiper-slide">
+                <div class="slide_section-5">
+                  <img
+                    class="main__section-background"
+                    src="./img/main_section-fifth/section_five-background_3.webp"
+                    alt="background"
+                  />
+                </div>
+              </div>
+            </div>
+          </div>
+          <div
+            class="main__section-content wow animate__fadeIn animate__delay-1s"
+            data-wow-delay="0.5s"
+            data-wow-offset="400"
+          >
+            <h4 class="title">Выбери свой цвет</h4>
+            <p class="subtitle">
+              Протестируйте выбранный цвет,<br />используя
+              интуитивно-понятную,<br />
+              реалистичную онлайн-визуализацию.
+            </p>
+            <div class="selects_content">
+              <form class="section_form" action="">
+                <div class="select_box">
+                  <label>Выберите палитру</label>
+                  <select class="select_list">
+                    <option value="">ПАЛИТРА AVIUM FREEDOM</option>
+                  </select>
+                </div>
+                <div class="select_box">
+                  <label>Выберите гамму</label>
+                  <select class="select_list">
+                    <option value="">ГОЛУБАЯ ГАММА</option>
+                    <option value="">ГОЛУБАЯ ГАММА</option>
+                    <option value="">ГОЛУБАЯ ГАММА</option>
+                  </select>
+                </div>
+                <div class="select_box">
+                  <label>Выберите цвет</label>
+                  <select class="select_list">
+                    <option value="">F02 Morning Milk</option>
+                  </select>
+                </div>
+                <div class="select_box select_mobile">
+                  <label>Цвет пола</label>
+                  <select class="select_list">
+                    <option value="">светлый</option>
+                  </select>
+                </div>
+              </form>
+              <div class="buttons">
+                <div class="buttons_left">
+                  <button class="button">
+                    <img
+                      style="width: 1.5rem; height: 1.3rem"
+                      src="./img/main_section-fifth/section_five-icon_back.svg"
+                      alt=""
+                    />
+                  </button>
+                  <button class="button">
+                    <img
+                      style="width: 1.5rem; height: 1.3rem"
+                      src="./img/main_section-fifth/section_five-icon-next.svg"
+                      alt=""
+                    />
+                  </button>
+                </div>
+                <div class="buttons_right">
+                  <button class="button">
+                    <img
+                      style="width: 1.4rem; height: 1.6rem"
+                      src="./img/main_section-fifth/section_five-icon_cart.svg"
+                      alt=""
+                    />
+                  </button>
+                  <button class="button">
+                    <img
+                      style="width: 1.2rem; height: 1.2rem"
+                      src="./img/main_section-fifth/section_five-icon_repost.svg"
+                      alt=""
+                    />
+                  </button>
+                </div>
+              </div>
+              <div class="select_box select_desktop">
+                <label>Цвет пола</label>
+                <select class="select_list">
+                  <option value="">светлый</option>
+                </select>
+              </div>
+            </div>
+            <button class="btn btn-popup">Выбрать</button>
+          </div>
+          <div class="overlay">
+            <div class="modal">
+              <img
+                class="modal_close-icon"
+                src="././img/main_section-fifth/modal_close.svg"
+                alt=""
+              />
+              <div class="modal_content">
+                <div class="selects_content">
+                  <form class="section_form" action="">
+                    <div class="select_box">
+                      <select class="select_list">
+                        <option value="" disabled selected>
+                          Выберите палитру
+                        </option>
+                        <option value="">ПАЛИТРА AVIUM FREEDOM</option>
+                      </select>
+                    </div>
+                    <div class="select_box">
+                      <select class="select_list">
+                        <option value="" disabled selected>
+                          Выберите гамму
+                        </option>
+                        <option value="">ГОЛУБАЯ ГАММА</option>
+                      </select>
+                    </div>
+                    <div class="select_box">
+                      <select class="select_list disactive">
+                        <option value="" disabled selected>
+                          Выберите цвет
+                        </option>
+                        <option value="">F02 Morning Milk</option>
+                      </select>
+                    </div>
+                    <div class="select_box select_mobile">
+                      <select class="select_list">
+                        <option value="" disabled selected>Цвет пола</option>
+                        <option value="">светлый</option>
+                      </select>
+                    </div>
+                  </form>
+                  <div class="buttons">
+                    <div class="buttons_left">
+                      <button class="button">
+                        <img
+                          style="width: 3rem; height: 2.6rem"
+                          src="./img/main_section-fifth/section_five-icon_back.svg"
+                          alt=""
+                        />
+                      </button>
+                      <button class="button">
+                        <img
+                          style="width: 3rem; height: 2.6rem"
+                          src="./img/main_section-fifth/section_five-icon-next.svg"
+                          alt=""
+                        />
+                      </button>
+                    </div>
+                    <div class="buttons_right">
+                      <button class="button">
+                        <img
+                          style="width: 2.8rem; height: 3.2rem"
+                          src="./img/main_section-fifth/section_five-icon_cart.svg"
+                          alt=""
+                        />
+                      </button>
+                      <button class="button">
+                        <img
+                          style="width: 2.4rem; height: 2.4rem"
+                          src="./img/main_section-fifth/section_five-icon_repost.svg"
+                          alt=""
+                        />
+                      </button>
+                    </div>
+                  </div>
+                  <button class="content_btn btn">Подтвердить</button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="main__section-sixth">
+        <div class="container">
+          <div class="main__section-content">
+            <h4 class="title outlined-text" data-text="Нейросеть рекомендует">
+              Нейросеть рекомендует
+            </h4>
+            <p class="subtitle">
+              Наведи на круг цвета, чтобы узнать название одного из цветов дня
+            </p>
+            <div class="circles">
+              <div
+                class="circles_left wow animate__fadeIn animate__delay-1s"
+                data-wow-delay="0.1s"
+              >
+                <span class="dot_20px"></span>
+                <span class="dot_25px"></span>
+                <span class="dot_25px"></span>
+                <span class="dot_35px"></span>
+              </div>
+              <div
+                class="circles_center wow animate__zoomIn animate__delay-1s"
+                data-wow-delay="0.4s"
+              >
+                <div class="circle">
+                  <div class="circle_action"></div>
+                  <div class="circle_inside">
+                    <span class="circle_text">F02<br />Savoy White</span>
+                  </div>
+                </div>
+                <div class="circle">
+                  <div class="circle_action"></div>
+                  <div class="circle_inside">
+                    <span class="circle_text">F02<br />Savoy White</span>
+                  </div>
+                </div>
+                <div class="circle">
+                  <div class="circle_action"></div>
+                  <div class="circle_inside">
+                    <span class="circle_text">F02<br />Savoy White</span>
+                  </div>
+                </div>
+                <div class="circle">
+                  <div class="circle_action"></div>
+                  <div class="circle_inside">
+                    <span class="circle_text">F02<br />Savoy White</span>
+                  </div>
+                </div>
+                <div class="circle">
+                  <div class="circle_action"></div>
+                  <div class="circle_inside">
+                    <span class="circle_text">F02<br />Savoy White</span>
+                  </div>
+                </div>
+                <div class="circle">
+                  <div class="circle_action"></div>
+                  <div class="circle_inside">
+                    <span class="circle_text">F02<br />Savoy White</span>
+                  </div>
+                </div>
+              </div>
+              <div
+                class="circles_right wow animate__fadeIn animate__delay-1s"
+                data-wow-delay="0.1s"
+              >
+                <span class="dot_40px"></span>
+                <span class="dot_50px"></span>
+                <span class="dot_25px"></span>
+                <span class="dot_20px"></span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="footer">
+      <div class="container">
+        <img
+          style="width: 17rem"
+          class="footer_logotype"
+          src="img/footer/footer_logotype-desktop.svg"
+          alt="logotype"
+        />
+        <div class="footer_content">
+          <span class="title">Тот самый идеальный цвет</span>
+          <ul class="lists_info">
+            <ul class="list_left">
+              <li class="list_item">Философия</li>
+              <li class="list_item">Решения</li>
+              <li class="list_item">Цвет года</li>
+            </ul>
+            <ul class="list_right">
+              <li class="list_item">Сотрудничество</li>
+              <li class="list_item">Дилерам</li>
+              <li class="list_item">Дизайнерам</li>
+              <li class="list_item">Купить</li>
+            </ul>
+          </ul>
+          <div class="contacts">
+            <ul class="lists_contacts">
+              <li class="contacts_item">
+                <i class="contact_icon"
+                  ><img src="img/footer/footer_email-icon.svg" alt="email icon"
+                /></i>
+                <p class="contact_text">info@inviktus.ru</p>
+              </li>
+              <li class="contacts_item">
+                <i class="contact_icon"
+                  ><img src="img/footer/footer_phone-icon.svg" alt="phone icon"
+                /></i>
+                <p class="contact_text">8 (800) 350 69 63</p>
+              </li>
+              <li class="contacts_item">
+                <i class="contact_icon"
+                  ><img
+                    src="img/footer/footer_inst-icon.svg"
+                    alt="instagram icon"
+                /></i>
+                <p class="contact_text">avium.paint</p>
+              </li>
+            </ul>
+            <div class="contacts_inviktus">
+              <img src="img/footer/inviktus_logotype.svg" alt="Inviktus" />
+            </div>
+          </div>
+        </div>
+        <img
+          class="footer_logotype-mobile"
+          src="img/footer/footer_logotype-mobile.svg"
+          alt=""
+        />
+        <img
+          class="decoration_left"
+          src="img/footer/footer_decoration_left.svg"
+          alt="decoration"
+        />
+        <img
+          class="decoration_right"
+          src="img/footer/footer_decoration_right.svg"
+          alt="decoration"
+        />
+        <img
+          class="decoration_mobile"
+          src="img/footer/footer_decoration-mobile-v2.svg"
+          alt=""
+        />
+      </div>
+    </footer>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+    <script src="./js/jquery.js"></script>
+    <script src="./js/jquery.nice-select.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.js"></script>
+    <script src="js/wow.min.js"></script>
+    <script type="module" src="./js/swiper.js"></script>
+    <script type="module" src="./js/animations.js"></script>
+    <script src="./js/main.js"></script>
+  </body>
+</html>

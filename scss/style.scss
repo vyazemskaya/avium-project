@@ -1,7 +1,22 @@
 @import url('https://fonts.googleapis.com/css2?family=Comfortaa:wght@300;400;700&display=swap');
 
+@font-face {
+  font-family: 'CNA';
+  src: url('../fonts/fonts_CNA.woff') format('woff'),
+    url('../fonts/fonts_CNA.woff2') format('woff2'),
+    url('../fonts/fonts_CNA.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+
 @import 'set';
 @import 'header';
+@import 'main-section-first';
+@import 'main-section-second';
+@import 'main-section-third';
+@import 'main-section-fourth';
+@import 'main-section-fifth';
+@import 'main-section-sixth';
 @import 'details-section-first';
 @import 'details-section-second';
 @import 'calculate-section';
@@ -121,6 +136,22 @@ body {
     font-weight: 700;
     text-transform: uppercase;
     color: #53565a;
+  }
+
+  .special-fonts {
+    font-family: 'CNA';
+    &.primer {
+      color: #929497;
+    }
+    &.celling {
+      color: #8787b3;
+    }
+    &.mat {
+      color: #bbbdbf;
+    }
+    &.topmat {
+      color: #bbbdbf;
+    }
   }
 
   .overlay {
@@ -374,6 +405,22 @@ body {
     overflow: hidden;
     width: 90rem;
   }
+  .swiper_main-section-2 {
+    width: 90rem;
+    overflow: hidden;
+  }
+
+  .swiper_main-section-3 {
+    .slide-section-3 {
+      display: flex;
+    }
+  }
+
+  .swiper_main-section-4 {
+    .slide-section-4 {
+      display: flex;
+    }
+  }
 }
 
 @media (max-width: 48em) {
@@ -478,6 +525,28 @@ body {
             }
           }
         }
+      }
+    }
+    .swiper_main-section-2 {
+      .swiper-wrapper {
+        .swiper-slide {
+          .slide_section-2 {
+            width: 67rem;
+            margin: 0;
+          }
+        }
+      }
+    }
+
+    .swiper_main-section-3 {
+      .slide-section-3 {
+        flex-direction: column;
+      }
+    }
+
+    .swiper_main-section-4 {
+      .slide-section-4 {
+        flex-direction: column-reverse;
       }
     }
   }
