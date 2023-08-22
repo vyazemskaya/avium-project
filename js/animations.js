@@ -1,7 +1,11 @@
-document.addEventListener('DOMContentLoaded', function (event) {
-  const mmd = window.matchMedia('(min-width: 768px)').matches
-  const md = window.matchMedia('(max-width: 768px)').matches
+import {
+  swiperMainSection1,
+  swiperMainSection2,
+  swiperMainSection3,
+  swiperMainSection4,
+} from './swiper.js'
 
+document.addEventListener('DOMContentLoaded', function () {
   gsap.defaults({
     duration: 1,
     delay: 0.5,
@@ -68,21 +72,22 @@ document.addEventListener('DOMContentLoaded', function (event) {
     target: '.section.active',
     onDown: () => {
       if (document.querySelector('.main__section-first.active')) {
+        swiperMainSection1.autoplay.start()
         gsap.to('.swiper_main-section-1', {
           opacity: 1,
           yPercent: 0,
         }),
-          gsap.to('.title1_section-1', { opacity: 1, xPercent: 0 }),
-          gsap.to('.title2_section-1', { opacity: 1, delay: 1.5 }),
-          gsap.to('.title3_section-1', { opacity: 1, delay: 1.8 }),
-          gsap.to('.btn_section-1', { opacity: 1, delay: 2 })
+          gsap.to('.title1_section-1', { opacity: 1, xPercent: 0, delay: 1.3 }),
+          gsap.to('.title2_section-1', { opacity: 1, delay: 2 }),
+          gsap.to('.title3_section-1', { opacity: 1, delay: 2.5 }),
+          gsap.to('.btn_section-1', { opacity: 1, delay: 3 })
       }
       if (document.querySelector('.main__section-second.active')) {
-        const tl = gsap.timeline()
-        tl.to('.main__section-second .content_left', {
+        swiperMainSection2.autoplay.start()
+        gsap.to('.main__section-second .content_left', {
           opacity: 1,
         }),
-          tl.to('.main__section-second .icon_wrap', {
+          gsap.to('.main__section-second .icon_wrap', {
             opacity: 1,
           })
         gsap.to('.main__section-content .title_mobile', {
@@ -91,7 +96,7 @@ document.addEventListener('DOMContentLoaded', function (event) {
         }),
           gsap.to('.main__section-second .content_right .title', {
             opacity: 1,
-            yPercent: 0,
+            yPercent: 1,
           }),
           gsap.to('.main__section-second .swiper-slide .subtitle', {
             opacity: 1,
@@ -107,6 +112,7 @@ document.addEventListener('DOMContentLoaded', function (event) {
         })
       }
       if (document.querySelector('.main__section-third.active')) {
+        swiperMainSection3.autoplay.start()
         gsap.to('.main__section-third .left_block .text', {
           opacity: 1,
           yPercent: 0,
@@ -133,6 +139,7 @@ document.addEventListener('DOMContentLoaded', function (event) {
         })
       }
       if (document.querySelector('.main__section-fourth.active')) {
+        swiperMainSection4.autoplay.start()
         gsap.to('.main__section-fourth .photo_after', {
           opacity: 1,
           xPercent: 0,
@@ -144,8 +151,13 @@ document.addEventListener('DOMContentLoaded', function (event) {
           opacity: 1,
           yPercent: 0,
         })
+        gsap.to('.main__section-fourth .right_block .pots-value', {
+          opacity: 1,
+          delay: 1.5,
+        })
         gsap.to('.main__section-fourth .right_block .text_block', {
           opacity: 1,
+          delay: 2,
         })
       }
       if (document.querySelector('.main__section-fifth.active')) {

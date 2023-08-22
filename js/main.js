@@ -1,9 +1,7 @@
 $(document).ready(function () {
   $('select').niceSelect()
   $('#fullpage').fullpage({
-    // lazyLoading: false,
-    // scrollOverflow: true,
-    afterRender: function () {},
+    scrollOverflow: true,
   })
 })
 
