@@ -5,15 +5,15 @@ import {
   swiperMainSection4,
 } from './swiper.js'
 
+const mmd = window.matchMedia('(min-width: 768px)').matches
+const md = window.matchMedia('(max-width: 768px)').matches
+
 if (document.querySelector('.section_animate')) {
   document.querySelector('body').style.overflow = 'hidden'
-
 }
 document.addEventListener('DOMContentLoaded', function (event) {
   window.onload = function () {
     window.requestAnimationFrame(function () {
-      const mmd = window.matchMedia('(min-width: 768px)').matches
-      const md = window.matchMedia('(max-width: 768px)').matches
       gsap.registerPlugin(ScrollTrigger)
 
       gsap.defaults({
