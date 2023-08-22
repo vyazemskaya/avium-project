@@ -172,29 +172,29 @@ const swiperPhilosophySection3 = new Swiper('.swiper_philosophy-section-3', {
   },
 });
 
-swiperPhilosophySection3.on('slideChangeTransitionEnd', function () {
-  if (window.innerWidth < 769) {
-    // Удаляем класс active со всех слайдов
-    $('.swiper-slide').removeClass('active');
-    // Добавляем класс active к текущему активному слайду
-    $('.swiper-slide-active').addClass('active');
-  }
-});
+// swiperPhilosophySection3.on('slideChangeTransitionEnd', function () {
+//   if (window.innerWidth < 769) {
+//     // Удаляем класс active со всех слайдов
+//     $('.swiper-slide').removeClass('active');
+//     // Добавляем класс active к текущему активному слайду
+//     $('.swiper-slide-active').addClass('active');
+//   }
+// });
 
-swiperPhilosophySection3.on('transitionEnd', function () {
-  if (window.innerWidth < 769) {
-    // Удаляем класс active со всех слайдов
-    $('.swiper-slide').removeClass('active');
-    // Добавляем класс active к текущему активному слайду
-    $('.swiper-slide-active').addClass('active');
-  }
-});
+// swiperPhilosophySection3.on('transitionEnd', function () {
+//   if (window.innerWidth < 769) {
+//     // Удаляем класс active со всех слайдов
+//     $('.swiper-slide').removeClass('active');
+//     // Добавляем класс active к текущему активному слайду
+//     $('.swiper-slide-active').addClass('active');
+//   }
+// });
 
-swiperPhilosophySection3.on('slideChange', function () {
-  if (window.innerWidth < 769) {
-    $('.swiper-slide').removeClass('active');
-  }
-});
+// swiperPhilosophySection3.on('slideChange', function () {
+//   if (window.innerWidth < 769) {
+//     $('.swiper-slide').removeClass('active');
+//   }
+// });
 
 export const swiperMainSection1 = new Swiper('.swiper_main-section-1', {
   fadeEffect: { crossFade: true },

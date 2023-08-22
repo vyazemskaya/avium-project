@@ -68,16 +68,6 @@
             gap: 7.3rem;
             .swiper-slide {
               width: 10rem;
-              &.active {
-                .circle_box {
-                  .circle {
-                    transform: scale(1.8);
-                  }
-                  .circle_text {
-                    display: block;
-                  }
-                }
-              }
               .circle_box {
                 position: relative;
                 .circle {
@@ -185,6 +175,16 @@
               .swiper-slide {
                 width: 40rem;
                 margin: 0;
+                &-active {
+                  .circle_box {
+                    .circle {
+                      transform: scale(1.8);
+                    }
+                    .circle_text {
+                      display: block;
+                    }
+                  }
+                }
                 .circle_box {
                   margin: 0;
                   pointer-events: none;

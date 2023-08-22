@@ -5511,12 +5511,6 @@ section {
 .philosophy__section-third .container .philosophy__section-content .content_bottom .circles .circles_center .swiper-slide {
   width: 10rem;
 }
-.philosophy__section-third .container .philosophy__section-content .content_bottom .circles .circles_center .swiper-slide.active .circle_box .circle {
-  transform: scale(1.8);
-}
-.philosophy__section-third .container .philosophy__section-content .content_bottom .circles .circles_center .swiper-slide.active .circle_box .circle_text {
-  display: block;
-}
 .philosophy__section-third .container .philosophy__section-content .content_bottom .circles .circles_center .swiper-slide .circle_box {
   position: relative;
 }
@@ -5616,6 +5610,12 @@ section {
   .philosophy__section-third .container .philosophy__section-content .content_bottom .circles .circles_center .swiper-slide {
     width: 40rem;
     margin: 0;
+  }
+  .philosophy__section-third .container .philosophy__section-content .content_bottom .circles .circles_center .swiper-slide-active .circle_box .circle {
+    transform: scale(1.8);
+  }
+  .philosophy__section-third .container .philosophy__section-content .content_bottom .circles .circles_center .swiper-slide-active .circle_box .circle_text {
+    display: block;
   }
   .philosophy__section-third .container .philosophy__section-content .content_bottom .circles .circles_center .swiper-slide .circle_box {
     margin: 0;
