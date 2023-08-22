@@ -5619,6 +5619,7 @@ section {
   }
   .philosophy__section-third .container .philosophy__section-content .content_bottom .circles .circles_center .swiper-slide .circle_box {
     margin: 0;
+    pointer-events: none;
   }
   .philosophy__section-third .container .philosophy__section-content .content_bottom .circles .circles_center .swiper-slide .circle_box .circle {
     pointer-events: none;
