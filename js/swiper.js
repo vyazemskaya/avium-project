@@ -169,7 +169,7 @@ const swiperPhilosophySection3 = new Swiper('.swiper_philosophy-section-3', {
   },
 });
 
-export const swiperMainSection1 = new Swiper('.swiper_main-section-1', {
+const swiperMainSection1 = new Swiper('.swiper_main-section-1', {
   loop: false,
   autoplay: {
     delay: 4000,
@@ -180,7 +180,7 @@ export const swiperMainSection1 = new Swiper('.swiper_main-section-1', {
   },
 });
 
-export const swiperMainSection2 = new Swiper('.swiper_main-section-2', {
+const swiperMainSection2 = new Swiper('.swiper_main-section-2', {
   fadeEffect: { crossFade: true },
   virtualTranslate: true,
   autoplay: {
@@ -288,8 +288,7 @@ swiperMainSection2.on('slideChange', () => {
     }
   }, 500);
 });
-
-export const swiperMainSection3 = new Swiper('.swiper_main-section-3', {
+const swiperMainSection3 = new Swiper('.swiper_main-section-3', {
   fadeEffect: { crossFade: true },
   virtualTranslate: true,
   loop: true,
