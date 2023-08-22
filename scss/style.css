@@ -7468,9 +7468,10 @@ body .select_box label {
   body .swiper_main-section-4 .slide-section-4 {
     flex-direction: column-reverse;
   }
+.swiper_main-section-1 .swiper-slide {
+  opacity: 0 !important;
 }
-@media (min-width: 48em) {
-  [data-animate] {
-    opacity: 0;
-  }
-}/*# sourceMappingURL=style.css.map */
+.swiper_main-section-1 .swiper-slide.swiper-slide-active {
+  opacity: 1 !important;
+}
+

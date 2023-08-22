@@ -1,11 +1,11 @@
 const rem = function (rem) {
   if (window.innerWidth > 768) {
-    return 0.005208335 * window.innerWidth * rem;
+    return 0.005208335 * window.innerWidth * rem
   } else {
     // где 375 это ширина моб версии макета
-    return (100 / 375) * (0.1 * window.innerWidth) * rem;
+    return (100 / 375) * (0.1 * window.innerWidth) * rem
   }
-};
+}
 
 const swiperSolutionSection2 = new Swiper('.swiper_solution-section-second', {
   fadeEffect: { crossFade: true },
@@ -17,7 +17,7 @@ const swiperSolutionSection2 = new Swiper('.swiper_solution-section-second', {
   speed: 1000,
   slidersPerView: 1,
   effect: 'fade',
-});
+})
 
 const swiperConceptColorSection3 = new Swiper(
   '.swiper_conceptColor-section-third',
@@ -38,7 +38,7 @@ const swiperConceptColorSection3 = new Swiper(
       el: '.swiper-pagination_section-3',
     },
   }
-);
+)
 
 const swiperCalculateSection = new Swiper('.swiper_calculate-section', {
   fadeEffect: { crossFade: true },
@@ -50,7 +50,7 @@ const swiperCalculateSection = new Swiper('.swiper_calculate-section', {
   speed: 1000,
   slidersPerView: 1,
   effect: 'fade',
-});
+})
 
 const swiperDetailsCertificates = new Swiper('.swiper_certificates', {
   slidesPerView: 1,
@@ -64,7 +64,7 @@ const swiperDetailsCertificates = new Swiper('.swiper_certificates', {
       spaceBetween: rem(5),
     },
   },
-});
+})
 
 const swiperPhilosophySection2 = new Swiper(
   '.swiper_philosophy-section-second',
@@ -82,26 +82,26 @@ const swiperPhilosophySection2 = new Swiper(
     slidersPerView: 1,
     effect: 'fade',
   }
-);
+)
 
 if (document.querySelector('.philosophy__section-second')) {
   const aesthetics = document.getElementById('aesthetics'),
     innovation = document.getElementById('innovation'),
-    quality = document.getElementById('quality');
+    quality = document.getElementById('quality')
 
   swiperPhilosophySection2.on('slideChange', () => {
     if (swiperPhilosophySection2.activeIndex === 0) {
-      aesthetics.classList.add('animation_icon-third');
-      innovation.classList.add('animation_icon-first');
-      quality.classList.add('animation_icon-second');
+      aesthetics.classList.add('animation_icon-third')
+      innovation.classList.add('animation_icon-first')
+      quality.classList.add('animation_icon-second')
     } else if (swiperPhilosophySection2.activeIndex === 1) {
-      aesthetics.classList.add('animation_icon-first');
-      innovation.classList.add('animation_icon-second');
-      quality.classList.add('animation_icon-third');
+      aesthetics.classList.add('animation_icon-first')
+      innovation.classList.add('animation_icon-second')
+      quality.classList.add('animation_icon-third')
     } else if (swiperPhilosophySection2.activeIndex === 2) {
-      aesthetics.classList.add('animation_icon-second');
-      innovation.classList.add('animation_icon-third');
-      quality.classList.add('animation_icon-first');
+      aesthetics.classList.add('animation_icon-second')
+      innovation.classList.add('animation_icon-third')
+      quality.classList.add('animation_icon-first')
     }
 
     setTimeout(() => {
@@ -109,48 +109,48 @@ if (document.querySelector('.philosophy__section-second')) {
         'animation_icon-first',
         'animation_icon-second',
         'animation_icon-third'
-      );
+      )
       aesthetics.classList.remove(
         'animation_icon-first',
         'animation_icon-second',
         'animation_icon-third'
-      );
+      )
       quality.classList.remove(
         'animation_icon-first',
         'animation_icon-second',
         'animation_icon-third'
-      );
+      )
 
       if (swiperPhilosophySection2.activeIndex === 0) {
-        innovation.classList.remove('icon_first', 'icon_third');
-        innovation.classList.add('icon_second', 'active');
+        innovation.classList.remove('icon_first', 'icon_third')
+        innovation.classList.add('icon_second', 'active')
 
-        aesthetics.classList.remove('icon_second', 'icon_third', 'active');
-        aesthetics.classList.add('icon_first');
+        aesthetics.classList.remove('icon_second', 'icon_third', 'active')
+        aesthetics.classList.add('icon_first')
 
-        quality.classList.remove('icon_second', 'icon_first', 'active');
-        quality.classList.add('icon_third');
+        quality.classList.remove('icon_second', 'icon_first', 'active')
+        quality.classList.add('icon_third')
       } else if (swiperPhilosophySection2.activeIndex === 1) {
-        innovation.classList.remove('icon_first', 'icon_second', 'active');
-        innovation.classList.add('icon_third');
+        innovation.classList.remove('icon_first', 'icon_second', 'active')
+        innovation.classList.add('icon_third')
 
-        aesthetics.classList.remove('icon_first', 'icon_third');
-        aesthetics.classList.add('icon_second', 'active');
+        aesthetics.classList.remove('icon_first', 'icon_third')
+        aesthetics.classList.add('icon_second', 'active')
 
-        quality.classList.remove('icon_second', 'icon_third', 'active');
-        quality.classList.add('icon_first');
+        quality.classList.remove('icon_second', 'icon_third', 'active')
+        quality.classList.add('icon_first')
       } else if (swiperPhilosophySection2.activeIndex === 2) {
-        innovation.classList.remove('icon_second', 'icon_third', 'active');
-        innovation.classList.add('icon_first');
+        innovation.classList.remove('icon_second', 'icon_third', 'active')
+        innovation.classList.add('icon_first')
 
-        aesthetics.classList.remove('icon_first', 'icon_second', 'active');
-        aesthetics.classList.add('icon_third');
+        aesthetics.classList.remove('icon_first', 'icon_second', 'active')
+        aesthetics.classList.add('icon_third')
 
-        quality.classList.remove('icon_first', 'icon_third');
-        quality.classList.add('icon_second', 'active');
+        quality.classList.remove('icon_first', 'icon_third')
+        quality.classList.add('icon_second', 'active')
       }
-    }, 500);
-  });
+    }, 500)
+  })
 }
 
 const swiperPhilosophySection3 = new Swiper('.swiper_philosophy-section-3', {
@@ -167,18 +167,26 @@ const swiperPhilosophySection3 = new Swiper('.swiper_philosophy-section-3', {
       spaceBetween: rem(0),
     },
   },
-});
+})
 
 export const swiperMainSection1 = new Swiper('.swiper_main-section-1', {
-  loop: false,
+  fadeEffect: { crossFade: true },
+  virtualTranslate: true,
+  slidesPerView: 1,
+  // loop: true,
+  spaceBetween: 0,
   autoplay: {
     delay: 4000,
+    disableOnInteraction: true,
   },
   effect: 'fade',
   on: {
-    init: (swiper) => swiper.autoplay.stop(),
+    afterInit: swiper => {
+      swiper.autoplay.stop()
+      swiper.update()
+    },
   },
-});
+})
 
 export const swiperMainSection2 = new Swiper('.swiper_main-section-2', {
   fadeEffect: { crossFade: true },
@@ -194,42 +202,42 @@ export const swiperMainSection2 = new Swiper('.swiper_main-section-2', {
   slidersPerView: 1,
   effect: 'fade',
   on: {
-    init: (swiper) => swiper.autoplay.stop(),
+    init: swiper => swiper.autoplay.stop(),
   },
-});
+})
 
 const comfort = document.getElementById('comfort'),
   perfect = document.getElementById('perfect'),
-  truetron = document.getElementById('truetron');
+  truetron = document.getElementById('truetron')
 
 swiperMainSection2.on('slideChange', () => {
   if (window.innerWidth > 768) {
     if (swiperMainSection2.activeIndex === 0) {
-      truetron.classList.add('animation_icon-third');
-      comfort.classList.add('animation_icon-first');
-      perfect.classList.add('animation_icon-second');
+      truetron.classList.add('animation_icon-third')
+      comfort.classList.add('animation_icon-first')
+      perfect.classList.add('animation_icon-second')
     } else if (swiperMainSection2.activeIndex === 1) {
-      truetron.classList.add('animation_icon-first');
-      comfort.classList.add('animation_icon-second');
-      perfect.classList.add('animation_icon-third');
+      truetron.classList.add('animation_icon-first')
+      comfort.classList.add('animation_icon-second')
+      perfect.classList.add('animation_icon-third')
     } else if (swiperMainSection2.activeIndex === 2) {
-      truetron.classList.add('animation_icon-second');
-      comfort.classList.add('animation_icon-third');
-      perfect.classList.add('animation_icon-first');
+      truetron.classList.add('animation_icon-second')
+      comfort.classList.add('animation_icon-third')
+      perfect.classList.add('animation_icon-first')
     }
   } else {
     if (swiperMainSection2.activeIndex === 0) {
-      truetron.classList.add('animation_icon-thirdMobile');
-      comfort.classList.add('animation_icon-firstMobile');
-      perfect.classList.add('animation_icon-secondMobile');
+      truetron.classList.add('animation_icon-thirdMobile')
+      comfort.classList.add('animation_icon-firstMobile')
+      perfect.classList.add('animation_icon-secondMobile')
     } else if (swiperMainSection2.activeIndex === 1) {
-      truetron.classList.add('animation_icon-firstMobile');
-      comfort.classList.add('animation_icon-secondMobile');
-      perfect.classList.add('animation_icon-thirdMobile');
+      truetron.classList.add('animation_icon-firstMobile')
+      comfort.classList.add('animation_icon-secondMobile')
+      perfect.classList.add('animation_icon-thirdMobile')
     } else if (swiperMainSection2.activeIndex === 2) {
-      truetron.classList.add('animation_icon-secondMobile');
-      comfort.classList.add('animation_icon-thirdMobile');
-      perfect.classList.add('animation_icon-firstMobile');
+      truetron.classList.add('animation_icon-secondMobile')
+      comfort.classList.add('animation_icon-thirdMobile')
+      perfect.classList.add('animation_icon-firstMobile')
     }
   }
   setTimeout(() => {
@@ -240,7 +248,7 @@ swiperMainSection2.on('slideChange', () => {
       'animation_icon-firstMobile',
       'animation_icon-secondMobile',
       'animation_icon-thirdMobile'
-    );
+    )
     truetron.classList.remove(
       'animation_icon-first',
       'animation_icon-second',
@@ -248,7 +256,7 @@ swiperMainSection2.on('slideChange', () => {
       'animation_icon-firstMobile',
       'animation_icon-secondMobile',
       'animation_icon-thirdMobile'
-    );
+    )
     perfect.classList.remove(
       'animation_icon-first',
       'animation_icon-second',
@@ -256,38 +264,39 @@ swiperMainSection2.on('slideChange', () => {
       'animation_icon-firstMobile',
       'animation_icon-secondMobile',
       'animation_icon-thirdMobile'
-    );
+    )
 
     if (swiperMainSection2.activeIndex === 0) {
-      comfort.classList.remove('icon_first', 'icon_third');
-      comfort.classList.add('icon_second', 'active');
+      comfort.classList.remove('icon_first', 'icon_third')
+      comfort.classList.add('icon_second', 'active')
 
-      truetron.classList.remove('icon_second', 'icon_third', 'active');
-      truetron.classList.add('icon_first');
+      truetron.classList.remove('icon_second', 'icon_third', 'active')
+      truetron.classList.add('icon_first')
 
-      perfect.classList.remove('icon_second', 'icon_first', 'active');
-      perfect.classList.add('icon_third');
+      perfect.classList.remove('icon_second', 'icon_first', 'active')
+      perfect.classList.add('icon_third')
     } else if (swiperMainSection2.activeIndex === 1) {
-      comfort.classList.remove('icon_first', 'icon_second', 'active');
-      comfort.classList.add('icon_third');
+      comfort.classList.remove('icon_first', 'icon_second', 'active')
+      comfort.classList.add('icon_third')
 
-      truetron.classList.remove('icon_first', 'icon_third');
-      truetron.classList.add('icon_second', 'active');
+      truetron.classList.remove('icon_first', 'icon_third')
+      truetron.classList.add('icon_second', 'active')
 
-      perfect.classList.remove('icon_second', 'icon_third', 'active');
-      perfect.classList.add('icon_first');
+      perfect.classList.remove('icon_second', 'icon_third', 'active')
+      perfect.classList.add('icon_first')
     } else if (swiperMainSection2.activeIndex === 2) {
-      comfort.classList.remove('icon_second', 'icon_third', 'active');
-      comfort.classList.add('icon_first');
+      comfort.classList.remove('icon_second', 'icon_third', 'active')
+      comfort.classList.add('icon_first')
 
-      truetron.classList.remove('icon_first', 'icon_second', 'active');
-      truetron.classList.add('icon_third');
+      truetron.classList.remove('icon_first', 'icon_second', 'active')
+      truetron.classList.add('icon_third')
 
-      perfect.classList.remove('icon_first', 'icon_third');
-      perfect.classList.add('icon_second', 'active');
+      perfect.classList.remove('icon_first', 'icon_third')
+      perfect.classList.add('icon_second', 'active')
     }
-  }, 500);
-});
+  }, 500)
+})
+
 export const swiperMainSection3 = new Swiper('.swiper_main-section-3', {
   fadeEffect: { crossFade: true },
   virtualTranslate: true,
@@ -303,9 +312,10 @@ export const swiperMainSection3 = new Swiper('.swiper_main-section-3', {
   slidersPerView: 1,
   effect: 'fade',
   on: {
-    init: (swiper) => swiper.autoplay.stop(),
+    init: swiper => swiper.autoplay.stop(),
   },
-});
+})
+
 export const swiperMainSection4 = new Swiper('.swiper_main-section-4 ', {
   fadeEffect: { crossFade: true },
   virtualTranslate: true,
@@ -321,9 +331,9 @@ export const swiperMainSection4 = new Swiper('.swiper_main-section-4 ', {
   slidersPerView: 1,
   effect: 'fade',
   on: {
-    init: (swiper) => swiper.autoplay.stop(),
+    init: swiper => swiper.autoplay.stop(),
   },
-});
+})
 
 const swiperMainSection5 = new Swiper('.swiper_main-section-5', {
   fadeEffect: { crossFade: true },
@@ -335,16 +345,16 @@ const swiperMainSection5 = new Swiper('.swiper_main-section-5', {
   speed: 1000,
   slidersPerView: 1,
   effect: 'fade',
-});
+})
 
-swiperMainSection5.on('slideChange', (x) => {
+swiperMainSection5.on('slideChange', x => {
   if (x.activeIndex == 2 || x.activeIndex == 1) {
     document
       .querySelector('.main__section-fifth .container .main__section-content')
-      .classList.add('active');
+      .classList.add('active')
   } else {
     document
       .querySelector('.main__section-fifth .container .main__section-content')
-      .classList.remove('active');
+      .classList.remove('active')
   }
-});
+})
