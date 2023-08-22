@@ -210,6 +210,23 @@ section {
   width: 4rem;
   height: 4.3rem;
 }
+.header .container .icons .icon.icon-cart {
+  position: relative;
+}
+.header .container .icons .icon.icon-cart::before {
+  content: '12';
+  position: absolute;
+  top: 0;
+  right: -0.8rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #fff;
+  width: 2.8rem;
+  height: 1.6rem;
+  background-color: #a1a1a1;
+  border-radius: 2rem;
+}
 .header .container .burger {
   display: none;
 }
@@ -747,6 +764,14 @@ section {
     right: 1.2rem;
   }
 }
+.swiper_main-section-1 .swiper-slide {
+  opacity: 0 !important;
+}
+
+.swiper_main-section-1 .swiper-slide.swiper-slide-active {
+  opacity: 1 !important;
+}
+
 .main__section-second {
   margin-bottom: 0;
   z-index: 0;
@@ -2808,6 +2833,64 @@ section {
   .choose_box
   img {
   width: 9rem;
+}
+.details__section-first
+  .container
+  .details__section-content
+  .content_right
+  .choosen_box {
+  color: #000;
+  font-size: 2rem;
+  font-weight: 300;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 2rem;
+  cursor: pointer;
+}
+.details__section-first
+  .container
+  .details__section-content
+  .content_right
+  .choosen_box:hover
+  .choosen_text::before {
+  opacity: 1;
+}
+.details__section-first
+  .container
+  .details__section-content
+  .content_right
+  .choosen_box
+  .choosen_text {
+  text-align: center;
+  position: relative;
+}
+.details__section-first
+  .container
+  .details__section-content
+  .content_right
+  .choosen_box
+  .choosen_text::before {
+  content: '';
+  position: absolute;
+  top: 2rem;
+  right: -2.8rem;
+  width: 2.4rem;
+  height: 2.4rem;
+  opacity: 0;
+  background-size: 2.4rem 2.4rem;
+  background-image: url('../img/details_section-first/edit-icon.svg');
+}
+.details__section-first
+  .container
+  .details__section-content
+  .content_right
+  .choosen_box
+  .choosen_color {
+  width: 9rem;
+  height: 9rem;
+  border-radius: 50%;
 }
 .details__section-first .container .overlay {
   display: none;
@@ -8343,7 +8426,7 @@ section {
     display: block;
   }
   .freedom__section-third .container .freedom__section-content .content_search {
-    height: 12rem;
+    height: 9.6rem;
     padding: 3.6rem 4rem;
   }
   .freedom__section-third
@@ -9252,7 +9335,7 @@ section {
   top: 20rem;
   left: 50%;
   transform: translateX(-50%);
-  opacity: 0;
+  display: none;
   pointer-events: none;
   color: #000;
   font-size: 2rem;
@@ -9365,7 +9448,7 @@ section {
     align-items: flex-start;
     padding: 0;
     gap: 4rem;
-    margin-bottom: 6rem;
+    margin-bottom: 8.2rem;
   }
   .philosophy__section-third
     .container
@@ -9423,6 +9506,7 @@ section {
     .swiper-slide
     .circle_box {
     margin: 0;
+    pointer-events: none;
   }
   .philosophy__section-third
     .container
@@ -11582,6 +11666,18 @@ body .swiper .swiper-pagination .swiper-pagination-bullet:nth-child(4) {
   height: 1rem;
   background-color: #a1a1a1;
 }
+body .swiper .swiper-pagination .swiper-pagination-bullet:nth-child(5) {
+  border-radius: 50%;
+  width: 1.5rem;
+  height: 1.5rem;
+  background-color: #e6e6e6;
+}
+body .swiper .swiper-pagination .swiper-pagination-bullet:nth-child(6) {
+  border-radius: 50%;
+  width: 1.5rem;
+  height: 1.5rem;
+  background-color: #d5d5d5;
+}
 body .section-title {
   font-size: 5.5rem;
   font-weight: 700;
@@ -11869,6 +11965,9 @@ body .swiper_philosophy-section-second {
   overflow: hidden;
   width: 90rem;
 }
+body .swiper_philosophy-section-3 .swiper-pagination_section-3 {
+  display: none;
+}
 body .swiper_main-section-2 {
   width: 90rem;
   overflow: hidden;
@@ -11907,6 +12006,14 @@ body .swiper_main-section-4 .slide-section-4 {
   body .swiper .swiper-pagination .swiper-pagination-bullet:nth-child(4) {
     width: 1.4rem;
     height: 1.4rem;
+  }
+  body .swiper .swiper-pagination .swiper-pagination-bullet:nth-child(5) {
+    width: 1.8rem;
+    height: 1.8rem;
+  }
+  body .swiper .swiper-pagination .swiper-pagination-bullet:nth-child(6) {
+    width: 1.8rem;
+    height: 1.8rem;
   }
   body .btn {
     width: 100%;
@@ -11983,6 +12090,16 @@ body .swiper_main-section-4 .slide-section-4 {
     img {
     width: 60rem;
     margin: 0 auto;
+  }
+  body .swiper_philosophy-section-3 .swiper-slide-active {
+    z-index: 10;
+  }
+  body .swiper_philosophy-section-3 .swiper-pagination_section-3 {
+    display: flex;
+    width: 21rem;
+    position: static;
+    margin: 0 auto;
+    margin-top: 4.5rem;
   }
   body .swiper_main-section-2 .swiper-wrapper .swiper-slide .slide_section-2 {
     width: 67rem;

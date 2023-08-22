@@ -49,6 +49,23 @@
           width: 4rem;
           height: 4.3rem;
         }
+        &.icon-cart {
+          position: relative;
+          &::before {
+            content: '12';
+            position: absolute;
+            top: 0;
+            right: -0.8rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #fff;
+            width: 2.8rem;
+            height: 1.6rem;
+            background-color: #a1a1a1;
+            border-radius: 2rem;
+          }
+        }
       }
     }
     .burger {

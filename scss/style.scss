@@ -129,6 +129,18 @@ body {
         height: 1rem;
         background-color: #a1a1a1;
       }
+      .swiper-pagination-bullet:nth-child(5) {
+        border-radius: 50%;
+        width: 1.5rem;
+        height: 1.5rem;
+        background-color: #e6e6e6;
+      }
+      .swiper-pagination-bullet:nth-child(6) {
+        border-radius: 50%;
+        width: 1.5rem;
+        height: 1.5rem;
+        background-color: #d5d5d5;
+      }
     }
   }
 
@@ -406,6 +418,11 @@ body {
     overflow: hidden;
     width: 90rem;
   }
+  .swiper_philosophy-section-3 {
+    .swiper-pagination_section-3 {
+      display: none;
+    }
+  }
   .swiper_main-section-2 {
     width: 90rem;
     overflow: hidden;
@@ -454,6 +471,14 @@ body {
         .swiper-pagination-bullet:nth-child(4) {
           width: 1.4rem;
           height: 1.4rem;
+        }
+        .swiper-pagination-bullet:nth-child(5) {
+          width: 1.8rem;
+          height: 1.8rem;
+        }
+        .swiper-pagination-bullet:nth-child(6) {
+          width: 1.8rem;
+          height: 1.8rem;
         }
       }
     }
@@ -526,6 +551,18 @@ body {
             }
           }
         }
+      }
+    }
+    .swiper_philosophy-section-3 {
+      .swiper-slide-active {
+        z-index: 10;
+      }
+      .swiper-pagination_section-3 {
+        display: flex;
+        width: 21rem;
+        position: static;
+        margin: 0 auto;
+        margin-top: 4.5rem;
       }
     }
     .swiper_main-section-2 {
