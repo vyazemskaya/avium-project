@@ -241,7 +241,7 @@ document.addEventListener('DOMContentLoaded', function (event) {
         gsap.timeline().to('#tl', { height: '61%', duration: 2.5 })
         gsap.timeline().to('#txt', {
           opacity: 0,
-          duration: 1,
+          duration: 0.5,
           delay: 4,
         })
         gsap.timeline().to('#circle', {
