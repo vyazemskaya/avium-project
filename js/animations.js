@@ -22,6 +22,9 @@ document.addEventListener('DOMContentLoaded', function () {
       if (document.querySelector('.section_animate')) {
         const header = document.querySelector('header')
         const rect = header.querySelector('.logotype').getBoundingClientRect()
+        gsap.set('#txt', {
+          y: window.matchMedia('(max-width:767.98px)').matches ? 70 : 120,
+        })
         gsap.timeline().to('.section_wrap', {
           top: rect.top,
           left: rect.left,
@@ -30,7 +33,7 @@ document.addEventListener('DOMContentLoaded', function () {
           xPercent: 0,
           yPercent: 0,
           opacity: 0,
-          duration: 0.5,
+          duration: 0.3,
           delay: 4,
         })
         gsap.timeline().to('#txt', {
@@ -42,13 +45,13 @@ document.addEventListener('DOMContentLoaded', function () {
         })
         gsap.timeline().to('.section_wrap path', {
           fill: '#000',
-          duration: 0.5,
+          duration: 0.3,
           delay: 4,
         })
         gsap.timeline().to('#tl', { height: '61%', duration: 2.5 })
         gsap.timeline().to('#txt', {
           opacity: 0,
-          duration: 0.5,
+          duration: 0.3,
           delay: 4,
         })
         gsap.timeline().to('#circle', {
