@@ -11168,7 +11168,7 @@ section {
   }
 }
 .video__section {
-  margin-top: 9.1rem;
+  /* margin-top: 9.1rem; */
   margin-bottom: 0;
 }
 .video__section .section_video video {
@@ -12004,8 +12004,3 @@ body .swiper_main-section-4 .slide-section-4 {
   opacity: 1 !important;
 }
 
-@media (min-width: 48em) {
-  [data-animate] {
-    opacity: 0;
-  }
-}
