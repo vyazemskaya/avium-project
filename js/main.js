@@ -505,5 +505,7 @@ if (document.querySelector('.main__section-sixth')) {
     });
   });
 
-  cycleInterval = setInterval(autoCycle, 1500);
+  if (screen.width < 769) {
+    cycleInterval = setInterval(autoCycle, 1500);
+  }
 }

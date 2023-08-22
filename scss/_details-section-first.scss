@@ -567,6 +567,9 @@
             margin-bottom: 7.2rem;
           }
           .modal_content {
+            .modal_text {
+              font-size: 3rem;
+            }
             .modal_info {
               flex-direction: column;
               gap: 4rem;
