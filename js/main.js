@@ -313,29 +313,33 @@ if (document.querySelector('.details__section-first')) {
       });
     });
 
-  document
-    .querySelector('.details__section-first .choose_color-img')
-    .addEventListener('click', () => {
-      document.querySelector('.details__section-first .overlay').style.display =
-        'block';
-      document.querySelector(
-        '.details__section-first .overlay .modal_chooseColor'
-      ).style.display = 'block';
-      document.body.style.overflow = 'hidden';
-    });
+  if (document.querySelector('.details__section-first .choose_color-img')) {
+    document
+      .querySelector('.details__section-first .choose_color-img')
+      .addEventListener('click', () => {
+        document.querySelector(
+          '.details__section-first .overlay'
+        ).style.display = 'block';
+        document.querySelector(
+          '.details__section-first .overlay .modal_chooseColor'
+        ).style.display = 'block';
+        document.body.style.overflow = 'hidden';
+      });
 
-  document
-    .querySelector(
-      '.details__section-first .overlay .modal_chooseColor .modal_close-icon'
-    )
-    .addEventListener('click', () => {
-      document.querySelector('.details__section-first .overlay').style.display =
-        'none';
-      document.querySelector(
-        '.details__section-first .overlay .modal_chooseColor'
-      ).style.display = 'none';
-      document.body.style.overflow = 'visible';
-    });
+    document
+      .querySelector(
+        '.details__section-first .overlay .modal_chooseColor .modal_close-icon'
+      )
+      .addEventListener('click', () => {
+        document.querySelector(
+          '.details__section-first .overlay'
+        ).style.display = 'none';
+        document.querySelector(
+          '.details__section-first .overlay .modal_chooseColor'
+        ).style.display = 'none';
+        document.body.style.overflow = 'visible';
+      });
+  }
 
   document.querySelectorAll('[name=group_second]').forEach((element) => {
     element.addEventListener('change', () => {
