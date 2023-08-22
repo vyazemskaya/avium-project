@@ -99,31 +99,23 @@ document.addEventListener('DOMContentLoaded', function (event) {
             scroller: 'body',
             scrub: !0,
             start: () => '-100px top',
-            end: () => 'bottom top',
+            end: () => '100px top',
             pin: mmd ? '.main__section-second' : false,
             onEnter: () => (md ? swiperMainSection2.autoplay.start() : null),
             onUpdate: self => {
               if (mmd) {
-                if (self.progress > 0.25) {
-                  gsap.to('.main__section-second .content_left', { opacity: 1 })
-                }
                 if (self.progress > 0.35) {
+                  gsap.to('.main__section-second .content_left', { opacity: 1 })
                   gsap.to('.main__section-second .content_right .title', {
                     opacity: 1,
                     y: 0,
                   })
-                }
-                if (self.progress > 0.55) {
                   gsap.to('.main__section-second .content_right .subtitle', {
                     opacity: 1,
                   })
-                }
-                if (self.progress > 0.75) {
                   gsap.to('.main__section-second .content_right .text', {
                     opacity: 1,
                   })
-                }
-                if (self.progress > 0.85) {
                   swiperMainSection2.autoplay.start()
                   gsap.to('.main__section-second .btn', {
                     opacity: 1,
