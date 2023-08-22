@@ -1885,6 +1885,40 @@ section {
 .details__section-first .container .details__section-content .content_right .choose_box img {
   width: 9rem;
 }
+.details__section-first .container .details__section-content .content_right .choosen_box {
+  color: #000;
+  font-size: 2rem;
+  font-weight: 300;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 2rem;
+  cursor: pointer;
+}
+.details__section-first .container .details__section-content .content_right .choosen_box:hover .choosen_text::before {
+  opacity: 1;
+}
+.details__section-first .container .details__section-content .content_right .choosen_box .choosen_text {
+  text-align: center;
+  position: relative;
+}
+.details__section-first .container .details__section-content .content_right .choosen_box .choosen_text::before {
+  content: "";
+  position: absolute;
+  top: 2rem;
+  right: -2.8rem;
+  width: 2.4rem;
+  height: 2.4rem;
+  opacity: 0;
+  background-size: 2.4rem 2.4rem;
+  background-image: url("../img/details_section-first/edit-icon.svg");
+}
+.details__section-first .container .details__section-content .content_right .choosen_box .choosen_color {
+  width: 9rem;
+  height: 9rem;
+  border-radius: 50%;
+}
 .details__section-first .container .overlay {
   display: none;
   position: fixed;
@@ -2197,14 +2231,25 @@ section {
   .details__section-first .container .details__section-content .content_right .apply_box .apply_items .apply_item:nth-child(3) img {
     width: 4.2rem;
   }
-  .details__section-first .container .details__section-content .content_right .choose_box {
+  .details__section-first .container .details__section-content .content_right .choosen_box {
     align-items: flex-start;
     gap: 4rem;
   }
-  .details__section-first .container .details__section-content .content_right .choose_box .choose_text {
+  .details__section-first .container .details__section-content .content_right .choosen_box .choosen_text {
     font-size: 3rem;
   }
-  .details__section-first .container .details__section-content .content_right .choose_box .choose_color-img {
+  .details__section-first .container .details__section-content .content_right .choosen_box .choosen_text br {
+    display: none;
+  }
+  .details__section-first .container .details__section-content .content_right .choosen_box .choosen_text::before {
+    top: -1rem;
+    right: -6rem;
+    width: 4rem;
+    height: 4rem;
+    background-size: 4rem 4rem;
+    opacity: 1;
+  }
+  .details__section-first .container .details__section-content .content_right .choosen_box .choosen_color {
     width: 14rem;
     height: 14rem;
   }

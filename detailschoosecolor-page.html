@@ -1,0 +1,949 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Avium</title>
+    <link rel="stylesheet" href="./scss/style.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
+    />
+  </head>
+  <body>
+    <header class="header">
+      <div class="container">
+        <img class="logotype" src="img/header/logotype.svg" alt="logotype" />
+        <ul class="menu">
+          <li><a href="#">Цвет года</a></li>
+          <li><a href="#">Решение</a></li>
+          <li><a href="#">Палитры</a></li>
+          <li><a href="#">Сотрудничество</a></li>
+          <li><a href="#">Философия</a></li>
+          <li><a href="#">Купить</a></li>
+        </ul>
+        <ul class="icons">
+          <li class="icon">
+            <img
+              class="feedback-icon"
+              src="img/header/feedback-icon.svg"
+              alt="feedback"
+            />
+          </li>
+          <li class="icon">
+            <img src="img/header/cart-icon.svg" alt="cart" />
+          </li>
+        </ul>
+        <div class="burger">
+          <input id="burger-toggle" type="checkbox" />
+          <label class="burger-btn" for="burger-toggle">
+            <span></span>
+          </label>
+
+          <ul class="burgerbox">
+            <li class="burger-item">Цвет года</li>
+            <li class="burger-item">Решения</li>
+            <li class="burger-item">Палитры</li>
+            <li class="burger-item">Сотрудничество</li>
+            <li class="burger-item">Философия</li>
+            <li class="burger-item">Купить</li>
+            <li class="burger-item">Корзина</li>
+            <li class="feedback-item">
+              <p>У Вас есть вопросы, напишите нам!</p>
+              <img
+                class="feedback-icon"
+                style="width: 6rem; height: 6rem"
+                src="./img/header/feedback-icon.svg"
+                alt=""
+              />
+            </li>
+          </ul>
+        </div>
+        <div class="overlay">
+          <div class="modal">
+            <img
+              class="modal_close-icon"
+              src="./img/header/modal_close.svg"
+              alt=""
+            />
+            <div class="modal_content">
+              <h4 class="modal_title">У вас есть вопросы?</h4>
+              <p class="modal_text">
+                Заполните форму и наш менеджер свяжется с Вами.
+              </p>
+              <div class="modal_contact-form">
+                <div class="input_box">
+                  <label>ФИО</label>
+                  <input placeholder="ФИО" type="text" />
+                </div>
+                <div class="inputs_box">
+                  <div class="input_box">
+                    <label>Телефон</label>
+                    <input placeholder="Телефон" type="text" />
+                  </div>
+                  <div class="input_box">
+                    <label>Email</label>
+                    <input placeholder="Email" type="text" />
+                  </div>
+                </div>
+                <div class="input_box">
+                  <label>Ваш вопрос</label>
+                  <input placeholder="Ваш вопрос" type="text" />
+                </div>
+              </div>
+              <button class="modal_btn btn">Отправить</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </header>
+    <main>
+      <section class="details__section-first">
+        <div class="container">
+          <div class="details__section-content">
+            <div class="content_left">
+              <div class="content_title-box">
+                <div class="content_dots-box">
+                  <div class="dots dots_large-decorations">
+                    <span class="dots-smaller dots-color_lighter"></span>
+                    <span class="dots-smaller dots-color_light"></span>
+                    <span class="dots-small dots-color_dark"></span>
+                    <span class="dots-medium dots-color_poluton"></span>
+                    <span class="dots-large dots-color_light"></span>
+                    <span class="dots-medium dots-color_lighter"></span>
+                  </div>
+                  <div class="dots mobile dots_large-decorations">
+                    <span class="dots-medium dots-color_lighter"></span>
+                  </div>
+                </div>
+                <div class="content_name-box">
+                  <p class="content_name special-fonts primer">primer</p>
+                  <div class="info_amount mobile"><p>10-12м2/л</p></div>
+                </div>
+              </div>
+              <div class="content_info-box">
+                <div class="info_amount"><p>10-12м2/л</p></div>
+                <p class="info_price">3 000 ₽</p>
+              </div>
+              <div class="circle">
+                <img
+                  src="./img/details_section-first/section_first-photo.webp"
+                  alt=""
+                />
+              </div>
+              <p class="content_text">
+                Белая грунтовка на&nbsp;воgной основе с&nbsp;оmлuчной аgгeзueй
+                к&nbsp;большuнсmву маmерuалов, uсnользуемых в&nbsp;cтpoumeльcmвe
+                u&nbsp;nокрываемая любым munoм кроскu/эмолu на&nbsp;воgной
+                основе u&nbsp;оgнокомnоненmных расmворuмых эмалей.
+              </p>
+              <div class="content_specifications">
+                <p class="specifications_text">Характеристики</p>
+                <ul class="specifications_list">
+                  <li class="specifications_item">
+                    <img
+                      src="./img/details_section-first/icons/icons_1.svg"
+                      alt=""
+                    />
+                  </li>
+                  <li class="specifications_item">
+                    <img
+                      src="./img/details_section-first/icons/icons_2.svg"
+                      alt=""
+                    />
+                  </li>
+                  <li class="specifications_item">
+                    <img
+                      src="./img/details_section-first/icons/icons_3.svg"
+                      alt=""
+                    />
+                  </li>
+                  <li class="specifications_item">
+                    <img
+                      src="./img/details_section-first/icons/icons_4.svg"
+                      alt=""
+                    />
+                  </li>
+                  <li class="specifications_item">
+                    <img
+                      src="./img/details_section-first/icons/icons_5.svg"
+                      alt=""
+                    />
+                  </li>
+                </ul>
+              </div>
+              <div class="content_btn-box">
+                <button class="content_btn btn">Тех.карта</button>
+                <button class="content_btn addToCart btn">В корзину</button>
+              </div>
+            </div>
+            <div class="content_center">
+              <div class="circle">
+                <img
+                  src="./img/details_section-first/section_first-photo.webp"
+                  alt=""
+                />
+              </div>
+            </div>
+            <div class="content_btn-box mobile">
+              <button class="content_btn btn">Тех.карта</button>
+              <button class="content_btn addToCart btn">В корзину</button>
+            </div>
+            <div class="content_right">
+              <div class="apply_box">
+                <p class="apply_text">Чем наносить?</p>
+                <div class="apply_items">
+                  <div class="apply_item">
+                    <img
+                      src="./img/details_section-first/icons/icons_6.svg"
+                      alt=""
+                    />
+                  </div>
+                  <div class="apply_item">
+                    <img
+                      src="./img/details_section-first/icons/icons_7.svg"
+                      alt=""
+                    />
+                  </div>
+                </div>
+              </div>
+              <div class="choosen_box">
+                <p class="choosen_text">
+                  18-1718<br />
+                  Hawthotn Rose
+                </p>
+                <div
+                  style="background-color: #8b4d5e"
+                  class="choosen_color"
+                ></div>
+              </div>
+            </div>
+          </div>
+          <div class="overlay">
+            <div class="modal_addToCart">
+              <img
+                class="modal_close-icon"
+                src="./img/details_section-first/modal_close.svg"
+                alt="close"
+              />
+              <div class="modal_content">
+                <h4 class="modal_title">Вам понадобится грунтовка</h4>
+                <div class="modal_content-box">
+                  <img
+                    src="./img/details_section-first/section_first-modal_photo.webp"
+                    alt=""
+                    class="content_img"
+                  />
+                  <div class="content_info">
+                    <ul class="content_list">
+                      <li class="content_item">
+                        <p>Название: <strong>Keragrip Eco KERAKOLL</strong></p>
+                      </li>
+                      <li class="content_item">
+                        <p>
+                          Описание:
+                          <strong
+                            >Грунтовка улучшающая сцепление с
+                            поверхностью</strong
+                          >
+                        </p>
+                      </li>
+                      <li class="content_item">
+                        <p>Объём: <strong>5кг</strong></p>
+                      </li>
+                    </ul>
+                    <button class="content_btn btn">Добавить в корзину</button>
+                    <button class="content_btn mobile btn">В корзину</button>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="modal_chooseColor">
+              <img
+                class="modal_close-icon"
+                src="./img/details_section-first/modal_close.svg"
+                alt="close"
+              />
+              <div class="modal_content">
+                <h4 class="modal_title">Выберите цвет</h4>
+                <p class="modal_text">
+                  Если не нашли подходящий цвет, Вы можете заказать колеровку.
+                </p>
+                <div class="modal_info">
+                  <div class="info_left">
+                    <p><strong>Very peri</strong></p>
+                    <p>32 цвета</p>
+                  </div>
+                  <div class="info_right">
+                    <div class="select_box">
+                      <label>Выберите палитру</label>
+                      <select>
+                        <option value=""></option>
+                        <option value="">ПАЛИТРА VERY PERI</option>
+                      </select>
+                    </div>
+                  </div>
+                </div>
+                <div class="modal_colors">
+                  <div class="color-box">
+                    <div style="background-color: #c7aeb0" class="square"></div>
+                    <div class="square_name">
+                      <p>15-1905</p>
+                      <p>Burnished Lilac</p>
+                    </div>
+                  </div>
+                  <div class="color-box">
+                    <div style="background-color: #c7aeb0" class="square"></div>
+                    <div class="square_name">
+                      <p>15-1905</p>
+                      <p>Burnished Lilac</p>
+                    </div>
+                  </div>
+                  <div class="color-box">
+                    <div style="background-color: #c7aeb0" class="square"></div>
+                    <div class="square_name">
+                      <p>15-1905</p>
+                      <p>Burnished Lilac</p>
+                    </div>
+                  </div>
+                  <div class="color-box">
+                    <div style="background-color: #c7aeb0" class="square"></div>
+                    <div class="square_name">
+                      <p>15-1905</p>
+                      <p>Burnished Lilac</p>
+                    </div>
+                  </div>
+                  <div class="color-box">
+                    <div style="background-color: #c7aeb0" class="square"></div>
+                    <div class="square_name">
+                      <p>15-1905</p>
+                      <p>Burnished Lilac</p>
+                    </div>
+                  </div>
+                  <div class="color-box">
+                    <div style="background-color: #c7aeb0" class="square"></div>
+                    <div class="square_name">
+                      <p>15-1905</p>
+                      <p>Burnished Lilac</p>
+                    </div>
+                  </div>
+                  <div class="color-box">
+                    <div style="background-color: #c7aeb0" class="square"></div>
+                    <div class="square_name">
+                      <p>15-1905</p>
+                      <p>Burnished Lilac</p>
+                    </div>
+                  </div>
+                  <div class="color-box">
+                    <div style="background-color: #c7aeb0" class="square"></div>
+                    <div class="square_name">
+                      <p>15-1905</p>
+                      <p>Burnished Lilac</p>
+                    </div>
+                  </div>
+                  <div class="color-box">
+                    <div style="background-color: #c7aeb0" class="square"></div>
+                    <div class="square_name">
+                      <p>15-1905</p>
+                      <p>Burnished Lilac</p>
+                    </div>
+                  </div>
+                  <div class="color-box">
+                    <div style="background-color: #c7aeb0" class="square"></div>
+                    <div class="square_name">
+                      <p>15-1905</p>
+                      <p>Burnished Lilac</p>
+                    </div>
+                  </div>
+                  <div class="color-box">
+                    <div style="background-color: #c7aeb0" class="square"></div>
+                    <div class="square_name">
+                      <p>15-1905</p>
+                      <p>Burnished Lilac</p>
+                    </div>
+                  </div>
+                  <div class="color-box">
+                    <div style="background-color: #c7aeb0" class="square"></div>
+                    <div class="square_name">
+                      <p>15-1905</p>
+                      <p>Burnished Lilac</p>
+                    </div>
+                  </div>
+                  <div class="color-box">
+                    <div style="background-color: #c7aeb0" class="square"></div>
+                    <div class="square_name">
+                      <p>15-1905</p>
+                      <p>Burnished Lilac</p>
+                    </div>
+                  </div>
+                  <div class="color-box">
+                    <div style="background-color: #c7aeb0" class="square"></div>
+                    <div class="square_name">
+                      <p>15-1905</p>
+                      <p>Burnished Lilac</p>
+                    </div>
+                  </div>
+                  <div class="color-box">
+                    <div style="background-color: #c7aeb0" class="square"></div>
+                    <div class="square_name">
+                      <p>15-1905</p>
+                      <p>Burnished Lilac</p>
+                    </div>
+                  </div>
+                  <div class="color-box">
+                    <div style="background-color: #c7aeb0" class="square"></div>
+                    <div class="square_name">
+                      <p>15-1905</p>
+                      <p>Burnished Lilac</p>
+                    </div>
+                  </div>
+                  <div class="color-box">
+                    <div style="background-color: #c7aeb0" class="square"></div>
+                    <div class="square_name">
+                      <p>15-1905</p>
+                      <p>Burnished Lilac</p>
+                    </div>
+                  </div>
+                  <div class="color-box">
+                    <div style="background-color: #c7aeb0" class="square"></div>
+                    <div class="square_name">
+                      <p>15-1905</p>
+                      <p>Burnished Lilac</p>
+                    </div>
+                  </div>
+                  <div class="color-box">
+                    <div style="background-color: #c7aeb0" class="square"></div>
+                    <div class="square_name">
+                      <p>15-1905</p>
+                      <p>Burnished Lilac</p>
+                    </div>
+                  </div>
+                  <div class="color-box">
+                    <div style="background-color: #c7aeb0" class="square"></div>
+                    <div class="square_name">
+                      <p>15-1905</p>
+                      <p>Burnished Lilac</p>
+                    </div>
+                  </div>
+                  <div class="color-box">
+                    <div style="background-color: #c7aeb0" class="square"></div>
+                    <div class="square_name">
+                      <p>15-1905</p>
+                      <p>Burnished Lilac</p>
+                    </div>
+                  </div>
+                  <div class="color-box">
+                    <div style="background-color: #c7aeb0" class="square"></div>
+                    <div class="square_name">
+                      <p>15-1905</p>
+                      <p>Burnished Lilac</p>
+                    </div>
+                  </div>
+                  <div class="color-box">
+                    <div style="background-color: #c7aeb0" class="square"></div>
+                    <div class="square_name">
+                      <p>15-1905</p>
+                      <p>Burnished Lilac</p>
+                    </div>
+                  </div>
+                  <div class="color-box">
+                    <div style="background-color: #c7aeb0" class="square"></div>
+                    <div class="square_name">
+                      <p>15-1905</p>
+                      <p>Burnished Lilac</p>
+                    </div>
+                  </div>
+                  <div class="color-box">
+                    <div style="background-color: #c7aeb0" class="square"></div>
+                    <div class="square_name">
+                      <p>15-1905</p>
+                      <p>Burnished Lilac</p>
+                    </div>
+                  </div>
+                  <div class="color-box">
+                    <div style="background-color: #c7aeb0" class="square"></div>
+                    <div class="square_name">
+                      <p>15-1905</p>
+                      <p>Burnished Lilac</p>
+                    </div>
+                  </div>
+                  <div class="color-box">
+                    <div style="background-color: #c7aeb0" class="square"></div>
+                    <div class="square_name">
+                      <p>15-1905</p>
+                      <p>Burnished Lilac</p>
+                    </div>
+                  </div>
+                  <div class="color-box">
+                    <div style="background-color: #c7aeb0" class="square"></div>
+                    <div class="square_name">
+                      <p>15-1905</p>
+                      <p>Burnished Lilac</p>
+                    </div>
+                  </div>
+                  <div class="color-box">
+                    <div style="background-color: #c7aeb0" class="square"></div>
+                    <div class="square_name">
+                      <p>15-1905</p>
+                      <p>Burnished Lilac</p>
+                    </div>
+                  </div>
+                  <div class="color-box">
+                    <div style="background-color: #c7aeb0" class="square"></div>
+                    <div class="square_name">
+                      <p>15-1905</p>
+                      <p>Burnished Lilac</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="fixed-block">
+            <div class="content_info-price">
+              <p class="price_title">Цена</p>
+              <p class="price_value">3 000 ₽</p>
+            </div>
+            <button class="content-btn addToCart btn">В корзину</button>
+          </div>
+        </div>
+      </section>
+      <section class="details__section-second">
+        <div class="container">
+          <div class="details__section-content">
+            <div class="content_top-box">
+              <div class="content_input-box">
+                <input
+                  id="description_content"
+                  value="description_box"
+                  name="group_second"
+                  type="radio"
+                  checked
+                /><label class="label_description" for="description_content"
+                  >Описание</label
+                >
+                <input
+                  id="certificates_content"
+                  value="certificates_box"
+                  name="group_second"
+                  type="radio"
+                /><label class="label_certificates" for="certificates_content"
+                  >Сертификаты</label
+                >
+              </div>
+            </div>
+            <div class="content_bottom-box">
+              <div id="description_box" class="information_box">
+                <p class="description_text">
+                  Для создания подложки, изоляции и&nbsp;обеспыливания перед
+                  окрашиванием. Для дерева, штукатурки, цемента
+                  и&nbsp;большинства стандартных поверхностей. Идеальная
+                  грунтовка для гипсокартона.
+                </p>
+                <ul class="description_list">
+                  <li class="description_item special">
+                    <div>
+                      <div class="circle"></div>
+                    </div>
+                    <p>Пogxogum gля больwuнсmво munoв noвepxнocmeu</p>
+                  </li>
+                  <li class="description_item">
+                    <div>
+                      <div class="circle"></div>
+                    </div>
+                    <p>Иgеольно gля гunсокорmоно</p>
+                  </li>
+                  <li class="description_item">
+                    <div>
+                      <div class="circle"></div>
+                    </div>
+                    <p>Быстрое высыхонuе</p>
+                  </li>
+                  <li class="description_item">
+                    <div>
+                      <div class="circle"></div>
+                    </div>
+                    <p>Без uнmенсuвного зоnохо</p>
+                  </li>
+                  <li class="description_item special">
+                    <div>
+                      <div class="circle"></div>
+                    </div>
+                    <p>Высокая оgгезuя к больwuнсmву сmроumельных моmерuолов</p>
+                  </li>
+                  <li class="description_item">
+                    <div>
+                      <div class="circle"></div>
+                    </div>
+                    <p>Высокая возgухоnронuцоемосmь</p>
+                  </li>
+                  <li class="description_item">
+                    <div>
+                      <div class="circle"></div>
+                    </div>
+                    <p>Экологuчно</p>
+                  </li>
+                </ul>
+              </div>
+              <div id="certificates_box" class="information_box deactive">
+                <div class="swiper swiper_certificates">
+                  <div class="swiper-wrapper">
+                    <div class="swiper-slide">
+                      <div class="slide-certificates">
+                        <img
+                          src="./img/details_section-second/certificates_1.webp"
+                          alt=""
+                        />
+                      </div>
+                    </div>
+                    <div class="swiper-slide">
+                      <div class="slide-certificates">
+                        <img
+                          src="./img/details_section-second/certificates_2.webp"
+                          alt=""
+                        />
+                      </div>
+                    </div>
+                    <div class="swiper-slide">
+                      <div class="slide-certificates">
+                        <img
+                          src="./img/details_section-second/certificates_3.webp"
+                          alt=""
+                        />
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="dots dots-decorations">
+                  <span class="dots-medium dots-color_light"></span>
+                  <span class="dots-large dots-color_poluton"></span>
+                  <span class="dots-medium dots-color_poluton"></span>
+                  <span class="dots-small dots-color_dark"></span>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="overlay">
+            <div class="modal">
+              <img
+                class="modal_close-icon"
+                src="./img/details_section-second/modal_close.svg"
+                alt=""
+              />
+              <img class="certificates_img-inModal" src="" alt="" />
+            </div>
+          </div>
+        </div>
+      </section>
+      <section class="calculate__section">
+        <div class="container">
+          <div class="calculate__section-content">
+            <div class="content_left">
+              <h2 class="content_title text-border">Калькулятор</h2>
+              <h4 class="content_subtitle">Расчёт расхода краски онлайн</h4>
+              <p class="content_text">
+                Выберите нужный продукт и&nbsp;посчитайте, сколько литров краски
+                вам потребуется исходя из&nbsp;площади.
+              </p>
+              <div class="content_img-box mobile">
+                <div class="swiper swiper_calculate-section">
+                  <div class="swiper-wrapper">
+                    <div class="swiper-slide">
+                      <div class="slide_calculate">
+                        <img
+                          style="width: 40rem"
+                          src="./img/calculate_section/section_calculate-photo_1.webp"
+                          alt=""
+                        />
+                      </div>
+                    </div>
+                    <div class="swiper-slide">
+                      <div class="slide_calculate">
+                        <img
+                          style="width: 40rem"
+                          src="./img/calculate_section/section_calculate-photo_2.webp"
+                          alt=""
+                        />
+                      </div>
+                    </div>
+                    <div class="swiper-slide">
+                      <div class="slide_calculate">
+                        <img
+                          style="width: 40rem"
+                          src="./img/calculate_section/section_calculate-photo_3.webp"
+                          alt=""
+                        />
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <video style="width: 20rem; height: 20rem" autoplay loop muted>
+                  <source
+                    src="./img/calculate_section/section_calculate-bank.mp4"
+                    type="video/mp4"
+                  />
+                </video>
+              </div>
+              <div class="content_calculate">
+                <div class="content_calculate-input_box">
+                  <input
+                    type="radio"
+                    id="default_calculate"
+                    value="default_box"
+                    name="group_first"
+                    checked
+                  /><label for="default_calculate">Простой</label>
+                  <input
+                    type="radio"
+                    id="advanced_calculate"
+                    value="advanced_box"
+                    name="group_first"
+                  />
+                  <label for="advanced_calculate">Расширенный</label>
+                </div>
+                <p class="calculate_text">
+                  Для более подробного расчета заполните расширенную форму
+                </p>
+              </div>
+              <div id="advanced_box" class="content_calculate-box deactive">
+                <div class="calculate-box_left">
+                  <div class="input_box">
+                    <label>Площадь покрытия, м2</label>
+                    <input placeholder="Площадь покрытия, м2" type="text" />
+                  </div>
+                  <div class="input_box">
+                    <label>Длина стены, м</label>
+                    <input placeholder="Длина стены, м" type="text" />
+                  </div>
+                  <div class="select_box">
+                    <label>Тип помещения</label>
+                    <select class="desktop">
+                      <option value="">Тип помещения</option>
+                      <option value="">1</option>
+                    </select>
+                  </div>
+                </div>
+                <div class="calculate-box_right">
+                  <div class="select_box">
+                    <label>Тип краски</label>
+                    <select class="desktop">
+                      <option value="">Тип краски</option>
+                      <option value="">Обычный</option>
+                    </select>
+                  </div>
+                  <div class="input_box">
+                    <label>Высота стены, м</label>
+                    <input placeholder="Высота стены, м" type="text" />
+                  </div>
+                  <div class="input_box">
+                    <label>Ваш e-mail</label>
+                    <input placeholder="Ваш e-mail" type="text" />
+                  </div>
+                </div>
+              </div>
+              <div id="default_box" class="content_calculate-box">
+                <div class="calculate-box_left">
+                  <div class="input_box">
+                    <label>Площадь покрытия, м2</label>
+                    <input placeholder="Площадь покрытия, м2" type="text" />
+                  </div>
+                </div>
+                <div class="calculate-box_right">
+                  <div class="select_box">
+                    <label>Тип краски</label>
+                    <select class="desktop">
+                      <option value="">Тип краски</option>
+                      <option value="">1</option>
+                    </select>
+                  </div>
+                </div>
+              </div>
+
+              <button class="content_btn btn">Рассчитать</button>
+            </div>
+            <div class="content_right">
+              <div class="content_img-box">
+                <video style="width: 26rem" autoplay loop muted>
+                  <source
+                    src="./img/calculate_section/section_calculate-bank.mp4"
+                    type="video/mp4"
+                  />
+                </video>
+                <div class="swiper swiper_calculate-section">
+                  <div class="swiper-wrapper">
+                    <div class="swiper-slide">
+                      <div class="slide_calculate">
+                        <img
+                          style="width: 40rem"
+                          src="./img/calculate_section/section_calculate-photo_1.webp"
+                          alt=""
+                        />
+                      </div>
+                    </div>
+                    <div class="swiper-slide">
+                      <div class="slide_calculate">
+                        <img
+                          style="width: 40rem"
+                          src="./img/calculate_section/section_calculate-photo_2.webp"
+                          alt=""
+                        />
+                      </div>
+                    </div>
+                    <div class="swiper-slide">
+                      <div class="slide_calculate">
+                        <img
+                          style="width: 40rem"
+                          src="./img/calculate_section/section_calculate-photo_3.webp"
+                          alt=""
+                        />
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="overlay">
+            <div class="modal_advanced">
+              <img
+                class="modal_close-icon"
+                src="./img/calculate_section/modal_close.svg"
+                alt="close"
+              />
+              <div class="modal_content">
+                <h4 class="modal_title">Заявка оставлена!</h4>
+                <p class="modal_text">
+                  Подробный расчёт отправлен Вам на почту.
+                </p>
+              </div>
+            </div>
+            <div class="modal_default">
+              <img
+                class="modal_close-icon"
+                src="./img/calculate_section/modal_close.svg"
+                alt="close"
+              />
+              <div class="modal_content">
+                <h4 class="modal_title">Вам понадобится: 3 банки</h4>
+                <div class="modal_content-box">
+                  <img
+                    src="./img/calculate_section/section_calculate-modal.png"
+                    alt=""
+                    class="content_img"
+                  />
+                  <div class="content_info">
+                    <ul class="content_list">
+                      <li class="content_item">
+                        <p><span>Краска:</span>Avium Top Mat</p>
+                      </li>
+                      <li class="content_item">
+                        <p>
+                          <span>Описание:</span>Экстраматовая, водоэмульсионная
+                          краска
+                        </p>
+                      </li>
+                      <li class="content_item">
+                        <p><span>Расход:</span>10-12м2/л</p>
+                      </li>
+                      <li class="content_item">
+                        <p><span>Количество:</span> 1.88л</p>
+                      </li>
+                    </ul>
+                    <button class="content_btn btn">Добавить в корзину</button>
+                    <button class="content_btn mobile btn">В корзину</button>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+    <footer class="footer">
+      <div class="container">
+        <img
+          style="width: 17rem"
+          class="footer_logotype"
+          src="img/footer/footer_logotype-desktop.svg"
+          alt="logotype"
+        />
+        <div class="footer_content">
+          <span class="title">Тот самый идеальный цвет</span>
+          <ul class="lists_info">
+            <ul class="list_left">
+              <li class="list_item">Философия</li>
+              <li class="list_item">Решения</li>
+              <li class="list_item">Цвет года</li>
+            </ul>
+            <ul class="list_right">
+              <li class="list_item">Сотрудничество</li>
+              <li class="list_item">Дилерам</li>
+              <li class="list_item">Дизайнерам</li>
+              <li class="list_item">Купить</li>
+            </ul>
+          </ul>
+          <div class="contacts">
+            <ul class="lists_contacts">
+              <li class="contacts_item">
+                <i class="contact_icon"
+                  ><img src="img/footer/footer_email-icon.svg" alt="email icon"
+                /></i>
+                <p class="contact_text">info@inviktus.ru</p>
+              </li>
+              <li class="contacts_item">
+                <i class="contact_icon"
+                  ><img src="img/footer/footer_phone-icon.svg" alt="phone icon"
+                /></i>
+                <p class="contact_text">8 (800) 350 69 63</p>
+              </li>
+              <li class="contacts_item">
+                <i class="contact_icon"
+                  ><img
+                    src="img/footer/footer_inst-icon.svg"
+                    alt="instagram icon"
+                /></i>
+                <p class="contact_text">avium.paint</p>
+              </li>
+            </ul>
+            <div class="contacts_inviktus">
+              <img src="img/footer/inviktus_logotype.svg" alt="Inviktus" />
+            </div>
+          </div>
+        </div>
+        <img
+          class="footer_logotype-mobile"
+          src="img/footer/footer_logotype-mobile.svg"
+          alt=""
+        />
+        <img
+          class="decoration_left"
+          src="img/footer/footer_decoration_left.svg"
+          alt="decoration"
+        />
+        <img
+          class="decoration_right"
+          src="img/footer/footer_decoration_right.svg"
+          alt="decoration"
+        />
+        <img
+          class="decoration_mobile"
+          src="img/footer/footer_decoration-mobile-v2.svg"
+          alt=""
+        />
+      </div>
+    </footer>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+    <script src="./js/jquery.js"></script>
+    <script src="./js/jquery.nice-select.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.js"></script>
+    <script src="js/wow.min.js"></script>
+    <script type="module" src="js/swiper.js"></script>
+    <script src="js/main.js"></script>
+  </body>
+</html>
