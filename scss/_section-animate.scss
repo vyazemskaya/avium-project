@@ -1,0 +1,69 @@
+/* section animate */
+.section_animate {
+  position: fixed;
+  z-index: 500;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  overflow: hidden;
+}
+.section_animate._hidden {
+  display: none;
+  z-index: 0;
+  width: 0;
+  height: 0;
+}
+.section_animate .section_wrap {
+  position: relative;
+  top: 50%;
+  left: 50%;
+  width: 560px;
+  translate: -50% -50%;
+}
+.section_animate #circle {
+  position: absolute;
+  z-index: -1;
+  bottom: -50%;
+  left: 50%;
+  width: 1000vw;
+  height: 1000vw;
+  border-radius: 50%;
+  background-color: #53565a;
+  translate: -50% 50%;
+}
+.section_animate p {
+  position: absolute;
+  top: 50%;
+  font-family: Comfortaa;
+  font-size: 3.5rem;
+  font-weight: 400;
+  line-height: 3.9rem;
+  text-align: center;
+  color: #ffffff;
+  white-space: nowrap;
+  opacity: 0;
+  translate: 0 120px;
+}
+.section_animate svg {
+  width: 100%;
+  height: 100%;
+}
+.section_animate #tl {
+  position: absolute;
+  top: 40%;
+  right: 0;
+  width: 13.6px;
+  height: calc((100vh - 20%) / 2);
+  border-radius: 20px;
+  background-color: #ffffff;
+}
+
+@media (max-width: 48em) {
+  .section_animate .section_wrap {
+    width: 350px;
+  }
+  .section_animate #tl {
+    width: 8.6px;
+  }
+}

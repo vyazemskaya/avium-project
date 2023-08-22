@@ -11,6 +11,7 @@
 
 @import 'set';
 @import 'header';
+@import 'section_animate';
 @import 'main-section-first';
 @import 'main-section-second';
 @import 'main-section-third';
@@ -549,5 +550,10 @@ body {
         flex-direction: column-reverse;
       }
     }
+  }
+}
+@media (min-width: 48em) {
+  [data-animate] {
+    opacity: 0;
   }
 }
