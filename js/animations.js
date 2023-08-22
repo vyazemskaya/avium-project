@@ -64,13 +64,24 @@ document.addEventListener('DOMContentLoaded', function () {
           document.querySelector('.section_animate').classList.add('_hidden')
         }, 5000)
       }
+      if (window.matchMedia('(max-width:767.98px)').matches) {
+        const sections = document.querySelectorAll('.section')
+        if (sections.length) {
+          sections.forEach(section => {
+            if (section.classList.contains('fp-noscroll')) {
+              section.classList.remove('fp-noscroll')
+            }
+          })
+        }
+      }
     })
   }
 
   ScrollTrigger.observe({
-    type: 'wheel,touch',
+    type: 'wheel,touch,scroll,pointer',
     target: '.section.active',
-    onDown: () => {
+    onChange: () => {
+      console.log('log')
       if (document.querySelector('.main__section-first.active')) {
         swiperMainSection1.autoplay.start()
         gsap.to('.swiper_main-section-1', {
