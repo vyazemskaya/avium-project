@@ -7086,6 +7086,18 @@ body .swiper .swiper-pagination .swiper-pagination-bullet:nth-child(4) {
   height: 1rem;
   background-color: #a1a1a1;
 }
+body .swiper .swiper-pagination .swiper-pagination-bullet:nth-child(5) {
+  border-radius: 50%;
+  width: 1.5rem;
+  height: 1.5rem;
+  background-color: #e6e6e6;
+}
+body .swiper .swiper-pagination .swiper-pagination-bullet:nth-child(6) {
+  border-radius: 50%;
+  width: 1.5rem;
+  height: 1.5rem;
+  background-color: #d5d5d5;
+}
 body .section-title {
   font-size: 5.5rem;
   font-weight: 700;
@@ -7399,6 +7411,14 @@ body .swiper_main-section-4 .slide-section-4 {
   body .swiper .swiper-pagination .swiper-pagination-bullet:nth-child(4) {
     width: 1.4rem;
     height: 1.4rem;
+  }
+  body .swiper .swiper-pagination .swiper-pagination-bullet:nth-child(5) {
+    width: 1.8rem;
+    height: 1.8rem;
+  }
+  body .swiper .swiper-pagination .swiper-pagination-bullet:nth-child(6) {
+    width: 1.8rem;
+    height: 1.8rem;
   }
   body .btn {
     width: 100%;
