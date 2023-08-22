@@ -11,7 +11,7 @@
 
 @import 'set';
 @import 'header';
-@import 'section_animate';
+@import 'section-animate';
 @import 'main-section-first';
 @import 'main-section-second';
 @import 'main-section-third';
@@ -78,7 +78,6 @@ body {
   }
 
   .swiper {
-    overflow: visible;
     .swiper-pagination {
       width: 10rem;
       height: 2rem;

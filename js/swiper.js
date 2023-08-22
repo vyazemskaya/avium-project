@@ -306,8 +306,7 @@ const swiperMainSection3 = new Swiper('.swiper_main-section-3', {
     init: (swiper) => swiper.autoplay.stop(),
   },
 });
-
-export const swiperMainSection4 = new Swiper('.swiper_main-section-4 ', {
+const swiperMainSection4 = new Swiper('.swiper_main-section-4 ', {
   fadeEffect: { crossFade: true },
   virtualTranslate: true,
   loop: true,
@@ -320,7 +319,8 @@ export const swiperMainSection4 = new Swiper('.swiper_main-section-4 ', {
   },
   speed: 1000,
   slidersPerView: 1,
-  effect: 'fade',on: {
+  effect: 'fade',
+  on: {
     init: (swiper) => swiper.autoplay.stop(),
   },
 });
