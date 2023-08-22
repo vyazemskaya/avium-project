@@ -5511,6 +5511,12 @@ section {
 .philosophy__section-third .container .philosophy__section-content .content_bottom .circles .circles_center .swiper-slide {
   width: 10rem;
 }
+.philosophy__section-third .container .philosophy__section-content .content_bottom .circles .circles_center .swiper-slide.active .circle_box .circle {
+  transform: scale(1.8);
+}
+.philosophy__section-third .container .philosophy__section-content .content_bottom .circles .circles_center .swiper-slide.active .circle_box .circle_text {
+  display: block;
+}
 .philosophy__section-third .container .philosophy__section-content .content_bottom .circles .circles_center .swiper-slide .circle_box {
   position: relative;
 }
@@ -5537,7 +5543,7 @@ section {
   top: 20rem;
   left: 50%;
   transform: translateX(-50%);
-  opacity: 0;
+  display: none;
   pointer-events: none;
   color: #000;
   font-size: 2rem;
@@ -5563,7 +5569,7 @@ section {
   width: 44.4rem;
 }
 .philosophy__section-third .container .philosophy__section-content .content_bottom .circles .circles_center .swiper-slide .circle_box:hover .circle_text {
-  opacity: 1;
+  display: block;
 }
 .philosophy__section-third .container::after {
   content: "";
@@ -5591,7 +5597,7 @@ section {
     align-items: flex-start;
     padding: 0;
     gap: 4rem;
-    margin-bottom: 6rem;
+    margin-bottom: 8.2rem;
   }
   .philosophy__section-third .container .philosophy__section-content .content_top .content_left img {
     width: 32rem;
@@ -5615,6 +5621,7 @@ section {
     margin: 0;
   }
   .philosophy__section-third .container .philosophy__section-content .content_bottom .circles .circles_center .swiper-slide .circle_box .circle {
+    pointer-events: none;
     width: 20rem;
     height: 20rem;
   }
@@ -5625,6 +5632,7 @@ section {
     transform: scale(1.8);
   }
   .philosophy__section-third .container .philosophy__section-content .content_bottom .circles .circles_center .swiper-slide .circle_box .circle_text {
+    pointer-events: none;
     top: 35rem;
     font-size: 3rem;
     text-align: left;
@@ -7373,6 +7381,9 @@ body .swiper_philosophy-section-second {
   overflow: hidden;
   width: 90rem;
 }
+body .swiper_philosophy-section-3 .swiper-pagination_section-3 {
+  display: none;
+}
 body .swiper_main-section-2 {
   width: 90rem;
   overflow: hidden;
@@ -7488,6 +7499,16 @@ body .select_box label {
   body .swiper_certificates .swiper-wrapper .swiper-slide .slide-certificates img {
     width: 60rem;
     margin: 0 auto;
+  }
+  body .swiper_philosophy-section-3 .swiper-slide-active {
+    z-index: 10;
+  }
+  body .swiper_philosophy-section-3 .swiper-pagination_section-3 {
+    display: flex;
+    width: 21rem;
+    position: static;
+    margin: 0 auto;
+    margin-top: 4.5rem;
   }
   body .swiper_main-section-2 .swiper-wrapper .swiper-slide .slide_section-2 {
     width: 67rem;
