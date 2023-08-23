@@ -17,9 +17,6 @@ $(document).ready(function () {
     })
   }
 })
-$(window).on('load', function () {
-  wow.init()
-})
 
 document.addEventListener('DOMContentLoaded', function () {
   const checkbox = document.getElementById('burger-toggle')
@@ -473,6 +470,12 @@ document.addEventListener('DOMContentLoaded', function () {
   }
 
   //////////////////////////////Главная//////////////////////////////////
+
+  if (document.querySelector('.main__section-first')) {
+    $(window).on('load', function () {
+      wow.init()
+    })
+  }
 
   if (document.querySelector('.main__section-fifth')) {
     document

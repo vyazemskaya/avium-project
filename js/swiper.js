@@ -157,6 +157,7 @@ const swiperPhilosophySection3 = new Swiper('.swiper_philosophy-section-3', {
   slidesPerView: 3,
   slidesPerGroup: 1,
   centeredSlides: true,
+  touchRatio: 0.25,
   spaceBetween: rem(1.7),
   initialSlide: 4,
   pagination: {
