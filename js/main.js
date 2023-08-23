@@ -1,8 +1,8 @@
 $(document).ready(function () {
   $('select').niceSelect()
-  $('#fullpage').fullpage({
-    scrollOverflow: true,
-  })
+  // $('#fullpage').fullpage({
+  //   scrollOverflow: true,
+  // })
 })
 
 wow = new WOW({
@@ -101,6 +101,22 @@ if (document.getElementById('cart')) {
 }
 
 /////////////////////////////Коллекция Freedom///////////////////////////////////
+
+if (document.querySelector('.freedom__section-third')) {
+  const paginationItems = document.querySelectorAll(
+    '.freedom__section-third .pagination_item'
+  );
+
+  paginationItems.forEach((item) => {
+    item.addEventListener('click', () => {
+      paginationItems.forEach((item) => {
+        item.classList.remove('active');
+      });
+
+      item.classList.add('active');
+    });
+  });
+}
 
 if (document.getElementById('freedom-toggle-btn')) {
   const freedomToggleButton = document.getElementById('freedom-toggle-btn')
@@ -508,5 +524,7 @@ if (document.querySelector('.main__section-sixth')) {
     })
   })
 
-  cycleInterval = setInterval(autoCycle, 1500)
+ if (screen.width < 769) {
+   cycleInterval = setInterval(autoCycle, 1500);
+ }
 }
