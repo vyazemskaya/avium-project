@@ -84,7 +84,6 @@ document.addEventListener('DOMContentLoaded', function () {
     type: 'wheel,touch,scroll,pointer',
     target: '.section.active',
     onChange: () => {
-      console.log('log')
       if (document.querySelector('.main__section-first.active')) {
         swiperMainSection1.autoplay.start()
         gsap.to('.swiper_main-section-1', {
