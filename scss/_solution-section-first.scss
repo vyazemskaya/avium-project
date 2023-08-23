@@ -8,6 +8,10 @@
       video {
         clip-path: polygon(0% 0%, 100% 0%, 100% 100%, 0% 80%);
         width: 100%;
+        &.desktop {
+          object-fit: cover;
+          height: 99.5rem;
+        }
         &.mobile {
           display: none;
         }
