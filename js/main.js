@@ -549,14 +549,15 @@ document.addEventListener('DOMContentLoaded', function () {
 
   // yearcolor
   if (document.getElementById('video-collection')) {
-    const headerHeight = document.querySelector('header').offsetHeight
+    const mmd = window.matchMedia('(min-width: 768px)').matches
+    const md = window.matchMedia('(max-width: 768px)').matches
     gsap.defaults({ duration: 1 })
     gsap.set('.container_media', {
       xPercent: 50,
       yPercent: -50,
     })
     gsap.set('.container_media', {
-      'clip-path': 'circle(75%)',
+      'clip-path': mmd ? 'circle(75%)' : 'circle(65%)',
     })
     gsap.set('.section_first .content_outer-btn', { opacity: 0 })
     gsap.set('.section_first .decoration', { opacity: 0 })
@@ -571,27 +572,18 @@ document.addEventListener('DOMContentLoaded', function () {
     document
       .getElementById('video-collection')
       .addEventListener('ended', () => {
-        const mmd = window.matchMedia('(min-width: 768px)').matches
-        const md = window.matchMedia('(max-width: 768px)').matches
         const tl1 = gsap.timeline()
         const tl2 = gsap.timeline()
 
         gsap.to('.container_media .video_cover', {
           opacity: 1,
         })
-        gsap.to('.container_media', {
-          'clip-path': 'circle(50%)',
-        })
-        gsap.timeline().to('.container_media', {
-          width: mmd ? '110.1rem' : '90.6rem',
-          height: mmd ? '110.1rem' : '90.6rem',
-          delay: 0.5,
-        })
         tl1.to('.container_media', {
+          'clip-path': mmd ? 'circle(34%)' : 'circle(47%)',
+          xPercent: mmd ? 26 : 42,
+          yPercent: mmd ? -13 : -4,
           top: 0,
           right: 0,
-          xPercent: mmd ? 5 : 40,
-          yPercent: mmd ? -17 : 0,
           duration: 2,
           delay: 2,
           onEnd: () =>
@@ -605,10 +597,10 @@ document.addEventListener('DOMContentLoaded', function () {
         } else {
           gsap
             .timeline()
-            .to('.section_first .decoration_left', { opacity: 1, delay: 3 })
+            .to('.section_first .decoration_left', { opacity: 1, delay: 4 })
           gsap
             .timeline()
-            .to('.section_first .decoration_right', { opacity: 1, delay: 3 })
+            .to('.section_first .decoration_right', { opacity: 1, delay: 4 })
         }
         tl2.to('.section_first .content_title', {
           opacity: 1,

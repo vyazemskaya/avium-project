@@ -6,7 +6,7 @@
 .section_first .container_media {
   position: absolute;
   width: 100%;
-  height: 100%;
+  /* height: 100%; */
   top: 50%;
   right: 50%;
   display: flex;
@@ -85,9 +85,8 @@
   top: 0;
   left: 0;
   background-color: #00000038;
-  clip-path: circle(50%);
   opacity: 0;
-  transition: opacity 0.5s ease 2s;
+  transition: opacity 1s ease 2s;
 }
 .section_first._revealed .container_media::after {
   opacity: 1;
@@ -160,6 +159,10 @@
   }
   .section_first .container {
     padding: 0;
+  }
+  .section_first .container_media {
+    width: 99.6rem;
+    height: 99.6rem;
   }
   .section_first .container .section_background .circle_background {
     width: 90.6rem;
