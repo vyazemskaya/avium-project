@@ -19,8 +19,6 @@ $(document).ready(function () {
 });
 
 document.addEventListener('DOMContentLoaded', function () {
-  
-
   const checkbox = document.getElementById('burger-toggle');
 
   checkbox.addEventListener('change', function () {
@@ -641,3 +639,14 @@ document.addEventListener('DOMContentLoaded', function () {
       });
   }
 });
+
+//////////////////////////////Коллекция Veripery//////////////////////////////////
+
+if (document.querySelector('.veripery__section-first')) {
+  let videos = document.getElementsByTagName('video');
+
+  for (let i = 0; i < videos.length; i++) {
+    let video = videos[i];
+    video.play();
+  }
+}

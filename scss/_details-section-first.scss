@@ -515,7 +515,7 @@
                 }
                 &:nth-child(1) {
                   img {
-                    width: 6.4rem;
+                    width: 6.8rem;
                   }
                 }
                 &:nth-child(2) {
@@ -529,6 +529,17 @@
                   }
                 }
               }
+            }
+          }
+          .choose_box {
+            align-items: flex-start;
+            gap: 4rem;
+            .choose_text {
+              font-size: 3rem;
+            }
+            img {
+              width: 14rem;
+              height: 14rem;
             }
           }
           .choosen_box {
