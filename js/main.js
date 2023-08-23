@@ -500,6 +500,8 @@ document.addEventListener('DOMContentLoaded', function () {
     let currentIndex = 0;
     let cycleInterval;
 
+    console.log(circles);
+
     function activateCircle(index) {
       if (index >= 0 && index < circles.length) {
         circles.forEach((circle) => circle.classList.remove('active'));
