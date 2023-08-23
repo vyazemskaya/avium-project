@@ -1,8 +1,10 @@
 $(document).ready(function () {
   $('select').niceSelect()
-  $('#fullpage').fullpage({
-    scrollOverflow: true,
-  })
+  if ($('#fullpage').length) {
+    $('#fullpage').fullpage({
+      scrollOverflow: true,
+    })
+  }
 })
 
 wow = new WOW({
