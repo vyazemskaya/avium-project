@@ -5,216 +5,26 @@ import {
   swiperMainSection4,
 } from './swiper.js'
 
-const mmd = window.matchMedia('(min-width: 768px)').matches
-const md = window.matchMedia('(max-width: 768px)').matches
+document.addEventListener('DOMContentLoaded', function () {
+  gsap.defaults({
+    duration: 1,
+    delay: 0.5,
+  })
+  gsap.set('.fadeIn', { opacity: 0 })
+  gsap.set('.fadeInLeft', { opacity: 0, xPercent: -100 })
+  gsap.set('.fadeInDown', { opacity: 0, yPercent: -100 })
+  gsap.set('.zoomIn', { opacity: 0, scale: 0 })
 
-if (document.querySelector('.section_animate')) {
-  document.querySelector('body').style.overflow = 'hidden'
-}
-document.addEventListener('DOMContentLoaded', function (event) {
   window.onload = function () {
     window.requestAnimationFrame(function () {
       gsap.registerPlugin(ScrollTrigger)
 
-      gsap.defaults({
-        duration: 1,
-      })
-
-      if (mmd) {
-        gsap.set('.main__section-first .title1_section-1', {
-          x: '-100%',
-        })
-        gsap.set('.swiper_main-section-1', {
-          y: '-100%',
-        })
-        gsap.set(
-          '.main__section-second .container .main__section-content .content_right .title',
-          {
-            y: '-100%',
-          }
-        )
-        gsap.set('.main__section-fourth .photo_after', {
-          xPercent: -100,
-        })
-        gsap.set('.main__section-fourth .right_block .title', {
-          yPercent: -100,
-        })
-      }
-      if (document.querySelector('.main__section-first')) {
-        gsap.timeline({
-          scrollTrigger: {
-            trigger: '.main__section-first',
-            scroller: 'body',
-            scrub: !0,
-            start: () => 'top top',
-            end: () => 'bottom top',
-            pin: mmd ? '.main__section-first' : false,
-            onEnter: () => (md ? swiperMainSection1.autoplay.start() : null),
-            onUpdate: self => {
-              if (mmd) {
-                if (self.progress > 0.25) {
-                  gsap.to('.swiper_main-section-1', { opacity: 1, y: 0 })
-                }
-                if (self.progress > 0.35) {
-                  gsap.to('.title1_section-1', {
-                    opacity: 1,
-                    x: 0,
-                  })
-                }
-                if (self.progress > 0.55) {
-                  gsap.to('.title2_section-1', {
-                    opacity: 1,
-                    delay: 0.5,
-                  })
-                }
-                if (self.progress > 0.75) {
-                  swiperMainSection1.autoplay.start()
-                  gsap.to('.title3_section-1', {
-                    opacity: 1,
-                    delay: 0.5,
-                  })
-                  gsap.to('.btn_section-1', {
-                    opacity: 1,
-                    delay: 0.5,
-                  })
-                }
-              }
-            },
-            onLeave: function (self) {
-              if (mmd) {
-                self.scroll(self.start)
-                self.disable()
-                self.animation.progress(1)
-              }
-              ScrollTrigger.refresh()
-            },
-          },
-          ease: 'none',
-        })
-      }
-      if (document.querySelector('.main__section-second')) {
-        gsap.timeline({
-          scrollTrigger: {
-            trigger: '.main__section-second',
-            scroller: 'body',
-            scrub: !0,
-            start: () => '-100px top',
-            end: () => 'bottom top',
-            pin: mmd ? '.main__section-second' : false,
-            onEnter: () => (md ? swiperMainSection2.autoplay.start() : null),
-            onUpdate: self => {
-              if (mmd) {
-                if (self.progress > 0.25) {
-                  gsap.to('.main__section-second .content_left', { opacity: 1 })
-                }
-                if (self.progress > 0.35) {
-                  gsap.to('.main__section-second .content_right .title', {
-                    opacity: 1,
-                    y: 0,
-                  })
-                }
-                if (self.progress > 0.55) {
-                  gsap.to('.main__section-second .content_right .subtitle', {
-                    opacity: 1,
-                  })
-                }
-                if (self.progress > 0.75) {
-                  gsap.to('.main__section-second .content_right .text', {
-                    opacity: 1,
-                  })
-                }
-                if (self.progress > 0.85) {
-                  swiperMainSection2.autoplay.start()
-                  gsap.to('.main__section-second .btn', {
-                    opacity: 1,
-                  })
-                }
-              }
-            },
-            onLeave: function (self) {
-              if (mmd) {
-                self.scroll(self.start)
-                self.disable()
-                self.animation.progress(1)
-              }
-              ScrollTrigger.refresh()
-            },
-          },
-          ease: 'none',
-        })
-      }
-      if (document.querySelector('.main__section-third')) {
-        gsap.timeline({
-          scrollTrigger: {
-            trigger: '.main__section-third',
-            scroller: 'body',
-            scrub: !0,
-            start: () => 'top top',
-            end: () => 'bottom top',
-            onEnter: () => swiperMainSection3.autoplay.start(),
-          },
-          ease: 'none',
-        })
-      }
-      if (document.querySelector('.main__section-fourth')) {
-        gsap.timeline({
-          scrollTrigger: {
-            trigger: '.main__section-fourth',
-            scroller: 'body',
-            scrub: !0,
-            start: () => 'top top',
-            end: () => 'bottom top',
-            pin: mmd ? '.main__section-fourth' : false,
-            onEnter: () => (md ? swiperMainSection4.autoplay.start() : null),
-            onUpdate: self => {
-              if (mmd) {
-                if (self.progress > 0.35) {
-                  gsap.to('.main__section-fourth .photo_after', {
-                    opacity: 1,
-                    xPercent: 0,
-                  })
-                }
-
-                if (self.progress > 0.25) {
-                  gsap.to('.main__section-fourth .photo_before', {
-                    opacity: 1,
-                  })
-                  gsap.to('.main__section-fourth .right_block .title', {
-                    opacity: 1,
-                    yPercent: 0,
-                  })
-                }
-                if (self.progress > 0.55) {
-                  gsap.to('.main__section-fourth .right_block .pots-value', {
-                    opacity: 1,
-                  })
-                }
-                if (self.progress > 0.75) {
-                  swiperMainSection4.autoplay.start()
-                  gsap.to(
-                    '.main__section-fourth .container .right_block .text_block',
-                    {
-                      opacity: 1,
-                    }
-                  )
-                }
-              }
-            },
-            onLeave: function (self) {
-              if (mmd) {
-                self.scroll(self.start)
-                self.disable()
-                self.animation.progress(1)
-              }
-              ScrollTrigger.refresh()
-            },
-          },
-          ease: 'none',
-        })
-      }
       if (document.querySelector('.section_animate')) {
         const header = document.querySelector('header')
         const rect = header.querySelector('.logotype').getBoundingClientRect()
+        gsap.set('#txt', {
+          y: window.matchMedia('(max-width:767.98px)').matches ? 70 : 120,
+        })
         gsap.timeline().to('.section_wrap', {
           top: rect.top,
           left: rect.left,
@@ -223,7 +33,7 @@ document.addEventListener('DOMContentLoaded', function (event) {
           xPercent: 0,
           yPercent: 0,
           opacity: 0,
-          duration: 0.5,
+          duration: 0.3,
           delay: 4,
         })
         gsap.timeline().to('#txt', {
@@ -235,13 +45,13 @@ document.addEventListener('DOMContentLoaded', function (event) {
         })
         gsap.timeline().to('.section_wrap path', {
           fill: '#000',
-          duration: 0.5,
+          duration: 0.3,
           delay: 4,
         })
         gsap.timeline().to('#tl', { height: '61%', duration: 2.5 })
         gsap.timeline().to('#txt', {
           opacity: 0,
-          duration: 1,
+          duration: 0.3,
           delay: 4,
         })
         gsap.timeline().to('#circle', {
@@ -253,19 +63,140 @@ document.addEventListener('DOMContentLoaded', function (event) {
         })
         gsap.timeline().to('#circle', { opacity: 0, duration: 1.5, delay: 4 })
         setTimeout(() => {
-          document.querySelector('body').style.overflow = 'auto'
+          // document.querySelector('body').style.overflow = 'auto'
           document.querySelector('.section_animate').classList.add('_hidden')
-          ScrollTrigger.refresh()
         }, 5000)
-        ScrollTrigger.refresh()
+      }
+      if (window.matchMedia('(max-width:767.98px)').matches) {
+        const sections = document.querySelectorAll('.section')
+        if (sections.length) {
+          sections.forEach(section => {
+            if (section.classList.contains('fp-noscroll')) {
+              section.classList.remove('fp-noscroll')
+            }
+          })
+        }
       }
     })
   }
-})
 
-if (md) {
-  const animItems = document.querySelectorAll('[data-animate]')
-  animItems.forEach(item => {
-    item.classList.add('wow')
+  ScrollTrigger.observe({
+    type: 'wheel,touch,scroll,pointer',
+    target: '.section.active',
+    onChange: () => {
+      console.log('log')
+      if (document.querySelector('.main__section-first.active')) {
+        swiperMainSection1.autoplay.start()
+        gsap.to('.swiper_main-section-1', {
+          opacity: 1,
+          yPercent: 0,
+        }),
+          gsap.to('.title1_section-1', { opacity: 1, xPercent: 0, delay: 1.3 }),
+          gsap.to('.title2_section-1', { opacity: 1, delay: 2 }),
+          gsap.to('.title3_section-1', { opacity: 1, delay: 2.5 }),
+          gsap.to('.btn_section-1', { opacity: 1, delay: 3 })
+      }
+      if (document.querySelector('.main__section-second.active')) {
+        swiperMainSection2.autoplay.start()
+        gsap.to('.main__section-second .content_left', {
+          opacity: 1,
+        }),
+          gsap.to('.main__section-second .icon_wrap', {
+            opacity: 1,
+          })
+        gsap.to('.main__section-content .title_mobile', {
+          opacity: 1,
+          yPercent: 0,
+        }),
+          gsap.to('.main__section-second .content_right .title', {
+            opacity: 1,
+            yPercent: 1,
+          }),
+          gsap.to('.main__section-second .swiper-slide .subtitle', {
+            opacity: 1,
+            delay: 1.5,
+          }),
+          gsap.to('.main__section-second .swiper-slide .text', {
+            opacity: 1,
+            delay: 1.7,
+          })
+        gsap.to('.main__section-second  .btn', {
+          opacity: 1,
+          delay: 2,
+        })
+      }
+      if (document.querySelector('.main__section-third.active')) {
+        swiperMainSection3.autoplay.start()
+        gsap.to('.main__section-third .left_block .text', {
+          opacity: 1,
+          yPercent: 0,
+        })
+        gsap.to('.main__section-third .left_block .subtitle_span', {
+          opacity: 1,
+          delay: 1.5,
+        })
+        gsap.to('.main__section-third .left_block .subtitle', {
+          opacity: 1,
+          delay: 2,
+        })
+        gsap.to('.main__section-third .left_block .btn', {
+          opacity: 1,
+          delay: 2.5,
+        })
+        gsap.to('.main__section-third .right_block .img_block', {
+          opacity: 1,
+          scale: 1,
+        })
+        gsap.to('.main__section-third .swiper-pagination', {
+          opacity: 1,
+          delay: 1.5,
+        })
+      }
+      if (document.querySelector('.main__section-fourth.active')) {
+        swiperMainSection4.autoplay.start()
+        gsap.to('.main__section-fourth .photo_after', {
+          opacity: 1,
+          xPercent: 0,
+        })
+        gsap.to('.main__section-fourth .photo_before', {
+          opacity: 1,
+        })
+        gsap.to('.main__section-fourth .right_block .title', {
+          opacity: 1,
+          yPercent: 0,
+        })
+        gsap.to('.main__section-fourth .right_block .pots-value', {
+          opacity: 1,
+          delay: 1.5,
+        })
+        gsap.to('.main__section-fourth .right_block .text_block', {
+          opacity: 1,
+          delay: 2,
+        })
+      }
+      if (document.querySelector('.main__section-fifth.active')) {
+        gsap.to('.main__section-fifth .container', {
+          opacity: 1,
+          yPercent: 0,
+        })
+        gsap.to('.main__section-fifth .main__section-content', {
+          opacity: 1,
+          delay: 1.5,
+        })
+      }
+      if (document.querySelector('.main__section-sixth.active')) {
+        gsap.to('.main__section-sixth .circles_left', {
+          opacity: 1,
+        })
+        gsap.to('.main__section-sixth .circles_center', {
+          opacity: 1,
+          scale: 1,
+        })
+        gsap.to('.main__section-sixth .circles_right', {
+          opacity: 1,
+        })
+      }
+    },
+    preventDefault: true,
   })
-}
+})
