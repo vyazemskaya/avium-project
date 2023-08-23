@@ -587,12 +587,13 @@ if (document.getElementById('video-collection')) {
     })
   })
 }
-
-document
-  .querySelector('.section_first .container .content_btn')
-  .addEventListener('click', () => {
-    document.querySelector('.section_first .container_media').style.display =
-      'block'
-    document.getElementById('video-collection').play()
-    document.querySelector('.section_first .container').style.display = 'none'
-  })
+if (document.querySelector('.section_first')) {
+  document
+    .querySelector('.section_first .container .content_btn')
+    .addEventListener('click', () => {
+      document.querySelector('.section_first .container_media').style.display =
+        'block'
+      document.getElementById('video-collection').play()
+      document.querySelector('.section_first .container').style.display = 'none'
+    })
+}
