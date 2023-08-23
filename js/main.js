@@ -19,6 +19,8 @@ $(document).ready(function () {
 });
 
 document.addEventListener('DOMContentLoaded', function () {
+  
+
   const checkbox = document.getElementById('burger-toggle');
 
   checkbox.addEventListener('change', function () {
