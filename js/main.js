@@ -12,7 +12,8 @@ $(document).ready(function () {
   if ($('#fullpage').length && $(window).width() > 768) {
     $('#fullpage').fullpage({
       scrollOverflow: true,
-      // responsiveWidth: 767.98,
+      scrollSectionToBottomFromBottom: false,
+      fitToSection: false,
     })
   }
 })
