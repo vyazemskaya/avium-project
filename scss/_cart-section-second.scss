@@ -198,6 +198,45 @@
       }
     }
   }
+  &-empty {
+    margin-bottom: 0;
+    background-image: url('../img/cart_section-second/section_second-background.webp');
+    background-repeat: no-repeat;
+    background-position: bottom;
+    background-size: contain;
+    padding-top: 9.1rem;
+    .container {
+      width: 100%;
+      height: 89.5rem;
+      position: relative;
+      .cart__section-content {
+        padding-top: 9.5rem;
+        padding-left: 22.6rem;
+        .content_title {
+          color: #000;
+          font-size: 5.5rem;
+          font-weight: 700;
+          text-transform: uppercase;
+          margin-bottom: 9rem;
+        }
+        .content_subtitle {
+          color: #000;
+          font-size: 5rem;
+          font-style: normal;
+          font-weight: 300;
+          margin-bottom: 4rem;
+        }
+        .content_text {
+          max-width: 66.6rem;
+          font-size: 3rem;
+          font-style: normal;
+          font-weight: 400;
+          line-height: 133.333%;
+          margin-bottom: 9rem;
+        }
+      }
+    }
+  }
 }
 
 @media (max-width: 48em) {
@@ -297,6 +336,30 @@
                 }
               }
             }
+          }
+        }
+      }
+    }
+    &-empty {
+      padding-top: 10.4rem;
+      .container {
+        height: 106rem;
+        .cart__section-content {
+          padding-top: 24rem;
+          padding-left: 0;
+          .content_title {
+            font-size: 5.5rem;
+            margin-bottom: 6rem;
+          }
+          .content_subtitle {
+            margin-bottom: 3rem;
+          }
+          .content_text {
+            font-size: 3rem;
+            margin-bottom: 6rem;
+          }
+          .content_btn {
+            width: auto;
           }
         }
       }
