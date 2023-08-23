@@ -81,7 +81,7 @@ body {
   .swiper {
     overflow: visible;
     .swiper-pagination {
-      width: 10rem;
+      width: 11rem;
       height: 2rem;
       display: flex;
       align-items: center;
@@ -98,8 +98,8 @@ body {
             top: 50%;
             left: 50%;
             z-index: 5;
-            width: calc(100% + 0.5rem);
-            height: calc(100% + 0.5rem);
+            width: calc(100% + 0.8rem);
+            height: calc(100% + 0.8rem);
             border: 1px solid #53565a;
             border-radius: 50%;
             transform: translate(-50%, -50%);
@@ -114,8 +114,8 @@ body {
       }
       .swiper-pagination-bullet:nth-child(2) {
         border-radius: 50%;
-        width: 1.7rem;
-        height: 1.7rem;
+        width: 2rem;
+        height: 2rem;
         background-color: #e6e6e6;
       }
       .swiper-pagination-bullet:nth-child(3) {
@@ -126,8 +126,8 @@ body {
       }
       .swiper-pagination-bullet:nth-child(4) {
         border-radius: 50%;
-        width: 1rem;
-        height: 1rem;
+        width: 1.5rem;
+        height: 1.5rem;
         background-color: #a1a1a1;
       }
       .swiper-pagination-bullet:nth-child(5) {
