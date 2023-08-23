@@ -202,8 +202,10 @@
     margin-bottom: 0;
     background-image: url('../img/cart_section-second/section_second-background.webp');
     background-repeat: no-repeat;
-    background-position: -20rem 5rem;
+    background-position: bottom;
+    background-position: -15rem 8rem;
     background-size: cover;
+    background-size: 220rem;
     padding-top: 9.1rem;
     .container {
       width: 100%;
@@ -343,7 +345,9 @@
     &-empty {
       padding-top: 10.4rem;
       .container {
-        height: 106rem;
+        background-position: -30rem 100%;
+        background-size: 115rem;
+        height: 110rem;
         .cart__section-content {
           padding-top: 24rem;
           padding-left: 0;
