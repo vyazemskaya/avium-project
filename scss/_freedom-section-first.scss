@@ -2,10 +2,11 @@
   width: 100%;
   margin-top: 9.1rem;
   background-color: #f4f4fa;
-  clip-path: polygon(0% 0%, 100% 0%, 100% 100%, 0% 90%);
+  clip-path: polygon(0% 0%, 100% 0%, 100% 100%, 0% 75%);
   overflow: hidden;
   .container {
     position: relative;
+    height: 99.5rem;
     padding-top: 18.3rem;
     padding-bottom: 36.4rem;
     .freedom__section-video {
@@ -68,6 +69,7 @@
     .container {
       display: flex;
       flex-direction: column-reverse;
+      height: auto;
       padding: 0;
       .freedom__section-video {
         position: static;
@@ -81,6 +83,7 @@
         .mobile {
           display: block;
           object-fit: cover;
+          height: 90rem;
           object-position: 0 -5rem;
         }
       }
