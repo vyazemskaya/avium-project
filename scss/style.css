@@ -3832,6 +3832,9 @@ section {
 .cooperation__section-first .container .cooperation__section-background img {
   -o-object-fit: cover;
      object-fit: cover;
+  -o-object-position: 0 -9rem;
+     object-position: 0 -9rem;
+  height: 99.5rem;
 }
 .cooperation__section-first .container .cooperation__section-content {
   width: 75rem;
@@ -4180,14 +4183,17 @@ section {
     padding: 0;
   }
   .decisions__section-first .container .decisions__section-background img {
-    -o-object-position: -42rem;
-       object-position: -42rem;
-    height: 80rem;
+    -o-object-position: -46rem;
+       object-position: -46rem;
+    height: 76rem;
   }
   .decisions__section-first .container .decisions__section-content {
     max-width: 100%;
     position: static;
     padding: 0 4rem;
+  }
+  .decisions__section-first .container .decisions__section-content .content_text {
+    margin-bottom: 6rem;
   }
   .decisions__section-first .container .decisions__section-content .content_btn {
     width: 100%;
@@ -6012,6 +6018,9 @@ section {
 .purchase__section-first .container .purchase__section-background img {
   -o-object-fit: cover;
      object-fit: cover;
+  -o-object-position: 0 -16rem;
+     object-position: 0 -16rem;
+  height: 99.5rem;
 }
 .purchase__section-first .container .purchase__section-content {
   position: absolute;
@@ -7065,13 +7074,13 @@ section {
 }
 .footer .container .decoration_left {
   width: 50rem;
-  left: -21rem;
+  left: -20.6rem;
   bottom: 1rem;
 }
 .footer .container .decoration_right {
   width: 12.1rem;
-  right: 1rem;
-  bottom: 1.4rem;
+  right: 1.3rem;
+  bottom: 1.8rem;
 }
 .footer .container .decoration_mobile {
   display: none;
