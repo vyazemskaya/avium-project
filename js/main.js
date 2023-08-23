@@ -1,12 +1,3 @@
-$(document).ready(function () {
-  $('select').niceSelect()
-  if ($('#fullpage').length) {
-    $('#fullpage').fullpage({
-      scrollOverflow: true,
-    })
-  }
-})
-
 wow = new WOW({
   boxClass: 'wow',
   animateClass: 'animate__animated',
@@ -14,7 +5,24 @@ wow = new WOW({
   mobile: true,
   live: true,
 })
-wow.init()
+
+
+$(document).ready(function () {
+  wow.init()
+  $('select').niceSelect()
+  if ($('#fullpage').length && $(window).width() > 768) {
+    $('#fullpage').fullpage({
+      scrollOverflow: true,
+      // responsiveWidth: 767.98,
+    })
+  }
+})
+$(window).on('load', function() {
+  wow.init()
+})
+
+
+
 
 const checkbox = document.getElementById('burger-toggle')
 
