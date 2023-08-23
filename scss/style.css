@@ -3251,8 +3251,8 @@ section {
   margin-bottom: 0;
   background-image: url("../img/cart_section-second/section_second-background.webp");
   background-repeat: no-repeat;
-  background-position: bottom;
-  background-size: contain;
+  background-position: -16rem 6rem;
+  background-size: cover;
   padding-top: 9.1rem;
 }
 .cart__section-second-empty .container {
@@ -7199,8 +7199,8 @@ body .swiper .swiper-pagination .swiper-pagination-bullet-active::before {
   top: 50%;
   left: 50%;
   z-index: 5;
-  width: calc(100% + 1rem);
-  height: calc(100% + 1rem);
+  width: calc(100% + 0.8rem);
+  height: calc(100% + 0.8rem);
   border: 1px solid #53565a;
   border-radius: 50%;
   transform: translate(-50%, -50%);
