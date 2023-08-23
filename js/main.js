@@ -582,9 +582,9 @@ document.addEventListener('DOMContentLoaded', function () {
           opacity: 1,
         })
         tl1.to('.container_media', {
-          'clip-path': mmd ? 'circle(34%)' : 'circle(47%)',
+          'clip-path': mmd ? 'circle(32%)' : 'circle(47%)',
           xPercent: mmd ? 26 : 42,
-          yPercent: mmd ? -13 : -4,
+          yPercent: mmd ? -9 : -4,
           top: 0,
           right: 0,
           duration: 2,
