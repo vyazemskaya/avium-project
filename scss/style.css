@@ -4820,8 +4820,8 @@ section {
   width: 100%;
   margin-top: 9.1rem;
   background-color: #f4f4fa;
-  -webkit-clip-path: polygon(0% 0%, 100% 0%, 100% 100%, 0% 80%);
-          clip-path: polygon(0% 0%, 100% 0%, 100% 100%, 0% 80%);
+  -webkit-clip-path: polygon(0% 0%, 100% 0%, 100% 100%, 0% 75%);
+          clip-path: polygon(0% 0%, 100% 0%, 100% 100%, 0% 75%);
   overflow: hidden;
 }
 .freedom__section-first .container {
@@ -6283,8 +6283,8 @@ section {
   position: relative;
 }
 .solution__section-first .container .solution__background-video video {
-  -webkit-clip-path: polygon(0% 0%, 100% 0%, 100% 100%, 0% 80%);
-          clip-path: polygon(0% 0%, 100% 0%, 100% 100%, 0% 80%);
+  -webkit-clip-path: polygon(0% 0%, 100% 0%, 100% 100%, 0% 75%);
+          clip-path: polygon(0% 0%, 100% 0%, 100% 100%, 0% 75%);
   width: 100%;
 }
 .solution__section-first .container .solution__background-video video.desktop {
