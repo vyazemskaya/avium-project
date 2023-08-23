@@ -1,5 +1,5 @@
 .video__section {
-  margin-top: 9.1rem;
+  padding-top: 9.1rem;
   margin-bottom: 0;
   // clip-path: polygon(100% 0%, 100% 100%, 0% 80%, 0% 0%);
   .section_video {
@@ -13,6 +13,6 @@
 
 @media (max-width: 48em) {
   .video__section-first {
-    margin-top: 10.4rem;
+    padding-top: 10.4rem;
   }
 }

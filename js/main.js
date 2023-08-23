@@ -512,3 +512,87 @@ if (document.querySelector('.main__section-sixth')) {
 
   cycleInterval = setInterval(autoCycle, 1500)
 }
+
+// yearcolor
+if (document.getElementById('video-collection')) {
+  const headerHeight = document.querySelector('header').offsetHeight
+  gsap.defaults({ duration: 1 })
+  gsap.set('.container_media', {
+    xPercent: 50,
+    yPercent: -50,
+  })
+  gsap.set('.container_media', {
+    'clip-path': 'circle(75%)',
+  })
+  gsap.set('.section_first .content_outer-btn', { opacity: 0 })
+  gsap.set('.section_first .decoration', { opacity: 0 })
+  gsap.set('.section_first .content_title', { opacity: 0, xPercent: -100 })
+  gsap.set('.section_first .container .section_content .content_text', {
+    opacity: 0,
+  })
+  gsap.set('.section_first .container .section_content .content_btn', {
+    opacity: 0,
+  })
+
+  document.getElementById('video-collection').addEventListener('ended', () => {
+    const mmd = window.matchMedia('(min-width: 768px)').matches
+    const md = window.matchMedia('(max-width: 768px)').matches
+    const tl1 = gsap.timeline()
+    const tl2 = gsap.timeline()
+
+    gsap.to('.container_media .video_cover', {
+      opacity: 1,
+    })
+    gsap.to('.container_media', {
+      'clip-path': 'circle(50%)',
+    })
+    gsap.timeline().to('.container_media', {
+      width: mmd ? '110.1rem' : '90.6rem',
+      height: mmd ? '110.1rem' : '90.6rem',
+      delay: 0.5,
+    })
+    tl1.to('.container_media', {
+      top: 0,
+      right: 0,
+      xPercent: mmd ? 5 : 40,
+      yPercent: mmd ? -17 : 0,
+      duration: 2,
+      delay: 2,
+      onEnd: () =>
+        document.querySelector('.section_first').classList.add('_revealed'),
+    })
+    tl1.to('.section_first .content_outer-btn', {
+      opacity: 1,
+    })
+    if (md) {
+      tl2.to('.section_first .decoration_mobile', { opacity: 1, delay: 3 })
+    } else {
+      gsap
+        .timeline()
+        .to('.section_first .decoration_left', { opacity: 1, delay: 3 })
+      gsap
+        .timeline()
+        .to('.section_first .decoration_right', { opacity: 1, delay: 3 })
+    }
+    tl2.to('.section_first .content_title', {
+      opacity: 1,
+      xPercent: 0,
+      delay: mmd ? 4 : 0,
+    })
+    tl2.to('.section_first .container .section_content .content_text', {
+      opacity: 1,
+    })
+    tl2.to('.section_first .container .section_content .content_btn', {
+      opacity: 1,
+    })
+  })
+}
+
+document
+  .querySelector('.section_first .container .content_btn')
+  .addEventListener('click', () => {
+    document.querySelector('.section_first .container_media').style.display =
+      'block'
+    document.getElementById('video-collection').play()
+    document.querySelector('.section_first .container').style.display = 'none'
+  })
