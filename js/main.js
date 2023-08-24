@@ -496,7 +496,9 @@ document.addEventListener('DOMContentLoaded', function () {
       });
 
     document
-      .querySelector('.philosophy__section-sixth .container .content_btn')
+      .querySelector(
+        '.philosophy__section-sixth .container .philosophy__section-content'
+      )
       .addEventListener('click', () => {
         document.querySelector(
           '.philosophy__section-sixth .container-video'
