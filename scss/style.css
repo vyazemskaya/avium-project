@@ -20,6 +20,7 @@ html {
   line-height: 1.2;
   margin: 0;
   padding: 0;
+  -webkit-tap-highlight-color: transparent;
 }
 
 body {
@@ -3380,7 +3381,6 @@ section {
     margin-bottom: 8rem;
   }
   .cart__section-second .container .cart__section-content .contents .content_right .content_price-box .input_box label {
-    display: block;
     font-size: 3.2rem;
   }
   .cart__section-second .container .cart__section-content .contents .content_right .content_price-box .information_box {
@@ -3722,7 +3722,6 @@ section {
   .conceptColor__section-third .container .conceptColor__section-content .content_bottom .swiper .swiper-pagination {
     display: flex;
     position: static;
-    width: 21rem;
     margin: 6rem auto 0;
   }
   .conceptColor__section-third .container .conceptColor__section-content .content_bottom .swiper .swiper-slide .slide_palettes {
@@ -6295,6 +6294,9 @@ section {
   .purchase__section-third .container .purchase__section-content .content_bottom .content_left {
     padding: 0 0 0 4rem;
   }
+  .purchase__section-third .container .purchase__section-content .content_bottom .content_left .places_box {
+    height: auto;
+  }
   .purchase__section-third .container .purchase__section-content .content_bottom .content_left .places_box .place_info-box {
     font-size: 3rem;
   }
@@ -7942,6 +7944,9 @@ body .select_box label {
   body .swiper_conceptColor-section-third {
     margin-bottom: 4rem;
   }
+  body .swiper_conceptColor-section-third .swiper-pagination {
+    width: 22rem;
+  }
   body .swiper_conceptColor-section-third .swiper-wrapper {
     padding: 0;
     height: 48rem;
@@ -7976,7 +7981,7 @@ body .select_box label {
   }
   body .swiper_philosophy-section-3 .swiper-pagination_section-3 {
     display: flex;
-    width: 21rem;
+    width: 22rem;
     position: static;
     margin: 0 auto;
     margin-top: 4.5rem;
