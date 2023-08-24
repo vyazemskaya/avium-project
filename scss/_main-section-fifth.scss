@@ -8,6 +8,12 @@
       object-fit: cover;
       clip-path: polygon(100% 0%, 100% 100%, 0% 100%, 0% 15%);
     }
+    .main__section-background-filter {
+      position: relative;
+      img {
+        position: absolute;
+      }
+    }
     .main__section-content {
       position: absolute;
       top: 32.5rem;
@@ -197,6 +203,11 @@
         object-position: -85rem;
         height: 153.6rem;
         clip-path: polygon(100% 0%, 100% 100%, 0% 100%, 0% 10%);
+      }
+      .main__section-background-filter {
+        object-fit: cover;
+        object-position: -85rem;
+        height: 153.6rem;
       }
       .main__section-content {
         width: 69rem;
