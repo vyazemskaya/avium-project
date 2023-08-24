@@ -83,15 +83,16 @@ document.addEventListener('DOMContentLoaded', function () {
           gsap.to('.swiper_main-section-1', {
             opacity: 1,
             yPercent: 0,
+            delay: 0.5,
           }),
             gsap.to('.title1_section-1', {
               opacity: 1,
               xPercent: 0,
-              delay: 1.3,
+              delay: 0.5,
             }),
-            gsap.to('.title2_section-1', { opacity: 1, delay: 2 }),
-            gsap.to('.title3_section-1', { opacity: 1, delay: 2.5 }),
-            gsap.to('.btn_section-1', { opacity: 1, delay: 3 })
+            gsap.to('.title2_section-1', { opacity: 1, delay: 1.5 }),
+            gsap.to('.title3_section-1', { opacity: 1, delay: 1.8 }),
+            gsap.to('.btn_section-1', { opacity: 1, delay: 2 })
         }
         if (document.querySelector('.main__section-second.active')) {
           swiperMainSection2.autoplay.start()
@@ -111,15 +112,15 @@ document.addEventListener('DOMContentLoaded', function () {
             }),
             gsap.to('.main__section-second .swiper-slide .subtitle', {
               opacity: 1,
-              delay: 1.5,
+              delay: 1.3,
             }),
             gsap.to('.main__section-second .swiper-slide .text', {
               opacity: 1,
-              delay: 1.7,
+              delay: 1.5,
             })
           gsap.to('.main__section-second  .btn', {
             opacity: 1,
-            delay: 2,
+            delay: 1.8,
           })
         }
         if (document.querySelector('.main__section-third.active')) {
@@ -130,15 +131,15 @@ document.addEventListener('DOMContentLoaded', function () {
           })
           gsap.to('.main__section-third .left_block .subtitle_span', {
             opacity: 1,
-            delay: 1.5,
+            delay: 1.3,
           })
           gsap.to('.main__section-third .left_block .subtitle', {
             opacity: 1,
-            delay: 2,
+            delay: 1.3,
           })
           gsap.to('.main__section-third .left_block .btn', {
             opacity: 1,
-            delay: 2.5,
+            delay: 1.5,
           })
           gsap.to('.main__section-third .right_block .img_block', {
             opacity: 1,
@@ -164,11 +165,11 @@ document.addEventListener('DOMContentLoaded', function () {
           })
           gsap.to('.main__section-fourth .right_block .pots-value', {
             opacity: 1,
-            delay: 1.5,
+            delay: 1.3,
           })
           gsap.to('.main__section-fourth .right_block .text_block', {
             opacity: 1,
-            delay: 2,
+            delay: 1.5,
           })
         }
         if (document.querySelector('.main__section-fifth.active')) {
