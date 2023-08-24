@@ -214,12 +214,12 @@ export const swiperMainSection1 = new Swiper('.swiper_main-section-1', {
     disableOnInteraction: true,
   },
   effect: 'fade',
-  on: {
-    afterInit: (swiper) => {
-      swiper.autoplay.stop();
-      swiper.update();
-    },
-  },
+  // on: {
+  //   afterInit: (swiper) => {
+  //     swiper.autoplay.stop();
+  //     swiper.update();
+  //   },
+  // },
 });
 
 export const swiperMainSection2 = new Swiper('.swiper_main-section-2', {
@@ -235,9 +235,9 @@ export const swiperMainSection2 = new Swiper('.swiper_main-section-2', {
   speed: 1000,
   slidersPerView: 1,
   effect: 'fade',
-  on: {
-    init: (swiper) => swiper.autoplay.stop(),
-  },
+  // on: {
+  //   init: (swiper) => swiper.autoplay.stop(),
+  // },
 });
 
 const comfort = document.getElementById('comfort'),
@@ -336,7 +336,7 @@ export const swiperMainSection3 = new Swiper('.swiper_main-section-3', {
   virtualTranslate: true,
   loop: true,
   autoplay: {
-    delay: 2500,
+    delay: 4000,
     disableOnInteraction: true,
   },
   pagination: {
@@ -345,9 +345,9 @@ export const swiperMainSection3 = new Swiper('.swiper_main-section-3', {
   speed: 1000,
   slidersPerView: 1,
   effect: 'fade',
-  on: {
-    init: (swiper) => swiper.autoplay.stop(),
-  },
+  // on: {
+  //   init: (swiper) => swiper.autoplay.stop(),
+  // },
 });
 
 export const swiperMainSection4 = new Swiper('.swiper_main-section-4 ', {
@@ -364,9 +364,9 @@ export const swiperMainSection4 = new Swiper('.swiper_main-section-4 ', {
   speed: 1000,
   slidersPerView: 1,
   effect: 'fade',
-  on: {
-    init: (swiper) => swiper.autoplay.stop(),
-  },
+  // on: {
+  //   init: (swiper) => swiper.autoplay.stop(),
+  // },
 });
 
 const swiperMainSection5 = new Swiper('.swiper_main-section-5', {
