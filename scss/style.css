@@ -7559,6 +7559,9 @@ body .overlay {
 }
 body .btn {
   display: flex;
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
   justify-content: center;
   align-items: center;
   color: #000000;
