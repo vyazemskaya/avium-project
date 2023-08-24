@@ -2755,6 +2755,7 @@ section {
   align-items: center;
   justify-content: center;
   gap: 2rem;
+  cursor: pointer;
 }
 .details__section-first
   .container
@@ -3394,7 +3395,7 @@ section {
     .apply_items
     .apply_item:nth-child(1)
     img {
-    width: 6.4rem;
+    width: 6.8rem;
   }
   .details__section-first
     .container
@@ -3415,6 +3416,31 @@ section {
     .apply_item:nth-child(3)
     img {
     width: 4.2rem;
+  }
+  .details__section-first
+    .container
+    .details__section-content
+    .content_right
+    .choose_box {
+    align-items: flex-start;
+    gap: 4rem;
+  }
+  .details__section-first
+    .container
+    .details__section-content
+    .content_right
+    .choose_box
+    .choose_text {
+    font-size: 3rem;
+  }
+  .details__section-first
+    .container
+    .details__section-content
+    .content_right
+    .choose_box
+    img {
+    width: 14rem;
+    height: 14rem;
   }
   .details__section-first
     .container
@@ -3829,6 +3855,9 @@ section {
 }
 
 @media (max-width: 48em) {
+  .details__section-second {
+    margin-bottom: 12rem;
+  }
   .details__section-second
     .container
     .details__section-content
@@ -5584,10 +5613,10 @@ section {
   }
   .cart__section-second-empty {
     padding-top: 10.4rem;
-  }
-  .cart__section-second-empty .container {
     background-position: -30rem 100%;
     background-size: 115rem;
+  }
+  .cart__section-second-empty .container {
     height: 110rem;
   }
   .cart__section-second-empty .container .cart__section-content {
@@ -10740,7 +10769,7 @@ section {
   .solution__section-second .container .solution__section-content .content_top {
     flex-direction: column-reverse;
     gap: 4rem;
-    margin-bottom: 12rem;
+    margin-bottom: 18rem;
   }
   .solution__section-second
     .container
@@ -11071,7 +11100,7 @@ section {
     object-fit: cover;
     -o-object-position: 0 0.5rem;
     object-position: 0 0.5rem;
-    height: 80rem;
+    height: 80.2rem;
     -webkit-clip-path: polygon(0% 0%, 100% 0%, 100% 100%, 0% 88%);
     clip-path: polygon(0% 0%, 100% 0%, 100% 100%, 0% 88%);
   }
@@ -11715,34 +11744,34 @@ body .swiper .swiper-pagination .swiper-pagination-bullet-active::before {
   top: 50%;
   left: 50%;
   z-index: 5;
-  width: calc(100% + 0.8rem);
-  height: calc(100% + 0.8rem);
+  width: calc(100% + 0.5rem);
+  height: calc(100% + 0.5rem);
   border: 1px solid #53565a;
   border-radius: 50%;
   transform: translate(-50%, -50%);
 }
 body .swiper .swiper-pagination .swiper-pagination-bullet:nth-child(1) {
   border-radius: 50%;
-  width: 1.5rem;
-  height: 1.5rem;
+  width: 1rem;
+  height: 1rem;
   background-color: #d5d5d5;
 }
 body .swiper .swiper-pagination .swiper-pagination-bullet:nth-child(2) {
   border-radius: 50%;
-  width: 2rem;
-  height: 2rem;
+  width: 1rem;
+  height: 1rem;
   background-color: #e6e6e6;
 }
 body .swiper .swiper-pagination .swiper-pagination-bullet:nth-child(3) {
   border-radius: 50%;
-  width: 1.5rem;
-  height: 1.5rem;
+  width: 1rem;
+  height: 1rem;
   background-color: #e6e6e6;
 }
 body .swiper .swiper-pagination .swiper-pagination-bullet:nth-child(4) {
   border-radius: 50%;
-  width: 1.5rem;
-  height: 1.5rem;
+  width: 1rem;
+  height: 1rem;
   background-color: #a1a1a1;
 }
 body .swiper .swiper-pagination .swiper-pagination-bullet:nth-child(5) {
@@ -11785,6 +11814,9 @@ body .overlay {
 }
 body .btn {
   display: flex;
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
   justify-content: center;
   align-items: center;
   color: #000000;
@@ -12000,6 +12032,9 @@ body .select_box select::placeholder {
 body .swiper_solution-section-second {
   overflow: visible;
 }
+body .swiper_solution-section-second .swiper-pagination {
+  display: none;
+}
 body .swiper_conceptColor-section-third {
   overflow: hidden;
   margin-bottom: 9rem;
@@ -12040,6 +12075,9 @@ body
   img {
   width: 30rem;
 }
+body .swiper_certificates .swiper-pagination {
+  display: none;
+}
 body .swiper_philosophy-section-second {
   overflow: hidden;
   width: 90rem;
@@ -12071,28 +12109,28 @@ body .swiper_main-section-4 .slide-section-4 {
     height: calc(100% + 1rem);
   }
   body .swiper .swiper-pagination .swiper-pagination-bullet:nth-child(1) {
-    width: 1.8rem;
-    height: 1.8rem;
+    width: 2rem;
+    height: 2rem;
   }
   body .swiper .swiper-pagination .swiper-pagination-bullet:nth-child(2) {
-    width: 2.2rem;
-    height: 2.2rem;
+    width: 2rem;
+    height: 2rem;
   }
   body .swiper .swiper-pagination .swiper-pagination-bullet:nth-child(3) {
-    width: 1.8rem;
-    height: 1.8rem;
+    width: 2rem;
+    height: 2rem;
   }
   body .swiper .swiper-pagination .swiper-pagination-bullet:nth-child(4) {
-    width: 1.4rem;
-    height: 1.4rem;
+    width: 2rem;
+    height: 2rem;
   }
   body .swiper .swiper-pagination .swiper-pagination-bullet:nth-child(5) {
-    width: 1.8rem;
-    height: 1.8rem;
+    width: 2rem;
+    height: 2rem;
   }
   body .swiper .swiper-pagination .swiper-pagination-bullet:nth-child(6) {
-    width: 1.8rem;
-    height: 1.8rem;
+    width: 2rem;
+    height: 2rem;
   }
   body .btn {
     width: 100%;
@@ -12138,6 +12176,12 @@ body .swiper_main-section-4 .slide-section-4 {
     display: none;
     font-size: 3.2rem;
   }
+  body .swiper_solution-section-second .swiper-pagination {
+    display: flex;
+    bottom: 12rem;
+    left: 50%;
+    transform: translateX(-50%);
+  }
   body .swiper_conceptColor-section-third {
     margin-bottom: 4rem;
   }
@@ -12159,7 +12203,7 @@ body .swiper_main-section-4 .slide-section-4 {
     margin: 0;
   }
   body .swiper_certificates {
-    margin-bottom: 6rem;
+    height: 90rem;
   }
   body
     .swiper_certificates
@@ -12169,6 +12213,11 @@ body .swiper_main-section-4 .slide-section-4 {
     img {
     width: 60rem;
     margin: 0 auto;
+  }
+  body .swiper_certificates .swiper-pagination {
+    display: flex;
+    left: 50%;
+    transform: translateX(-50%);
   }
   body .swiper_philosophy-section-3 .swiper-slide-active {
     z-index: 10;

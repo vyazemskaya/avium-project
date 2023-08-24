@@ -14,6 +14,9 @@ const swiperSolutionSection2 = new Swiper('.swiper_solution-section-second', {
     delay: 5000,
     disableOnInteraction: true,
   },
+  pagination: {
+    el: '.swiper-pagination_section-2',
+  },
   speed: 1000,
   slidersPerView: 1,
   effect: 'fade',
@@ -55,6 +58,9 @@ const swiperCalculateSection = new Swiper('.swiper_calculate-section', {
 const swiperDetailsCertificates = new Swiper('.swiper_certificates', {
   slidesPerView: 1,
   slidesPerGroup: 1,
+  pagination: {
+    el: '.swiper-pagination_certificates',
+  },
   // centeredSlides: true,
   // spaceBetween: rem(1),
   breakpoints: {

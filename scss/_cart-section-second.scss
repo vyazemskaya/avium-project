@@ -344,9 +344,9 @@
     }
     &-empty {
       padding-top: 10.4rem;
+      background-position: -30rem 100%;
+      background-size: 115rem;
       .container {
-        background-position: -30rem 100%;
-        background-size: 115rem;
         height: 110rem;
         .cart__section-content {
           padding-top: 24rem;
