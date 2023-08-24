@@ -142,7 +142,7 @@
     height: 15.7rem;
     position: absolute;
     transform: translateY(-99.4%);
-    clip-path: polygon(0% 100%, 50% 100%, 0% 0%);
+    clip-path: polygon(0% 100%, 50% 100%, 0% 20%);
     background-color: #f3f4f7;
   }
 }
@@ -230,7 +230,7 @@
       }
     }
     &::before {
-      clip-path: polygon(0% 100%, 50% 100%, 0% 50%);
+      clip-path: polygon(0% 100%, 50% 100%, 0% 75%);
     }
   }
 }

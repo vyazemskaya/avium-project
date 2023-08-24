@@ -1064,8 +1064,8 @@ section {
 
 @media (max-width: 48em) {
   .main__section-third {
-    -webkit-clip-path: polygon(100% 0%, 100% 100%, 0% 100%, 0% 10%);
-            clip-path: polygon(100% 0%, 100% 100%, 0% 100%, 0% 10%);
+    -webkit-clip-path: polygon(100% 0%, 100% 100%, 0% 100%, 0% 5%);
+            clip-path: polygon(100% 0%, 100% 100%, 0% 100%, 0% 5%);
   }
   .main__section-third .container .main__section-content {
     padding: 25rem 0 8rem;
@@ -1415,8 +1415,8 @@ section {
     -o-object-position: -85rem;
        object-position: -85rem;
     height: 153.6rem;
-    -webkit-clip-path: polygon(100% 0%, 100% 100%, 0% 100%, 0% 10%);
-            clip-path: polygon(100% 0%, 100% 100%, 0% 100%, 0% 10%);
+    -webkit-clip-path: polygon(100% 0%, 100% 100%, 0% 100%, 0% 5%);
+            clip-path: polygon(100% 0%, 100% 100%, 0% 100%, 0% 5%);
   }
   .main__section-fifth .container .main__section-background-filter {
     -o-object-fit: cover;
@@ -3540,8 +3540,8 @@ section {
   width: 100%;
   height: 15.7rem;
   position: absolute;
-  -webkit-clip-path: polygon(100% 100%, 100% 0%, 49.6% 0%);
-          clip-path: polygon(100% 100%, 100% 0%, 49.6% 0%);
+  -webkit-clip-path: polygon(100% 80%, 100% 0%, 49.6% 0%);
+          clip-path: polygon(100% 80%, 100% 0%, 49.6% 0%);
   background-color: #fff;
 }
 
@@ -3569,8 +3569,8 @@ section {
     display: none;
   }
   .conceptColor__section-second::after {
-    -webkit-clip-path: polygon(100% 50%, 100% 0%, 50% 0%);
-            clip-path: polygon(100% 50%, 100% 0%, 50% 0%);
+    -webkit-clip-path: polygon(100% 25%, 100% 0%, 49% 0%);
+            clip-path: polygon(100% 25%, 100% 0%, 49% 0%);
   }
 }
 .conceptColor__section-third {
@@ -3697,8 +3697,8 @@ section {
   height: 15.7rem;
   position: absolute;
   transform: translateY(-99.4%);
-  -webkit-clip-path: polygon(0% 100%, 50% 100%, 0% 0%);
-          clip-path: polygon(0% 100%, 50% 100%, 0% 0%);
+  -webkit-clip-path: polygon(0% 100%, 50% 100%, 0% 20%);
+          clip-path: polygon(0% 100%, 50% 100%, 0% 20%);
   background-color: #f3f4f7;
 }
 
@@ -3768,8 +3768,8 @@ section {
     text-align: center;
   }
   .conceptColor__section-third::before {
-    -webkit-clip-path: polygon(0% 100%, 50% 100%, 0% 50%);
-            clip-path: polygon(0% 100%, 50% 100%, 0% 50%);
+    -webkit-clip-path: polygon(0% 100%, 50% 100%, 0% 75%);
+            clip-path: polygon(0% 100%, 50% 100%, 0% 75%);
   }
 }
 .conceptColor__section-fourth {
@@ -5738,9 +5738,9 @@ section {
   left: 0;
   bottom: -40.45rem;
   width: 100%;
-  height: 20rem;
-  -webkit-clip-path: polygon(0% 0%, 50% 50%, 100% 100%, 0% 100%);
-          clip-path: polygon(0% 0%, 50% 50%, 100% 100%, 0% 100%);
+  height: 40rem;
+  -webkit-clip-path: polygon(0% 45%, 100% 100%, 0% 100%);
+          clip-path: polygon(0% 45%, 100% 100%, 0% 100%);
   background-color: #fff;
 }
 .philosophy__section-third .container .dots {
@@ -5814,6 +5814,8 @@ section {
   .philosophy__section-third .container::after {
     height: 18rem;
     bottom: -55rem;
+    -webkit-clip-path: polygon(0% 40%, 110% 100%, 0% 100%);
+            clip-path: polygon(0% 40%, 110% 100%, 0% 100%);
   }
   .philosophy__section-third .container .dots {
     display: flex;
@@ -7044,7 +7046,7 @@ section {
   content: "";
   position: absolute;
   left: 0;
-  bottom: 0;
+  bottom: -0.2rem;
   z-index: 50;
   width: 100%;
   height: 20rem;
@@ -7069,6 +7071,9 @@ section {
     /* width: calc(99.6rem * 2);
     height: calc(99.6rem * 2); */
   }
+  .section_first .container .section_background {
+    height: 80rem;
+  }
   .section_first .container .section_background .circle_background {
     width: 90.6rem;
     bottom: 10rem;
@@ -7079,7 +7084,7 @@ section {
     height: 31.6rem;
     /* top: 25.2rem;
     left: 34.5rem; */
-    transform: translate(-68%, 52%);
+    transform: translate(-65%, 92%);
   }
   .section_first .container .section_content {
     padding: 0 4rem;
@@ -7105,6 +7110,9 @@ section {
     position: absolute;
     left: 0;
     bottom: 40.5rem;
+    height: 18rem;
+    -webkit-clip-path: polygon(0% 45%, 0% 100%, 100% 100%);
+            clip-path: polygon(0% 45%, 0% 100%, 100% 100%);
   }
 }
 .section_second .container .section_content .content_title {
