@@ -13,8 +13,8 @@ const animItems = () => {
     })
   }
 }
-
 if (!document.getElementById('fullpage')) {
+  document.querySelector('body').style.overflow = 'hidden'
   animItems()
 }
 
@@ -70,11 +70,21 @@ document.addEventListener('DOMContentLoaded', function () {
           duration: 1,
           delay: 3.5,
         })
-        gsap.timeline().to('#circle', { opacity: 0, duration: 1.5, delay: 4 })
-        setTimeout(() => {
-          // document.querySelector('body').style.overflow = 'auto'
-          document.querySelector('.section_animate').classList.add('_hidden')
-        }, 5000)
+        gsap.timeline().to('#circle', {
+          opacity: 0,
+          duration: 1.5,
+          delay: 4,
+          onEnd: () => {
+            if (!document.getElementById('fullpage')) {
+              document.querySelector('body').style.overflow = 'auto'
+            }
+            setTimeout(() => {
+              document
+                .querySelector('.section_animate')
+                .classList.add('_hidden')
+            }, 1500)
+          },
+        })
       }
     })
   }
