@@ -639,9 +639,9 @@ document.addEventListener('DOMContentLoaded', function () {
           'clip-path': md ? 'circle(42%)' : 'circle(31%)',
           opacity: 1,
           xPercent: md ? 37 : 30,
-          yPercent: md ? -9 : -12,
+          yPercent: md ? -23 : -12,
           duration: 1.5,
-          delay: 2,
+          delay: 1.5,
           onEnd: () =>
             document.querySelector('.section_first').classList.add('_revealed'),
         });
