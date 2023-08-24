@@ -6,16 +6,17 @@ wow = new WOW({
   live: true,
 })
 
+wow.init()
+
 $(document).ready(function () {
-  wow.init()
   $('select').niceSelect()
-  if ($('#fullpage').length && $(window).width() > 768) {
-    $('#fullpage').fullpage({
-      scrollOverflow: false,
-      scrollSectionToBottomFromBottom: false,
-      fitToSection: false,
-    })
-  }
+  // if ($('#fullpage').length && $(window).width() > 768) {
+  //   $('#fullpage').fullpage({
+  //     scrollOverflow: false,
+  //     scrollSectionToBottomFromBottom: false,
+  //     fitToSection: false,
+  //   })
+  // }
 })
 
 document.addEventListener('DOMContentLoaded', function () {

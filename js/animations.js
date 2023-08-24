@@ -5,18 +5,24 @@ import {
   swiperMainSection4,
 } from './swiper.js'
 
+const animItems = () => {
+  const animItems = document.querySelectorAll('[data-animate]')
+  if (animItems.length) {
+    animItems.forEach(item => {
+      item.classList.add('wow')
+    })
+  }
+}
+
+if (!document.getElementById('fullpage')) {
+  animItems()
+}
+
 document.addEventListener('DOMContentLoaded', function () {
   gsap.defaults({
     duration: 1,
     delay: 0.5,
   })
-
-  if (window.matchMedia('(min-width:767.98px)').matches) {
-    gsap.set('.fadeIn', { opacity: 0 })
-    gsap.set('.fadeInLeft', { opacity: 0, xPercent: -100 })
-    gsap.set('.fadeInDown', { opacity: 0, yPercent: -100 })
-    gsap.set('.zoomIn', { opacity: 0, scale: 0 })
-  }
 
   window.onload = function () {
     window.requestAnimationFrame(function () {
@@ -73,136 +79,138 @@ document.addEventListener('DOMContentLoaded', function () {
     })
   }
 
-  if (window.matchMedia('(min-width:767.98px)').matches) {
-    ScrollTrigger.observe({
-      type: 'wheel,touch,scroll,pointer',
-      target: '.section.active',
-      onChange: () => {
-        if (document.querySelector('.main__section-first.active')) {
-          swiperMainSection1.autoplay.start()
-          gsap.to('.swiper_main-section-1', {
-            opacity: 1,
-            yPercent: 0,
-            delay: 0.5,
-          }),
-            gsap.to('.title1_section-1', {
+  if (document.getElementById('fullpage')) {
+    console.log('log')
+    if (window.matchMedia('(min-width:767.98px)').matches) {
+      gsap.set('.fadeIn', { opacity: 0 })
+      gsap.set('.fadeInLeft', { opacity: 0, xPercent: -100 })
+      gsap.set('.fadeInDown', { opacity: 0, yPercent: -100 })
+      gsap.set('.zoomIn', { opacity: 0, scale: 0 })
+      ScrollTrigger.observe({
+        type: 'wheel,touch,scroll,pointer',
+        target: '.section.active',
+        onChange: () => {
+          if (document.querySelector('.main__section-first.active')) {
+            swiperMainSection1.autoplay.start()
+            gsap.to('.swiper_main-section-1', {
               opacity: 1,
-              xPercent: 0,
+              yPercent: 0,
               delay: 0.5,
             }),
-            gsap.to('.title2_section-1', { opacity: 1, delay: 1.5 }),
-            gsap.to('.title3_section-1', { opacity: 1, delay: 1.8 }),
-            gsap.to('.btn_section-1', { opacity: 1, delay: 2 })
-        }
-        if (document.querySelector('.main__section-second.active')) {
-          swiperMainSection2.autoplay.start()
-          gsap.to('.main__section-second .content_left', {
-            opacity: 1,
-          }),
-            gsap.to('.main__section-second .icon_wrap', {
+              gsap.to('.title1_section-1', {
+                opacity: 1,
+                xPercent: 0,
+                delay: 0.5,
+              }),
+              gsap.to('.title2_section-1', { opacity: 1, delay: 1.5 }),
+              gsap.to('.title3_section-1', { opacity: 1, delay: 1.8 }),
+              gsap.to('.btn_section-1', { opacity: 1, delay: 2 })
+          }
+          if (document.querySelector('.main__section-second.active')) {
+            swiperMainSection2.autoplay.start()
+            gsap.to('.main__section-second .content_left', {
               opacity: 1,
-            })
-          gsap.to('.main__section-content .title_mobile', {
-            opacity: 1,
-            yPercent: 0,
-          }),
-            gsap.to('.main__section-second .content_right .title', {
-              opacity: 1,
-              yPercent: 1,
             }),
-            gsap.to('.main__section-second .swiper-slide .subtitle', {
+              gsap.to('.main__section-second .icon_wrap', {
+                opacity: 1,
+              })
+            gsap.to('.main__section-content .title_mobile', {
+              opacity: 1,
+              yPercent: 0,
+            }),
+              gsap.to('.main__section-second .content_right .title', {
+                opacity: 1,
+                yPercent: 1,
+              }),
+              gsap.to('.main__section-second .swiper-slide .subtitle', {
+                opacity: 1,
+                delay: 1.3,
+              }),
+              gsap.to('.main__section-second .swiper-slide .text', {
+                opacity: 1,
+                delay: 1.5,
+              })
+            gsap.to('.main__section-second  .btn', {
+              opacity: 1,
+              delay: 1.8,
+            })
+          }
+          if (document.querySelector('.main__section-third.active')) {
+            swiperMainSection3.autoplay.start()
+            gsap.to('.main__section-third .left_block .text', {
+              opacity: 1,
+              yPercent: 0,
+            })
+            gsap.to('.main__section-third .left_block .subtitle_span', {
               opacity: 1,
               delay: 1.3,
-            }),
-            gsap.to('.main__section-second .swiper-slide .text', {
+            })
+            gsap.to('.main__section-third .left_block .subtitle', {
+              opacity: 1,
+              delay: 1.3,
+            })
+            gsap.to('.main__section-third .left_block .btn', {
               opacity: 1,
               delay: 1.5,
             })
-          gsap.to('.main__section-second  .btn', {
-            opacity: 1,
-            delay: 1.8,
-          })
-        }
-        if (document.querySelector('.main__section-third.active')) {
-          swiperMainSection3.autoplay.start()
-          gsap.to('.main__section-third .left_block .text', {
-            opacity: 1,
-            yPercent: 0,
-          })
-          gsap.to('.main__section-third .left_block .subtitle_span', {
-            opacity: 1,
-            delay: 1.3,
-          })
-          gsap.to('.main__section-third .left_block .subtitle', {
-            opacity: 1,
-            delay: 1.3,
-          })
-          gsap.to('.main__section-third .left_block .btn', {
-            opacity: 1,
-            delay: 1.5,
-          })
-          gsap.to('.main__section-third .right_block .img_block', {
-            opacity: 1,
-            scale: 1,
-          })
-          gsap.to('.main__section-third .swiper-pagination', {
-            opacity: 1,
-            delay: 1.5,
-          })
-        }
-        if (document.querySelector('.main__section-fourth.active')) {
-          swiperMainSection4.autoplay.start()
-          gsap.to('.main__section-fourth .photo_after', {
-            opacity: 1,
-            xPercent: 0,
-          })
-          gsap.to('.main__section-fourth .photo_before', {
-            opacity: 1,
-          })
-          gsap.to('.main__section-fourth .right_block .title', {
-            opacity: 1,
-            yPercent: 0,
-          })
-          gsap.to('.main__section-fourth .right_block .pots-value', {
-            opacity: 1,
-            delay: 1.3,
-          })
-          gsap.to('.main__section-fourth .right_block .text_block', {
-            opacity: 1,
-            delay: 1.5,
-          })
-        }
-        if (document.querySelector('.main__section-fifth.active')) {
-          gsap.to('.main__section-fifth .container', {
-            opacity: 1,
-            yPercent: 0,
-          })
-          gsap.to('.main__section-fifth .main__section-content', {
-            opacity: 1,
-            delay: 1.5,
-          })
-        }
-        if (document.querySelector('.main__section-sixth.active')) {
-          gsap.to('.main__section-sixth .circles_left', {
-            opacity: 1,
-          })
-          gsap.to('.main__section-sixth .circles_center', {
-            opacity: 1,
-            scale: 1,
-          })
-          gsap.to('.main__section-sixth .circles_right', {
-            opacity: 1,
-          })
-        }
-      },
-      preventDefault: true,
-    })
-  } else {
-    const animItems = document.querySelectorAll('[data-animate]')
-    if (animItems.length) {
-      animItems.forEach(item => {
-        item.classList.add('wow')
+            gsap.to('.main__section-third .right_block .img_block', {
+              opacity: 1,
+              scale: 1,
+            })
+            gsap.to('.main__section-third .swiper-pagination', {
+              opacity: 1,
+              delay: 1.5,
+            })
+          }
+          if (document.querySelector('.main__section-fourth.active')) {
+            swiperMainSection4.autoplay.start()
+            gsap.to('.main__section-fourth .photo_after', {
+              opacity: 1,
+              xPercent: 0,
+            })
+            gsap.to('.main__section-fourth .photo_before', {
+              opacity: 1,
+            })
+            gsap.to('.main__section-fourth .right_block .title', {
+              opacity: 1,
+              yPercent: 0,
+            })
+            gsap.to('.main__section-fourth .right_block .pots-value', {
+              opacity: 1,
+              delay: 1.3,
+            })
+            gsap.to('.main__section-fourth .right_block .text_block', {
+              opacity: 1,
+              delay: 1.5,
+            })
+          }
+          if (document.querySelector('.main__section-fifth.active')) {
+            gsap.to('.main__section-fifth .container', {
+              opacity: 1,
+              yPercent: 0,
+            })
+            gsap.to('.main__section-fifth .main__section-content', {
+              opacity: 1,
+              delay: 1.5,
+            })
+          }
+          if (document.querySelector('.main__section-sixth.active')) {
+            gsap.to('.main__section-sixth .circles_left', {
+              opacity: 1,
+            })
+            gsap.to('.main__section-sixth .circles_center', {
+              opacity: 1,
+              scale: 1,
+            })
+            gsap.to('.main__section-sixth .circles_right', {
+              opacity: 1,
+            })
+          }
+        },
+        preventDefault: true,
       })
+    } else {
+      animItems()
     }
   }
 })
