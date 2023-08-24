@@ -19,6 +19,16 @@ $(document).ready(function () {
 });
 
 document.addEventListener('DOMContentLoaded', function () {
+  const overlays = document.querySelectorAll('.overlay');
+  overlays.forEach((overlay) => {
+    overlay.addEventListener('click', (event) => {
+      const modal = overlay.querySelector('.modal');
+      if (event.target === overlay) {
+        overlay.style.display = 'none';
+      }
+    });
+  });
+
   const checkbox = document.getElementById('burger-toggle');
 
   checkbox.addEventListener('change', function () {

@@ -1880,6 +1880,7 @@ section {
   align-items: center;
   justify-content: center;
   gap: 2rem;
+  cursor: pointer;
 }
 .details__section-first .container .details__section-content .content_right .choose_box img {
   width: 9rem;
