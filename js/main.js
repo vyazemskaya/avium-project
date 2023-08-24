@@ -25,7 +25,9 @@ document.addEventListener('DOMContentLoaded', function () {
     overlay.addEventListener('click', event => {
       const modal = overlay.querySelector('.modal')
       if (event.target === overlay) {
-        overlay.style.display = 'none'
+        overlay.style.display = 'none';
+        modal.style.display = 'none';
+        document.body.style.overflow = 'visible';
       }
     })
   })
@@ -85,35 +87,52 @@ document.addEventListener('DOMContentLoaded', function () {
       cartSwapper = document.getElementById('cart_fixed-block')
 
     cartSwapper.querySelector('.content-btn').addEventListener('click', () => {
-      const cartPosition = cart.getBoundingClientRect().top + window.scrollY
-
-      // Перемещаем страницу к блоку #cart
+      const cartPosition = cart.getBoundingClientRect().top + window.scrollY;
       window.scrollTo({
         top: cartPosition - 100,
         behavior: 'smooth',
       })
     })
 
-    const observer = new IntersectionObserver(entries => {
-      entries.forEach(entry => {
-        if (entry.target === cart) {
-          if (entry.isIntersecting) {
-            // Блок targetBlock виден, делаем блок видимым
-            if (window.innerWidth < 769) {
-              cartSwapper.style.display = 'none'
-            }
-          } else {
-            // Блок targetBlock не виден, скрываем блок
-            if (window.innerWidth < 769) {
-              cartSwapper.style.display = 'flex'
-            }
-          }
-        }
-      })
-    })
+    // const observer = new IntersectionObserver((entries) => {
+    //   entries.forEach((entry) => {
+    //     if (entry.target === cart) {
+    //       if (entry.isIntersecting) {
+    //         // Блок targetBlock виден, делаем блок видимым
+    //         if (window.innerWidth < 769) {
+    //           cartSwapper.style.display = 'none';
+    //         }
+    //       } else {
+    //         // Блок targetBlock не виден, скрываем блок
+    //         if (window.innerWidth < 769) {
+    //           cartSwapper.style.display = 'flex';
+    //         }
+    //       }
+    //     }
+    //   });
+    // });
 
-    // Начать отслеживать видимость блока cart
-    observer.observe(cart)
+    // // Начать отслеживать видимость блока cart
+    // observer.observe(cart);
+
+    if (screen.width < 769) {
+      $(document).ready(function () {
+        var cartPosition = $('#cart');
+        var fixedBlock = $('#cart_fixed-block');
+
+        $(window).scroll(function () {
+          var scrollPosition = $(window).scrollTop();
+          var cartOffset =
+            cartPosition.offset().top + cartPosition.height() - 1000;
+
+          if (scrollPosition >= cartOffset) {
+            fixedBlock.hide();
+          } else {
+            fixedBlock.show();
+          }
+        });
+      });
+    }
   }
 
   /////////////////////////////Коллекция Freedom///////////////////////////////////
@@ -322,60 +341,60 @@ document.addEventListener('DOMContentLoaded', function () {
 
     document
       .querySelector(
-        '.details__section-first .overlay .modal_addToCart .modal_close-icon'
+        '.details__section-first .overlay-add-to-cart .modal_addToCart .modal_close-icon'
       )
       .addEventListener('click', () => {
         document.querySelector(
-          '.details__section-first .overlay'
-        ).style.display = 'none'
+          '.details__section-first .overlay-add-to-cart'
+        ).style.display = 'none';
         document.querySelector(
-          '.details__section-first .overlay .modal_addToCart'
-        ).style.display = 'none'
-        document.body.style.overflow = 'visible'
-      })
+          '.details__section-first .overlay-add-to-cart .modal_addToCart'
+        ).style.display = 'none';
+        document.body.style.overflow = 'visible';
+      });
 
     document
       .querySelectorAll(
-        '.details__section-first .overlay .modal_addToCart .content_btn'
+        '.details__section-first .overlay-add-to-cart .modal_addToCart .content_btn'
       )
       .forEach(element => {
         element.addEventListener('click', () => {
           document.querySelector(
-            '.details__section-first .overlay'
-          ).style.display = 'none'
+            '.details__section-first .overlay-add-to-cart'
+          ).style.display = 'none';
           document.querySelector(
-            '.details__section-first .overlay .modal_addToCart'
-          ).style.display = 'none'
-          document.body.style.overflow = 'visible'
-        })
-      })
+            '.details__section-first .overlay-add-to-cart .modal_addToCart'
+          ).style.display = 'none';
+          document.body.style.overflow = 'visible';
+        });
+      });
 
     if (document.querySelector('.details__section-first .choose_color-img')) {
       document
         .querySelector('.details__section-first .choose_color-img')
         .addEventListener('click', () => {
           document.querySelector(
-            '.details__section-first .overlay'
-          ).style.display = 'block'
+            '.details__section-first .overlay-choose-color'
+          ).style.display = 'block';
           document.querySelector(
-            '.details__section-first .overlay .modal_chooseColor'
-          ).style.display = 'block'
-          document.body.style.overflow = 'hidden'
-        })
+            '.details__section-first .overlay-choose-color .modal_chooseColor'
+          ).style.display = 'block';
+          document.body.style.overflow = 'hidden';
+        });
 
       document
         .querySelector(
-          '.details__section-first .overlay .modal_chooseColor .modal_close-icon'
+          '.details__section-first .overlay-choose-color .modal_chooseColor .modal_close-icon'
         )
         .addEventListener('click', () => {
           document.querySelector(
-            '.details__section-first .overlay'
-          ).style.display = 'none'
+            '.details__section-first .overlay-choose-color'
+          ).style.display = 'none';
           document.querySelector(
-            '.details__section-first .overlay .modal_chooseColor'
-          ).style.display = 'none'
-          document.body.style.overflow = 'visible'
-        })
+            '.details__section-first .overlay-choose-color .modal_chooseColor'
+          ).style.display = 'none';
+          document.body.style.overflow = 'visible';
+        });
     }
 
     document.querySelectorAll('[name=group_second]').forEach(element => {

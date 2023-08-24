@@ -539,6 +539,9 @@ body {
 
     .swiper_conceptColor-section-third {
       margin-bottom: 4rem;
+      .swiper-pagination {
+        width: 22rem;
+      }
       .swiper-wrapper {
         padding: 0;
         height: 48rem;
@@ -581,7 +584,7 @@ body {
       }
       .swiper-pagination_section-3 {
         display: flex;
-        width: 21rem;
+        width: 22rem;
         position: static;
         margin: 0 auto;
         margin-top: 4.5rem;
