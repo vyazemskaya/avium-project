@@ -38,18 +38,34 @@
 
 @media (max-width: 48em) {
   .elmar__section-first {
+    margin-bottom: 12rem;
     .container {
       padding: 0;
       .elmar__section-background {
         img {
           object-fit: cover;
-          object-position: -162rem;
-          height: 147.4rem;
+          // object-position: -162rem;
+          height: 80rem;
         }
       }
       .elmar__section-content {
-        top: 46.4rem;
-        left: 4rem;
+        position: static;
+        padding: 0 4rem;
+        // top: 46.4rem;
+        // left: 4rem;
+        .content_title {
+          gap: 2rem;
+        }
+        .content_text {
+          margin-bottom: 6rem;
+        }
+        .content_title,
+        .content_text {
+          color: #000;
+        }
+        .content_btn {
+          box-shadow: 1px 4px 4px 0px #d5d5d5;
+        }
       }
     }
   }

@@ -187,6 +187,7 @@
       .elmar__section-content {
         gap: 12rem;
         .content_box {
+          gap: 12rem;
           .content_top {
             flex-direction: column-reverse;
             &-left {
@@ -212,6 +213,7 @@
               width: 100%;
               .content_driver-text {
                 text-align: left;
+                margin-bottom: 1rem;
               }
             }
             &-right {
