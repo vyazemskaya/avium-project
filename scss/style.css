@@ -545,6 +545,9 @@ section {
   background-size: 100% 95.9rem;
   margin-bottom: 0;
   overflow: hidden;
+  margin-top: -1rem;
+  position: relative;
+  z-index: 0;
 }
 .main__section-first .container {
   width: 100%;
@@ -4422,6 +4425,11 @@ section {
   .decisions__section-second .container .decisions__section-content .content_bottom .product_box .product_right .product_btn {
     display: none;
   }
+}
+.elmar__section-first {
+  margin-top: -1rem;
+  position: relative;
+  z-index: 0;
 }
 .elmar__section-first .container {
   width: 100%;
