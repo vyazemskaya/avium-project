@@ -641,20 +641,18 @@ document.addEventListener('DOMContentLoaded', function () {
             .timeline()
             .to('#video-collection', { width: '100%', height: '100%' })
           gsap.timeline().to('header', { yPercent: -100 })
-          gsap
-            .timeline()
-            .to('.section_first .container_media', {
-              width: '100%',
-              height: '100%',
-              x: 0,
-              y: 0,
-              'clip-path': 'circle(75%)',
-            })
+          gsap.timeline().to('.section_first .container_media', {
+            width: '100%',
+            height: '100%',
+            y: 0,
+            x: 0,
+            'clip-path': 'none',
+          })
         } else {
           videoWrap.classList.add('_fw')
           gsap.timeline().to(videoWrap, {
-            translateX: 0,
-            translateY: 0,
+            yPercent: 0,
+            xPercent: 0,
             width: '100%',
             height: '100%',
             duration: 1,
