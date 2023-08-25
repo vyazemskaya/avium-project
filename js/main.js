@@ -632,6 +632,7 @@ document.addEventListener('DOMContentLoaded', function () {
     document.addEventListener('click', function (e) {
       if (e.target.closest('.content_outer-btn')) {
         if (md) {
+          videoWrap.classList.add('_fw')
           document.querySelector('.section_first').classList.add('_fw')
           gsap
             .timeline()
@@ -640,6 +641,15 @@ document.addEventListener('DOMContentLoaded', function () {
             .timeline()
             .to('#video-collection', { width: '100%', height: '100%' })
           gsap.timeline().to('header', { yPercent: -100 })
+          gsap
+            .timeline()
+            .to('.section_first .container_media', {
+              width: '100%',
+              height: '100%',
+              x: 0,
+              y: 0,
+              'clip-path': 'circle(75%)',
+            })
         } else {
           videoWrap.classList.add('_fw')
           gsap.timeline().to(videoWrap, {
@@ -663,7 +673,10 @@ document.addEventListener('DOMContentLoaded', function () {
           },
           0
         )
-      } else if (videoWrap.classList.contains('_fw') && !md) {
+      } else if (
+        document.querySelector('.section_first').classList.contains('_fw') &&
+        !md
+      ) {
         gsap.timeline().to(videoWrap, {
           'clip-path': 'circle(50%)',
           opacity: 1,
