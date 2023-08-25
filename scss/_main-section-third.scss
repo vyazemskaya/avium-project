@@ -86,23 +86,20 @@
       .main__section-content {
         padding: 25rem 0 8rem;
         .swiper-pagination_section-3 {
-          bottom: 11.5rem;
+          bottom: 14.5rem;
           left: 27rem;
         }
         .left_block {
           margin-right: 0;
           .title {
             width: 69rem;
-            display: flex;
-            flex-direction: column;
-            align-items: flex-start;
             margin-bottom: 4rem;
             .title_span {
               text-align: start;
               font-size: 6.4rem;
             }
             .subtitle_span {
-              position: static;
+              top: 15rem;
             }
           }
           .subtitle {
@@ -118,7 +115,7 @@
         .right_block {
           transform: none;
           .img_block {
-            margin-bottom: 8rem;
+            margin-bottom: 14rem;
           }
           .btn_mobile {
             display: flex;

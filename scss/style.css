@@ -1076,7 +1076,7 @@ section {
     padding: 25rem 0 8rem;
   }
   .main__section-third .container .main__section-content .swiper-pagination_section-3 {
-    bottom: 11.5rem;
+    bottom: 14.5rem;
     left: 27rem;
   }
   .main__section-third .container .main__section-content .left_block {
@@ -1084,9 +1084,6 @@ section {
   }
   .main__section-third .container .main__section-content .left_block .title {
     width: 69rem;
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
     margin-bottom: 4rem;
   }
   .main__section-third .container .main__section-content .left_block .title .title_span {
@@ -1094,7 +1091,7 @@ section {
     font-size: 6.4rem;
   }
   .main__section-third .container .main__section-content .left_block .title .subtitle_span {
-    position: static;
+    top: 15rem;
   }
   .main__section-third .container .main__section-content .left_block .subtitle {
     font-size: 5rem;
@@ -1109,7 +1106,7 @@ section {
     transform: none;
   }
   .main__section-third .container .main__section-content .right_block .img_block {
-    margin-bottom: 8rem;
+    margin-bottom: 14rem;
   }
   .main__section-third .container .main__section-content .right_block .btn_mobile {
     display: flex;
@@ -1198,10 +1195,10 @@ section {
     width: 65rem;
     height: 65rem;
     top: -24rem;
-    right: -8rem;
+    right: -6rem;
   }
   .main__section-fourth .container .main__section-content .left_block .image_block.celling .photo_after {
-    transform: translateY(-2rem);
+    transform: translateY(-1.5rem);
   }
   .main__section-fourth .container .main__section-content .left_block .image_block.celling .photo_before {
     top: -25.5rem;
@@ -1440,6 +1437,7 @@ section {
   }
   .main__section-fifth .container .main__section-content .btn-popup {
     display: flex;
+    margin: 0 auto;
   }
 }
 .main__section-sixth {
@@ -1668,9 +1666,10 @@ section {
 @media (max-width: 48em) {
   .main__section-sixth {
     overflow: hidden;
+    margin-bottom: 0;
   }
   .main__section-sixth .container {
-    padding: 16rem 6rem 20rem;
+    padding: 16rem 6rem 14rem;
   }
   .main__section-sixth .container .main__section-content .subtitle {
     margin-bottom: 12.8rem;
