@@ -687,19 +687,6 @@ document.addEventListener('DOMContentLoaded', function () {
               document
                 .querySelector('.section_first')
                 .classList.add('_revealed'),
-            onComplete: () => {
-              document
-                .querySelector('.section_first .content_outer-btn')
-                .addEventListener('click', function () {
-                  tl1.kill()
-                  document.getElementById('video-collection').currentTime = 0
-                  setTimeout(() => {
-                    document.getElementById('video-collection').play()
-                    gsapSet()
-                    initVideo()
-                  }, 500)
-                })
-            },
           })
           if (md) {
             tl1.to(
@@ -753,6 +740,18 @@ document.addEventListener('DOMContentLoaded', function () {
             },
             6
           )
+
+          document
+            .querySelector('.section_first .content_outer-btn')
+            .addEventListener('click', function () {
+              tl1.kill()
+              document.getElementById('video-collection').currentTime = 0
+              setTimeout(() => {
+                document.getElementById('video-collection').play()
+                gsapSet()
+                initVideo()
+              }, 500)
+            })
         })
     }
     initVideo()
