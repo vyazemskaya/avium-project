@@ -663,11 +663,14 @@ document.addEventListener('DOMContentLoaded', function () {
         .getElementById('video-collection')
         .addEventListener('ended', () => {
           const tl1 = gsap.timeline()
-          const tl2 = gsap.timeline()
 
-          gsap.to('.container_media .video_cover', {
-            opacity: 1,
-            duration: 1.5,
+          tl1.to('.container_media #video-collection', {
+            opacity: 0,
+            onStart: () => {
+              gsap.to('.container_media .video_cover', {
+                opacity: 1,
+              })
+            },
           })
           tl1.to('.container_media .video_cover', {
             'clip-path': md ? 'circle(39%)' : 'circle(31%)',
@@ -676,54 +679,19 @@ document.addEventListener('DOMContentLoaded', function () {
             xPercent: md ? 35 : 30,
             yPercent: md ? -20 : -12,
             duration: 1.5,
-            delay: 1.5,
-            onEnd: () =>
-              document
-                .querySelector('.section_first')
-                .classList.add('_revealed'),
-          })
-          gsap.to('.container_media #video-collection', {
-            opacity: 0,
           })
           tl1.to('.section_first .content_outer-btn', {
             opacity: 1,
             visibility: 'visible',
-          })
-          if (md) {
-            tl2.to('.section_first .decoration_mobile', {
-              opacity: 1,
-              delay: 3,
-              visibility: 'visible',
-            })
-          } else {
-            gsap.timeline().to('.section_first .decoration_left', {
-              opacity: 1,
-              delay: 4,
-              visibility: 'visible',
-            })
-            gsap.timeline().to('.section_first .decoration_right', {
-              opacity: 1,
-              delay: 4,
-              visibility: 'visible',
-            })
-          }
-          tl2.to('.section_first .content_title', {
-            opacity: 1,
-            visibility: 'visible',
-            xPercent: 0,
-            delay: mmd ? 4 : 0,
-          })
-          tl2.to('.section_first .container .section_content .content_text', {
-            opacity: 1,
-            visibility: 'visible',
-          })
-          tl2.to('.section_first .container .section_content .content_btn', {
-            opacity: 1,
-            visibility: 'visible',
+            onStart: () =>
+              document
+                .querySelector('.section_first')
+                .classList.add('_revealed'),
             onComplete: () => {
               document
                 .querySelector('.section_first .content_outer-btn')
                 .addEventListener('click', function () {
+                  tl1.kill()
                   document.getElementById('video-collection').currentTime = 0
                   setTimeout(() => {
                     document.getElementById('video-collection').play()
@@ -733,6 +701,58 @@ document.addEventListener('DOMContentLoaded', function () {
                 })
             },
           })
+          if (md) {
+            tl1.to(
+              '.section_first .decoration_mobile',
+              {
+                opacity: 1,
+                visibility: 'visible',
+              },
+              3
+            )
+          } else {
+            tl1.to(
+              '.section_first .decoration_left',
+              {
+                opacity: 1,
+                visibility: 'visible',
+              },
+              3
+            )
+            tl1.to(
+              '.section_first .decoration_right',
+              {
+                opacity: 1,
+                visibility: 'visible',
+              },
+              3
+            )
+          }
+          tl1.to(
+            '.section_first .content_title',
+            {
+              opacity: 1,
+              visibility: 'visible',
+              xPercent: 0,
+            },
+            4
+          )
+          tl1.to(
+            '.section_first .container .section_content .content_text',
+            {
+              opacity: 1,
+              visibility: 'visible',
+            },
+            5
+          )
+          tl1.to(
+            '.section_first .container .section_content .content_btn',
+            {
+              opacity: 1,
+              visibility: 'visible',
+            },
+            6
+          )
         })
     }
     initVideo()

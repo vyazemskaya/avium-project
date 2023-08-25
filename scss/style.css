@@ -11491,7 +11491,7 @@ section {
   left: 0;
   background-color: rgba(0, 0, 0, 0.2196078431);
   opacity: 0;
-  transition: opacity 1s ease 2s;
+  transition: opacity 1s ease;
 }
 
 .section_first._revealed .video_cover::after {
