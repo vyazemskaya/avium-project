@@ -630,7 +630,7 @@ document.addEventListener('DOMContentLoaded', function () {
         addSourceToVideo(element, src.dataset.mobileVid)
       }
     }
-    const gsapReset = duration => {
+    const gsapReset = () => {
       if (videoSection.classList.contains('_fw')) {
         gsap.timeline().to(videoWrap, {
           'clip-path': 'circle(50%)',
@@ -639,25 +639,34 @@ document.addEventListener('DOMContentLoaded', function () {
           y: mmd ? '-17%' : '-23%',
           width: mmd ? '110.9rem' : '89.3rem',
           height: mmd ? '110.9rem' : '89.3rem',
-          duration: duration === 'none' ? 0 : 1,
+          duration: md ? 0 : 1,
           delay: mmd ? 1 : 0,
           position: 'absolute',
         })
         gsap.timeline().to(videoWrap, {
           'clip-path': 'circle(50%)',
         })
+        gsap.timeline().to(video, {
+          width: md ? '67%' : '100%',
+          height: md ? '82%' : '100%',
+        })
         gsap.timeline().to(playBtn, {
           opacity: 1,
           visibility: 'visible',
           delay: mmd ? 1 : 0,
-          duration: duration === 'none' ? 0 : 1,
+          duration: md ? 0 : 1,
           onStart: () => {
-            videoSection.classList.remove('_fw')
+            if (mmd) {
+              videoSection.classList.remove('_fw')
+            }
+          },
+          onUpdate: () => {
+            if (md) {
+              videoSection.classList.remove('_fw')
+            }
           },
         })
-        gsap
-          .timeline()
-          .to('header', { yPercent: 0, duration: duration === 'none' ? 0 : 1 })
+        gsap.timeline().to('header', { yPercent: 0, duration: md ? 0 : 1 })
         gsap.timeline().to('body', { overflow: 'auto' })
       }
     }
@@ -707,11 +716,11 @@ document.addEventListener('DOMContentLoaded', function () {
           },
           0
         )
-      } else {
+      } else if (!e.target.closest('.content_outer-btn') && mmd) {
         gsapReset()
       }
       if (e.target.closest('#close-video')) {
-        gsapReset('none')
+        gsapReset()
       }
     })
   }
