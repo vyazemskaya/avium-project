@@ -607,154 +607,183 @@ document.addEventListener('DOMContentLoaded', function () {
 
   // yearcolor
   if (document.getElementById('video-collection')) {
+    const playBtn = document.querySelector('.content_outer-btn')
+    const video = document.getElementById('video-collection')
+    const videoWrap = document.querySelector('.container_media')
     const mmd = window.matchMedia('(min-width: 768px)').matches
     const md = window.matchMedia('(max-width: 768px)').matches
     gsap.defaults({ duration: 1 })
 
-    const gsapSet = () => {
-      const tl = gsap.timeline()
-      tl.to('.container_media', {
-        xPercent: 50,
-        yPercent: -50,
-        duration: 0,
-      })
-      tl.to('.video_cover', {
-        'clip-path': md ? 'circle(62%)' : 'circle(75%)',
-        duration: 0,
-        xPercent: 0,
-        opacity: 0,
-        yPercent: 0,
-      })
-      tl.to('.section_first .content_outer-btn', {
-        opacity: 0,
-        visibility: 'hidden',
-        duration: 0,
-      })
-      tl.to('.section_first .decoration', {
-        opacity: 0,
-        duration: 0,
-        visibility: 'hidden',
-      })
-      tl.to('.section_first .content_title', {
-        opacity: 0,
-        xPercent: -100,
-        duration: 0,
-        visibility: 'hidden',
-      })
-      tl.to('.section_first .container .section_content .content_text', {
-        opacity: 0,
-        duration: 0,
-        visibility: 'hidden',
-      })
-      tl.to('.section_first .container .section_content .content_btn', {
-        opacity: 0,
-        duration: 0,
-        visibility: 'hidden',
-      })
-      tl.to('.container_media #video-collection', {
-        opacity: 1,
-        duration: 0,
-      })
-    }
-    gsapSet()
+    playBtn.addEventListener('click', function () {
+      const tl1 = gsap.timeline()
+      const tl2 = gsap.timeline()
 
-    const initVideo = () => {
-      document
-        .getElementById('video-collection')
-        .addEventListener('ended', () => {
-          const tl1 = gsap.timeline()
-
-          tl1.to('.container_media #video-collection', {
-            opacity: 0,
-            onStart: () => {
-              gsap.to('.container_media .video_cover', {
-                opacity: 1,
-              })
-            },
-          })
-          tl1.to('.container_media .video_cover', {
-            'clip-path': md ? 'circle(39%)' : 'circle(31%)',
-            opacity: 1,
-            visibility: 'visible',
-            xPercent: md ? 35 : 30,
-            yPercent: md ? -20 : -12,
-            duration: 1.5,
-          })
-          tl1.to('.section_first .content_outer-btn', {
-            opacity: 1,
-            visibility: 'visible',
-            onStart: () =>
-              document
-                .querySelector('.section_first')
-                .classList.add('_revealed'),
-          })
-          if (md) {
-            tl1.to(
-              '.section_first .decoration_mobile',
-              {
-                opacity: 1,
-                visibility: 'visible',
-              },
-              3
-            )
-          } else {
-            tl1.to(
-              '.section_first .decoration_left',
-              {
-                opacity: 1,
-                visibility: 'visible',
-              },
-              3
-            )
-            tl1.to(
-              '.section_first .decoration_right',
-              {
-                opacity: 1,
-                visibility: 'visible',
-              },
-              3
-            )
-          }
-          tl1.to(
-            '.section_first .content_title',
-            {
-              opacity: 1,
-              visibility: 'visible',
-              xPercent: 0,
-            },
-            4
-          )
-          tl1.to(
-            '.section_first .container .section_content .content_text',
-            {
-              opacity: 1,
-              visibility: 'visible',
-            },
-            5
-          )
-          tl1.to(
-            '.section_first .container .section_content .content_btn',
-            {
-              opacity: 1,
-              visibility: 'visible',
-            },
-            6
-          )
-
-          document
-            .querySelector('.section_first .content_outer-btn')
-            .addEventListener('click', function () {
-              tl1.kill()
-              document.getElementById('video-collection').currentTime = 0
-              setTimeout(() => {
-                document.getElementById('video-collection').play()
-                gsapSet()
-                initVideo()
-              }, 500)
-            })
+      if (!videoWrap.classList.contains('_fw')) {
+        videoWrap.classList.add('_fw')
+        tl1.to(videoWrap, {
+          translateX: 0,
+          translateY: 0,
+          'clip-path': 'circle(75%)',
+          width: '100%',
+          height: '100%',
         })
-    }
-    initVideo()
+      } else {
+        videoWrap.classList.remove('_fw')
+        tl1.to(videoWrap, {
+          opacity: 1,
+          translateX: 5,
+          translateY: '-17%',
+          'clip-path': 'circle(50%)',
+          width: '110.9rem',
+          height: '110.9rem',
+        })
+      }
+    })
+
+    // const gsapSet = () => {
+    //   const tl = gsap.timeline()
+    //   tl.to('.container_media', {
+    //     xPercent: 50,
+    //     yPercent: -50,
+    //     duration: 0,
+    //   })
+    //   tl.to('.video_cover', {
+    //     'clip-path': md ? 'circle(62%)' : 'circle(75%)',
+    //     duration: 0,
+    //     xPercent: 0,
+    //     opacity: 0,
+    //     yPercent: 0,
+    //   })
+    //   tl.to('.section_first .content_outer-btn', {
+    //     opacity: 0,
+    //     visibility: 'hidden',
+    //     duration: 0,
+    //   })
+    //   tl.to('.section_first .decoration', {
+    //     opacity: 0,
+    //     duration: 0,
+    //     visibility: 'hidden',
+    //   })
+    //   tl.to('.section_first .content_title', {
+    //     opacity: 0,
+    //     xPercent: -100,
+    //     duration: 0,
+    //     visibility: 'hidden',
+    //   })
+    //   tl.to('.section_first .container .section_content .content_text', {
+    //     opacity: 0,
+    //     duration: 0,
+    //     visibility: 'hidden',
+    //   })
+    //   tl.to('.section_first .container .section_content .content_btn', {
+    //     opacity: 0,
+    //     duration: 0,
+    //     visibility: 'hidden',
+    //   })
+    //   tl.to('.container_media #video-collection', {
+    //     opacity: 1,
+    //     duration: 0,
+    //   })
+    // }
+    // gsapSet()
+
+    // const initVideo = () => {
+    //   document
+    //     .getElementById('video-collection')
+    //     .addEventListener('ended', () => {
+    //       const tl1 = gsap.timeline()
+
+    //       tl1.to('.container_media #video-collection', {
+    //         opacity: 0,
+    //         onStart: () => {
+    //           gsap.to('.container_media .video_cover', {
+    //             opacity: 1,
+    //           })
+    //         },
+    //       })
+    //       tl1.to('.container_media .video_cover', {
+    //         'clip-path': md ? 'circle(39%)' : 'circle(31%)',
+    //         opacity: 1,
+    //         visibility: 'visible',
+    //         xPercent: md ? 35 : 30,
+    //         yPercent: md ? -20 : -12,
+    //         duration: 1.5,
+    //       })
+    //       tl1.to('.section_first .content_outer-btn', {
+    //         opacity: 1,
+    //         visibility: 'visible',
+    //         onStart: () =>
+    //           document
+    //             .querySelector('.section_first')
+    //             .classList.add('_revealed'),
+    //       })
+    //       if (md) {
+    //         tl1.to(
+    //           '.section_first .decoration_mobile',
+    //           {
+    //             opacity: 1,
+    //             visibility: 'visible',
+    //           },
+    //           3
+    //         )
+    //       } else {
+    //         tl1.to(
+    //           '.section_first .decoration_left',
+    //           {
+    //             opacity: 1,
+    //             visibility: 'visible',
+    //           },
+    //           3
+    //         )
+    //         tl1.to(
+    //           '.section_first .decoration_right',
+    //           {
+    //             opacity: 1,
+    //             visibility: 'visible',
+    //           },
+    //           3
+    //         )
+    //       }
+    //       tl1.to(
+    //         '.section_first .content_title',
+    //         {
+    //           opacity: 1,
+    //           visibility: 'visible',
+    //           xPercent: 0,
+    //         },
+    //         4
+    //       )
+    //       tl1.to(
+    //         '.section_first .container .section_content .content_text',
+    //         {
+    //           opacity: 1,
+    //           visibility: 'visible',
+    //         },
+    //         5
+    //       )
+    //       tl1.to(
+    //         '.section_first .container .section_content .content_btn',
+    //         {
+    //           opacity: 1,
+    //           visibility: 'visible',
+    //         },
+    //         6
+    //       )
+
+    //       document
+    //         .querySelector('.section_first .content_outer-btn')
+    //         .addEventListener('click', function () {
+    //           tl1.kill()
+    //           document.getElementById('video-collection').currentTime = 0
+    //           setTimeout(() => {
+    //             document.getElementById('video-collection').play()
+    //             gsapSet()
+    //             initVideo()
+    //           }, 500)
+    //         })
+    //     })
+    // }
+    // initVideo()
   }
   // if (document.querySelector('.section_first')) {
   //   document
