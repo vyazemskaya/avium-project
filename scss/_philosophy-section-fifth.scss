@@ -16,9 +16,6 @@
           font-weight: 700;
           text-transform: uppercase;
           margin-bottom: 4rem;
-          &.mobile {
-            display: none;
-          }
         }
         .content_text {
           font-size: 3rem;
@@ -57,11 +54,8 @@
         .content_left {
           width: 100%;
           .content_title {
-            display: none;
-            &.mobile {
-              display: block;
-              font-size: 6rem;
-            }
+            display: block;
+            font-size: 6rem;
           }
           .content_text {
             font-size: 3rem;

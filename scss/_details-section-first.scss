@@ -399,6 +399,9 @@
             .content_btn {
               flex: 1 0;
               padding: 3rem 6rem;
+              width: 37.5rem;
+              flex: unset;
+              margin: 0 auto;
               &.addToCart {
                 display: none;
               }
@@ -432,7 +435,7 @@
                 content: '';
                 position: absolute;
                 top: 4rem;
-                left: -2rem;
+                left: -2.6rem;
                 border-radius: 50%;
                 width: 1.3rem;
                 height: 1.3rem;
@@ -526,7 +529,7 @@
                 }
                 &:nth-child(3) {
                   img {
-                    width: 4.2rem;
+                    width: 4.8rem;
                   }
                 }
               }
