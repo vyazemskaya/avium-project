@@ -216,6 +216,7 @@
 }
 @media (max-width: 48em) {
   .main__section-sixth {
+    overflow: hidden;
     .container {
       padding: 16rem 6rem 20rem;
       .main__section-content {
