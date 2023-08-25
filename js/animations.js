@@ -31,19 +31,20 @@ document.addEventListener('DOMContentLoaded', function () {
       if (document.querySelector('.section_animate')) {
         const header = document.querySelector('header')
         const rect = header.querySelector('.logotype').getBoundingClientRect()
+        const md = window.matchMedia('(max-width: 768px)').matches
         gsap.set('#txt', {
-          y: window.matchMedia('(max-width:767.98px)').matches ? 70 : 120,
+          y: md ? -10 : 120,
         })
         gsap.timeline().to('.section_wrap', {
           top: rect.top,
           left: rect.left,
           width: rect.width,
           height: rect.height,
-          xPercent: 0,
-          yPercent: 0,
+          x: 0,
+          y: 0,
           opacity: 0,
-          duration: 0.3,
-          delay: 4,
+          duration: 0.5,
+          delay: md ? 3.8 : 4,
         })
         gsap.timeline().to('#txt', {
           left: '50%',
@@ -60,8 +61,8 @@ document.addEventListener('DOMContentLoaded', function () {
         gsap.timeline().to('#tl', { height: '61%', duration: 2.5 })
         gsap.timeline().to('#txt', {
           opacity: 0,
-          duration: 0.3,
-          delay: 4,
+          duration: 0.1,
+          delay: md ? 3.8 : 4,
         })
         gsap.timeline().to('#circle', {
           width: 0,

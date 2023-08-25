@@ -636,9 +636,11 @@ section {
 @media (max-width: 48em) {
   .section_animate .section_wrap {
     width: 320px;
+    translate: -50% -120%;
   }
   .section_animate #tl {
     width: 8px;
+    height: calc((100vh - -127%) / 2);
   }
 }
 .main__section-first {
@@ -11592,7 +11594,8 @@ section {
   }
   .section_first .container .section_background .content_outer-btn {
     width: 31.6rem;
-    height: 31.6rem;transform: translate(3%, -36%);
+    height: 31.6rem;
+    transform: translate(3%, -36%);
   }
   .section_first .container .section_content {
     padding: 0 4rem;
