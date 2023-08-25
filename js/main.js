@@ -670,11 +670,11 @@ document.addEventListener('DOMContentLoaded', function () {
             duration: 1.5,
           })
           tl1.to('.container_media .video_cover', {
-            'clip-path': md ? 'circle(42%)' : 'circle(31%)',
+            'clip-path': md ? 'circle(39%)' : 'circle(31%)',
             opacity: 1,
             visibility: 'visible',
-            xPercent: md ? 37 : 30,
-            yPercent: md ? -23 : -12,
+            xPercent: md ? 35 : 30,
+            yPercent: md ? -20 : -12,
             duration: 1.5,
             delay: 1.5,
             onEnd: () =>
