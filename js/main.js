@@ -607,52 +607,88 @@ document.addEventListener('DOMContentLoaded', function () {
 
   // yearcolor
   if (document.getElementById('video-collection')) {
+    const videoSection = document.querySelector('.section_first')
     const video = document.getElementById('video-collection')
-    const source = document.createElement('source')
+    const btnClose = document.getElementById('#close-video')
     const playBtn = document.querySelector('.content_outer-btn')
     const videoWrap = document.querySelector('.container_media')
     const mmd = window.matchMedia('(min-width: 768px)').matches
     const md = window.matchMedia('(max-width: 768px)').matches
-    const initVideo = () => {
-      source.setAttribute('src', './img/yearcolor-page/section_first-video.mp4')
-      source.setAttribute('type', 'video/mp4')
 
-      video.appendChild(source)
-      video.play()
-      if (md) {
-        source.setAttribute('src', './img/yearcolor-page/video.mp4')
+    const addSourceToVideo = (element, src) => {
+      const source = document.createElement('source')
+      source.src = src
+      source.type = 'video/mp4'
+      element.appendChild(source)
+    }
 
-        video.play()
+    const initVideo = (element, src) => {
+      const windowWidth = window.innerWidth
+      if (windowWidth > 1200) {
+        addSourceToVideo(element, src.dataset.desktopVid)
+      } else {
+        addSourceToVideo(element, src.dataset.mobileVid)
+      }
+    }
+    const gsapReset = duration => {
+      if (videoSection.classList.contains('_fw')) {
+        gsap.timeline().to(videoWrap, {
+          'clip-path': 'circle(50%)',
+          opacity: 1,
+          x: mmd ? '5%' : '38%',
+          y: mmd ? '-17%' : '-23%',
+          width: mmd ? '110.9rem' : '89.3rem',
+          height: mmd ? '110.9rem' : '89.3rem',
+          duration: duration === 'none' ? 0 : 1,
+          delay: mmd ? 1 : 0,
+          position: 'absolute',
+        })
+        gsap.timeline().to(videoWrap, {
+          'clip-path': 'circle(50%)',
+        })
+        gsap.timeline().to(playBtn, {
+          opacity: 1,
+          visibility: 'visible',
+          delay: mmd ? 1 : 0,
+          duration: duration === 'none' ? 0 : 1,
+          onStart: () => {
+            videoSection.classList.remove('_fw')
+          },
+        })
+        gsap
+          .timeline()
+          .to('header', { yPercent: 0, duration: duration === 'none' ? 0 : 1 })
+        gsap.timeline().to('body', { overflow: 'auto' })
       }
     }
 
     gsap.defaults({ duration: 1 })
 
-    initVideo()
+    initVideo(video, video)
+
     document.addEventListener('click', function (e) {
       if (e.target.closest('.content_outer-btn')) {
         if (md) {
-          videoWrap.classList.add('_fw')
-          document.querySelector('.section_first').classList.add('_fw')
+          videoSection.classList.add('_fw')
           gsap
             .timeline()
-            .to('.section_background', { width: '100vw', height: '100vh' })
-          gsap
-            .timeline()
-            .to('#video-collection', { width: '100%', height: '100%' })
-          gsap.timeline().to('header', { yPercent: -100 })
-          gsap.timeline().to('.section_first .container_media', {
-            width: '100%',
-            height: '100%',
+            .to(video, { width: '100%', height: '100%', duration: 0 })
+          gsap.timeline().to('header', { yPercent: -100, duration: 0 })
+          gsap.timeline().to('body', { overflow: 'hidden', duration: 0 })
+          gsap.timeline().to(videoWrap, {
+            position: 'fixed',
+            width: '100vw',
+            height: '100vh',
             y: 0,
             x: 0,
-            'clip-path': 'none',
+            'clip-path': 'circle(72%)',
+            duration: 0,
           })
         } else {
-          videoWrap.classList.add('_fw')
+          videoSection.classList.add('_fw')
           gsap.timeline().to(videoWrap, {
-            yPercent: 0,
-            xPercent: 0,
+            x: 0,
+            y: 0,
             width: '100%',
             height: '100%',
             duration: 1,
@@ -671,29 +707,11 @@ document.addEventListener('DOMContentLoaded', function () {
           },
           0
         )
-      } else if (
-        document.querySelector('.section_first').classList.contains('_fw') &&
-        !md
-      ) {
-        gsap.timeline().to(videoWrap, {
-          'clip-path': 'circle(50%)',
-          opacity: 1,
-          translateX: mmd ? '5%' : '38%',
-          translateY: mmd ? '-17%' : '-23%',
-          'clip-path': 'circle(50%)',
-          width: mmd ? '110.9rem' : '89.3rem',
-          height: mmd ? '110.9rem' : '89.3rem',
-          duration: 1,
-          delay: mmd ? 1 : 0.5,
-        })
-        gsap.timeline().to(playBtn, {
-          opacity: 1,
-          visibility: 'visible',
-          delay: 1,
-          onStart: () => {
-            videoWrap.classList.remove('_fw')
-          },
-        })
+      } else {
+        gsapReset()
+      }
+      if (e.target.closest('#close-video')) {
+        gsapReset('none')
       }
     })
   }
