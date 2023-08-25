@@ -720,7 +720,7 @@ document.addEventListener('DOMContentLoaded', function () {
           tl2.to('.section_first .container .section_content .content_btn', {
             opacity: 1,
             visibility: 'visible',
-            onEnd: () => {
+            onComplete: () => {
               document
                 .querySelector('.section_first .content_outer-btn')
                 .addEventListener('click', function () {
