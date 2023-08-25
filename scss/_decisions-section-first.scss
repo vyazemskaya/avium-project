@@ -53,19 +53,22 @@
       padding: 0;
       .decisions__section-background {
         img {
-          object-position: -46rem;
-          height: 76rem;
+          object-position: -43rem;
+          height: 72rem;
         }
       }
       .decisions__section-content {
         max-width: 100%;
         position: static;
         padding: 0 4rem;
+        .content_title {
+          gap: 2rem;
+        }
         .content_text {
           margin-bottom: 6rem;
         }
         .content_btn {
-          width: 100%;
+          margin: 0 auto;
         }
       }
       .decoration {

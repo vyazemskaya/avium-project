@@ -52,7 +52,7 @@
     .container {
       .purchase__section-content {
         .content_title {
-          margin-bottom: 8rem;
+          margin-bottom: 6rem;
         }
         .content_box {
           max-width: 51.6rem;
@@ -60,22 +60,22 @@
           gap: 5rem;
           align-items: flex-start;
           .content_btn {
-            font-size: 5rem;
+            font-size: 3rem;
             font-weight: 300;
-            padding: 4rem 6rem;
+            padding: 2.8rem 9.6rem;
           }
           .information_box {
             flex-direction: column;
             align-items: flex-start;
             gap: 4rem;
             .info {
-              align-items: flex-start;
+              align-items: center;
               gap: 4rem;
               .info_icon {
                 width: 5.6rem;
               }
               .info_text {
-                font-size: 5rem;
+                font-size: 3rem;
                 line-height: normal;
               }
             }
