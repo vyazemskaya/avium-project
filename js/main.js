@@ -614,6 +614,8 @@ document.addEventListener('DOMContentLoaded', function () {
     const videoWrap = document.querySelector('.container_media')
     const mmd = window.matchMedia('(min-width: 768px)').matches
     const md = window.matchMedia('(max-width: 768px)').matches
+    let isAnimating = false
+    gsap.defaults({ duration: 1 })
 
     const addSourceToVideo = (element, src) => {
       const source = document.createElement('source')
@@ -621,7 +623,6 @@ document.addEventListener('DOMContentLoaded', function () {
       source.type = 'video/mp4'
       element.appendChild(source)
     }
-
     const initVideo = (element, src) => {
       const windowWidth = window.innerWidth
       if (windowWidth > 1200) {
@@ -630,99 +631,170 @@ document.addEventListener('DOMContentLoaded', function () {
         addSourceToVideo(element, src.dataset.mobileVid)
       }
     }
-    const gsapReset = () => {
-      if (videoSection.classList.contains('_fw')) {
-        gsap.timeline().to(videoWrap, {
-          'clip-path': 'circle(50%)',
-          opacity: 1,
-          x: mmd ? '5%' : '38%',
-          y: mmd ? '-17%' : '-23%',
-          width: mmd ? '110.9rem' : '89.3rem',
-          height: mmd ? '110.9rem' : '89.3rem',
-          duration: md ? 0 : 1,
-          delay: mmd ? 1 : 0,
-          position: 'absolute',
+    const gsapInit = () => {
+      if (md) {
+        gsap.set(videoWrap, {
+          yPercent: -23,
+          xPercent: 38,
+          width: '89.3rem',
+          height: '89.3rem',
         })
-        gsap.timeline().to(videoWrap, {
-          'clip-path': 'circle(50%)',
+        document.addEventListener('click', function (e) {
+          const tl1 = gsap.timeline()
+          const tl2 = gsap.timeline()
+          if (
+            e.target.closest('.content_outer-btn') &&
+            !videoSection.classList.contains('_fw')
+          ) {
+            videoSection.classList.add('_fw')
+            tl2.kill()
+            tl1.to(video, { width: '100%', height: '100%', duration: 0 }, 0)
+            tl1.to('header', { yPercent: -100, duration: 0 }, 0)
+            tl1.to('body', { overflow: 'hidden', duration: 0 }, 0)
+            tl1.to(
+              videoWrap,
+              {
+                position: 'fixed',
+                width: '100vw',
+                height: '100vh',
+                yPercent: 0,
+                xPercent: 0,
+                'clip-path': 'circle(72%)',
+                duration: 0,
+              },
+              0
+            )
+            tl1.to(
+              playBtn,
+              {
+                opacity: 0,
+                visibility: 'hidden',
+              },
+              0
+            )
+          } else if (
+            e.target.closest('#close-video') &&
+            videoSection.classList.contains('_fw')
+          ) {
+            videoSection.classList.remove('_fw')
+            tl1.kill()
+            tl2.to(
+              video,
+              {
+                width: '67%',
+                height: '82%',
+                duration: 0,
+              },
+              0
+            )
+            tl2.to(
+              videoWrap,
+              {
+                position: 'absolute',
+                yPercent: -23,
+                xPercent: 38,
+                width: '89.3rem',
+                height: '89.3rem',
+                'clip-path': 'circle(50%)',
+                duration: 0,
+              },
+              0
+            )
+            tl2.to('header', { yPercent: 0, duration: 0 }, 0)
+            tl2.to('body', { overflow: 'visible', duration: 0 }, 0)
+            tl2.to(
+              playBtn,
+              {
+                opacity: 1,
+                visibility: 'visible',
+              },
+              0
+            )
+          }
         })
-        gsap.timeline().to(video, {
-          width: md ? '67%' : '100%',
-          height: md ? '82%' : '100%',
-        })
-        gsap.timeline().to(playBtn, {
-          opacity: 1,
-          visibility: 'visible',
-          delay: mmd ? 1 : 0,
-          duration: md ? 0 : 1,
-          onStart: () => {
-            if (mmd) {
-              videoSection.classList.remove('_fw')
-            }
-          },
-          onUpdate: () => {
-            if (md) {
-              videoSection.classList.remove('_fw')
-            }
-          },
-        })
-        gsap.timeline().to('header', { yPercent: 0, duration: md ? 0 : 1 })
-        gsap.timeline().to('body', { overflow: 'auto' })
       }
-    }
-
-    gsap.defaults({ duration: 1 })
-
-    initVideo(video, video)
-
-    document.addEventListener('click', function (e) {
-      if (e.target.closest('.content_outer-btn')) {
-        if (md) {
-          videoSection.classList.add('_fw')
-          gsap
-            .timeline()
-            .to(video, { width: '100%', height: '100%', duration: 0 })
-          gsap.timeline().to('header', { yPercent: -100, duration: 0 })
-          gsap.timeline().to('body', { overflow: 'hidden', duration: 0 })
-          gsap.timeline().to(videoWrap, {
-            position: 'fixed',
-            width: '100vw',
-            height: '100vh',
-            y: 0,
-            x: 0,
-            'clip-path': 'circle(72%)',
-            duration: 0,
-          })
-        } else {
-          videoSection.classList.add('_fw')
-          gsap.timeline().to(videoWrap, {
-            x: 0,
-            y: 0,
-            width: '100%',
-            height: '100%',
-            duration: 1,
-          })
-          gsap.timeline().to(videoWrap, {
-            'clip-path': 'circle(75%)',
-            duration: 1,
-            delay: mmd ? 1 : 0.5,
-          })
-        }
-        gsap.timeline().to(
-          playBtn,
+      if (mmd) {
+        gsap.set(
+          videoWrap,
           {
-            opacity: 0,
-            visibility: 'hidden',
+            yPercent: -17,
+            xPercent: 5,
+            width: '110.9rem',
+            height: '110.9rem',
           },
           0
         )
-      } else if (!e.target.closest('.content_outer-btn') && mmd) {
-        gsapReset()
+        document.addEventListener('click', function (e) {
+          const tl1 = gsap.timeline()
+          const tl2 = gsap.timeline()
+          if (
+            e.target.closest('.content_outer-btn') &&
+            !videoSection.classList.contains('_fw')
+          ) {
+            videoSection.classList.add('_fw')
+            tl2.kill()
+            tl1.to(
+              videoWrap,
+              {
+                'clip-path': 'circle(72%)',
+                delay: 1,
+              },
+              0
+            )
+            tl1.to(
+              videoWrap,
+              {
+                width: '100%',
+                height: '100%',
+                yPercent: 0,
+                xPercent: 0,
+              },
+              0
+            )
+            tl1.to(
+              playBtn,
+              {
+                opacity: 0,
+                visibility: 'hidden',
+              },
+              0
+            )
+          } else if (videoSection.classList.contains('_fw')) {
+            videoSection.classList.remove('_fw')
+            tl1.kill()
+            tl2.to(
+              videoWrap,
+              {
+                yPercent: -17,
+                xPercent: 5,
+                width: '110.9rem',
+                height: '110.9rem',
+                delay: 1,
+              },
+              0
+            )
+            tl2.to(
+              videoWrap,
+              {
+                'clip-path': 'circle(50%)',
+              },
+              0
+            )
+            tl2.to(
+              playBtn,
+              {
+                opacity: 1,
+                visibility: 'visible',
+              },
+              0
+            )
+          }
+        })
       }
-      if (e.target.closest('#close-video')) {
-        gsapReset()
-      }
-    })
+    }
+
+    gsapInit()
+    initVideo(video, video)
   }
 })
 
