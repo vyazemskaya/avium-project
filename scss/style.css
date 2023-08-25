@@ -11567,7 +11567,6 @@ section {
   clip-path: polygon(0% 0%, 50% 50%, 100% 100%, 0% 100%);
   background-color: #fff;
 }
-
 @media (max-width: 48em) {
   .section_first {
     margin-top: 10.4rem;
@@ -11576,13 +11575,12 @@ section {
     padding: 0;
   }
   .section_first .container_media {
-    width: 99.6rem;
-    height: 99.6rem;
+    width: 89.3rem;
+    height: 89.3rem;
+    transform: translate(38%, -23%);
   }
   .section_first .video_cover {
     width: 130%;
-    /* width: calc(99.6rem * 2);
-    height: calc(99.6rem * 2); */
   }
   .section_first .container .section_background {
     height: 80rem;
@@ -11594,10 +11592,7 @@ section {
   }
   .section_first .container .section_background .content_outer-btn {
     width: 31.6rem;
-    height: 31.6rem;
-    /* top: 25.2rem;
-    left: 34.5rem; */
-    transform: translate(-69%, 67%);
+    height: 31.6rem;transform: translate(3%, -36%);
   }
   .section_first .container .section_content {
     padding: 0 4rem;
@@ -11628,27 +11623,25 @@ section {
     clip-path: polygon(0% 45%, 0% 100%, 100% 100%);
   }
 }
+
 .section_second .container .section_content .content_title {
   font-size: 9rem;
   font-weight: 700;
   text-transform: uppercase;
   margin-bottom: 9rem;
 }
-
 .section_second .container .section_content .content_archieves {
   display: flex;
   align-items: center;
   justify-content: center;
   gap: 23.4rem;
 }
-
 .section_second .container .section_content .content_archieves .archieve_box {
   display: flex;
   flex-direction: column;
   align-items: center;
   gap: 4rem;
 }
-
 .section_second
   .container
   .section_content
@@ -11661,7 +11654,6 @@ section {
   box-shadow: 9px 10px 10px rgba(88, 88, 88, 0.25),
     9px 10px 10px 0px rgba(255, 255, 255, 0.25) inset;
 }
-
 .section_second
   .container
   .section_content
@@ -11670,7 +11662,6 @@ section {
   .circle_info {
   text-align: center;
 }
-
 .section_second
   .container
   .section_content
@@ -11682,7 +11673,6 @@ section {
   font-size: 5rem;
   font-weight: 700;
 }
-
 .section_second
   .container
   .section_content
@@ -11696,7 +11686,6 @@ section {
   font-weight: 400;
   line-height: 4rem;
 }
-
 @media (max-width: 48em) {
   .section_second .container .section_content .content_title {
     margin-bottom: 8rem;

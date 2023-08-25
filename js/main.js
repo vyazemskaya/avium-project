@@ -612,30 +612,54 @@ document.addEventListener('DOMContentLoaded', function () {
     const videoWrap = document.querySelector('.container_media')
     const mmd = window.matchMedia('(min-width: 768px)').matches
     const md = window.matchMedia('(max-width: 768px)').matches
+    const tl1 = gsap.timeline()
     gsap.defaults({ duration: 1 })
 
-    playBtn.addEventListener('click', function () {
-      const tl1 = gsap.timeline()
-      const tl2 = gsap.timeline()
-
-      if (!videoWrap.classList.contains('_fw')) {
+    document.addEventListener('click', function (e) {
+      if (e.target.closest('.content_outer-btn')) {
         videoWrap.classList.add('_fw')
-        tl1.to(videoWrap, {
+        gsap.timeline().to(videoWrap, {
           translateX: 0,
           translateY: 0,
-          'clip-path': 'circle(75%)',
           width: '100%',
           height: '100%',
+          duration: 1,
         })
-      } else {
-        videoWrap.classList.remove('_fw')
-        tl1.to(videoWrap, {
-          opacity: 1,
-          translateX: 5,
-          translateY: '-17%',
+        gsap.timeline().to(videoWrap, {
+          'clip-path': 'circle(75%)',
+          duration: 1,
+          delay: mmd ? 1 : 0.5,
+        })
+        gsap.timeline().to(
+          playBtn,
+          {
+            opacity: 0,
+            visibility: 'hidden',
+          },
+          0
+        )
+      } else if (videoWrap.classList.contains('_fw')) {
+        gsap.timeline().to(videoWrap, {
           'clip-path': 'circle(50%)',
-          width: '110.9rem',
-          height: '110.9rem',
+          duration: 1,
+        })
+        gsap.timeline().to(videoWrap, {
+          opacity: 1,
+          translateX: mmd ? '5%' : '38%',
+          translateY: mmd ? '-17%' : '-23%',
+          'clip-path': 'circle(50%)',
+          width: mmd ? '110.9rem' : '89.3rem',
+          height: mmd ? '110.9rem' : '89.3rem',
+          duration: 1,
+          delay: mmd ? 1 : 0.5,
+        })
+        gsap.timeline().to(playBtn, {
+          opacity: 1,
+          visibility: 'visible',
+          delay: 1,
+          onStart: () => {
+            videoWrap.classList.remove('_fw')
+          },
         })
       }
     })
