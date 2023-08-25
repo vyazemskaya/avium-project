@@ -649,6 +649,9 @@ section {
   background-size: 100% 95.9rem;
   margin-bottom: 0;
   overflow: hidden;
+  margin-top: -1rem;
+  position: relative;
+  z-index: 0;
 }
 .main__section-first .container {
   width: 100%;
@@ -2300,6 +2303,9 @@ section {
 }
 
 @media (max-width: 48em) {
+  .main__section-sixth {
+    overflow: hidden;
+  }
   .main__section-sixth .container {
     padding: 16rem 6rem 20rem;
   }
@@ -3192,6 +3198,9 @@ section {
     .content_btn {
     flex: 1 0;
     padding: 3rem 6rem;
+    width: 37.5rem;
+    flex: unset;
+    margin: 0 auto;
   }
   .details__section-first
     .container
@@ -3254,7 +3263,7 @@ section {
     content: '';
     position: absolute;
     top: 4rem;
-    left: -2rem;
+    left: -2.6rem;
     border-radius: 50%;
     width: 1.3rem;
     height: 1.3rem;
@@ -3434,7 +3443,7 @@ section {
     .apply_items
     .apply_item:nth-child(3)
     img {
-    width: 4.2rem;
+    width: 4.8rem;
   }
   .details__section-first
     .container
@@ -4319,7 +4328,7 @@ section {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    margin-bottom: 12rem;
+    margin-bottom: 8rem;
   }
   .calculate__section .container .calculate__section-content .content_left {
     width: 100%;
@@ -4355,6 +4364,7 @@ section {
     .content_calculate
     .calculate_text {
     font-size: 3rem;
+    line-height: 135%;
   }
   .calculate__section
     .container
@@ -4385,6 +4395,8 @@ section {
     .content_btn {
     width: 100%;
     padding: 2.8rem 9.6rem;
+    width: fit-content;
+    margin: 0 auto;
   }
   .calculate__section .container .calculate__section-content .content_right {
     display: none;
@@ -5084,7 +5096,7 @@ section {
   display: flex;
   flex-direction: column;
   gap: 3rem;
-  margin-bottom: 9rem;
+  margin-bottom: 6rem;
 }
 .cart__section-second
   .container
@@ -5464,7 +5476,7 @@ section {
     margin-bottom: 4rem;
   }
   .cart__section-second .container .cart__section-content {
-    padding-bottom: 38.4rem;
+    padding-bottom: 34rem;
   }
   .cart__section-second .container .cart__section-content .content_title {
     margin-bottom: 6rem;
@@ -5814,6 +5826,9 @@ section {
 }
 
 @media (max-width: 48em) {
+  .conceptColor__section-second .container {
+    padding-bottom: 16rem;
+  }
   .conceptColor__section-second .container .conceptColor__section-content {
     flex-direction: column-reverse;
     gap: 0;
@@ -6207,7 +6222,7 @@ section {
     .slide_palettes
     .palettes_photo.exclusive
     img {
-    width: 21rem;
+    width: 30rem;
   }
   .conceptColor__section-third
     .container
@@ -6810,9 +6825,9 @@ section {
     .cooperation__section-content
     .content_left
     .content_image-block {
-    transform: translate(-10rem, 10rem);
-    width: 86.6rem;
-    height: 91.6rem;
+    transform: translate(-6rem, 30rem);
+    width: 80.6rem;
+    height: 85.6rem;
   }
   .cooperation__section-third
     .container
@@ -7370,6 +7385,11 @@ section {
     .product_btn {
     display: none;
   }
+}
+.elmar__section-first {
+  margin-top: -1rem;
+  position: relative;
+  z-index: 0;
 }
 .elmar__section-first .container {
   width: 100%;
@@ -8112,6 +8132,9 @@ section {
     .content_info
     .content_text {
     text-align: left;
+  }
+  .err404__section-content .btn {
+    width: fit-content;
   }
 }
 .freedom__section-first {
@@ -9943,13 +9966,6 @@ section {
   .container
   .philosophy__section-content
   .content_left
-  .content_title.mobile {
-  display: none;
-}
-.philosophy__section-fifth
-  .container
-  .philosophy__section-content
-  .content_left
   .content_text {
   font-size: 3rem;
   font-weight: 400;
@@ -10007,14 +10023,6 @@ section {
     .philosophy__section-content
     .content_left
     .content_title {
-    display: none;
-  }
-  .philosophy__section-fifth
-    .container
-    .philosophy__section-content
-    .content_left
-    .content_title.mobile {
-    display: block;
     font-size: 6rem;
   }
   .philosophy__section-fifth
@@ -11394,10 +11402,20 @@ section {
   width: 100%;
   height: 99.5rem;
 }
+.video__section .section_video .mobile {
+  display: none;
+}
 
 @media (max-width: 48em) {
-  .video__section-first {
+  .video__section {
     padding-top: 10.4rem;
+  }
+  .video__section .section_video .desktop {
+    display: none;
+  }
+  .video__section .section_video .mobile {
+    height: 80rem;
+    display: block;
   }
 }
 .section_first {

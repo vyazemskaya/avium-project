@@ -21,7 +21,7 @@ $(document).ready(function () {
 
 document.addEventListener('DOMContentLoaded', function () {
   let videos = document.getElementsByTagName('video')
-
+  console.log(videos)
   for (let i = 0; i < videos.length; i++) {
     let video = videos[i]
     video.play()
@@ -270,18 +270,18 @@ document.addEventListener('DOMContentLoaded', function () {
         document.body.style.overflow = 'visible'
       })
 
-    document
-      .querySelector(
-        '.calculate__section .overlay-default .modal_default .content_btn'
-      )
-      .addEventListener('click', () => {
-        document.querySelector('.calculate__section .overlay').style.display =
-          'none'
-        document.querySelector(
-          '.calculate__section .overlay-default .modal_default'
-        ).style.display = 'none'
-        document.body.style.overflow = 'visible'
-      })
+    // document
+    //   .querySelector(
+    //     '.calculate__section .overlay-default .modal_default .content_btn'
+    //   )
+    //   .addEventListener('click', () => {
+    //     document.querySelector('.calculate__section .overlay').style.display =
+    //       'none'
+    //     document.querySelector(
+    //       '.calculate__section .overlay-default .modal_default'
+    //     ).style.display = 'none'
+    //     document.body.style.overflow = 'visible'
+    //   })
 
     document
       .querySelector(
