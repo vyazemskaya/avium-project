@@ -11,7 +11,7 @@ const swiperSolutionSection2 = new Swiper('.swiper_solution-section-second', {
   fadeEffect: { crossFade: true },
   virtualTranslate: true,
   autoplay: {
-    delay: 5000,
+    delay: 8000,
     disableOnInteraction: true,
   },
   pagination: {

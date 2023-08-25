@@ -64,9 +64,13 @@
         .content_top {
           width: 100%;
           margin-bottom: 6rem;
+          .content_title {
+            margin-bottom: 0;
+          }
         }
         .content_bottom {
           .content_list {
+            gap: 4rem;
             .content_item {
               flex-direction: column;
             }
