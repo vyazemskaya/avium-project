@@ -484,30 +484,132 @@ document.addEventListener('DOMContentLoaded', function () {
   //////////////////////////////Философия//////////////////////////////////
 
   if (document.querySelector('.philosophy__section-sixth')) {
+    const videoContainer = document.querySelector('.container-video')
+    const video = videoContainer.querySelector('video')
+    const md = window.matchMedia('(max-width: 768px)').matches
+    video.play()
+
     document
       .getElementById('video-collection')
       .addEventListener('ended', () => {
+        gsap.timeline().to('body', { overflow: 'visible' }, 0)
         document.querySelector(
           '.philosophy__section-sixth .container-video'
         ).style.display = 'none'
         document.querySelector(
           '.philosophy__section-sixth .container'
         ).style.display = 'block'
+        gsap.to(
+          '.philosophy__section-sixth .philosophy__section-content',
+          {
+            opacity: 1,
+            visibility: 'visible',
+          },
+          0
+        )
       })
 
-    document
-      .querySelector(
-        '.philosophy__section-sixth .container .philosophy__section-content'
-      )
-      .addEventListener('click', () => {
+    document.addEventListener('click', function (e) {
+      const tl1 = gsap.timeline()
+      const tl2 = gsap.timeline()
+      if (
+        e.target.closest(
+          '.philosophy__section-sixth  .philosophy__section-content'
+        )
+      ) {
         document.querySelector(
           '.philosophy__section-sixth .container-video'
         ).style.display = 'block'
-        document.getElementById('video-collection').play()
         document.querySelector(
           '.philosophy__section-sixth .container'
         ).style.display = 'none'
-      })
+        document.getElementById('video-collection').play()
+
+        if (md) {
+          tl2.kill()
+          videoContainer.classList.add('_fw')
+
+          tl1.to(
+            '.philosophy__section-sixth .philosophy__section-content',
+            {
+              opacity: 0,
+              visibility: 'hidden',
+            },
+            0
+          )
+          tl1.to(
+            '.philosophy__section-sixth .content-btn',
+            {
+              opacity: 0,
+              visibility: 'hidden',
+            },
+            0
+          )
+          tl1.to(
+            video,
+            {
+              position: 'fixed',
+              top: 0,
+              left: 0,
+              width: '100vw',
+              height: '100vh',
+              'z-index': 110,
+              duration: 0,
+            },
+            0
+          )
+          tl1.to('body', { overflow: 'hidden' }, 0)
+        } else {
+          gsap.timeline().to(
+            '.philosophy__section-sixth .philosophy__section-content',
+            {
+              opacity: 0,
+              visibility: 'hidden',
+            },
+            0
+          )
+        }
+      } else if (
+        e.target.closest('.philosophy__section-sixth #close-video') &&
+        videoContainer.classList.contains('_fw') &&
+        md
+      ) {
+        tl1.kill()
+        videoContainer.classList.remove('_fw')
+
+        tl2.to(
+          '.philosophy__section-sixth .philosophy__section-content',
+          {
+            opacity: 1,
+            visibility: 'visible',
+          },
+          0
+        )
+        tl2.to(
+          '.philosophy__section-sixth .content_btn',
+          {
+            opacity: 1,
+            visibility: 'visible',
+          },
+          0
+        )
+
+        tl2.to(
+          video,
+          {
+            position: 'static',
+            top: 0,
+            left: 0,
+            width: '100%',
+            height: '99.5rem',
+            'z-index': 1,
+            duration: 0,
+          },
+          0
+        )
+        tl2.to('body', { overflow: 'visible' }, 0)
+      }
+    })
   }
 
   //////////////////////////////Коллекция Forever Solution//////////////////////////////////
@@ -606,15 +708,14 @@ document.addEventListener('DOMContentLoaded', function () {
   }
 
   // yearcolor
-  if (document.getElementById('video-collection')) {
+  if (document.querySelector('.section_first')) {
     const videoSection = document.querySelector('.section_first')
     const video = document.getElementById('video-collection')
-    const btnClose = document.getElementById('#close-video')
     const playBtn = document.querySelector('.content_outer-btn')
     const videoWrap = document.querySelector('.container_media')
     const mmd = window.matchMedia('(min-width: 768px)').matches
     const md = window.matchMedia('(max-width: 768px)').matches
-    let isAnimating = false
+    video.play()
     gsap.defaults({ duration: 1 })
 
     const addSourceToVideo = (element, src) => {
@@ -659,7 +760,7 @@ document.addEventListener('DOMContentLoaded', function () {
                 height: '100vh',
                 yPercent: 0,
                 xPercent: 0,
-                'clip-path': 'circle(72%)',
+                'border-radius': 0,
                 duration: 0,
               },
               0
@@ -673,7 +774,7 @@ document.addEventListener('DOMContentLoaded', function () {
               0
             )
           } else if (
-            e.target.closest('#close-video') &&
+            e.target.closest('.section_first #close-video') &&
             videoSection.classList.contains('_fw')
           ) {
             videoSection.classList.remove('_fw')
@@ -695,7 +796,7 @@ document.addEventListener('DOMContentLoaded', function () {
                 xPercent: 38,
                 width: '89.3rem',
                 height: '89.3rem',
-                'clip-path': 'circle(50%)',
+                'border-radius': '50%',
                 duration: 0,
               },
               0
@@ -736,18 +837,11 @@ document.addEventListener('DOMContentLoaded', function () {
             tl1.to(
               videoWrap,
               {
-                'clip-path': 'circle(72%)',
-                delay: 1,
-              },
-              0
-            )
-            tl1.to(
-              videoWrap,
-              {
                 width: '100%',
                 height: '100%',
                 yPercent: 0,
                 xPercent: 0,
+                'border-radius': 0,
               },
               0
             )
@@ -760,7 +854,6 @@ document.addEventListener('DOMContentLoaded', function () {
               0
             )
           } else if (videoSection.classList.contains('_fw')) {
-            videoSection.classList.remove('_fw')
             tl1.kill()
             tl2.to(
               videoWrap,
@@ -769,14 +862,7 @@ document.addEventListener('DOMContentLoaded', function () {
                 xPercent: 5,
                 width: '110.9rem',
                 height: '110.9rem',
-                delay: 1,
-              },
-              0
-            )
-            tl2.to(
-              videoWrap,
-              {
-                'clip-path': 'circle(50%)',
+                'border-radius': '50%',
               },
               0
             )
@@ -785,6 +871,10 @@ document.addEventListener('DOMContentLoaded', function () {
               {
                 opacity: 1,
                 visibility: 'visible',
+                delay: 1,
+                onStart: () => {
+                  videoSection.classList.remove('_fw')
+                },
               },
               0
             )

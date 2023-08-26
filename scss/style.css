@@ -8698,6 +8698,22 @@ section {
     font-size: 3rem;
   }
 }
+.philosophy__section-sixth {
+  position: relative;
+}
+.philosophy__section-sixth #close-video {
+  content: '';
+  position: fixed;
+  z-index: 110;
+  top: 20px;
+  right: 30px;
+  opacity: 0;
+  font-size: 18px;
+  transition: opacity 0.3s ease;
+}
+.philosophy__section-sixth .container-video._fw #close-video {
+  opacity: 1;
+}
 .philosophy__section-first {
   margin-top: 9.1rem;
   margin-bottom: 0;
@@ -10150,7 +10166,7 @@ section {
   -o-object-fit: cover;
   object-fit: cover;
 }
-.philosophy__section-sixth .container .philosophy__section-content {
+.philosophy__section-sixth .philosophy__section-content {
   display: flex;
   align-items: center;
   justify-content: center;
@@ -10163,15 +10179,11 @@ section {
   border: 1px solid #fff;
   cursor: pointer;
 }
-.philosophy__section-sixth
-  .container
-  .philosophy__section-content
-  .content_btn {
+.philosophy__section-sixth .philosophy__section-content .content_btn {
   display: flex;
   gap: 1rem;
 }
 .philosophy__section-sixth
-  .container
   .philosophy__section-content
   .content_btn
   .content_text {
@@ -10181,7 +10193,6 @@ section {
   text-transform: uppercase;
 }
 .philosophy__section-sixth
-  .container
   .philosophy__section-content
   .content_btn
   .content_icon {
@@ -10197,7 +10208,7 @@ section {
     object-position: -100rem;
     height: 104rem;
   }
-  .philosophy__section-sixth .container .philosophy__section-content {
+  .philosophy__section-sixth .philosophy__section-content {
     top: 4rem;
     left: 4rem;
   }
@@ -11503,7 +11514,8 @@ section {
   right: 0;
   display: flex;
   justify-content: center;
-  clip-path: circle(50%);
+  border-radius: 50%;
+  overflow: hidden;
   /* translate: 5% -17%; */
 }
 
@@ -12688,3 +12700,20 @@ body .swiper_main-section-4 .slide-section-4 {
     flex-direction: column-reverse;
   }
 } /*# sourceMappingURL=style.css.map */
+
+*::-webkit-media-controls-panel {
+  display: none !important;
+  -webkit-appearance: none;
+}
+
+/* Old shadow dom for play button */
+*::-webkit-media-controls-play-button {
+  display: none !important;
+  -webkit-appearance: none;
+}
+
+/* New shadow dom for play button */
+*::-webkit-media-controls-start-playback-button {
+  display: none !important;
+  -webkit-appearance: none;
+}
