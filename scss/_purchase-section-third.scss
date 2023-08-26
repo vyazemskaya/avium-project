@@ -74,6 +74,7 @@
 
 @media (max-width: 48em) {
   .purchase__section-third {
+    margin-bottom: 12rem;
     .container {
       padding: 0;
       .purchase__section-content {
@@ -91,6 +92,7 @@
         }
         .content_top {
           padding: 0 4rem;
+          margin-bottom: 6rem;
         }
         .content_bottom {
           flex-direction: column-reverse;

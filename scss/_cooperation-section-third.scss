@@ -103,9 +103,9 @@
         flex-direction: column-reverse;
         .content_left {
           width: 100%;
-          height: 65rem;
+          height: 44rem;
           .content_image-block {
-            transform: translate(-6rem, 30rem);
+            transform: translate(-7.5rem, 8rem);
             width: 80.6rem;
             height: 85.6rem;
             .content_img {
@@ -122,6 +122,7 @@
           padding: 0;
           .content_title {
             text-align: left;
+            margin-bottom: 6rem;
           }
           .content_form {
             margin-bottom: 8rem;

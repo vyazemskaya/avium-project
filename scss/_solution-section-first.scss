@@ -54,10 +54,11 @@
 @media (max-width: 48em) {
   .solution__section-first {
     margin-top: 10.3rem;
-    margin-bottom: 3rem;
+    margin-bottom: 12rem;
     .container {
       padding: 0;
       .solution__background-video {
+        margin-bottom: 4rem;
         video {
           width: 100%;
           clip-path: none;
@@ -70,9 +71,14 @@
         }
       }
       .solution__section-content {
-        position: block;
-        top: 42rem;
-        left: 4rem;
+        max-width: 100%;
+        position: static;
+        padding: 0 4rem;
+        .content_text {
+          margin-bottom: 6rem;
+        }
+        // top: 42rem;
+        // left: 4rem;
       }
     }
   }
