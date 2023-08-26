@@ -160,12 +160,12 @@ if (document.querySelector('.philosophy__section-second')) {
 }
 
 const swiperPhilosophySection3 = new Swiper('.swiper_philosophy-section-3', {
-  slidesPerView: 3,
+  slidesPerView: 5,
   slidesPerGroup: 1,
   centeredSlides: true,
   touchRatio: 0.25,
-  spaceBetween: rem(1.7),
-  initialSlide: 4,
+  spaceBetween: rem(0.8),
+  initialSlide: 2,
   pagination: {
     el: '.swiper-pagination_section-3',
   },

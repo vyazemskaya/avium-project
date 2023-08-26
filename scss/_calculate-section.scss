@@ -210,6 +210,9 @@
             align-items: center;
             justify-content: space-between;
             margin-bottom: 8rem;
+            video {
+              margin-right: 1.8rem;
+            }
           }
         }
         .content_left {
@@ -241,7 +244,7 @@
             }
           }
           .content_btn {
-            width: 100%;
+            margin: 0 auto;
             padding: 2.8rem 9.6rem;
           }
         }

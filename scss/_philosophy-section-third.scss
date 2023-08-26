@@ -190,18 +190,18 @@
                   pointer-events: none;
                   .circle {
                     pointer-events: none;
-                    width: 20rem;
-                    height: 20rem;
+                    width: 11.2rem;
+                    height: 11.2rem;
                     .circle_year {
-                      font-size: 5rem;
+                      font-size: 3rem;
                     }
                     &:hover {
-                      transform: scale(1.8);
+                      transform: scale(2);
                     }
                   }
                   .circle_text {
                     pointer-events: none;
-                    top: 35rem;
+                    top: 30rem;
                     font-size: 3rem;
                     text-align: left;
                     &.y-2008,

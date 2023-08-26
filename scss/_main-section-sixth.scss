@@ -217,8 +217,9 @@
 @media (max-width: 48em) {
   .main__section-sixth {
     overflow: hidden;
+    margin-bottom: 0;
     .container {
-      padding: 16rem 6rem 20rem;
+      padding: 16rem 6rem 14rem;
       .main__section-content {
         .subtitle {
           margin-bottom: 12.8rem;
