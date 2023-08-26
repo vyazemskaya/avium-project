@@ -11505,9 +11505,6 @@ section {
   justify-content: center;
   clip-path: circle(50%);
   /* translate: 5% -17%; */
-  -webkit-clip-path: circle(50%);
-  clip-path: circle(50%);
-  transform: translate(5%, -17%);
 }
 
 .section_first .container_media::after {
@@ -11519,11 +11516,6 @@ section {
   left: 0;
   background-color: rgba(0, 0, 0, 0.2196078431);
   transition: opacity 1s ease;
-}
-
-.section_first .container_media._fw::after {
-  opacity: 0;
-  transition: opacity 0.5s ease;
 }
 
 .section_first .container_media video {
@@ -11661,6 +11653,16 @@ section {
   height: 100%;
 }
 
+.section_first #close-video {
+  content: '';
+  position: absolute;
+  z-index: 6;
+  top: 0;
+  right: 30px;
+  opacity: 0;
+  font-size: 18px;
+  transition: opacity 0.3s ease;
+}
 .section_first .container::before {
   content: '';
   position: absolute;
