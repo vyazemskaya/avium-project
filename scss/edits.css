@@ -1,0 +1,44 @@
+.cart__section-btns {
+  display: flex;
+  gap: 2.7rem;
+}
+.cart__section-btns .icon-btn {
+  padding: 1.9rem 2.05rem;
+}
+
+@media (max-width: 48em) {
+  .freedom__section-first .container .freedom__section-video {
+    height: 72rem;
+  }
+  .freedom__section-first .container .freedom__section-video .mobile {
+    height: 87.5rem;
+    -o-object-position: 0 -10rem;
+    object-position: 0 -10rem;
+  }
+  .freedom__section-first .container .freedom__section-content .content_title, 
+  .veripery__section-first .container .veripery__section-content .content_title,
+  .elmar__section-first .container .elmar__section-content .content_title,
+  .solution__section-first .container .solution__section-content .content_title {
+    gap: 1rem;
+  }
+  .veripery__section-first .container .veripery__section-background .background-mobile {
+    height: 72rem;
+    width: 100%;
+  }
+  .cart__section-btns {
+    display: flex;
+    flex-direction: column;
+    gap: 3rem;
+  }
+  .cart__section-second-empty .container .cart__section-content .content_btn {
+    width: fit-content;
+  }
+  .cart__section-second-empty .container .cart__section-content .icon-btn {
+    padding: 2.6rem 2.1rem;
+    width: 8.4rem;
+    height: 8.4rem;
+  }
+  .cart__section-second-empty .container {
+    height: 130rem;
+  }
+}
