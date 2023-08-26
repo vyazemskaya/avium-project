@@ -625,7 +625,7 @@ document.addEventListener('DOMContentLoaded', function () {
     }
     const initVideo = (element, src) => {
       const windowWidth = window.innerWidth
-      if (windowWidth > 1200) {
+      if (windowWidth > 768) {
         addSourceToVideo(element, src.dataset.desktopVid)
       } else {
         addSourceToVideo(element, src.dataset.mobileVid)
