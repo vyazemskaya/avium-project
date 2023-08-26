@@ -1,6 +1,13 @@
 .section_first {
   margin-top: 9.1rem;
   position: relative;
+  transition: margin-top 0.3s ease;
+}
+.section_first._fw .container::before {
+  opacity: 0;
+}
+.section_first._fw {
+  margin-top: 0;
 }
 .section_first .container_media {
   position: absolute;
@@ -165,9 +172,17 @@
   height: 20rem;
   -webkit-clip-path: polygon(0% 0%, 50% 50%, 100% 100%, 0% 100%);
   clip-path: polygon(0% 0%, 50% 50%, 100% 100%, 0% 100%);
+  transition: opacity 0.3s ease;
   background-color: #fff;
 }
 @media (max-width: 48em) {
+  .section_first .container_media video {
+    width: 66%;
+    height: 80%;
+    position: absolute;
+    left: 0;
+    bottom: 0;
+  }
   .section_first {
     margin-top: 10.4rem;
   }

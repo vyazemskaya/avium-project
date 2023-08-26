@@ -1,76 +1,339 @@
-/* section animate */
-.section_animate {
-  position: fixed;
-  z-index: 500;
+.section_first {
+  margin-top: 9.1rem;
+  position: relative;
+  transition: margin-top 0.3s ease;
+}
+.section_first .container_media {
+  position: absolute;
+  z-index: 5;
+  width: 110.9rem;
+  height: 110.9rem;
+  top: 0;
+  right: 0;
+  display: flex;
+  justify-content: center;
+  clip-path: circle(50%);
+  /* translate: 5% -17%; */
+}
+
+.section_first .container_media::after {
+  content: '';
+  position: absolute;
+  width: 100%;
+  height: 100%;
   top: 0;
   left: 0;
-  width: 100vw;
-  height: 100vh;
-  overflow: hidden;
+  background-color: rgba(0, 0, 0, 0.2196078431);
+  transition: opacity 1s ease;
 }
 
-.section_animate._hidden {
-  display: none;
-  z-index: 0;
-  width: 0;
-  height: 0;
-}
-
-.section_animate .section_wrap {
-  position: relative;
-  top: 50%;
-  left: 50%;
-  width: 560px;
-  translate: -50% -50%;
-}
-
-.section_animate #circle {
-  position: absolute;
-  z-index: -1;
-  bottom: -50%;
-  left: 50%;
-  width: 1000vw;
-  height: 1000vw;
-  border-radius: 50%;
-  background-color: #53565a;
-  translate: -50% 50%;
-}
-
-.section_animate p {
-  position: absolute;
-  top: 50%;
-  font-family: Comfortaa;
-  font-size: 3.5rem;
-  font-weight: 400;
-  line-height: 3.9rem;
-  text-align: center;
-  color: #ffffff;
-  white-space: nowrap;
-  opacity: 0;
-}
-
-.section_animate svg {
+.section_first .container_media video {
+  -o-object-fit: cover;
+  object-fit: cover;
   width: 100%;
   height: 100%;
 }
-
-.section_animate #tl {
+.section_first .container {
+  width: 100%;
+  transition: opacity 3s easy;
+}
+.section_first .container .section_background {
+  position: relative;
+  overflow: hidden;
+  height: 99.5rem;
+  background-color: #f3f4f7;
+}
+.section_first .container .section_background .content_outer-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
   position: absolute;
-  top: 40%;
-  right: 0;
-  width: 13.6px;
-  height: calc((100vh - 20%) / 2);
-  border-radius: 20px;
-  background-color: #ffffff;
+  z-index: 2;
+  top: 50%;
+  right: 50%;
+  width: 25.6rem;
+  height: 25.6rem;
+  border-radius: 50%;
+  border: 1px solid #fff;
+  cursor: pointer;
+  transform: translate(50%, -50%);
 }
 
+.section_first .container .section_background .content_outer-btn .content_btn {
+  display: flex;
+  gap: 1rem;
+}
+
+.section_first
+  .container
+  .section_background
+  .content_outer-btn
+  .content_btn
+  .content_text {
+  color: #fff;
+  font-size: 2rem;
+  font-weight: 700;
+  text-transform: uppercase;
+}
+
+.section_first
+  .container
+  .section_background
+  .content_outer-btn
+  .content_btn
+  .content_icon {
+  width: 0.8rem;
+}
+
+.section_first .container .section_content {
+  position: absolute;
+  z-index: 2;
+  top: 36.2rem;
+  left: 22.6rem;
+}
+.section_first .container .section_content .content_title {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  font-size: 5.5rem;
+  font-weight: 300;
+  text-transform: uppercase;
+  margin-bottom: 4rem;
+}
+
+.section_first
+  .container
+  .section_content
+  .content_title
+  .title_name-collection {
+  font-weight: 700;
+}
+
+.section_first .container .section_content .content_text {
+  font-size: 3rem;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 4rem;
+  margin-bottom: 9rem;
+}
+
+.section_first .container .decoration.decoration_left,
+.section_first .container .decoration.decoration_right,
+.section_first .container .decoration.decoration_mobile {
+  position: absolute;
+}
+
+.section_first .container .decoration.decoration_left {
+  top: 1.2rem;
+  left: 1.2rem;
+}
+
+.section_first .container .decoration.decoration_right {
+  right: 1.2rem;
+  bottom: 2.8rem;
+}
+
+.section_first .container .decoration.decoration_mobile {
+  display: none;
+}
+
+.section_first._fw .container_media::after {
+  opacity: 0;
+  transition: opacity 0.5s ease;
+}
+.section_first .video_cover {
+  position: absolute;
+  width: 110%;
+  height: 110%;
+  top: 0;
+  left: auto;
+  right: 0;
+  opacity: 0;
+  transition: opacity;
+}
+
+.section_first .video_cover img {
+  -o-object-fit: cover;
+  object-fit: cover;
+  height: 100%;
+}
+
+.section_first #close-video {
+  content: '';
+  position: absolute;
+  z-index: 6;
+  top: 0;
+  right: 30px;
+  opacity: 0;
+  font-size: 18px;
+  transition: opacity 0.3s ease;
+}
+.section_first .container::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  bottom: -0.2rem;
+  z-index: 50;
+  width: 100%;
+  height: 20rem;
+  -webkit-clip-path: polygon(0% 0%, 50% 50%, 100% 100%, 0% 100%);
+  clip-path: polygon(0% 0%, 50% 50%, 100% 100%, 0% 100%);
+  background-color: #fff;
+}
 @media (max-width: 48em) {
-  .section_animate .section_wrap {
-    width: 320px;
-    translate: -50% -120%;
+  /* ============== */
+  .section_first._fw #close-video {
+    opacity: 1;
   }
-  .section_animate #tl {
-    width: 8px;
-    height: calc((100vh - -127%) / 2);
+  /* ============== */
+  .section_first._fw .container::before {
+    opacity: 0;
+  }
+  .section_first._fw {
+    /* margin-top: 0; */
+  }
+  .section_first .container_media video {
+    width: 67%;
+    height: 82%;
+    position: absolute;
+    left: 0;
+    bottom: 0;
+  }
+  .section_first {
+    margin-top: 10.4rem;
+  }
+  .section_first .container {
+    padding: 0;
+  }
+  .section_first .container_media {
+    width: 89.3rem;
+    height: 89.3rem;
+    /* translate: 38% -23%; */
+  }
+  .section_first .video_cover {
+    width: 130%;
+  }
+  .section_first .container .section_background {
+    height: 80rem;
+  }
+  .section_first .container .section_background .circle_background {
+    width: 90.6rem;
+    bottom: 10rem;
+    left: 20rem;
+  }
+  .section_first .container .section_background .content_outer-btn {
+    width: 31.6rem;
+    height: 31.6rem;
+    transform: translate(3%, -36%);
+  }
+  .section_first .container .section_content {
+    padding: 0 4rem;
+    position: static;
+  }
+  .section_first .container .section_content .content_text {
+    font-size: 5rem;
+  }
+  .section_first .container .section_content .content_btn {
+    width: 100%;
+  }
+  .section_first .container .decoration.decoration_left,
+  .section_first .container .decoration.decoration_right {
+    display: none;
+  }
+  .section_first .container .decoration.decoration_mobile {
+    display: block;
+    top: 1.2rem;
+    left: 1.2rem;
+  }
+  .section_first .container::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: 40.5rem;
+    height: 18rem;
+    -webkit-clip-path: polygon(0% 45%, 0% 100%, 100% 100%);
+    clip-path: polygon(0% 45%, 0% 100%, 100% 100%);
+  }
+}
+
+.section_second .container .section_content .content_title {
+  font-size: 9rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  margin-bottom: 9rem;
+}
+.section_second .container .section_content .content_archieves {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 23.4rem;
+}
+.section_second .container .section_content .content_archieves .archieve_box {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 4rem;
+}
+.section_second
+  .container
+  .section_content
+  .content_archieves
+  .archieve_box
+  .circle {
+  width: 25rem;
+  height: 25rem;
+  border-radius: 50%;
+  box-shadow: 9px 10px 10px rgba(88, 88, 88, 0.25),
+    9px 10px 10px 0px rgba(255, 255, 255, 0.25) inset;
+}
+.section_second
+  .container
+  .section_content
+  .content_archieves
+  .archieve_box
+  .circle_info {
+  text-align: center;
+}
+.section_second
+  .container
+  .section_content
+  .content_archieves
+  .archieve_box
+  .circle_info
+  .circle_year {
+  color: #000;
+  font-size: 5rem;
+  font-weight: 700;
+}
+.section_second
+  .container
+  .section_content
+  .content_archieves
+  .archieve_box
+  .circle_info
+  .circle_name {
+  color: #53565a;
+  font-size: 3rem;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 4rem;
+}
+@media (max-width: 48em) {
+  .section_second .container .section_content .content_title {
+    margin-bottom: 8rem;
+    text-align: center;
+  }
+  .section_second .container .section_content .content_archieves {
+    flex-direction: column;
+    gap: 8rem;
+  }
+  .section_second
+    .container
+    .section_content
+    .content_archieves
+    .archieve_box
+    .circle {
+    width: 40rem;
+    height: 40rem;
   }
 }
