@@ -2395,7 +2395,6 @@ section {
     margin-bottom: 4rem;
   }
   .details__section-first .container .details__section-content .content_btn-box.mobile .content_btn {
-    width: 100%;
     flex: 1 0;
     flex: unset;
     margin: 0 auto;
@@ -4858,7 +4857,7 @@ section {
     margin-bottom: 8rem;
   }
   .elmar__section-second .container .elmar__section-content .content_left .content_btn {
-    width: 100%;
+    margin: 0 auto;
   }
 }
 .elmar__section-third .container .elmar__section-content {
@@ -5365,7 +5364,7 @@ section {
     margin-bottom: 74rem;
   }
   .freedom__section-second .container .freedom__section-content .content_btn {
-    width: 100%;
+    margin: 0 auto;
   }
   .freedom__section-second .container .section_pallete {
     top: 60%;
@@ -5379,25 +5378,25 @@ section {
     width: 44.4rem;
   }
   .freedom__section-second .container .section_pallete .pallete_text.text-1 {
-    top: -2rem;
+    top: -4rem;
     left: -3rem;
   }
   .freedom__section-second .container .section_pallete .pallete_text.text-2 {
-    top: -2rem;
+    top: -4rem;
     right: -10rem;
   }
   .freedom__section-second .container .section_pallete .pallete_text.text-3 {
-    bottom: -3rem;
-    left: -10rem;
+    bottom: -5rem;
+    left: -12rem;
   }
   .freedom__section-second .container .section_pallete .pallete_text.text-4 {
-    bottom: -3rem;
-    right: -10rem;
+    bottom: -5rem;
+    right: -10.3rem;
   }
   .freedom__section-second .container .section_pallete .pallete_text.text-5 {
     text-align: center;
     width: 35.6rem;
-    bottom: -12rem;
+    bottom: -14rem;
     left: 5rem;
   }
 }
@@ -6092,14 +6091,14 @@ section {
   .philosophy__section-third {
     overflow: hidden;
     padding-top: 6rem;
-    padding-bottom: 54.6rem;
+    padding-bottom: 45rem;
   }
   .philosophy__section-third .container .philosophy__section-content .content_top {
     flex-direction: column;
     align-items: flex-start;
     padding: 0;
     gap: 4rem;
-    margin-bottom: 8.2rem;
+    margin-bottom: 9.5rem;
   }
   .philosophy__section-third .container .philosophy__section-content .content_top .content_left img {
     width: 32rem;
@@ -6142,7 +6141,7 @@ section {
   }
   .philosophy__section-third .container .philosophy__section-content .content_bottom .circles .circles_center .swiper-slide .circle_box .circle_text {
     pointer-events: none;
-    top: 30rem;
+    top: 28rem;
     font-size: 3rem;
     text-align: left;
   }
@@ -6154,7 +6153,7 @@ section {
   }
   .philosophy__section-third .container::after {
     height: 18rem;
-    bottom: -55rem;
+    bottom: -46rem;
     -webkit-clip-path: polygon(0% 40%, 110% 100%, 0% 100%);
             clip-path: polygon(0% 40%, 110% 100%, 0% 100%);
   }
@@ -7810,7 +7809,7 @@ section {
     height: 100%;
   }
   .footer .container {
-    padding-top: 14rem;
+    padding-top: 8rem;
     position: relative;
     justify-content: space-between;
   }

@@ -147,7 +147,7 @@
   .philosophy__section-third {
     overflow: hidden;
     padding-top: 6rem;
-    padding-bottom: 54.6rem;
+    padding-bottom: 45rem;
     .container {
       .philosophy__section-content {
         .content_top {
@@ -155,7 +155,7 @@
           align-items: flex-start;
           padding: 0;
           gap: 4rem;
-          margin-bottom: 8.2rem;
+          margin-bottom: 9.5rem;
           .content_left {
             img {
               width: 32rem;
@@ -201,7 +201,7 @@
                   }
                   .circle_text {
                     pointer-events: none;
-                    top: 30rem;
+                    top: 28rem;
                     font-size: 3rem;
                     text-align: left;
                     &.y-2008,
@@ -227,7 +227,7 @@
       }
       &::after {
         height: 18rem;
-        bottom: -55rem;
+        bottom: -46rem;
         clip-path: polygon(0% 40%, 110% 100%, 0% 100%);
       }
       .dots {
