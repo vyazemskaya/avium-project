@@ -287,6 +287,7 @@ document.addEventListener('DOMContentLoaded', function () {
             e.target.closest('.section_first #close-video') &&
             videoSection.classList.contains('_fw')
           ) {
+            screen.orientation.unlock()
             videoSection.classList.remove('_fw')
             tl1.kill()
             tl2.to(
@@ -335,6 +336,16 @@ document.addEventListener('DOMContentLoaded', function () {
             e.target.closest('.content_outer-btn') &&
             !videoSection.classList.contains('_fw')
           ) {
+            if (document.documentElement.requestFullscreen)
+              videoWrap.requestFullscreen()
+            else if (document.documentElement.webkitRequestFullScreen)
+              videoWrap.webkitRequestFullScreen()
+
+            screen.orientation
+              .lock('landscape-primary')
+              .catch(function (error) {
+                alert(error)
+              })
             videoSection.classList.add('_fw')
             tl2.kill()
             tl1.to(
@@ -388,23 +399,6 @@ document.addEventListener('DOMContentLoaded', function () {
         })
       }
     }
-
-    // upon lock to landscape-primary mode
-    playBtn.addEventListener('click', function () {
-      if (document.documentElement.requestFullscreen)
-        videoWrap.requestFullscreen()
-      else if (document.documentElement.webkitRequestFullScreen)
-        videoWrap.webkitRequestFullScreen()
-
-      screen.orientation.lock('landscape-primary').catch(function (error) {
-        alert(error)
-      })
-    })
-
-    // upon unlock
-    closeBtn.addEventListener('click', function () {
-      screen.orientation.unlock()
-    })
 
     gsapInit()
     initVideo(video, video)
