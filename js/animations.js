@@ -226,6 +226,7 @@ document.addEventListener('DOMContentLoaded', function () {
       },
       0
     )
+    gsap.set(closeBtn, { opacity: 1 }, 0)
 
     const addSourceToVideo = (element, src) => {
       const source = document.createElement('source')
@@ -263,6 +264,7 @@ document.addEventListener('DOMContentLoaded', function () {
               })
             videoSection.classList.add('_fw')
             tl2.kill()
+            tl1.to(closeBtn, { opacity: 1 }, 0)
             tl1.to(
               video,
               { width: '100%', height: '100%', duration: 0, delay: 0 },

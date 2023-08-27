@@ -11683,7 +11683,7 @@ section {
   z-index: 112;
   top: 50px;
   right: 30px;
-  opacity: 0;
+  /* opacity: 0; */
   font-size: 18px;
   /* transition: opacity 0.3s ease; */
 }
@@ -11703,7 +11703,7 @@ section {
 @media (max-width: 48em) {
   /* ============== */
   .section_first._fw #close-video {
-    opacity: 1;
+    /* opacity: 1; */
   }
   /* ============== */
   .section_first._fw .container::before {
