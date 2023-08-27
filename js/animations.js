@@ -257,7 +257,7 @@ document.addEventListener('DOMContentLoaded', function () {
             else if (document.documentElement.webkitRequestFullScreen)
               videoWrap.webkitRequestFullScreen()
 
-            screen.orientation
+            window.screen.orientation
               .lock('landscape-primary')
               .catch(function (error) {
                 alert(error)
@@ -307,7 +307,7 @@ document.addEventListener('DOMContentLoaded', function () {
             if (exitFullscreen) {
               exitFullscreen.bind(document)()
             }
-            screen.orientation.unlock()
+            window.screen.orientation.unlock()
             videoSection.classList.remove('_fw')
             tl1.kill()
             tl2.to(
