@@ -206,29 +206,32 @@ document.addEventListener('DOMContentLoaded', function () {
 
     gsap.defaults({ duration: 1 })
 
-    gsap.set(videoWrap, { opacity: 0, visibility: 'hidden' })
-    gsap.set(
-      videoWrap,
-      {
-        yPercent: md ? -23 : -17,
-        xPercent: md ? 38 : 5,
-        right: 0,
-        top: 0,
-        width: md ? '89.3rem' : '110.9rem',
-        height: md ? '89.3rem' : '110.9rem',
-        'border-radius': '50%',
-      },
-      0
-    )
-    gsap.set(
-      video,
-      {
-        width: md ? '67%' : '100%',
-        height: md ? '82%' : '100%',
-      },
-      0
-    )
-    gsap.set(closeBtn, { opacity: 1 }, 0)
+    const gsapSet = () => {
+      console.log('set')
+      gsap.set(videoWrap, { opacity: 0, visibility: 'hidden' })
+      gsap.set(
+        videoWrap,
+        {
+          yPercent: md ? -23 : -17,
+          xPercent: md ? 38 : 5,
+          right: 0,
+          top: 0,
+          width: md ? '89.3rem' : '110.9rem',
+          height: md ? '89.3rem' : '110.9rem',
+          'border-radius': '50%',
+        },
+        0
+      )
+      gsap.set(
+        video,
+        {
+          width: md ? '67%' : '100%',
+          height: md ? '82%' : '100%',
+        },
+        0
+      )
+      gsap.set(closeBtn, { opacity: 0, visibility: 'hidden' }, 0)
+    }
 
     const addSourceToVideo = (element, src) => {
       const source = document.createElement('source')
@@ -237,6 +240,7 @@ document.addEventListener('DOMContentLoaded', function () {
       element.appendChild(source)
     }
     const initVideo = (element, src) => {
+      console.log('video')
       const windowWidth = window.innerWidth
       if (windowWidth > 768) {
         addSourceToVideo(element, src.dataset.desktopVid)
@@ -247,8 +251,7 @@ document.addEventListener('DOMContentLoaded', function () {
     const gsapInit = () => {
       gsap.to(videoWrap, { opacity: 1, visibility: 'visible', delay: 2 })
       if (md) {
-        const mql = window.matchMedia('(orientation: portrait)')
-
+        console.log('mobile')
         document.addEventListener('click', function (e) {
           const tl1 = gsap.timeline()
           const tl2 = gsap.timeline()
@@ -256,21 +259,6 @@ document.addEventListener('DOMContentLoaded', function () {
             e.target.closest('.content_outer-btn') &&
             !videoSection.classList.contains('_fw')
           ) {
-            // if (document.documentElement.requestFullscreen)
-            //   videoWrap.requestFullscreen()
-            // else if (document.documentElement.webkitRequestFullScreen)
-            //   videoWrap.webkitRequestFullScreen()
-
-            // document.querySelector('body').classList.add('_rotate')
-
-            // window.screen.orientation
-            //   .lock('landscape-primary')
-            //   .catch(function (error) {
-            //     alert(error)
-            //   })
-
-            const screenOrientation = 'landscape' | 'portrait'
-
             function getScreenOrientation() {
               if (window.innerHeight < window.innerWidth) {
                 tl1.to(
@@ -286,12 +274,12 @@ document.addEventListener('DOMContentLoaded', function () {
                 )
               }
             }
-
+            getScreenOrientation()
             window.addEventListener('resize', getScreenOrientation)
 
             videoSection.classList.add('_fw')
             tl2.kill()
-            tl1.to(closeBtn, { opacity: 1 }, 0)
+            tl1.to(closeBtn, { opacity: 1, visibility: 'visible' }, 0)
             tl1.to(
               video,
               { width: '100%', height: '100%', duration: 0, delay: 0 },
@@ -329,7 +317,6 @@ document.addEventListener('DOMContentLoaded', function () {
             e.target.closest('.section_first #close-video') &&
             videoSection.classList.contains('_fw')
           ) {
-            // document.querySelector('body').classList.remove('_rotate')
             videoSection.classList.remove('_fw')
             tl1.kill()
             tl2.to(
@@ -374,6 +361,7 @@ document.addEventListener('DOMContentLoaded', function () {
         })
       }
       if (mmd) {
+        console.log('desk')
         document.addEventListener('click', function (e) {
           const tl1 = gsap.timeline()
           const tl2 = gsap.timeline()
@@ -435,6 +423,7 @@ document.addEventListener('DOMContentLoaded', function () {
       }
     }
 
+    gsapSet()
     gsapInit()
     initVideo(video, video)
   }

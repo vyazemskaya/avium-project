@@ -11509,10 +11509,6 @@ section {
   }
 }
 
-body._rotate {
-  height: 100vh;
-  transform: rotate(90deg);
-}
 
 .section_first {
   margin-top: 9.1rem;
@@ -11706,16 +11702,10 @@ body._rotate {
 }
 
 @media (max-width: 48em) {
-  /* ============== */
-  .section_first._fw #close-video {
-    /* opacity: 1; */
-  }
-  /* ============== */
   .section_first._fw .container::before {
     opacity: 0;
   }
   .section_first._fw {
-    /* margin-top: 0; */
   }
   .section_first .container_media video {
     width: 67%;
