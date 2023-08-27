@@ -337,6 +337,7 @@ document.addEventListener('DOMContentLoaded', function () {
                 yPercent: 0,
                 xPercent: 0,
                 'border-radius': 0,
+                delay: 0,
               },
               0
             )
@@ -345,6 +346,7 @@ document.addEventListener('DOMContentLoaded', function () {
               {
                 opacity: 0,
                 visibility: 'hidden',
+                delay: 0,
               },
               0
             )
@@ -358,6 +360,7 @@ document.addEventListener('DOMContentLoaded', function () {
                 width: '110.9rem',
                 height: '110.9rem',
                 'border-radius': '50%',
+                delay: 0,
               },
               0
             )
