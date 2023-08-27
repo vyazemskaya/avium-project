@@ -461,6 +461,22 @@ document.addEventListener('DOMContentLoaded', function () {
         ).style.display = 'none';
       });
 
+    const buttons = document.querySelectorAll('.volume_btn');
+    const checkboxes = document.querySelectorAll('.volume_checkbox');
+
+    buttons.forEach((button, index) => {
+      button.addEventListener('click', () => {
+        checkboxes.forEach((checkbox, checkboxIndex) => {
+          checkbox.checked = index === checkboxIndex;
+          if (index === checkboxIndex) {
+            button.classList.add('active');
+          } else {
+            buttons[checkboxIndex].classList.remove('active');
+          }
+        });
+      });
+    });
+
     if (screen.width < 769) {
       $(document).ready(function () {
         var secondSection = $('.details__section-second');
