@@ -1327,7 +1327,7 @@ section {
     font-size: 6.4rem;
   }
   .main__section-third .container .main__section-content .left_block .title .subtitle_span {
-    top: 15rem;
+    top: 16.5rem;
   }
   .main__section-third .container .main__section-content .left_block .subtitle {
     font-size: 5rem;
@@ -7014,7 +7014,7 @@ section {
 .veripery__section-first .container .veripery__section-background .background-desktop {
   -o-object-fit: cover;
      object-fit: cover;
-  height: 98.8rem;
+  height: 97rem;
 }
 .veripery__section-first .container .veripery__section-background .background-mobile {
   display: none;
