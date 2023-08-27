@@ -1,14 +1,3 @@
-$('body').on('click touchstart', function () {
-  const videoElement = document.getElementById('video-collection')
-  if (videoElement.playing) {
-    // video is already playing so do nothing
-  } else {
-    // video is not playing
-    // so play video now
-    videoElement.play()
-  }
-})
-
 const animItems = () => {
   const animItems = document.querySelectorAll('[data-animate]')
   if (animItems.length) {
@@ -22,6 +11,17 @@ if (!document.getElementById('fullpage')) {
 }
 
 document.addEventListener('DOMContentLoaded', function () {
+  $('body').on('click touchstart', function () {
+    const videoElement = document.getElementById('video-collection')
+    if (videoElement.playing) {
+      // video is already playing so do nothing
+    } else {
+      // video is not playing
+      // so play video now
+      videoElement.play()
+    }
+  })
+
   gsap.defaults({
     duration: 1,
     delay: 0.5,
@@ -209,7 +209,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
     gsap.defaults({ duration: 1 })
 
-    gsap.set(videoSection, { opacity: 0, visibility: 'hidden' })
+    gsap.set(videoWrap, { opacity: 0, visibility: 'hidden' })
     gsap.set(
       videoWrap,
       {
@@ -245,7 +245,7 @@ document.addEventListener('DOMContentLoaded', function () {
       }
     }
     const gsapInit = () => {
-      gsap.to(videoSection, { opacity: 1, visibility: 'visible', delay: 2 })
+      gsap.to(videoWrap, { opacity: 1, visibility: 'visible', delay: 2 })
       if (md) {
         document.addEventListener('click', function (e) {
           const tl1 = gsap.timeline()
