@@ -318,6 +318,7 @@ document.addEventListener('DOMContentLoaded', function () {
           iconImageSize: [70, 73],
         }
       );
+
       let placemarkSecondary = new ymaps.Placemark(
         [48.8879999999999, 2.34310679732999],
         {},
@@ -327,6 +328,28 @@ document.addEventListener('DOMContentLoaded', function () {
           iconImageSize: [70, 73],
         }
       );
+      placemarkMain.events.add('click', function (e) {
+        if(window.screen.width < 769) {
+          document.querySelector('.purchase__section-third .overlay').style.display = 'block';
+          document.querySelector('.purchase__section-third .overlay .modal').style.display = 'block';
+          document.body.style.overflow = 'hidden';
+        } else {
+          $('.place_info-box').removeClass('active')
+          $('.place_info-box')[0].classList.add("active")
+        }
+
+      });
+      placemarkSecondary.events.add('click', function (e) {
+        if(window.screen.width < 769) {
+          document.querySelector('.purchase__section-third .overlay').style.display = 'block';
+          document.querySelector('.purchase__section-third .overlay .modal').style.display = 'block';
+          document.body.style.overflow = 'hidden';
+        } else {
+          $('.place_info-box').removeClass('active')
+          $('.place_info-box')[1].classList.add("active")
+        }
+      });
+
 
       map.controls.remove('geolocationControl'); // удаляем геолокацию
       map.controls.remove('searchControl'); // удаляем поиск
@@ -342,6 +365,13 @@ document.addEventListener('DOMContentLoaded', function () {
     }
 
     ymaps.ready(init);
+    document
+    .querySelector('.purchase__section-third .overlay .modal_close-icon')
+    .addEventListener('click', () => {
+      document.querySelector('.purchase__section-third .overlay').style.display =
+        'none';
+      document.body.style.overflow = 'visible';
+    });
   }
 
   //////////////////////////////Детальная банка//////////////////////////////////
