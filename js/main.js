@@ -321,6 +321,7 @@ document.addEventListener('DOMContentLoaded', function () {
           iconImageSize: [70, 73],
         }
       )
+
       let placemarkSecondary = new ymaps.Placemark(
         [48.8879999999999, 2.34310679732999],
         {},
@@ -330,6 +331,34 @@ document.addEventListener('DOMContentLoaded', function () {
           iconImageSize: [70, 73],
         }
       )
+      placemarkMain.events.add('click', function (e) {
+        if (window.screen.width < 769) {
+          document.querySelector(
+            '.purchase__section-third .overlay'
+          ).style.display = 'block'
+          document.querySelector(
+            '.purchase__section-third .overlay .modal'
+          ).style.display = 'block'
+          document.body.style.overflow = 'hidden'
+        } else {
+          $('.place_info-box').removeClass('active')
+          $('.place_info-box')[0].classList.add('active')
+        }
+      })
+      placemarkSecondary.events.add('click', function (e) {
+        if (window.screen.width < 769) {
+          document.querySelector(
+            '.purchase__section-third .overlay'
+          ).style.display = 'block'
+          document.querySelector(
+            '.purchase__section-third .overlay .modal'
+          ).style.display = 'block'
+          document.body.style.overflow = 'hidden'
+        } else {
+          $('.place_info-box').removeClass('active')
+          $('.place_info-box')[1].classList.add('active')
+        }
+      })
 
       map.controls.remove('geolocationControl') // удаляем геолокацию
       map.controls.remove('searchControl') // удаляем поиск
@@ -345,6 +374,14 @@ document.addEventListener('DOMContentLoaded', function () {
     }
 
     ymaps.ready(init)
+    document
+      .querySelector('.purchase__section-third .overlay .modal_close-icon')
+      .addEventListener('click', () => {
+        document.querySelector(
+          '.purchase__section-third .overlay'
+        ).style.display = 'none'
+        document.body.style.overflow = 'visible'
+      })
   }
 
   //////////////////////////////Детальная банка//////////////////////////////////
@@ -464,6 +501,22 @@ document.addEventListener('DOMContentLoaded', function () {
         ).style.display = 'none'
       })
 
+    const buttons = document.querySelectorAll('.volume_btn')
+    const checkboxes = document.querySelectorAll('.volume_checkbox')
+
+    buttons.forEach((button, index) => {
+      button.addEventListener('click', () => {
+        checkboxes.forEach((checkbox, checkboxIndex) => {
+          checkbox.checked = index === checkboxIndex
+          if (index === checkboxIndex) {
+            button.classList.add('active')
+          } else {
+            buttons[checkboxIndex].classList.remove('active')
+          }
+        })
+      })
+    })
+
     if (screen.width < 769) {
       $(document).ready(function () {
         var secondSection = $('.details__section-second')
@@ -502,14 +555,6 @@ document.addEventListener('DOMContentLoaded', function () {
         document.querySelector(
           '.philosophy__section-sixth .container'
         ).style.display = 'block'
-        gsap.to(
-          '.philosophy__section-sixth .philosophy__section-content',
-          {
-            opacity: 1,
-            visibility: 'visible',
-          },
-          0
-        )
       })
 
     document.addEventListener('click', function (e) {
@@ -523,6 +568,7 @@ document.addEventListener('DOMContentLoaded', function () {
         document.querySelector(
           '.philosophy__section-sixth .container-video'
         ).style.display = 'block'
+        document.getElementById('video-collection').play()
         document.querySelector(
           '.philosophy__section-sixth .container'
         ).style.display = 'none'
@@ -719,5 +765,21 @@ if (document.querySelector('.veripery__section-first')) {
   for (let i = 0; i < videos.length; i++) {
     let video = videos[i]
     video.play()
+  }
+
+  if (screen.width < 769) {
+    document
+      .querySelector('.veripery__section-first .veripery__section-content')
+      .setAttribute('data-wow-delay', '0.1s')
+    document
+      .querySelector(
+        '.veripery__section-first .veripery__section-content .content_text'
+      )
+      .setAttribute('data-wow-delay', '0.2s')
+    document
+      .querySelector(
+        '.veripery__section-first .veripery__section-content .content_color-text'
+      )
+      .setAttribute('data-wow-delay', '0.4s')
   }
 }

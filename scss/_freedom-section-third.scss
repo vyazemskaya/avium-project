@@ -91,6 +91,7 @@
 
 @media (max-width: 48em) {
   .freedom__section-third {
+    margin-bottom: 12rem;
     .container {
       .freedom__section-content {
         .content_search-mobile {
@@ -107,6 +108,7 @@
           }
         }
         .content_pagination {
+          margin-bottom: 6rem;
           .pagination_list {
             gap: 0;
             row-gap: 4rem;
@@ -118,6 +120,7 @@
             }
             #freedom-toggle-btn {
               display: flex;
+              margin: 0 auto;
             }
           }
         }

@@ -78,7 +78,7 @@
           margin-bottom: 74rem;
         }
         .content_btn {
-          width: 100%;
+          margin: 0 auto;
         }
       }
       .section_pallete {
@@ -93,25 +93,25 @@
         }
         .pallete_text {
           &.text-1 {
-            top: -2rem;
+            top: -4rem;
             left: -3rem;
           }
           &.text-2 {
-            top: -2rem;
+            top: -4rem;
             right: -10rem;
           }
           &.text-3 {
-            bottom: -3rem;
-            left: -10rem;
+            bottom: -5rem;
+            left: -12rem;
           }
           &.text-4 {
-            bottom: -3rem;
-            right: -10rem;
+            bottom: -5rem;
+            right: -10.3rem;
           }
           &.text-5 {
             text-align: center;
             width: 35.6rem;
-            bottom: -12rem;
+            bottom: -14rem;
             left: 5rem;
           }
         }

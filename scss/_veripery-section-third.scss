@@ -6,7 +6,7 @@
       gap: 11.5rem;
       .content_box {
         display: flex;
-        gap: 7.6rem;
+        gap: 6rem;
         .content_left {
           flex: 1 0;
           display: grid;
@@ -50,6 +50,7 @@
 
 @media (max-width: 48em) {
   .veripery__section-third {
+    margin-bottom: 12rem;
     .container {
       .veripery__section-content {
         gap: 12rem;
