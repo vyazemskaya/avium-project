@@ -8335,7 +8335,7 @@ body .select_box label {
   body .swiper_main-section-4 .slide-section-4 {
     flex-direction: column-reverse;
   }
-} /*# sourceMappingURL=style.css.map */
+} 
 
 *::-webkit-media-controls-panel {
   display: none !important;
