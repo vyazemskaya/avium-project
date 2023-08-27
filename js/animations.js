@@ -241,7 +241,6 @@ document.addEventListener('DOMContentLoaded', function () {
       element.appendChild(source)
     }
     const initVideo = (element, src) => {
-      console.log('video')
       const windowWidth = window.innerWidth
       if (windowWidth > 768) {
         addSourceToVideo(element, src.dataset.desktopVid)
@@ -252,7 +251,6 @@ document.addEventListener('DOMContentLoaded', function () {
     const gsapInit = () => {
       gsap.to(videoWrap, { opacity: 1, visibility: 'visible', delay: 2 })
       if (window.matchMedia('(max-width: 768px)').matches) {
-        console.log('mobile')
         document.addEventListener('click', function (e) {
           const tl1 = gsap.timeline()
           const tl2 = gsap.timeline()
@@ -362,7 +360,6 @@ document.addEventListener('DOMContentLoaded', function () {
         })
       }
       if (window.matchMedia('(min-width: 768px)').matches) {
-        console.log('desk')
         document.addEventListener('click', function (e) {
           const tl1 = gsap.timeline()
           const tl2 = gsap.timeline()
@@ -427,12 +424,6 @@ document.addEventListener('DOMContentLoaded', function () {
     gsapSet()
     gsapInit()
     initVideo(video, video)
-
-    window.addEventListener('resize', function () {
-      gsapSet()
-      // gsapInit()
-      initVideo(video, video)
-    })
   }
 
   if (document.getElementById('fullpage')) {
