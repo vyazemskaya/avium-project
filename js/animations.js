@@ -11,16 +11,16 @@ if (!document.getElementById('fullpage')) {
 }
 
 document.addEventListener('DOMContentLoaded', function () {
-  $('body').on('click touchstart', function () {
-    const videoElement = document.getElementById('video-collection')
-    if (videoElement.playing) {
-      // video is already playing so do nothing
-    } else {
-      // video is not playing
-      // so play video now
-      videoElement.play()
-    }
-  })
+  // $('body').on('click touchstart', function () {
+  //   const videoElement = document.getElementById('video-collection')
+  //   if (videoElement.playing) {
+  //     // video is already playing so do nothing
+  //   } else {
+  //     // video is not playing
+  //     // so play video now
+  //     videoElement.play()
+  //   }
+  // })
 
   gsap.defaults({
     duration: 1,
