@@ -194,7 +194,9 @@ document.addEventListener('DOMContentLoaded', function () {
     const md = window.matchMedia('(max-width: 768px)').matches
     const mmd = window.matchMedia('(min-width: 768px)').matches
 
-    video.play()
+    setTimeout(() => {
+      video.play()
+    }, 0)
 
     gsap.defaults({ duration: 1 })
 
