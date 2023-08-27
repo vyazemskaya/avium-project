@@ -11680,7 +11680,7 @@ section {
 .section_first #close-video {
   content: '';
   position: absolute;
-  z-index: 6;
+  z-index: 112;
   top: 0;
   right: 30px;
   opacity: 0;
