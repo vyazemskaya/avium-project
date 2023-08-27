@@ -1,3 +1,12 @@
+$('#video-collection').addClass('inlinevideo')
+$('body').on('click touchstart', function () {
+  var videoElement = document.getElementsByClassName('inlinevideo')
+  if (videoElement.playing) {
+  } else {
+    $('.inlinevideo').trigger('play')
+  }
+})
+
 const animItems = () => {
   const animItems = document.querySelectorAll('[data-animate]')
   if (animItems.length) {
@@ -194,16 +203,7 @@ document.addEventListener('DOMContentLoaded', function () {
     const md = window.matchMedia('(max-width: 768px)').matches
     const mmd = window.matchMedia('(min-width: 768px)').matches
 
-    // video.play()
-
-    $(video).addClass('inlinevideo')
-    $('body').on('click touchstart', function () {
-      var videoElement = document.getElementsByClassName('inlinevideo')
-      if (videoElement.playing) {
-      } else {
-        $('.inlinevideo').trigger('play')
-      }
-    })
+    video.play()
 
     gsap.defaults({ duration: 1 })
 
