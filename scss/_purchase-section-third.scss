@@ -113,6 +113,56 @@
           }
         }
       }
+      .overlay {
+        display: none;
+        position: fixed;
+        left: 0;
+        top: 0;
+        z-index: 100;
+        width: 100%;
+        height: 100%;
+        .modal {
+          max-width: 67rem;
+          max-height: 44rem;
+          width: 100%;
+          background-color: #fff;
+          box-shadow: 1px 4px 6px #d5d5d5;
+          border-radius: 6rem;
+          padding: 4rem 4rem 8rem 4rem;
+          position: absolute;
+          left: 50%;
+          top: 50%;
+          transform: translate(-50%, -50%);
+          .modal_close-icon {
+            width: 4rem;
+            height: 4rem;
+            margin-left: auto;
+            cursor: pointer;
+            margin-bottom: 8.8rem;
+          }
+          .modal_content {
+            font-size: 3rem;
+            .place_title {
+              color: #000;
+              font-style: normal;
+              font-weight: 700;
+              margin-bottom: 2rem;
+            }
+            .place_address {
+              color: #000;
+              font-style: normal;
+              font-weight: 300;
+              line-height: 140%;
+              margin-bottom: 1rem;
+            }
+            .place_phone {
+              color: #53565a;
+              font-style: normal;
+              font-weight: 700;
+            }
+          }
+        }
+      }
     }
   }
 }
