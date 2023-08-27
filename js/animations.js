@@ -1,11 +1,11 @@
-$('#video-collection').addClass('inlinevideo')
-$('body').on('click touchstart', function () {
-  var videoElement = document.getElementsByClassName('inlinevideo')
-  if (videoElement.playing) {
-  } else {
-    $('.inlinevideo').trigger('play')
-  }
-})
+// $('#video-collection').addClass('inlinevideo')
+// $('body').on('click touchstart', function () {
+//   var videoElement = document.getElementsByClassName('inlinevideo')
+//   if (videoElement.playing) {
+//   } else {
+//     $('.inlinevideo').trigger('play')
+//   }
+// })
 
 const animItems = () => {
   const animItems = document.querySelectorAll('[data-animate]')
