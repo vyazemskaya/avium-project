@@ -24,7 +24,10 @@ document.addEventListener('DOMContentLoaded', function () {
   console.log(videos)
   for (let i = 0; i < videos.length; i++) {
     let video = videos[i]
-    video.play()
+
+    if (!video.closest('.section_first')) {
+      video.play()
+    }
   }
 
   const overlays = document.querySelectorAll('.overlay')
@@ -706,8 +709,6 @@ document.addEventListener('DOMContentLoaded', function () {
       cycleInterval = setInterval(autoCycle, 1500)
     }
   }
-
- 
 })
 
 //////////////////////////////Коллекция Veripery//////////////////////////////////
