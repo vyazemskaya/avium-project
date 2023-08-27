@@ -241,24 +241,6 @@ document.addEventListener('DOMContentLoaded', function () {
           e.target.closest('.content_outer-btn') &&
           !videoSection.classList.contains('_fw')
         ) {
-          function getScreenOrientation() {
-            if (window.innerHeight < window.innerWidth) {
-              tl1.to(
-                videoWrap,
-                {
-                  width: '100vw',
-                  height: '100vh',
-                  rotate: 0,
-                  duration: 0,
-                  delay: 0,
-                },
-                0
-              )
-            }
-          }
-          getScreenOrientation()
-          window.addEventListener('resize', getScreenOrientation)
-
           videoSection.classList.add('_fw')
           tl2.kill()
           tl1.to(closeBtn, { opacity: 1, visibility: 'visible' }, 0)
@@ -398,6 +380,27 @@ document.addEventListener('DOMContentLoaded', function () {
         }
       })
     })
+
+    function getScreenOrientation() {
+      if (
+        window.innerHeight < window.innerWidth &&
+        window.matchMedia('(max-width: 768px)').matches
+      ) {
+        gsap.to(
+          videoWrap,
+          {
+            width: '100vw',
+            height: '100vh',
+            rotate: 0,
+            duration: 0,
+            delay: 0,
+          },
+          0
+        )
+      }
+    }
+    getScreenOrientation()
+    window.addEventListener('resize', getScreenOrientation)
 
     const addSourceToVideo = (element, src) => {
       const source = document.createElement('source')
