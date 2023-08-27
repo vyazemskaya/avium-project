@@ -297,6 +297,7 @@ document.addEventListener('DOMContentLoaded', function () {
             e.target.closest('.section_first #close-video') &&
             videoSection.classList.contains('_fw')
           ) {
+            document.exitFullscreen()
             screen.orientation.unlock()
             videoSection.classList.remove('_fw')
             tl1.kill()
