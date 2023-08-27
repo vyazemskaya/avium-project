@@ -11,16 +11,12 @@ if (!document.getElementById('fullpage')) {
 }
 
 document.addEventListener('DOMContentLoaded', function () {
-  // $('body').on('click touchstart', function () {
-  //   const videoElement = document.getElementById('video-collection')
-  //   if (videoElement.playing) {
-  //     // video is already playing so do nothing
-  //   } else {
-  //     // video is not playing
-  //     // so play video now
-  //     videoElement.play()
-  //   }
-  // })
+  $('body').on('click touchstart', function () {
+    const videoElement = document.getElementById('video-collection')
+    if (!videoElement.playing) {
+      videoElement.play()
+    }
+  })
 
   gsap.defaults({
     duration: 1,
@@ -201,6 +197,7 @@ document.addEventListener('DOMContentLoaded', function () {
     const videoSection = document.querySelector('.section_first')
     const video = document.getElementById('video-collection')
     const playBtn = document.querySelector('.content_outer-btn')
+    const closeBtn = videoSection.querySelector('#close-video')
     const videoWrap = videoSection.querySelector('.container_media')
     const md = window.matchMedia('(max-width: 768px)').matches
     const mmd = window.matchMedia('(min-width: 768px)').matches
@@ -391,6 +388,23 @@ document.addEventListener('DOMContentLoaded', function () {
         })
       }
     }
+
+    // upon lock to landscape-primary mode
+    playBtn.addEventListener('click', function () {
+      if (document.documentElement.requestFullscreen)
+        videoWrap.requestFullscreen()
+      else if (document.documentElement.webkitRequestFullScreen)
+        videoWrap.webkitRequestFullScreen()
+
+      screen.orientation.lock('landscape-primary').catch(function (error) {
+        alert(error)
+      })
+    })
+
+    // upon unlock
+    closeBtn.addEventListener('click', function () {
+      screen.orientation.unlock()
+    })
 
     gsapInit()
     initVideo(video, video)
