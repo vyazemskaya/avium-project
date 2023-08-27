@@ -1,9 +1,11 @@
-$('#video-collection').addClass('inlinevideo')
 $('body').on('click touchstart', function () {
-  var videoElement = document.getElementsByClassName('inlinevideo')
+  const videoElement = document.getElementById('video-collection')
   if (videoElement.playing) {
+    // video is already playing so do nothing
   } else {
-    $('.inlinevideo').trigger('play')
+    // video is not playing
+    // so play video now
+    videoElement.play()
   }
 })
 
