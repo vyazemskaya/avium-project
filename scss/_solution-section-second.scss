@@ -99,6 +99,11 @@
           flex-direction: column-reverse;
           gap: 4.2rem;
           margin-bottom: 18rem;
+          .content_right {
+            .content_title {
+              font-size: 6.4rem;
+            }
+          }
           .content_left {
             margin: 0 auto;
             .circle {
