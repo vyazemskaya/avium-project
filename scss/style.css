@@ -11542,7 +11542,7 @@ section {
   transition: opacity 1s ease;
 }
 
-.section_first .container_media #video-collection {
+.section_first .container_media video {
   -o-object-fit: cover;
   object-fit: cover;
   width: 100%;
@@ -11712,7 +11712,7 @@ section {
   .section_first._fw {
     /* margin-top: 0; */
   }
-  .section_first .container_media #video-collection {
+  .section_first .container_media video {
     width: 67%;
     height: 82%;
     position: absolute;
