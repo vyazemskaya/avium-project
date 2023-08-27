@@ -1,4 +1,20 @@
 .philosophy__section-sixth {
+  position: relative;
+}
+.philosophy__section-sixth #close-video {
+  content: '';
+  position: fixed;
+  z-index: 110;
+  top: 20px;
+  right: 30px;
+  opacity: 0;
+  font-size: 18px;
+  transition: opacity 0.3s ease;
+}
+.philosophy__section-sixth .container-video._fw #close-video {
+  opacity: 1;
+}
+.philosophy__section-sixth {
   margin-bottom: 0;
   .container-video {
     display: none;
@@ -9,38 +25,38 @@
       height: 99.5rem;
     }
   }
+  .philosophy__section-content {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    top: 10.8rem;
+    left: 22.6rem;
+    width: 25.6rem;
+    height: 25.6rem;
+    border-radius: 50%;
+    border: 1px solid #fff;
+    cursor: pointer;
+    .content_btn {
+      display: flex;
+      gap: 1rem;
+      .content_text {
+        color: #fff;
+        font-size: 2rem;
+        font-weight: 700;
+        text-transform: uppercase;
+      }
+      .content_icon {
+        width: 0.8rem;
+      }
+    }
+  }
   .container {
     width: 100%;
     position: relative;
     .philosophy__section-background {
       img {
         object-fit: cover;
-      }
-    }
-    .philosophy__section-content {
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      position: absolute;
-      top: 10.8rem;
-      left: 22.6rem;
-      width: 25.6rem;
-      height: 25.6rem;
-      border-radius: 50%;
-      border: 1px solid #fff;
-      cursor: pointer;
-      .content_btn {
-        display: flex;
-        gap: 1rem;
-        .content_text {
-          color: #fff;
-          font-size: 2rem;
-          font-weight: 700;
-          text-transform: uppercase;
-        }
-        .content_icon {
-          width: 0.8rem;
-        }
       }
     }
   }
@@ -56,10 +72,10 @@
           height: 104rem;
         }
       }
-      .philosophy__section-content {
-        top: 4rem;
-        left: 4rem;
-      }
+    }
+    .philosophy__section-content {
+      top: 4rem;
+      left: 4rem;
     }
   }
 }

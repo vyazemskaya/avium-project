@@ -4,12 +4,12 @@ wow = new WOW({
   offset: 0,
   mobile: true,
   live: true,
-});
+})
 
-wow.init();
+wow.init()
 
 $(document).ready(function () {
-  $('select').niceSelect();
+  $('select').niceSelect()
   // if ($('#fullpage').length && $(window).width() > 768) {
   //   $('#fullpage').fullpage({
   //     scrollOverflow: false,
@@ -17,54 +17,57 @@ $(document).ready(function () {
   //     fitToSection: false,
   //   })
   // }
-});
+})
 
 document.addEventListener('DOMContentLoaded', function () {
-  let videos = document.getElementsByTagName('video');
-  console.log(videos);
+  let videos = document.getElementsByTagName('video')
+  console.log(videos)
   for (let i = 0; i < videos.length; i++) {
-    let video = videos[i];
-    video.play();
+    let video = videos[i]
+
+    if (!video.closest('.section_first')) {
+      video.play()
+    }
   }
 
-  const overlays = document.querySelectorAll('.overlay');
-  overlays.forEach((overlay) => {
-    overlay.addEventListener('click', (event) => {
-      const modal = overlay.querySelector('.modal');
+  const overlays = document.querySelectorAll('.overlay')
+  overlays.forEach(overlay => {
+    overlay.addEventListener('click', event => {
+      const modal = overlay.querySelector('.modal')
       if (event.target === overlay) {
-        overlay.style.display = 'none';
-        modal.style.display = 'none';
-        document.body.style.overflow = 'visible';
+        overlay.style.display = 'none'
+        modal.style.display = 'none'
+        document.body.style.overflow = 'visible'
       }
-    });
-  });
+    })
+  })
 
-  const checkbox = document.getElementById('burger-toggle');
+  const checkbox = document.getElementById('burger-toggle')
 
   checkbox.addEventListener('change', function () {
     if (this.checked) {
-      document.querySelector('.header').style.backgroundColor = '#ffffff';
-      document.body.style.overflow = 'hidden';
+      document.querySelector('.header').style.backgroundColor = '#ffffff'
+      document.body.style.overflow = 'hidden'
     } else {
-      document.querySelector('.header').style.backgroundColor = '#f7f8fa';
-      document.body.style.overflow = 'visible';
+      document.querySelector('.header').style.backgroundColor = '#f7f8fa'
+      document.body.style.overflow = 'visible'
     }
-  });
+  })
 
-  document.querySelectorAll('.header .feedback-icon').forEach((element) => {
+  document.querySelectorAll('.header .feedback-icon').forEach(element => {
     element.addEventListener('click', () => {
-      document.querySelector('.header .overlay').style.display = 'block';
-      document.querySelector('.header .overlay .modal').style.display = 'block';
-      document.body.style.overflow = 'hidden';
-    });
-  });
+      document.querySelector('.header .overlay').style.display = 'block'
+      document.querySelector('.header .overlay .modal').style.display = 'block'
+      document.body.style.overflow = 'hidden'
+    })
+  })
 
   document
     .querySelector('.header .overlay .modal_close-icon')
     .addEventListener('click', () => {
-      document.querySelector('.header .overlay').style.display = 'none';
-      document.body.style.overflow = 'visible';
-    });
+      document.querySelector('.header .overlay').style.display = 'none'
+      document.body.style.overflow = 'visible'
+    })
 
   //////////////////////////////Корзина//////////////////////////////////
 
@@ -75,35 +78,35 @@ document.addEventListener('DOMContentLoaded', function () {
       )
       .addEventListener('click', () => {
         document.querySelector('.cart__section-second .overlay').style.display =
-          'block';
+          'block'
         document.querySelector(
           '.cart__section-second .overlay .modal'
-        ).style.display = 'block';
-        document.body.style.overflow = 'hidden';
-      });
+        ).style.display = 'block'
+        document.body.style.overflow = 'hidden'
+      })
 
     document
       .querySelector('.cart__section-second .overlay .modal_close-icon')
       .addEventListener('click', () => {
         document.querySelector('.cart__section-second .overlay').style.display =
-          'none';
-        document.body.style.overflow = 'visible';
-      });
+          'none'
+        document.body.style.overflow = 'visible'
+      })
   }
 
   ////////////////////////////////////////////////////////////////
 
   if (document.getElementById('cart')) {
     const cart = document.getElementById('cart'),
-      cartSwapper = document.getElementById('cart_fixed-block');
+      cartSwapper = document.getElementById('cart_fixed-block')
 
     cartSwapper.querySelector('.content-btn').addEventListener('click', () => {
-      const cartPosition = cart.getBoundingClientRect().top + window.scrollY;
+      const cartPosition = cart.getBoundingClientRect().top + window.scrollY
       window.scrollTo({
         top: cartPosition - 100,
         behavior: 'smooth',
-      });
-    });
+      })
+    })
 
     // const observer = new IntersectionObserver((entries) => {
     //   entries.forEach((entry) => {
@@ -128,21 +131,21 @@ document.addEventListener('DOMContentLoaded', function () {
 
     if (screen.width < 769) {
       $(document).ready(function () {
-        var cartPosition = $('#cart');
-        var fixedBlock = $('#cart_fixed-block');
+        var cartPosition = $('#cart')
+        var fixedBlock = $('#cart_fixed-block')
 
         $(window).scroll(function () {
-          var scrollPosition = $(window).scrollTop();
+          var scrollPosition = $(window).scrollTop()
           var cartOffset =
-            cartPosition.offset().top + cartPosition.height() - 1000;
+            cartPosition.offset().top + cartPosition.height() - 1000
 
           if (scrollPosition >= cartOffset) {
-            fixedBlock.hide();
+            fixedBlock.hide()
           } else {
-            fixedBlock.show();
+            fixedBlock.show()
           }
-        });
-      });
+        })
+      })
     }
   }
 
@@ -151,45 +154,45 @@ document.addEventListener('DOMContentLoaded', function () {
   if (document.querySelector('.freedom__section-third')) {
     const paginationItems = document.querySelectorAll(
       '.freedom__section-third .pagination_item'
-    );
+    )
 
-    paginationItems.forEach((item) => {
+    paginationItems.forEach(item => {
       item.addEventListener('click', () => {
-        paginationItems.forEach((item) => {
-          item.classList.remove('active');
-        });
+        paginationItems.forEach(item => {
+          item.classList.remove('active')
+        })
 
-        item.classList.add('active');
-      });
-    });
+        item.classList.add('active')
+      })
+    })
   }
 
   if (document.getElementById('freedom-toggle-btn')) {
-    const freedomToggleButton = document.getElementById('freedom-toggle-btn');
+    const freedomToggleButton = document.getElementById('freedom-toggle-btn')
     const paginationItems = document.querySelectorAll(
       '.freedom__section-third .pagination_item'
-    );
+    )
 
-    let expanded = false;
+    let expanded = false
 
     freedomToggleButton.addEventListener('click', function () {
-      expanded = !expanded;
+      expanded = !expanded
       if (expanded) {
         paginationItems.forEach(function (item, index) {
           if (index >= 3) {
-            item.style.display = 'flex';
+            item.style.display = 'flex'
           }
-        });
-        freedomToggleButton.textContent = 'Свернуть';
+        })
+        freedomToggleButton.textContent = 'Свернуть'
       } else {
         paginationItems.forEach(function (item, index) {
           if (index >= 3) {
-            item.style.display = 'none';
+            item.style.display = 'none'
           }
-        });
-        freedomToggleButton.textContent = 'Развернуть';
+        })
+        freedomToggleButton.textContent = 'Развернуть'
       }
-    });
+    })
   }
 
   /////////////////////////////Сотрудничество///////////////////////////////////
@@ -198,39 +201,39 @@ document.addEventListener('DOMContentLoaded', function () {
     document
       .querySelector('.cooperation__section-third .content_form-btn')
       .addEventListener('click', function (e) {
-        e.preventDefault();
+        e.preventDefault()
         document.querySelector(
           '.cooperation__section-third .overlay'
-        ).style.display = 'block';
+        ).style.display = 'block'
         document.querySelector(
           '.cooperation__section-third .overlay .modal'
-        ).style.display = 'block';
-        document.body.style.overflow = 'hidden';
-      });
+        ).style.display = 'block'
+        document.body.style.overflow = 'hidden'
+      })
 
     document
       .querySelector('.cooperation__section-third .overlay .modal_close-icon')
       .addEventListener('click', function () {
         document.querySelector(
           '.cooperation__section-third .overlay'
-        ).style.display = 'none';
-        document.body.style.overflow = 'visible';
-      });
+        ).style.display = 'none'
+        document.body.style.overflow = 'visible'
+      })
   }
 
   /////////////////////////////Калькулятор///////////////////////////////////
 
   if (document.querySelector('.calculate__section')) {
-    document.querySelectorAll('[name=group_first]').forEach((element) => {
+    document.querySelectorAll('[name=group_first]').forEach(element => {
       element.addEventListener('change', () => {
         document
           .querySelectorAll('.calculate__section .content_calculate-box')
-          .forEach((item) => {
-            item.classList.add('deactive');
-          });
-        document.getElementById(element.value).classList.remove('deactive');
-      });
-    });
+          .forEach(item => {
+            item.classList.add('deactive')
+          })
+        document.getElementById(element.value).classList.remove('deactive')
+      })
+    })
 
     document
       .querySelector(
@@ -240,21 +243,21 @@ document.addEventListener('DOMContentLoaded', function () {
         if (document.getElementById('default_calculate').checked) {
           document.querySelector(
             '.calculate__section .overlay-default'
-          ).style.display = 'block';
+          ).style.display = 'block'
           document.querySelector(
             '.calculate__section .overlay-default .modal_default'
-          ).style.display = 'block';
-          document.body.style.overflow = 'hidden';
+          ).style.display = 'block'
+          document.body.style.overflow = 'hidden'
         } else if (document.getElementById('advanced_calculate').checked) {
           document.querySelector(
             '.calculate__section .overlay-advanced'
-          ).style.display = 'block';
+          ).style.display = 'block'
           document.querySelector(
             '.calculate__section .overlay-advanced .modal_advanced'
-          ).style.display = 'block';
-          document.body.style.overflow = 'hidden';
+          ).style.display = 'block'
+          document.body.style.overflow = 'hidden'
         }
-      });
+      })
 
     document
       .querySelector(
@@ -263,12 +266,12 @@ document.addEventListener('DOMContentLoaded', function () {
       .addEventListener('click', () => {
         document.querySelector(
           '.calculate__section .overlay-default'
-        ).style.display = 'none';
+        ).style.display = 'none'
         document.querySelector(
           '.calculate__section .overlay-default .modal_default'
-        ).style.display = 'none';
-        document.body.style.overflow = 'visible';
-      });
+        ).style.display = 'none'
+        document.body.style.overflow = 'visible'
+      })
 
     // document
     //   .querySelector(
@@ -290,24 +293,24 @@ document.addEventListener('DOMContentLoaded', function () {
       .addEventListener('click', () => {
         document.querySelector(
           '.calculate__section .overlay-advanced'
-        ).style.display = 'none';
+        ).style.display = 'none'
         document.querySelector(
           '.calculate__section .overlay-advanced .modal_advanced'
-        ).style.display = 'none';
-        document.body.style.overflow = 'visible';
-      });
+        ).style.display = 'none'
+        document.body.style.overflow = 'visible'
+      })
   }
 
   /////////////////////////////Купить///////////////////////////////////
 
   if (document.querySelector('.purchase__section-first')) {
-    let center = [48.8866527839977, 2.34310679732974];
+    let center = [48.8866527839977, 2.34310679732974]
 
     function init() {
       let map = new ymaps.Map('purchase_map', {
         center: center,
         zoom: 17,
-      });
+      })
 
       let placemarkMain = new ymaps.Placemark(
         center,
@@ -317,7 +320,7 @@ document.addEventListener('DOMContentLoaded', function () {
           iconImageHref: './img/purchase_section-third/geomark-1.svg',
           iconImageSize: [70, 73],
         }
-      );
+      )
 
       let placemarkSecondary = new ymaps.Placemark(
         [48.8879999999999, 2.34310679732999],
@@ -327,67 +330,74 @@ document.addEventListener('DOMContentLoaded', function () {
           iconImageHref: './img/purchase_section-third/geomark-2.svg',
           iconImageSize: [70, 73],
         }
-      );
+      )
       placemarkMain.events.add('click', function (e) {
-        if(window.screen.width < 769) {
-          document.querySelector('.purchase__section-third .overlay').style.display = 'block';
-          document.querySelector('.purchase__section-third .overlay .modal').style.display = 'block';
-          document.body.style.overflow = 'hidden';
+        if (window.screen.width < 769) {
+          document.querySelector(
+            '.purchase__section-third .overlay'
+          ).style.display = 'block'
+          document.querySelector(
+            '.purchase__section-third .overlay .modal'
+          ).style.display = 'block'
+          document.body.style.overflow = 'hidden'
         } else {
           $('.place_info-box').removeClass('active')
-          $('.place_info-box')[0].classList.add("active")
+          $('.place_info-box')[0].classList.add('active')
         }
-
-      });
+      })
       placemarkSecondary.events.add('click', function (e) {
-        if(window.screen.width < 769) {
-          document.querySelector('.purchase__section-third .overlay').style.display = 'block';
-          document.querySelector('.purchase__section-third .overlay .modal').style.display = 'block';
-          document.body.style.overflow = 'hidden';
+        if (window.screen.width < 769) {
+          document.querySelector(
+            '.purchase__section-third .overlay'
+          ).style.display = 'block'
+          document.querySelector(
+            '.purchase__section-third .overlay .modal'
+          ).style.display = 'block'
+          document.body.style.overflow = 'hidden'
         } else {
           $('.place_info-box').removeClass('active')
-          $('.place_info-box')[1].classList.add("active")
+          $('.place_info-box')[1].classList.add('active')
         }
-      });
+      })
 
+      map.controls.remove('geolocationControl') // удаляем геолокацию
+      map.controls.remove('searchControl') // удаляем поиск
+      map.controls.remove('trafficControl') // удаляем контроль трафика
+      map.controls.remove('typeSelector') // удаляем тип
+      map.controls.remove('fullscreenControl') // удаляем кнопку перехода в полноэкранный режим
+      map.controls.remove('zoomControl') // удаляем контрол зуммирования
+      map.controls.remove('rulerControl') // удаляем контрол правил
+      map.behaviors.disable(['scrollZoom']) // отключаем скролл карты (опционально)
 
-      map.controls.remove('geolocationControl'); // удаляем геолокацию
-      map.controls.remove('searchControl'); // удаляем поиск
-      map.controls.remove('trafficControl'); // удаляем контроль трафика
-      map.controls.remove('typeSelector'); // удаляем тип
-      map.controls.remove('fullscreenControl'); // удаляем кнопку перехода в полноэкранный режим
-      map.controls.remove('zoomControl'); // удаляем контрол зуммирования
-      map.controls.remove('rulerControl'); // удаляем контрол правил
-      map.behaviors.disable(['scrollZoom']); // отключаем скролл карты (опционально)
-
-      map.geoObjects.add(placemarkMain);
-      map.geoObjects.add(placemarkSecondary);
+      map.geoObjects.add(placemarkMain)
+      map.geoObjects.add(placemarkSecondary)
     }
 
-    ymaps.ready(init);
+    ymaps.ready(init)
     document
-    .querySelector('.purchase__section-third .overlay .modal_close-icon')
-    .addEventListener('click', () => {
-      document.querySelector('.purchase__section-third .overlay').style.display =
-        'none';
-      document.body.style.overflow = 'visible';
-    });
+      .querySelector('.purchase__section-third .overlay .modal_close-icon')
+      .addEventListener('click', () => {
+        document.querySelector(
+          '.purchase__section-third .overlay'
+        ).style.display = 'none'
+        document.body.style.overflow = 'visible'
+      })
   }
 
   //////////////////////////////Детальная банка//////////////////////////////////
 
   if (document.querySelector('.details__section-first')) {
-    document.querySelectorAll('.addToCart').forEach((element) => {
+    document.querySelectorAll('.addToCart').forEach(element => {
       element.addEventListener('click', () => {
         document.querySelector(
           '.details__section-first .overlay'
-        ).style.display = 'block';
+        ).style.display = 'block'
         document.querySelector(
           '.details__section-first .overlay .modal_addToCart'
-        ).style.display = 'block';
-        document.body.style.overflow = 'hidden';
-      });
-    });
+        ).style.display = 'block'
+        document.body.style.overflow = 'hidden'
+      })
+    })
 
     document
       .querySelector(
@@ -396,28 +406,28 @@ document.addEventListener('DOMContentLoaded', function () {
       .addEventListener('click', () => {
         document.querySelector(
           '.details__section-first .overlay-add-to-cart'
-        ).style.display = 'none';
+        ).style.display = 'none'
         document.querySelector(
           '.details__section-first .overlay-add-to-cart .modal_addToCart'
-        ).style.display = 'none';
-        document.body.style.overflow = 'visible';
-      });
+        ).style.display = 'none'
+        document.body.style.overflow = 'visible'
+      })
 
     document
       .querySelectorAll(
         '.details__section-first .overlay-add-to-cart .modal_addToCart .content_btn'
       )
-      .forEach((element) => {
+      .forEach(element => {
         element.addEventListener('click', () => {
           document.querySelector(
             '.details__section-first .overlay-add-to-cart'
-          ).style.display = 'none';
+          ).style.display = 'none'
           document.querySelector(
             '.details__section-first .overlay-add-to-cart .modal_addToCart'
-          ).style.display = 'none';
-          document.body.style.overflow = 'visible';
-        });
-      });
+          ).style.display = 'none'
+          document.body.style.overflow = 'visible'
+        })
+      })
 
     if (document.querySelector('.details__section-first .choose_color-img')) {
       document
@@ -425,12 +435,12 @@ document.addEventListener('DOMContentLoaded', function () {
         .addEventListener('click', () => {
           document.querySelector(
             '.details__section-first .overlay-choose-color'
-          ).style.display = 'block';
+          ).style.display = 'block'
           document.querySelector(
             '.details__section-first .overlay-choose-color .modal_chooseColor'
-          ).style.display = 'block';
-          document.body.style.overflow = 'hidden';
-        });
+          ).style.display = 'block'
+          document.body.style.overflow = 'hidden'
+        })
 
       document
         .querySelector(
@@ -439,47 +449,47 @@ document.addEventListener('DOMContentLoaded', function () {
         .addEventListener('click', () => {
           document.querySelector(
             '.details__section-first .overlay-choose-color'
-          ).style.display = 'none';
+          ).style.display = 'none'
           document.querySelector(
             '.details__section-first .overlay-choose-color .modal_chooseColor'
-          ).style.display = 'none';
-          document.body.style.overflow = 'visible';
-        });
+          ).style.display = 'none'
+          document.body.style.overflow = 'visible'
+        })
     }
 
-    document.querySelectorAll('[name=group_second]').forEach((element) => {
+    document.querySelectorAll('[name=group_second]').forEach(element => {
       element.addEventListener('change', () => {
         document
           .querySelectorAll('.details__section-second .information_box')
-          .forEach((item) => {
-            item.classList.add('deactive');
-          });
-        document.getElementById(element.value).classList.remove('deactive');
-      });
-    });
+          .forEach(item => {
+            item.classList.add('deactive')
+          })
+        document.getElementById(element.value).classList.remove('deactive')
+      })
+    })
 
     window.screen.width >= 769 &&
       document
         .querySelectorAll(
           '.details__section-second .swiper_certificates .swiper-slide'
         )
-        .forEach((element) => {
+        .forEach(element => {
           element.addEventListener('click', () => {
             document.querySelector(
               '.details__section-second .overlay'
-            ).style.display = 'block';
+            ).style.display = 'block'
             document.querySelector(
               '.details__section-second .overlay .modal'
-            ).style.display = 'block';
+            ).style.display = 'block'
             let imageSrc = element
               .querySelector('.slide-certificates img')
-              .getAttribute('src');
-            console.log(imageSrc);
+              .getAttribute('src')
+            console.log(imageSrc)
             document.querySelector(
               '.details__section-second .overlay .certificates_img-inModal'
-            ).src = imageSrc;
-          });
-        });
+            ).src = imageSrc
+          })
+        })
 
     document
       .querySelector(
@@ -488,72 +498,167 @@ document.addEventListener('DOMContentLoaded', function () {
       .addEventListener('click', () => {
         document.querySelector(
           '.details__section-second .overlay'
-        ).style.display = 'none';
-      });
+        ).style.display = 'none'
+      })
 
-    const buttons = document.querySelectorAll('.volume_btn');
-    const checkboxes = document.querySelectorAll('.volume_checkbox');
+    const buttons = document.querySelectorAll('.volume_btn')
+    const checkboxes = document.querySelectorAll('.volume_checkbox')
 
     buttons.forEach((button, index) => {
       button.addEventListener('click', () => {
         checkboxes.forEach((checkbox, checkboxIndex) => {
-          checkbox.checked = index === checkboxIndex;
+          checkbox.checked = index === checkboxIndex
           if (index === checkboxIndex) {
-            button.classList.add('active');
+            button.classList.add('active')
           } else {
-            buttons[checkboxIndex].classList.remove('active');
+            buttons[checkboxIndex].classList.remove('active')
           }
-        });
-      });
-    });
+        })
+      })
+    })
 
     if (screen.width < 769) {
       $(document).ready(function () {
-        var secondSection = $('.details__section-second');
-        var fixedBlock = $('.fixed-block');
+        var secondSection = $('.details__section-second')
+        var fixedBlock = $('.fixed-block')
 
         $(window).scroll(function () {
-          var scrollPosition = $(window).scrollTop();
+          var scrollPosition = $(window).scrollTop()
           var sectionOffset =
-            secondSection.offset().top + secondSection.height() - 500;
+            secondSection.offset().top + secondSection.height() - 500
 
           if (scrollPosition >= sectionOffset) {
-            fixedBlock.hide();
+            fixedBlock.hide()
           } else {
-            fixedBlock.show();
+            fixedBlock.show()
           }
-        });
-      });
+        })
+      })
     }
   }
 
   //////////////////////////////Философия//////////////////////////////////
 
   if (document.querySelector('.philosophy__section-sixth')) {
+    const videoContainer = document.querySelector('.container-video')
+    const video = videoContainer.querySelector('video')
+    const md = window.matchMedia('(max-width: 768px)').matches
+    video.play()
+
     document
       .getElementById('video-collection')
       .addEventListener('ended', () => {
+        gsap.timeline().to('body', { overflow: 'visible' }, 0)
         document.querySelector(
           '.philosophy__section-sixth .container-video'
-        ).style.display = 'none';
+        ).style.display = 'none'
         document.querySelector(
           '.philosophy__section-sixth .container'
-        ).style.display = 'block';
-      });
+        ).style.display = 'block'
+      })
 
-    document
-      .querySelector(
-        '.philosophy__section-sixth .container .philosophy__section-content'
-      )
-      .addEventListener('click', () => {
+    document.addEventListener('click', function (e) {
+      const tl1 = gsap.timeline()
+      const tl2 = gsap.timeline()
+      if (
+        e.target.closest(
+          '.philosophy__section-sixth  .philosophy__section-content'
+        )
+      ) {
         document.querySelector(
           '.philosophy__section-sixth .container-video'
-        ).style.display = 'block';
-        document.getElementById('video-collection').play();
+        ).style.display = 'block'
+        document.getElementById('video-collection').play()
         document.querySelector(
           '.philosophy__section-sixth .container'
-        ).style.display = 'none';
-      });
+        ).style.display = 'none'
+        document.getElementById('video-collection').play()
+
+        if (md) {
+          tl2.kill()
+          videoContainer.classList.add('_fw')
+
+          tl1.to(
+            '.philosophy__section-sixth .philosophy__section-content',
+            {
+              opacity: 0,
+              visibility: 'hidden',
+            },
+            0
+          )
+          tl1.to(
+            '.philosophy__section-sixth .content-btn',
+            {
+              opacity: 0,
+              visibility: 'hidden',
+            },
+            0
+          )
+          tl1.to(
+            video,
+            {
+              position: 'fixed',
+              top: 0,
+              left: 0,
+              width: '100vw',
+              height: '100vh',
+              'z-index': 110,
+              duration: 0,
+            },
+            0
+          )
+          tl1.to('body', { overflow: 'hidden' }, 0)
+        } else {
+          gsap.timeline().to(
+            '.philosophy__section-sixth .philosophy__section-content',
+            {
+              opacity: 0,
+              visibility: 'hidden',
+            },
+            0
+          )
+        }
+      } else if (
+        e.target.closest('.philosophy__section-sixth #close-video') &&
+        videoContainer.classList.contains('_fw') &&
+        md
+      ) {
+        tl1.kill()
+        videoContainer.classList.remove('_fw')
+
+        tl2.to(
+          '.philosophy__section-sixth .philosophy__section-content',
+          {
+            opacity: 1,
+            visibility: 'visible',
+          },
+          0
+        )
+        tl2.to(
+          '.philosophy__section-sixth .content_btn',
+          {
+            opacity: 1,
+            visibility: 'visible',
+          },
+          0
+        )
+
+        tl2.to(
+          video,
+          {
+            position: 'static',
+            top: 0,
+            left: 0,
+            width: '100%',
+            height: '99.5rem',
+            'z-index': 1,
+            duration: 0,
+          },
+          0
+        )
+        tl2.to('body', { overflow: 'visible' }, 0)
+      }
+    })
   }
 
   //////////////////////////////Коллекция Forever Solution//////////////////////////////////
@@ -561,21 +666,21 @@ document.addEventListener('DOMContentLoaded', function () {
   if (document.querySelector('.solution__section-first')) {
     document
       .querySelectorAll('.solution__background-video video')
-      .forEach((element) => {
+      .forEach(element => {
         element.addEventListener('ended', () => {
           document
             .querySelector('.solution__section-first .content_btn')
-            .classList.remove('shadowEffect');
-        });
-      });
+            .classList.remove('shadowEffect')
+        })
+      })
   }
 
   //////////////////////////////Главная//////////////////////////////////
 
   if (document.querySelector('.main__section-first')) {
     $(window).on('load', function () {
-      wow.init();
-    });
+      wow.init()
+    })
   }
 
   if (document.querySelector('.main__section-fifth')) {
@@ -583,290 +688,98 @@ document.addEventListener('DOMContentLoaded', function () {
       .querySelector('.main__section-fifth .btn')
       .addEventListener('click', () => {
         document.querySelector('.main__section-fifth .overlay').style.display =
-          'block';
-        document.body.style.overflow = 'hidden';
-      });
+          'block'
+        document.body.style.overflow = 'hidden'
+      })
 
     document
       .querySelector('.main__section-fifth .overlay .modal_close-icon')
       .addEventListener('click', () => {
         document.querySelector('.main__section-fifth .overlay').style.display =
-          'none';
-        document.body.style.overflow = 'visible';
-      });
+          'none'
+        document.body.style.overflow = 'visible'
+      })
   }
 
   if (document.querySelector('.main__section-sixth')) {
     const circlesCenter = document.querySelector(
       '.main__section-sixth .circles_center'
-    );
+    )
     const circles = document.querySelectorAll(
       '.main__section-sixth .circles_center .circle .circle_inside'
-    );
+    )
     const circlesActions = document.querySelectorAll(
       '.main__section-sixth .circles_center .circle .circle_action'
-    );
-    let currentIndex = 0;
-    let cycleInterval;
+    )
+    let currentIndex = 0
+    let cycleInterval
 
-    console.log(circles);
+    console.log(circles)
 
     function activateCircle(index) {
       if (index >= 0 && index < circles.length) {
-        circles.forEach((circle) => circle.classList.remove('active'));
-        currentIndex = index;
-        circles[currentIndex].classList.add('active');
+        circles.forEach(circle => circle.classList.remove('active'))
+        currentIndex = index
+        circles[currentIndex].classList.add('active')
       }
     }
 
     function autoCycle() {
-      activateCircle(currentIndex);
-      currentIndex = (currentIndex + 1) % circles.length;
+      activateCircle(currentIndex)
+      currentIndex = (currentIndex + 1) % circles.length
     }
 
     function stopCycle() {
       if (screen.width < 769) {
-        clearInterval(cycleInterval);
+        clearInterval(cycleInterval)
       }
     }
 
     circlesCenter.addEventListener('mouseout', () => {
-      circles[currentIndex].classList.remove('active');
-    });
+      circles[currentIndex].classList.remove('active')
+    })
 
     circlesActions.forEach((circle, index) => {
       circle.addEventListener('mouseover', () => {
-        stopCycle();
-        activateCircle(index);
-      });
+        stopCycle()
+        activateCircle(index)
+      })
 
       circle.addEventListener('click', () => {
-        stopCycle();
-        activateCircle(index);
-      });
-    });
+        stopCycle()
+        activateCircle(index)
+      })
+    })
 
     if (screen.width < 769) {
-      cycleInterval = setInterval(autoCycle, 1500);
+      cycleInterval = setInterval(autoCycle, 1500)
     }
   }
-
-  // yearcolor
-  if (document.getElementById('video-collection')) {
-    const videoSection = document.querySelector('.section_first');
-    const video = document.getElementById('video-collection');
-    const btnClose = document.getElementById('#close-video');
-    const playBtn = document.querySelector('.content_outer-btn');
-    const videoWrap = document.querySelector('.container_media');
-    const mmd = window.matchMedia('(min-width: 768px)').matches;
-    const md = window.matchMedia('(max-width: 768px)').matches;
-    let isAnimating = false;
-    gsap.defaults({ duration: 1 });
-
-    const addSourceToVideo = (element, src) => {
-      const source = document.createElement('source');
-      source.src = src;
-      source.type = 'video/mp4';
-      element.appendChild(source);
-    };
-    const initVideo = (element, src) => {
-      const windowWidth = window.innerWidth;
-      if (windowWidth > 768) {
-        addSourceToVideo(element, src.dataset.desktopVid);
-      } else {
-        addSourceToVideo(element, src.dataset.mobileVid);
-      }
-    };
-    const gsapInit = () => {
-      if (md) {
-        gsap.set(videoWrap, {
-          yPercent: -23,
-          xPercent: 38,
-          width: '89.3rem',
-          height: '89.3rem',
-        });
-        document.addEventListener('click', function (e) {
-          const tl1 = gsap.timeline();
-          const tl2 = gsap.timeline();
-          if (
-            e.target.closest('.content_outer-btn') &&
-            !videoSection.classList.contains('_fw')
-          ) {
-            videoSection.classList.add('_fw');
-            tl2.kill();
-            tl1.to(video, { width: '100%', height: '100%', duration: 0 }, 0);
-            tl1.to('header', { yPercent: -100, duration: 0 }, 0);
-            tl1.to('body', { overflow: 'hidden', duration: 0 }, 0);
-            tl1.to(
-              videoWrap,
-              {
-                position: 'fixed',
-                width: '100vw',
-                height: '100vh',
-                yPercent: 0,
-                xPercent: 0,
-                'clip-path': 'circle(72%)',
-                duration: 0,
-              },
-              0
-            );
-            tl1.to(
-              playBtn,
-              {
-                opacity: 0,
-                visibility: 'hidden',
-              },
-              0
-            );
-          } else if (
-            e.target.closest('#close-video') &&
-            videoSection.classList.contains('_fw')
-          ) {
-            videoSection.classList.remove('_fw');
-            tl1.kill();
-            tl2.to(
-              video,
-              {
-                width: '67%',
-                height: '82%',
-                duration: 0,
-              },
-              0
-            );
-            tl2.to(
-              videoWrap,
-              {
-                position: 'absolute',
-                yPercent: -23,
-                xPercent: 38,
-                width: '89.3rem',
-                height: '89.3rem',
-                'clip-path': 'circle(50%)',
-                duration: 0,
-              },
-              0
-            );
-            tl2.to('header', { yPercent: 0, duration: 0 }, 0);
-            tl2.to('body', { overflow: 'visible', duration: 0 }, 0);
-            tl2.to(
-              playBtn,
-              {
-                opacity: 1,
-                visibility: 'visible',
-              },
-              0
-            );
-          }
-        });
-      }
-      if (mmd) {
-        gsap.set(
-          videoWrap,
-          {
-            yPercent: -17,
-            xPercent: 5,
-            width: '110.9rem',
-            height: '110.9rem',
-          },
-          0
-        );
-        document.addEventListener('click', function (e) {
-          const tl1 = gsap.timeline();
-          const tl2 = gsap.timeline();
-          if (
-            e.target.closest('.content_outer-btn') &&
-            !videoSection.classList.contains('_fw')
-          ) {
-            videoSection.classList.add('_fw');
-            tl2.kill();
-            tl1.to(
-              videoWrap,
-              {
-                'clip-path': 'circle(72%)',
-                delay: 1,
-              },
-              0
-            );
-            tl1.to(
-              videoWrap,
-              {
-                width: '100%',
-                height: '100%',
-                yPercent: 0,
-                xPercent: 0,
-              },
-              0
-            );
-            tl1.to(
-              playBtn,
-              {
-                opacity: 0,
-                visibility: 'hidden',
-              },
-              0
-            );
-          } else if (videoSection.classList.contains('_fw')) {
-            videoSection.classList.remove('_fw');
-            tl1.kill();
-            tl2.to(
-              videoWrap,
-              {
-                yPercent: -17,
-                xPercent: 5,
-                width: '110.9rem',
-                height: '110.9rem',
-                delay: 1,
-              },
-              0
-            );
-            tl2.to(
-              videoWrap,
-              {
-                'clip-path': 'circle(50%)',
-              },
-              0
-            );
-            tl2.to(
-              playBtn,
-              {
-                opacity: 1,
-                visibility: 'visible',
-              },
-              0
-            );
-          }
-        });
-      }
-    };
-
-    gsapInit();
-    initVideo(video, video);
-  }
-});
+})
 
 //////////////////////////////Коллекция Veripery//////////////////////////////////
 
 if (document.querySelector('.veripery__section-first')) {
-  let videos = document.getElementsByTagName('video');
+  let videos = document.getElementsByTagName('video')
 
   for (let i = 0; i < videos.length; i++) {
-    let video = videos[i];
-    video.play();
+    let video = videos[i]
+    video.play()
   }
 
   if (screen.width < 769) {
     document
       .querySelector('.veripery__section-first .veripery__section-content')
-      .setAttribute('data-wow-delay', '0.1s');
+      .setAttribute('data-wow-delay', '0.1s')
     document
       .querySelector(
         '.veripery__section-first .veripery__section-content .content_text'
       )
-      .setAttribute('data-wow-delay', '0.2s');
+      .setAttribute('data-wow-delay', '0.2s')
     document
       .querySelector(
         '.veripery__section-first .veripery__section-content .content_color-text'
       )
-      .setAttribute('data-wow-delay', '0.4s');
+      .setAttribute('data-wow-delay', '0.4s')
   }
 }
