@@ -212,6 +212,8 @@ document.addEventListener('DOMContentLoaded', function () {
       {
         yPercent: md ? -23 : -17,
         xPercent: md ? 38 : 5,
+        right: 0,
+        top: 0,
         width: md ? '89.3rem' : '110.9rem',
         height: md ? '89.3rem' : '110.9rem',
         'border-radius': '50%',
@@ -252,16 +254,18 @@ document.addEventListener('DOMContentLoaded', function () {
             e.target.closest('.content_outer-btn') &&
             !videoSection.classList.contains('_fw')
           ) {
-            if (document.documentElement.requestFullscreen)
-              videoWrap.requestFullscreen()
-            else if (document.documentElement.webkitRequestFullScreen)
-              videoWrap.webkitRequestFullScreen()
+            // if (document.documentElement.requestFullscreen)
+            //   videoWrap.requestFullscreen()
+            // else if (document.documentElement.webkitRequestFullScreen)
+            //   videoWrap.webkitRequestFullScreen()
 
-            window.screen.orientation
-              .lock('landscape-primary')
-              .catch(function (error) {
-                alert(error)
-              })
+            // document.querySelector('body').classList.add('_rotate')
+
+            // window.screen.orientation
+            //   .lock('landscape-primary')
+            //   .catch(function (error) {
+            //     alert(error)
+            //   })
             videoSection.classList.add('_fw')
             tl2.kill()
             tl1.to(closeBtn, { opacity: 1 }, 0)
@@ -276,10 +280,13 @@ document.addEventListener('DOMContentLoaded', function () {
               videoWrap,
               {
                 position: 'fixed',
-                width: '100vw',
-                height: '100vh',
-                yPercent: 0,
-                xPercent: 0,
+                width: '100vh',
+                height: '100vw',
+                yPercent: -50,
+                rotate: 90,
+                xPercent: 50,
+                right: '50%',
+                top: '50%',
                 'border-radius': 0,
                 duration: 0,
                 delay: 0,
@@ -299,15 +306,7 @@ document.addEventListener('DOMContentLoaded', function () {
             e.target.closest('.section_first #close-video') &&
             videoSection.classList.contains('_fw')
           ) {
-            let exitFullscreen =
-              document.exitFullscreen ||
-              document.mozCancelFullScreen ||
-              document.webkitExitFullscreen ||
-              document.msExitFullscreen
-            if (exitFullscreen) {
-              exitFullscreen.bind(document)()
-            }
-            window.screen.orientation.unlock()
+            // document.querySelector('body').classList.remove('_rotate')
             videoSection.classList.remove('_fw')
             tl1.kill()
             tl2.to(
@@ -326,6 +325,9 @@ document.addEventListener('DOMContentLoaded', function () {
                 position: 'absolute',
                 yPercent: -23,
                 xPercent: 38,
+                top: 0,
+                rotate: 0,
+                right: 0,
                 width: '89.3rem',
                 height: '89.3rem',
                 'border-radius': '50%',

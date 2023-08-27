@@ -11509,6 +11509,11 @@ section {
   }
 }
 
+body._rotate {
+  height: 100vh;
+  transform: rotate(90deg);
+}
+
 .section_first {
   margin-top: 9.1rem;
   position: relative;
