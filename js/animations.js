@@ -205,6 +205,26 @@ document.addEventListener('DOMContentLoaded', function () {
     const tl1 = gsap.timeline()
     const tl2 = gsap.timeline()
 
+    function getScreenOrientation() {
+      if (
+        window.innerHeight < window.innerWidth &&
+        videoSection.classList.contains('_fw')
+      ) {
+        gsap.to(
+          videoWrap,
+          {
+            width: '100vw',
+            height: '100vh',
+            rotate: 0,
+            duration: 0,
+            delay: 0,
+          },
+          0
+        )
+      }
+    }
+    getScreenOrientation()
+
     if (window.matchMedia('(min-width: 768px)').matches) {
       video.play()
     }
@@ -277,6 +297,7 @@ document.addEventListener('DOMContentLoaded', function () {
             },
             0
           )
+          getScreenOrientation()
         } else if (
           e.target.closest('.section_first #close-video') &&
           videoSection.classList.contains('_fw')
@@ -381,25 +402,6 @@ document.addEventListener('DOMContentLoaded', function () {
       })
     })
 
-    function getScreenOrientation() {
-      if (
-        window.innerHeight < window.innerWidth &&
-        window.matchMedia('(max-width: 768px)').matches
-      ) {
-        gsap.to(
-          videoWrap,
-          {
-            width: '100vw',
-            height: '100vh',
-            rotate: 0,
-            duration: 0,
-            delay: 0,
-          },
-          0
-        )
-      }
-    }
-    getScreenOrientation()
     window.addEventListener('resize', getScreenOrientation)
 
     const addSourceToVideo = (element, src) => {
