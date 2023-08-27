@@ -247,6 +247,8 @@ document.addEventListener('DOMContentLoaded', function () {
     const gsapInit = () => {
       gsap.to(videoWrap, { opacity: 1, visibility: 'visible', delay: 2 })
       if (md) {
+        const mql = window.matchMedia('(orientation: portrait)')
+
         document.addEventListener('click', function (e) {
           const tl1 = gsap.timeline()
           const tl2 = gsap.timeline()
@@ -266,6 +268,27 @@ document.addEventListener('DOMContentLoaded', function () {
             //   .catch(function (error) {
             //     alert(error)
             //   })
+
+            const screenOrientation = 'landscape' | 'portrait'
+
+            function getScreenOrientation() {
+              if (window.innerHeight < window.innerWidth) {
+                tl1.to(
+                  videoWrap,
+                  {
+                    width: '100vw',
+                    height: '100vh',
+                    rotate: 0,
+                    duration: 0,
+                    delay: 0,
+                  },
+                  0
+                )
+              }
+            }
+
+            window.addEventListener('resize', getScreenOrientation)
+
             videoSection.classList.add('_fw')
             tl2.kill()
             tl1.to(closeBtn, { opacity: 1 }, 0)
