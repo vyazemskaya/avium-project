@@ -185,7 +185,7 @@ document.addEventListener('DOMContentLoaded', function () {
     )
   }
 
-  // yearcolor
+  // yearcolor page
   if (document.querySelector('.section_first')) {
     const videoSection = document.querySelector('.section_first')
     const video = document.getElementById('video-collection')
@@ -194,9 +194,16 @@ document.addEventListener('DOMContentLoaded', function () {
     const md = window.matchMedia('(max-width: 768px)').matches
     const mmd = window.matchMedia('(min-width: 768px)').matches
 
-    setTimeout(() => {
-      video.play()
-    }, 0)
+    // video.play()
+
+    $(video).addClass('inlinevideo')
+    $('body').on('click touchstart', function () {
+      var videoElement = document.getElementsByClassName('inlinevideo')
+      if (videoElement.playing) {
+      } else {
+        $('.inlinevideo').trigger('play')
+      }
+    })
 
     gsap.defaults({ duration: 1 })
 
