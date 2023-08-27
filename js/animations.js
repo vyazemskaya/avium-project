@@ -1,10 +1,3 @@
-import {
-  swiperMainSection1,
-  swiperMainSection2,
-  swiperMainSection3,
-  swiperMainSection4,
-} from './swiper.js'
-
 const animItems = () => {
   const animItems = document.querySelectorAll('[data-animate]')
   if (animItems.length) {
@@ -108,24 +101,6 @@ document.addEventListener('DOMContentLoaded', function () {
               yPercent: 0,
               duration: 0.5,
               delay: md ? 3.8 : 4,
-              // onStart: () => {
-              //   tl2.to(
-              //     '.section_wrap path',
-              //     {
-              //       fill: '#000',
-              //       duration: 0.5,
-              //     },
-              //     0
-              //   )
-              //   tl2.to(
-              //     sectionAnimateTl,
-              //     {
-              //       backgroundColor: '#000',
-              //       duration: 0.5,
-              //     },
-              //     0
-              //   )
-              // },
             },
             0
           )
@@ -208,6 +183,203 @@ document.addEventListener('DOMContentLoaded', function () {
       },
       0
     )
+  }
+
+  // yearcolor
+  if (document.querySelector('.section_first')) {
+    const videoSection = document.querySelector('.section_first')
+    const video = document.getElementById('video-collection')
+    const playBtn = document.querySelector('.content_outer-btn')
+    const videoWrap = videoSection.querySelector('.container_media')
+    const md = window.matchMedia('(max-width: 768px)').matches
+    const mmd = window.matchMedia('(min-width: 768px)').matches
+
+    video.play()
+
+    gsap.defaults({ duration: 1 })
+
+    gsap.set(videoSection, { opacity: 0, visibility: 'hidden' })
+    gsap.set(
+      videoWrap,
+      {
+        yPercent: md ? -23 : -17,
+        xPercent: md ? 38 : 5,
+        width: md ? '89.3rem' : '110.9rem',
+        height: md ? '89.3rem' : '110.9rem',
+        'border-radius': '50%',
+      },
+      0
+    )
+    gsap.set(
+      video,
+      {
+        width: md ? '67%' : '100%',
+        height: md ? '82%' : '100%',
+      },
+      0
+    )
+
+    const addSourceToVideo = (element, src) => {
+      const source = document.createElement('source')
+      source.src = src
+      source.type = 'video/mp4'
+      element.appendChild(source)
+    }
+    const initVideo = (element, src) => {
+      const windowWidth = window.innerWidth
+      if (windowWidth > 768) {
+        addSourceToVideo(element, src.dataset.desktopVid)
+      } else {
+        addSourceToVideo(element, src.dataset.mobileVid)
+      }
+    }
+    const gsapInit = () => {
+      gsap.to(videoSection, { opacity: 1, visibility: 'visible', delay: 2 })
+      if (md) {
+        document.addEventListener('click', function (e) {
+          const tl1 = gsap.timeline()
+          const tl2 = gsap.timeline()
+          if (
+            e.target.closest('.content_outer-btn') &&
+            !videoSection.classList.contains('_fw')
+          ) {
+            videoSection.classList.add('_fw')
+            tl2.kill()
+            tl1.to(
+              video,
+              { width: '100%', height: '100%', duration: 0, delay: 0 },
+              0
+            )
+            tl1.to('header', { yPercent: -100, duration: 0, delay: 0 }, 0)
+            tl1.to('body', { overflow: 'hidden', duration: 0, delay: 0 }, 0)
+            tl1.to(
+              videoWrap,
+              {
+                position: 'fixed',
+                width: '100vw',
+                height: '100vh',
+                yPercent: 0,
+                xPercent: 0,
+                'border-radius': 0,
+                duration: 0,
+                delay: 0,
+              },
+              0
+            )
+            tl1.to(
+              playBtn,
+              {
+                opacity: 0,
+                visibility: 'hidden',
+                delay: 0,
+              },
+              0
+            )
+          } else if (
+            e.target.closest('.section_first #close-video') &&
+            videoSection.classList.contains('_fw')
+          ) {
+            videoSection.classList.remove('_fw')
+            tl1.kill()
+            tl2.to(
+              video,
+              {
+                width: '67%',
+                height: '82%',
+                duration: 0,
+                delay: 0,
+              },
+              0
+            )
+            tl2.to(
+              videoWrap,
+              {
+                position: 'absolute',
+                yPercent: -23,
+                xPercent: 38,
+                width: '89.3rem',
+                height: '89.3rem',
+                'border-radius': '50%',
+                duration: 0,
+                delay: 0,
+              },
+              0
+            )
+            tl2.to('header', { yPercent: 0, duration: 0, delay: 0 }, 0)
+            tl2.to('body', { overflow: 'visible', duration: 0, delay: 0 }, 0)
+            tl2.to(
+              playBtn,
+              {
+                opacity: 1,
+                visibility: 'visible',
+                delay: 0,
+              },
+              0
+            )
+          }
+        })
+      }
+      if (mmd) {
+        document.addEventListener('click', function (e) {
+          const tl1 = gsap.timeline()
+          const tl2 = gsap.timeline()
+          if (
+            e.target.closest('.content_outer-btn') &&
+            !videoSection.classList.contains('_fw')
+          ) {
+            videoSection.classList.add('_fw')
+            tl2.kill()
+            tl1.to(
+              videoWrap,
+              {
+                width: '100%',
+                height: '100%',
+                yPercent: 0,
+                xPercent: 0,
+                'border-radius': 0,
+              },
+              0
+            )
+            tl1.to(
+              playBtn,
+              {
+                opacity: 0,
+                visibility: 'hidden',
+              },
+              0
+            )
+          } else if (videoSection.classList.contains('_fw')) {
+            tl1.kill()
+            tl2.to(
+              videoWrap,
+              {
+                yPercent: -17,
+                xPercent: 5,
+                width: '110.9rem',
+                height: '110.9rem',
+                'border-radius': '50%',
+              },
+              0
+            )
+            tl2.to(
+              playBtn,
+              {
+                opacity: 1,
+                visibility: 'visible',
+                delay: 1,
+                onStart: () => {
+                  videoSection.classList.remove('_fw')
+                },
+              },
+              0
+            )
+          }
+        })
+      }
+    }
+
+    gsapInit()
+    initVideo(video, video)
   }
 
   if (document.getElementById('fullpage')) {

@@ -11512,7 +11512,9 @@ section {
 .section_first {
   margin-top: 9.1rem;
   position: relative;
-  transition: margin-top 0.3s ease;
+  opacity: 0;
+  visibility: hidden;
+  /* transition: margin-top 0.3s ease; */
 }
 
 .section_first .container_media {
@@ -11537,7 +11539,7 @@ section {
   top: 0;
   left: 0;
   background-color: rgba(0, 0, 0, 0.2196078431);
-  transition: opacity 1s ease;
+  /* transition: opacity 1s ease; */
 }
 
 .section_first .container_media video {
@@ -11549,7 +11551,7 @@ section {
 
 .section_first .container {
   width: 100%;
-  transition: opacity 3s easy;
+  /* transition: opacity 3s easy; */
 }
 
 .section_first .container .section_background {
@@ -11683,7 +11685,7 @@ section {
   right: 30px;
   opacity: 0;
   font-size: 18px;
-  transition: opacity 0.3s ease;
+  /* transition: opacity 0.3s ease; */
 }
 .section_first .container::before {
   content: '';
