@@ -14,7 +14,6 @@ const animItems = () => {
   }
 }
 if (!document.getElementById('fullpage')) {
-  document.querySelector('body').style.overflow = 'hidden'
   animItems()
 }
 
@@ -24,70 +23,191 @@ document.addEventListener('DOMContentLoaded', function () {
     delay: 0.5,
   })
 
-  window.onload = function () {
-    window.requestAnimationFrame(function () {
-      gsap.registerPlugin(ScrollTrigger)
+  gsap.registerPlugin(ScrollTrigger)
 
-      if (document.querySelector('.section_animate')) {
-        const header = document.querySelector('header')
-        const rect = header.querySelector('.logotype').getBoundingClientRect()
-        const md = window.matchMedia('(max-width: 768px)').matches
-        gsap.set('#txt', {
-          y: md ? -10 : 120,
-        })
-        gsap.timeline().to('.section_wrap', {
-          top: rect.top,
-          left: rect.left,
-          width: rect.width,
-          height: rect.height,
-          x: 0,
-          y: 0,
-          opacity: 0,
-          duration: 0.5,
-          delay: md ? 3.8 : 4,
-        })
-        gsap.timeline().to('#txt', {
-          left: '50%',
-          xPercent: -50,
-          scale: 1,
-          opacity: 1,
-          duration: 2.5,
-        })
-        gsap.timeline().to('.section_wrap path', {
-          fill: '#000',
-          duration: 0.3,
-          delay: 4,
-        })
-        gsap.timeline().to('#tl', { height: '61%', duration: 2.5 })
-        gsap.timeline().to('#txt', {
-          opacity: 0,
-          duration: 0.1,
-          delay: md ? 3.8 : 4,
-        })
-        gsap.timeline().to('#circle', {
-          width: 0,
-          height: 0,
-          left: 0,
-          duration: 1,
-          delay: 3.5,
-        })
-        gsap.timeline().to('#circle', {
-          opacity: 0,
-          duration: 1.5,
-          delay: 4,
-          onEnd: () => {
-            if (!document.getElementById('fullpage')) {
-              document.querySelector('body').style.overflow = 'auto'
-            }
-            setTimeout(() => {
-              document
-                .querySelector('.section_animate')
-                .classList.add('_hidden')
-            }, 1500)
-          },
-        })
-      }
+  if (document.querySelector('.section_animate')) {
+    const sectionAnimate = document.querySelector('.section_animate')
+    const sectionAnimateWrap = sectionAnimate.querySelector('.section_wrap')
+    const sectionAnimateCircle = sectionAnimate.querySelector('#circle')
+    const sectionAnimateTxt = sectionAnimate.querySelector('#txt')
+    const sectionAnimateTl = sectionAnimate.querySelector('#tl')
+    const sectionAnimateCircleSize =
+      window.innerWidth > window.innerHeight
+        ? window.innerWidth + 'vw'
+        : window.innerHeight + 'vh'
+    const header = document.querySelector('header')
+    const rect = header.querySelector('.logotype').getBoundingClientRect()
+    const tl1 = gsap.timeline()
+    const tl2 = gsap.timeline()
+    const md = window.matchMedia('(max-width: 768px)').matches
+
+    gsap.set(header, { opacity: 0, visibility: 'hidden' })
+    gsap.set('.bg', { display: 'none' })
+    gsap.set(sectionAnimate, { display: 'block' })
+    gsap.set(sectionAnimateWrap, {
+      top: '50%',
+      left: '50%',
+      width: md ? 320 : 560,
+      height: 'auto',
+      xPercent: -50,
+      opacity: 0,
+      visibility: 'hidden',
+      yPercent: md ? -120 : -50,
     })
+    gsap.set(sectionAnimateCircle, {
+      left: '-50%',
+      width: sectionAnimateCircleSize,
+      height: sectionAnimateCircleSize,
+      xPercent: -50,
+      yPercent: 50,
+    })
+    gsap.set(sectionAnimateTxt, {
+      left: '-100%',
+      xPercent: 0,
+      y: md ? -10 : 120,
+      opacity: 0,
+      visibility: 'hidden',
+    })
+    gsap.set(sectionAnimateTl, {
+      height: md ? 'calc((100vh + 127%) / 2)' : 'calc((100vh - 20%) / 2)',
+    })
+
+    tl1.to(
+      sectionAnimateWrap,
+      { opacity: 1, visibility: 'visible', delay: 1 },
+      0
+    )
+    tl1.to(
+      sectionAnimateTxt,
+      {
+        left: '50%',
+        xPercent: -50,
+        opacity: 1,
+        visibility: 'visible',
+        duration: 2.5,
+        delay: 1,
+      },
+      0
+    )
+    tl1.to(
+      sectionAnimateTl,
+      {
+        height: '61%',
+        duration: 2.5,
+        delay: 1,
+        onEnd: () => {
+          tl2.to(header, { opacity: 1, visibility: 'visible' })
+          tl2.to(
+            sectionAnimateWrap,
+            {
+              top: rect.top,
+              left: rect.left,
+              width: rect.width,
+              height: rect.height,
+              xPercent: 0,
+              yPercent: 0,
+              duration: 0.5,
+              delay: md ? 3.8 : 4,
+              // onStart: () => {
+              //   tl2.to(
+              //     '.section_wrap path',
+              //     {
+              //       fill: '#000',
+              //       duration: 0.5,
+              //     },
+              //     0
+              //   )
+              //   tl2.to(
+              //     sectionAnimateTl,
+              //     {
+              //       backgroundColor: '#000',
+              //       duration: 0.5,
+              //     },
+              //     0
+              //   )
+              // },
+            },
+            0
+          )
+          tl2.to(
+            '.section_wrap path',
+            {
+              fill: '#000',
+              duration: 0.3,
+              delay: md ? 3.9 : 4.1,
+              onStart: () => {
+                gsap.to(
+                  sectionAnimateTl,
+                  {
+                    opacity: 0,
+                    visibility: 'hidden',
+                    duration: 0.5,
+                  },
+                  0
+                )
+                gsap.to(
+                  sectionAnimateWrap,
+                  {
+                    opacity: 0,
+                    visibility: 'hidden',
+                    duration: 0.5,
+                    delay: 4.2,
+                  },
+                  0
+                )
+              },
+            },
+            0
+          )
+          // tl2.to(
+          //   sectionAnimateWrap,
+          //   {
+          //     opacity: 0,
+          //     visibility: 'hidden',
+          //     duration: 0.5,
+          //     delay: md ? 4 : 4.2,
+          //   },
+          //   0
+          // )
+          tl2.to(
+            sectionAnimateCircle,
+            {
+              width: 0,
+              height: 0,
+              left: 0,
+              duration: 1,
+              delay: 3.5,
+            },
+            0
+          )
+          tl2.to(
+            sectionAnimateTxt,
+            {
+              opacity: 0,
+              duration: 0.1,
+              delay: md ? 3.8 : 4,
+            },
+            0
+          )
+          tl2.to(
+            sectionAnimateCircle,
+            {
+              opacity: 0,
+              duration: 1.5,
+              delay: 4,
+              onComplete: () => {
+                if (!document.getElementById('fullpage')) {
+                  document.querySelector('body').style.overflow = 'auto'
+                }
+                sectionAnimate.classList.add('_hidden')
+              },
+            },
+            0
+          )
+        },
+      },
+      0
+    )
   }
 
   if (document.getElementById('fullpage')) {
