@@ -61,6 +61,13 @@
 .purchase__section-third .container .purchase__section-content .content_bottom .content_left .places_box .place_info-box.active .place_phone {
   color: #000;
 }
+.purchase__section-third .container .overlay {
+  display: none;
+}
+.purchase__section-third .container .overlay .modal {
+  display: none;
+}
+
 
 @media (max-width: 48em) {
   .freedom__section-first .container .freedom__section-video {
@@ -181,7 +188,7 @@
     left: 0;
     top: 0.3rem;
   }
-  
+
   .purchase__section-third .container .purchase__section-content .content_bottom .content_left .places_box {
     margin-left: 0;
     padding-left: 0;
