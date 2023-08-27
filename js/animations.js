@@ -202,13 +202,14 @@ document.addEventListener('DOMContentLoaded', function () {
     const md = window.matchMedia('(max-width: 768px)').matches
     const mmd = window.matchMedia('(min-width: 768px)').matches
 
-    // video.play()
+    if (window.matchMedia('(min-width: 768px)').matches) {
+      video.play()
+    }
 
     gsap.defaults({ duration: 1 })
+    gsap.set(videoWrap, { opacity: 0, visibility: 'hidden' })
 
     const gsapSet = () => {
-      console.log('set')
-      gsap.set(videoWrap, { opacity: 0, visibility: 'hidden' })
       gsap.set(
         videoWrap,
         {
@@ -250,7 +251,7 @@ document.addEventListener('DOMContentLoaded', function () {
     }
     const gsapInit = () => {
       gsap.to(videoWrap, { opacity: 1, visibility: 'visible', delay: 2 })
-      if (md) {
+      if (window.matchMedia('(max-width: 768px)').matches) {
         console.log('mobile')
         document.addEventListener('click', function (e) {
           const tl1 = gsap.timeline()
@@ -360,7 +361,7 @@ document.addEventListener('DOMContentLoaded', function () {
           }
         })
       }
-      if (mmd) {
+      if (window.matchMedia('(min-width: 768px)').matches) {
         console.log('desk')
         document.addEventListener('click', function (e) {
           const tl1 = gsap.timeline()
@@ -426,10 +427,15 @@ document.addEventListener('DOMContentLoaded', function () {
     gsapSet()
     gsapInit()
     initVideo(video, video)
+
+    window.addEventListener('resize', function () {
+      gsapSet()
+      // gsapInit()
+      initVideo(video, video)
+    })
   }
 
   if (document.getElementById('fullpage')) {
-    console.log('log')
     if (window.matchMedia('(min-width:767.98px)').matches) {
       gsap.set('.fadeIn', { opacity: 0 })
       gsap.set('.fadeInLeft', { opacity: 0, xPercent: -100 })
