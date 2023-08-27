@@ -60,7 +60,11 @@
         .content_left {
           width: 100%;
           .content_title {
+            font-size: 5.8rem;
             text-transform: lowercase;
+          }
+          .content_subtitle {
+            font-size: 7.2rem;
           }
           .content_text {
             margin-bottom: 75rem;

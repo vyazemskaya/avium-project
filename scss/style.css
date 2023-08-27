@@ -4765,7 +4765,7 @@ section {
     .calculate__section-content
     .content_left
     .content_title {
-    font-size: 7rem;
+    font-size: 6.4rem;
     margin-bottom: 0;
   }
   .calculate__section
@@ -6163,6 +6163,12 @@ section {
     position: static;
     padding: 4rem 4rem 0;
   }
+  .conceptColor__section-first
+    .container
+    .conceptColor__section-content
+    .content_title {
+    font-size: 5.4rem;
+  }
   .conceptColor__section-first .container .decoration {
     display: none;
   }
@@ -6281,8 +6287,15 @@ section {
     .container
     .conceptColor__section-content
     .content_right
+    .content_subtitle {
+    margin-bottom: 1rem;
+  }
+  .conceptColor__section-second
+    .container
+    .conceptColor__section-content
+    .content_right
     .content_title {
-    font-size: 7rem;
+    font-size: 6.4rem;
   }
   .conceptColor__section-second
     .container
@@ -6579,6 +6592,23 @@ section {
   .conceptColor__section-third
     .container
     .conceptColor__section-content
+    .content_top
+    .content_left
+    .content_title-box {
+    gap: 1rem;
+  }
+  .conceptColor__section-third
+    .container
+    .conceptColor__section-content
+    .content_top
+    .content_left
+    .content_title-box
+    .content_title {
+    font-size: 6.4rem;
+  }
+  .conceptColor__section-third
+    .container
+    .conceptColor__section-content
     .content_bottom
     .swiper {
     height: 57rem;
@@ -6811,7 +6841,7 @@ section {
     .content_title-box {
     display: flex;
     flex-direction: column;
-    gap: 2rem;
+    gap: 1rem;
   }
   .conceptColor__section-fourth
     .container
@@ -7691,6 +7721,7 @@ section {
     .decisions__section-content
     .content_top
     .content_title {
+    font-size: 6.4rem;
     margin-bottom: 0;
   }
   .decisions__section-second
@@ -7999,7 +8030,7 @@ section {
     .elmar__section-content
     .content_left
     .content_title {
-    font-size: 7.2rem;
+    font-size: 6.4rem;
     margin-bottom: 0;
   }
   .elmar__section-second
@@ -8817,6 +8848,9 @@ section {
   .freedom__section-second .container .freedom__section-content {
     width: 100%;
   }
+  .freedom__section-second .container .freedom__section-content .content_title {
+    font-size: 6.4rem;
+  }
   .freedom__section-second .container .freedom__section-content .content_text {
     margin-bottom: 74rem;
   }
@@ -9486,7 +9520,7 @@ section {
     .container
     .philosophy__section-content
     .content_title {
-    font-size: 7rem;
+    font-size: 6.4rem;
   }
   .philosophy__section-second
     .container
@@ -10524,7 +10558,7 @@ section {
     .content_left
     .content_title {
     display: block;
-    font-size: 6rem;
+    font-size: 5.4rem;
   }
   .philosophy__section-fifth
     .container
@@ -11392,6 +11426,14 @@ section {
     .container
     .solution__section-content
     .content_top
+    .content_right
+    .content_title {
+    font-size: 6.4rem;
+  }
+  .solution__section-second
+    .container
+    .solution__section-content
+    .content_top
     .content_left {
     margin: 0 auto;
   }
@@ -11535,7 +11577,15 @@ section {
     .solution__section-content
     .content_left
     .content_title {
+    font-size: 5.8rem;
     text-transform: lowercase;
+  }
+  .solution__section-third
+    .container
+    .solution__section-content
+    .content_left
+    .content_subtitle {
+    font-size: 7.2rem;
   }
   .solution__section-third
     .container
@@ -11850,8 +11900,8 @@ section {
     .content_info
     .content_title {
     width: 100%;
-    font-size: 7.2rem;
-    margin-bottom: 2rem;
+    font-size: 6.4rem;
+    margin-bottom: 1rem;
   }
   .veripery__section-second
     .container
