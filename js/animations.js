@@ -251,6 +251,16 @@ document.addEventListener('DOMContentLoaded', function () {
             e.target.closest('.content_outer-btn') &&
             !videoSection.classList.contains('_fw')
           ) {
+            if (document.documentElement.requestFullscreen)
+              videoWrap.requestFullscreen()
+            else if (document.documentElement.webkitRequestFullScreen)
+              videoWrap.webkitRequestFullScreen()
+
+            screen.orientation
+              .lock('landscape-primary')
+              .catch(function (error) {
+                alert(error)
+              })
             videoSection.classList.add('_fw')
             tl2.kill()
             tl1.to(
@@ -336,16 +346,6 @@ document.addEventListener('DOMContentLoaded', function () {
             e.target.closest('.content_outer-btn') &&
             !videoSection.classList.contains('_fw')
           ) {
-            if (document.documentElement.requestFullscreen)
-              videoWrap.requestFullscreen()
-            else if (document.documentElement.webkitRequestFullScreen)
-              videoWrap.webkitRequestFullScreen()
-
-            screen.orientation
-              .lock('landscape-primary')
-              .catch(function (error) {
-                alert(error)
-              })
             videoSection.classList.add('_fw')
             tl2.kill()
             tl1.to(
