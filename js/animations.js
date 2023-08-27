@@ -427,6 +427,12 @@ document.addEventListener('DOMContentLoaded', function () {
     gsapSet()
     gsapInit()
     initVideo(video, video)
+
+    window.addEventListener('resize', function () {
+      gsapSet()
+      // gsapInit()
+      initVideo(video, video)
+    })
   }
 
   if (document.getElementById('fullpage')) {
