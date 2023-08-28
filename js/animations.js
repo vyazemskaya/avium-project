@@ -384,10 +384,10 @@ document.addEventListener('DOMContentLoaded', function () {
         document.addEventListener('click', function (e) {
           if (
             e.target.closest('.content_outer-btn') &&
-            !videoSection.classList.contains('_fw')
+            !videoSection.classList.contains('_fw', 'mobile')
           ) {
             openfullscreen()
-            videoSection.classList.add('_fw')
+            videoSection.classList.add('_fw', 'mobile')
             tl2.kill()
             tl1.to(closeBtn, { opacity: 1, visibility: 'visible' }, 0)
             tl1.to(
@@ -429,10 +429,10 @@ document.addEventListener('DOMContentLoaded', function () {
             gsapV(videoWrap)
           } else if (
             e.target.closest('.section_first #close-video') &&
-            videoSection.classList.contains('_fw')
+            videoSection.classList.contains('_fw', 'mobile')
           ) {
             closefullscreen()
-            videoSection.classList.remove('_fw')
+            videoSection.classList.remove('_fw', 'mobile')
             tl1.kill()
             tl2.to(
               video,
@@ -511,67 +511,96 @@ document.addEventListener('DOMContentLoaded', function () {
           }
         })
       }
-      // if (!isMobile.any()) {
-      //   document.addEventListener('click', function (e) {
-      //     const tl1 = gsap.timeline()
-      //     const tl2 = gsap.timeline()
-      //     if (
-      //       e.target.closest('.content_outer-btn') &&
-      //       !videoSection.classList.contains('_fw')
-      //     ) {
-      //       videoSection.classList.add('_fw')
-      //       tl2.kill()
-      //       tl1.to(
-      //         videoWrap,
-      //         {
-      //           width: '100%',
-      //           height: '100%',
-      //           yPercent: 0,
-      //           xPercent: 0,
-      //           right: 0,
-      //           top: 0,
-      //           'border-radius': 0,
-      //         },
-      //         0
-      //       )
-      //       tl1.to(
-      //         playBtn,
-      //         {
-      //           opacity: 0,
-      //           visibility: 'hidden',
-      //           delay: 0,
-      //         },
-      //         0
-      //       )
-      //     } else if (videoSection.classList.contains('_fw')) {
-      //       tl1.kill()
-      //       tl2.to(
-      //         videoWrap,
-      //         {
-      //           yPercent: -17,
-      //           xPercent: 5,
-      //           width: '110.9rem',
-      //           height: '110.9rem',
-      //           'border-radius': '50%',
-      //           delay: 0,
-      //         },
-      //         0
-      //       )
-      //       tl2.to(
-      //         playBtn,
-      //         {
-      //           opacity: 1,
-      //           visibility: 'visible',
-      //           delay: 1,
-      //           onStart: () => {
-      //             videoSection.classList.remove('_fw')
-      //           },
-      //         },
-      //         0
-      //       )
-      //     }
-      //   })
-      // }
+      if (!isMobile.any()) {
+        document.addEventListener('click', function (e) {
+          const tl1 = gsap.timeline()
+          const tl2 = gsap.timeline()
+          if (
+            e.target.closest('.content_outer-btn') &&
+            !videoSection.classList.contains('_fw')
+          ) {
+            videoSection.classList.add('_fw')
+            tl2.kill()
+            tl1.to(
+              videoWrap,
+              {
+                width: '100%',
+                height: '100%',
+                yPercent: 0,
+                xPercent: 0,
+                right: 0,
+                top: 0,
+                'border-radius': 0,
+              },
+              0
+            )
+            tl1.to(
+              playBtn,
+              {
+                opacity: 0,
+                visibility: 'hidden',
+                delay: 0,
+              },
+              0
+            )
+            window.addEventListener('resize', function () {
+              tl1.to(
+                videoWrap,
+                {
+                  width: '100%',
+                  height: '100%',
+                  yPercent: 0,
+                  xPercent: 0,
+                  right: 0,
+                  top: 0,
+                  'border-radius': 0,
+                },
+                0
+              )
+            })
+          } else if (videoSection.classList.contains('_fw')) {
+            tl1.kill()
+            tl2.to(
+              videoWrap,
+              {
+                yPercent: -17,
+                xPercent: 5,
+                width: '110.9rem',
+                height: '110.9rem',
+                'border-radius': '50%',
+                delay: 0,
+              },
+              0
+            )
+            tl2.to(
+              playBtn,
+              {
+                opacity: 1,
+                visibility: 'visible',
+                delay: 1,
+                onStart: () => {
+                  videoSection.classList.remove('_fw')
+                },
+              },
+              0
+            )
+            window.addEventListener('resize', function () {
+              tl2.to(
+                videoWrap,
+                {
+                  yPercent: -17,
+                  xPercent: 5,
+                  width: '110.9rem',
+                  height: '110.9rem',
+                  'border-radius': '50%',
+                  delay: 0,
+                },
+                0
+              )
+            })
+          }
+        })
+      }
     }
 
     gsapSet()
