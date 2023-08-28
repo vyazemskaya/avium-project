@@ -195,6 +195,7 @@ body {
     padding: 1.4rem 4.8rem;
     text-transform: uppercase;
     transition: box-shadow 0.5s;
+    cursor: pointer;
     &.shadowEffect {
       box-shadow: 1px 4px 10px 0px rgba(88, 88, 88, 0.4);
     }
@@ -445,6 +446,13 @@ body {
     width: 90rem;
   }
   .swiper_philosophy-section-3 {
+    .swiper-wrapper {
+      margin-left: -40rem;
+      padding-left: 40rem;
+      margin-right: -40rem;
+      padding-right: 40rem;
+    }
+
     .swiper-pagination_section-3 {
       display: none;
     }

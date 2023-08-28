@@ -235,12 +235,12 @@ export const swiperMainSection2 = new Swiper('.swiper_main-section-2', {
   speed: 1000,
   slidersPerView: 1,
   effect: 'fade',
-  on: {
-    afterInit: swiper => {
-      swiper.autoplay.stop()
-      swiper.update()
-    },
-  },
+  // on: {
+  //   afterInit: swiper => {
+  //     swiper.autoplay.stop()
+  //     swiper.update()
+  //   },
+  // },
 })
 
 const comfort = document.getElementById('comfort'),
