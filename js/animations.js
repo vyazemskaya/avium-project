@@ -441,26 +441,9 @@ document.addEventListener('DOMContentLoaded', function () {
                 height: '100%',
                 yPercent: 0,
                 xPercent: 0,
+                right: 0,
+                top: 0,
                 'border-radius': 0,
-                delay: 0,
-              },
-              0
-            )
-
-            tl1.to(
-              videoWrap,
-              {
-                position: 'fixed',
-                width: '100vh',
-                height: '100vw',
-                yPercent: -50,
-                rotate: 90,
-                xPercent: 50,
-                right: '50%',
-                top: '50%',
-                'border-radius': 0,
-                duration: 0,
-                delay: 0,
               },
               0
             )
