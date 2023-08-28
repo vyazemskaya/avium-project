@@ -893,6 +893,33 @@ document.addEventListener('DOMContentLoaded', function () {
             },
             0
           )
+          window.addEventListener('resize', function () {
+            if (window.innerHeight < window.innerWidth) {
+              gsap.to(
+                videoWrap,
+                {
+                  width: '100vw',
+                  height: '100vh',
+                  rotate: 0,
+                  duration: 0,
+                  delay: 0,
+                },
+                0
+              )
+            } else {
+              gsap.to(
+                videoWrap,
+                {
+                  width: '100vh',
+                  height: '100vw',
+                  rotate: 90,
+                  duration: 0,
+                  delay: 0,
+                },
+                0
+              )
+            }
+          })
         } else {
           closefullscreen()
           videoWrap.classList.remove('_fs')
