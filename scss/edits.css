@@ -237,11 +237,4 @@
   .elmar__section-third .container .elmar__section-content .content_box .content_bottom-right .blob {
     right: -4rem;
   }
-  .purchase__section-first .container .purchase__section-content .content_title {
-    font-size: 5rem;
-  }
-  .purchase__section-first .container .purchase__section-content .content_title strong {
-    margin-top: 2rem;
-    display: block;
-  }
 }
