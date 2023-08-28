@@ -78,11 +78,17 @@ const gsapV = videoWrap => {
     gsap.to(
       videoWrap,
       {
+        position: 'fixed',
         width: '100vw',
         height: '100vh',
         rotate: 0,
         duration: 0,
         delay: 0,
+        xPercent: 0,
+        top: 0,
+        right: 0,
+        yPercent: 0,
+        borderRadius: 0,
       },
       0
     )
@@ -90,11 +96,17 @@ const gsapV = videoWrap => {
     gsap.to(
       videoWrap,
       {
+        position: 'fixed',
         width: '100vh',
         height: '100vw',
         rotate: 90,
         duration: 0,
         delay: 0,
+        xPercent: 50,
+        yPercent: -50,
+        top: '50%',
+        right: '50%',
+        borderRadius: 0,
       },
       0
     )
@@ -939,43 +951,20 @@ document.addEventListener('DOMContentLoaded', function () {
               position: 'fixed',
               'z-index': 200,
               top: '50%',
-              left: '50%',
+              right: '50%',
               width: '100vh',
               height: '100vw',
               rotate: 90,
-              xPercent: -50,
+              xPercent: 50,
               yPercent: -50,
               duration: 0,
               delay: 0,
             },
             0
           )
+          gsapV(videoWrap)
           window.addEventListener('resize', function () {
-            if (window.innerHeight < window.innerWidth) {
-              gsap.to(
-                videoWrap,
-                {
-                  width: '100vw',
-                  height: '100vh',
-                  rotate: 0,
-                  duration: 0,
-                  delay: 0,
-                },
-                0
-              )
-            } else {
-              gsap.to(
-                videoWrap,
-                {
-                  width: '100vh',
-                  height: '100vw',
-                  rotate: 90,
-                  duration: 0,
-                  delay: 0,
-                },
-                0
-              )
-            }
+            gsapV(videoWrap)
           })
         } else {
           closefullscreen()
@@ -988,7 +977,7 @@ document.addEventListener('DOMContentLoaded', function () {
               position: 'relative',
               'z-index': 2,
               top: 0,
-              left: 0,
+              right: 0,
               width: '100%',
               height: '100%',
               rotate: 0,
@@ -1006,7 +995,7 @@ document.addEventListener('DOMContentLoaded', function () {
                 position: 'relative',
                 'z-index': 2,
                 top: 0,
-                left: 0,
+                right: 0,
                 width: '100%',
                 height: '100%',
                 rotate: 0,
