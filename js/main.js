@@ -332,6 +332,7 @@ document.addEventListener('DOMContentLoaded', function () {
         }
       )
       placemarkMain.events.add('click', function (e) {
+        placemarkSecondary.options.set('iconImageHref', './img/purchase_section-third/geomark-2.svg');
         if (window.screen.width < 769) {
           document.querySelector(
             '.purchase__section-third .overlay'
@@ -343,9 +344,11 @@ document.addEventListener('DOMContentLoaded', function () {
         } else {
           $('.place_info-box').removeClass('active')
           $('.place_info-box')[0].classList.add('active')
+          
         }
       })
       placemarkSecondary.events.add('click', function (e) {
+        e.get('target').options.set('iconImageHref', './img/purchase_section-third/geomark-2.svg');
         if (window.screen.width < 769) {
           document.querySelector(
             '.purchase__section-third .overlay'
@@ -357,6 +360,7 @@ document.addEventListener('DOMContentLoaded', function () {
         } else {
           $('.place_info-box').removeClass('active')
           $('.place_info-box')[1].classList.add('active')
+          e.get('target').options.set('iconImageHref', './img/purchase_section-third/geomark-3.svg');
         }
       })
 
