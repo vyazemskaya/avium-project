@@ -38,18 +38,23 @@ const isMobile = {
 }
 
 const getScreenOrientation = el => {
-  if (window.innerHeight < window.innerWidth) {
-    gsap.to(
-      el,
-      {
-        width: '100vw',
-        height: '100vh',
-        rotate: 0,
-        duration: 0,
-        delay: 0,
-      },
-      0
-    )
+  const tl = gsap.timeline()
+  if (document.querySelector('._fw')) {
+    if (window.innerHeight < window.innerWidth) {
+      tl.to(
+        el,
+        {
+          width: '100vw',
+          height: '100vh',
+          rotate: 0,
+          duration: 0,
+          delay: 0,
+        },
+        0
+      )
+    }
+  } else {
+    tl.kill()
   }
 }
 
@@ -294,6 +299,21 @@ document.addEventListener('DOMContentLoaded', function () {
     const gsapInit = () => {
       gsap.to(videoWrap, { opacity: 1, visibility: 'visible', delay: 2 })
       if (isMobile.any()) {
+        gsap.to(
+          video,
+          {
+            position: 'absolute',
+            left: 0,
+            bottom: 0,
+            width: '67%',
+            height: '82%',
+            duration: 0,
+            delay: 0,
+          },
+          0
+        )
+      }
+      if (isMobile.any()) {
         document.addEventListener('click', function (e) {
           const tl1 = gsap.timeline()
           const tl2 = gsap.timeline()
@@ -374,6 +394,7 @@ document.addEventListener('DOMContentLoaded', function () {
               },
               0
             )
+
             tl2.to('header', { yPercent: 0, duration: 0, delay: 0 }, 0)
             tl2.to('body', { overflow: 'visible', duration: 0, delay: 0 }, 0)
             tl2.to(
@@ -385,6 +406,21 @@ document.addEventListener('DOMContentLoaded', function () {
               },
               0
             )
+
+            if (window.matchMedia('(min-width: 768px)').matches) {
+              tl2.to(
+                video,
+                {
+                  width: '100%',
+                  height: '100%',
+                  left: 0,
+                  bottom: 0,
+                  duration: 0,
+                  delay: 0,
+                },
+                0
+              )
+            }
           }
         })
       }
@@ -590,12 +626,16 @@ document.addEventListener('DOMContentLoaded', function () {
           window.addEventListener('resize', function () {
             getScreenOrientation(videoWrap)
           })
-        } else {
+        }
+        if (!isMobile.any()) {
+          videoSection.classList.remove('_fw')
           gsap.timeline().to(
             '.philosophy__section-sixth .philosophy__section-content',
             {
               opacity: 0,
               visibility: 'hidden',
+              delay: 0,
+              duration: 0,
             },
             0
           )
