@@ -10,6 +10,49 @@ if (!document.getElementById('fullpage')) {
   animItems()
 }
 
+const isMobile = {
+  Android: function () {
+    return navigator.userAgent.match(/Android/i)
+  },
+  BlackBerry: function () {
+    return navigator.userAgent.match(/BlackBerry/i)
+  },
+  iOS: function () {
+    return navigator.userAgent.match(/iPhone|iPad|iPod/i)
+  },
+  Opera: function () {
+    return navigator.userAgent.match(/Opera Mini/i)
+  },
+  Windows: function () {
+    return navigator.userAgent.match(/IEMobile/i)
+  },
+  any: function () {
+    return (
+      isMobile.Android() ||
+      isMobile.BlackBerry() ||
+      isMobile.iOS() ||
+      isMobile.Opera() ||
+      isMobile.Windows()
+    )
+  },
+}
+
+const getScreenOrientation = el => {
+  if (window.innerHeight < window.innerWidth) {
+    gsap.to(
+      el,
+      {
+        width: '100vw',
+        height: '100vh',
+        rotate: 0,
+        duration: 0,
+        delay: 0,
+      },
+      0
+    )
+  }
+}
+
 document.addEventListener('DOMContentLoaded', function () {
   $('body').on('click touchstart', function () {
     const videoElement = document.getElementById('video-collection')
@@ -202,40 +245,23 @@ document.addEventListener('DOMContentLoaded', function () {
     const md = window.matchMedia('(max-width: 768px)').matches
     const mmd = window.matchMedia('(min-width: 768px)').matches
 
-    if (window.matchMedia('(min-width: 768px)').matches) {
+    if (isMobile.any()) {
       video.play()
     }
 
     gsap.defaults({ duration: 1 })
     gsap.set(videoWrap, { opacity: 0, visibility: 'hidden' })
 
-    function getScreenOrientation() {
-      if (window.innerHeight < window.innerWidth) {
-        gsap.to(
-          videoWrap,
-          {
-            width: '100vw',
-            height: '100vh',
-            rotate: 0,
-            duration: 0,
-            delay: 0,
-          },
-          0
-        )
-      }
-    }
-    getScreenOrientation()
-
     const gsapSet = () => {
       gsap.set(
         videoWrap,
         {
-          yPercent: md ? -23 : -17,
-          xPercent: md ? 38 : 5,
+          yPercent: isMobile.any() ? -23 : -17,
+          xPercent: isMobile.any() ? 38 : 5,
           right: 0,
           top: 0,
-          width: md ? '89.3rem' : '110.9rem',
-          height: md ? '89.3rem' : '110.9rem',
+          width: isMobile.any() ? '89.3rem' : '110.9rem',
+          height: isMobile.any() ? '89.3rem' : '110.9rem',
           'border-radius': '50%',
         },
         0
@@ -243,8 +269,8 @@ document.addEventListener('DOMContentLoaded', function () {
       gsap.set(
         video,
         {
-          width: md ? '67%' : '100%',
-          height: md ? '82%' : '100%',
+          width: isMobile.any() ? '67%' : '100%',
+          height: isMobile.any() ? '82%' : '100%',
         },
         0
       )
@@ -267,7 +293,7 @@ document.addEventListener('DOMContentLoaded', function () {
     }
     const gsapInit = () => {
       gsap.to(videoWrap, { opacity: 1, visibility: 'visible', delay: 2 })
-      if (window.matchMedia('(max-width: 768px)').matches) {
+      if (isMobile.any()) {
         document.addEventListener('click', function (e) {
           const tl1 = gsap.timeline()
           const tl2 = gsap.timeline()
@@ -311,7 +337,10 @@ document.addEventListener('DOMContentLoaded', function () {
               },
               0
             )
-            getScreenOrientation()
+            getScreenOrientation(videoWrap)
+            window.addEventListener('resize', function () {
+              getScreenOrientation(videoWrap)
+            })
           } else if (
             e.target.closest('.section_first #close-video') &&
             videoSection.classList.contains('_fw')
@@ -359,7 +388,7 @@ document.addEventListener('DOMContentLoaded', function () {
           }
         })
       }
-      if (window.matchMedia('(min-width: 768px)').matches) {
+      if (!isMobile.any()) {
         document.addEventListener('click', function (e) {
           const tl1 = gsap.timeline()
           const tl2 = gsap.timeline()
@@ -377,6 +406,24 @@ document.addEventListener('DOMContentLoaded', function () {
                 yPercent: 0,
                 xPercent: 0,
                 'border-radius': 0,
+                delay: 0,
+              },
+              0
+            )
+
+            tl1.to(
+              videoWrap,
+              {
+                position: 'fixed',
+                width: '100vh',
+                height: '100vw',
+                yPercent: -50,
+                rotate: 90,
+                xPercent: 50,
+                right: '50%',
+                top: '50%',
+                'border-radius': 0,
+                duration: 0,
                 delay: 0,
               },
               0
@@ -421,11 +468,186 @@ document.addEventListener('DOMContentLoaded', function () {
       }
     }
 
-    window.addEventListener('resize', getScreenOrientation)
+    // window.addEventListener('resize', function () {
+    //   getScreenOrientation(videoWrap)
+    // })
 
     gsapSet()
     gsapInit()
     initVideo(video, video)
+  }
+
+  if (document.querySelector('.philosophy__section-sixth')) {
+    const videoSection = document.querySelector('.philosophy__section-sixth')
+    const videoWrap = videoSection.querySelector('.container-video')
+    const video = videoSection.querySelector('video')
+    const closeBtn = videoSection.querySelector('#close-video')
+    const md = window.matchMedia('(max-width: 768px)').matches
+    video.play()
+
+    document
+      .getElementById('video-collection')
+      .addEventListener('ended', () => {
+        gsap.timeline().to('body', { overflow: 'visible' }, 0)
+        document.querySelector(
+          '.philosophy__section-sixth .container-video'
+        ).style.display = 'none'
+        document.querySelector(
+          '.philosophy__section-sixth .container'
+        ).style.display = 'block'
+        gsap.to(
+          '.philosophy__section-sixth .philosophy__section-content',
+          {
+            opacity: 1,
+            visibility: 'visible',
+          },
+          0
+        )
+      })
+
+    document.addEventListener('click', function (e) {
+      const tl1 = gsap.timeline()
+      const tl2 = gsap.timeline()
+      if (
+        e.target.closest(
+          '.philosophy__section-sixth  .philosophy__section-content'
+        )
+      ) {
+        document.querySelector(
+          '.philosophy__section-sixth .container-video'
+        ).style.display = 'block'
+        document.querySelector(
+          '.philosophy__section-sixth .container'
+        ).style.display = 'none'
+        document.getElementById('video-collection').play()
+
+        if (isMobile.any()) {
+          tl2.kill()
+          videoSection.classList.add('_fw')
+
+          tl1.to(closeBtn, { opacity: 1, visibility: 'visible' }, 0)
+          tl1.to(
+            video,
+            { width: '100%', height: '100%', duration: 0, delay: 0 },
+            0
+          )
+          tl1.to('header', { yPercent: -100, duration: 0, delay: 0 }, 0)
+          tl1.to('body', { overflow: 'hidden', duration: 0, delay: 0 }, 0)
+          tl1.to(
+            'footer',
+            { opacity: 0, visibility: 'hidden', duration: 0, delay: 0 },
+            0
+          )
+          tl1.to(
+            videoWrap,
+            {
+              position: 'fixed',
+              width: '100vh',
+              height: '100vw',
+              yPercent: -50,
+              rotate: 90,
+              xPercent: 50,
+              right: '50%',
+              top: '50%',
+              'border-radius': 0,
+              duration: 0,
+              delay: 0,
+            },
+            0
+          )
+          tl1.to(
+            '.philosophy__section-sixth .philosophy__section-content',
+            {
+              opacity: 0,
+              visibility: 'hidden',
+            },
+            0
+          )
+          tl1.to(
+            '.philosophy__section-sixth .content-btn',
+            {
+              opacity: 0,
+              visibility: 'hidden',
+            },
+            0
+          )
+          // tl1.to(
+          //   video,
+          //   {
+          //     position: 'fixed',
+          //     top: 0,
+          //     left: 0,
+          //     width: '100vw',
+          //     height: '100vh',
+          //     'z-index': 110,
+          //     duration: 0,
+          //   },
+          //   0
+          // )
+          tl1.to('body', { overflow: 'hidden' }, 0)
+          getScreenOrientation(videoWrap)
+          window.addEventListener('resize', function () {
+            getScreenOrientation(videoWrap)
+          })
+        } else {
+          gsap.timeline().to(
+            '.philosophy__section-sixth .philosophy__section-content',
+            {
+              opacity: 0,
+              visibility: 'hidden',
+            },
+            0
+          )
+        }
+      } else if (
+        e.target.closest('.philosophy__section-sixth #close-video') &&
+        videoSection.classList.contains('_fw') &&
+        md
+      ) {
+        tl1.kill()
+        tl2.to(closeBtn, { opacity: 0, visibility: 'hidden' }, 0)
+        videoSection.classList.remove('_fw')
+        tl2.to(
+          'footer',
+          { opacity: 1, visibility: 'visible', duration: 0, delay: 0 },
+          0
+        )
+
+        tl2.to(
+          '.philosophy__section-sixth .philosophy__section-content',
+          {
+            opacity: 1,
+            visibility: 'visible',
+          },
+          0
+        )
+        tl2.to(
+          '.philosophy__section-sixth .content_btn',
+          {
+            opacity: 1,
+            visibility: 'visible',
+          },
+          0
+        )
+
+        tl2.to(
+          videoWrap,
+          {
+            position: 'static',
+            top: 0,
+            right: 0,
+            width: '100%',
+            xPercent: 0,
+            yPercent: 0,
+            height: '99.5rem',
+            'z-index': 1,
+            duration: 0,
+          },
+          0
+        )
+        tl2.to('body', { overflow: 'visible' }, 0)
+      }
+    })
   }
 
   if (document.getElementById('fullpage')) {

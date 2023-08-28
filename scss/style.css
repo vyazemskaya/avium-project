@@ -10616,7 +10616,7 @@ section {
   -o-object-fit: cover;
   object-fit: cover;
 }
-.philosophy__section-sixth .container .philosophy__section-content {
+.philosophy__section-sixth .philosophy__section-content {
   display: flex;
   align-items: center;
   justify-content: center;
@@ -10630,14 +10630,12 @@ section {
   cursor: pointer;
 }
 .philosophy__section-sixth
-  .container
   .philosophy__section-content
   .content_btn {
   display: flex;
   gap: 1rem;
 }
 .philosophy__section-sixth
-  .container
   .philosophy__section-content
   .content_btn
   .content_text {
@@ -10647,11 +10645,26 @@ section {
   text-transform: uppercase;
 }
 .philosophy__section-sixth
-  .container
   .philosophy__section-content
   .content_btn
   .content_icon {
   width: 0.8rem;
+}
+.philosophy__section-sixth {
+  position: relative;
+}
+.philosophy__section-sixth #close-video {
+  content: '';
+  position: fixed;
+  z-index: 110;
+  top: 20px;
+  right: 30px;
+  opacity: 0;
+  font-size: 18px;
+  transition: opacity 0.3s ease;
+}
+.philosophy__section-sixth .container-video._fw #close-video {
+  opacity: 1;
 }
 
 @media (max-width: 48em) {
