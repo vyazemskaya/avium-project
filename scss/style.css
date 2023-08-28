@@ -658,7 +658,6 @@ section {
   position: relative;
   /* transition: margin-top 0.3s ease; */
 }
-
 .section_first .container_media {
   position: absolute;
   z-index: 5;
@@ -844,13 +843,10 @@ section {
   clip-path: polygon(0% 0%, 50% 50%, 100% 100%, 0% 100%);
   background-color: #fff;
 }
-
+.section_first.mobile .container::before {
+  opacity: 0;
+}
 @media (max-width: 48em) {
-  .section_first._fw .container::before {
-    opacity: 0;
-  }
-  .section_first._fw {
-  }
   .section_first .container_media video {
     width: 67%;
     height: 82%;
@@ -10675,7 +10671,7 @@ section {
     object-position: -100rem;
     height: 104rem;
   }
-  .philosophy__section-sixth .container .philosophy__section-content {
+  .philosophy__section-sixth .philosophy__section-content {
     top: 4rem;
     left: 4rem;
   }
