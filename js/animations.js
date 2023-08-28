@@ -871,12 +871,15 @@ document.addEventListener('DOMContentLoaded', function () {
     const toggleBtn = document.querySelector('.rotate-icon')
     if (isMobile.any()) {
       gsap.to('.video__section .rotate-icon', { display: 'block' })
+      const tl1 = gsap.timeline()
+      const tl2 = gsap.timeline()
       toggleBtn.addEventListener('click', function () {
         if (!videoWrap.classList.contains('_fs')) {
           openfullscreen()
           videoWrap.classList.add('_fs')
           document.querySelector('body').style.overflow = 'hidden'
-          gsap.to(
+          tl2.kill()
+          tl1.to(
             videoWrap,
             {
               position: 'fixed',
@@ -924,7 +927,8 @@ document.addEventListener('DOMContentLoaded', function () {
           closefullscreen()
           videoWrap.classList.remove('_fs')
           document.querySelector('body').style.overflow = 'auto'
-          gsap.to(
+          tl2.kill()
+          tl1.to(
             videoWrap,
             {
               position: 'relative',
@@ -941,6 +945,25 @@ document.addEventListener('DOMContentLoaded', function () {
             },
             0
           )
+          window.addEventListener('resize', function () {
+            tl1.to(
+              videoWrap,
+              {
+                position: 'relative',
+                'z-index': 2,
+                top: 0,
+                left: 0,
+                width: '100%',
+                height: '100%',
+                rotate: 0,
+                xPercent: 0,
+                yPercent: 0,
+                duration: 0,
+                delay: 0,
+              },
+              0
+            )
+          })
         }
       })
     }
