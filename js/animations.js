@@ -71,9 +71,10 @@ document.addEventListener('DOMContentLoaded', function () {
           if (!video.playing) {
             video.play()
           }
+        } else {
+          video.play()
         }
       })
-
     }
   })
 
