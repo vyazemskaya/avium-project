@@ -12944,3 +12944,13 @@ body .swiper_main-section-4 .slide-section-4 {
     flex-direction: column-reverse;
   }
 } /*# sourceMappingURL=style.css.map */
+
+.rotate-icon {
+  position: absolute;
+  z-index: 2;
+  display: none;
+  bottom: 3rem;
+  right: 3rem;
+  width: 9rem;
+  height: 9rem;
+}
