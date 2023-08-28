@@ -525,6 +525,15 @@ document.addEventListener('DOMContentLoaded', function () {
           tl2.kill()
           videoSection.classList.add('_fw')
 
+          tl1.to(
+            '.philosophy__section-sixth .philosophy__section-content',
+            {
+              opacity: 0,
+              visibility: 'hidden',
+              delay: 0,
+            },
+            0
+          )
           tl1.to(closeBtn, { opacity: 1, visibility: 'visible' }, 0)
           tl1.to(
             video,
@@ -555,22 +564,14 @@ document.addEventListener('DOMContentLoaded', function () {
             },
             0
           )
-          tl1.to(
-            '.philosophy__section-sixth .philosophy__section-content',
-            {
-              opacity: 0,
-              visibility: 'hidden',
-            },
-            0
-          )
-          tl1.to(
-            '.philosophy__section-sixth .content-btn',
-            {
-              opacity: 0,
-              visibility: 'hidden',
-            },
-            0
-          )
+          // tl1.to(
+          //   '.philosophy__section-sixth .content-btn',
+          //   {
+          //     opacity: 0,
+          //     visibility: 'hidden',
+          //   },
+          //   0
+          // )
           // tl1.to(
           //   video,
           //   {
@@ -638,6 +639,7 @@ document.addEventListener('DOMContentLoaded', function () {
             right: 0,
             width: '100%',
             xPercent: 0,
+            rotate: 0,
             yPercent: 0,
             height: '99.5rem',
             'z-index': 1,
