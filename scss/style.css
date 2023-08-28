@@ -658,7 +658,9 @@ section {
   position: relative;
   /* transition: margin-top 0.3s ease; */
 }
-
+.section_first._fw .container::before {
+opacity: 1;
+}
 .section_first .container_media {
   position: absolute;
   z-index: 5;
@@ -838,6 +840,7 @@ section {
   left: 0;
   bottom: -0.2rem;
   z-index: 50;
+  opacity: 0;
   width: 100%;
   height: 20rem;
   -webkit-clip-path: polygon(0% 0%, 50% 50%, 100% 100%, 0% 100%);
@@ -10675,7 +10678,7 @@ section {
     object-position: -100rem;
     height: 104rem;
   }
-  .philosophy__section-sixth .container .philosophy__section-content {
+  .philosophy__section-sixth  .philosophy__section-content {
     top: 4rem;
     left: 4rem;
   }

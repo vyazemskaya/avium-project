@@ -3,7 +3,9 @@
   position: relative;
   /* transition: margin-top 0.3s ease; */
 }
-
+.section_first._fw .container::before {
+  opacity: 1;
+}
 .section_first .container_media {
   position: absolute;
   z-index: 5;

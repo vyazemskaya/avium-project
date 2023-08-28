@@ -73,27 +73,54 @@ const isMobile = {
     )
   },
 }
-
-const getScreenOrientation = el => {
-  const tl = gsap.timeline()
-  if (document.querySelector('._fw')) {
-    if (window.innerHeight < window.innerWidth) {
-      tl.to(
-        el,
-        {
-          width: '100vw',
-          height: '100vh',
-          rotate: 0,
-          duration: 0,
-          delay: 0,
-        },
-        0
-      )
-    }
+const gsapV = videoWrap => {
+  if (window.innerHeight < window.innerWidth) {
+    gsap.to(
+      videoWrap,
+      {
+        width: '100vw',
+        height: '100vh',
+        rotate: 0,
+        duration: 0,
+        delay: 0,
+      },
+      0
+    )
   } else {
-    tl.kill()
+    gsap.to(
+      videoWrap,
+      {
+        width: '100vh',
+        height: '100vw',
+        rotate: 90,
+        duration: 0,
+        delay: 0,
+      },
+      0
+    )
   }
 }
+
+// const getScreenOrientation = el => {
+//   const tl = gsap.timeline()
+//   if (document.querySelector('._fw')) {
+//     if (window.innerHeight < window.innerWidth) {
+//       tl.to(
+//         el,
+//         {
+//           width: '100vw',
+//           height: '100vh',
+//           rotate: 0,
+//           duration: 0,
+//           delay: 0,
+//         },
+//         0
+//       )
+//     }
+//   } else {
+//     tl.kill()
+//   }
+// }
 
 document.addEventListener('DOMContentLoaded', function () {
   const videos = []
@@ -247,16 +274,6 @@ document.addEventListener('DOMContentLoaded', function () {
             },
             0
           )
-          // tl2.to(
-          //   sectionAnimateWrap,
-          //   {
-          //     opacity: 0,
-          //     visibility: 'hidden',
-          //     duration: 0.5,
-          //     delay: md ? 4 : 4.2,
-          //   },
-          //   0
-          // )
           tl2.to(
             sectionAnimateCircle,
             {
@@ -304,12 +321,6 @@ document.addEventListener('DOMContentLoaded', function () {
     const playBtn = document.querySelector('.content_outer-btn')
     const closeBtn = videoSection.querySelector('#close-video')
     const videoWrap = videoSection.querySelector('.container_media')
-    const md = window.matchMedia('(max-width: 768px)').matches
-    const mmd = window.matchMedia('(min-width: 768px)').matches
-
-    // if (!isMobile.iOS()) {
-    //   video.play()
-    // }
 
     gsap.defaults({ duration: 1 })
     gsap.set(videoWrap, { opacity: 0, visibility: 'hidden' })
@@ -338,7 +349,6 @@ document.addEventListener('DOMContentLoaded', function () {
       )
       gsap.set(closeBtn, { opacity: 0, visibility: 'hidden' }, 0)
     }
-
     const addSourceToVideo = (element, src) => {
       const source = document.createElement('source')
       source.src = src
@@ -356,6 +366,8 @@ document.addEventListener('DOMContentLoaded', function () {
     const gsapInit = () => {
       gsap.to(videoWrap, { opacity: 1, visibility: 'visible', delay: 2 })
       if (isMobile.any()) {
+        const tl1 = gsap.timeline()
+        const tl2 = gsap.timeline()
         gsap.to(
           video,
           {
@@ -369,15 +381,12 @@ document.addEventListener('DOMContentLoaded', function () {
           },
           0
         )
-      }
-      if (isMobile.any()) {
         document.addEventListener('click', function (e) {
-          const tl1 = gsap.timeline()
-          const tl2 = gsap.timeline()
           if (
             e.target.closest('.content_outer-btn') &&
             !videoSection.classList.contains('_fw')
           ) {
+            openfullscreen()
             videoSection.classList.add('_fw')
             tl2.kill()
             tl1.to(closeBtn, { opacity: 1, visibility: 'visible' }, 0)
@@ -414,14 +423,15 @@ document.addEventListener('DOMContentLoaded', function () {
               },
               0
             )
-            getScreenOrientation(videoWrap)
             window.addEventListener('resize', function () {
-              getScreenOrientation(videoWrap)
+              gsapV(videoWrap)
             })
+            gsapV(videoWrap)
           } else if (
             e.target.closest('.section_first #close-video') &&
             videoSection.classList.contains('_fw')
           ) {
+            closefullscreen()
             videoSection.classList.remove('_fw')
             tl1.kill()
             tl2.to(
@@ -464,6 +474,26 @@ document.addEventListener('DOMContentLoaded', function () {
               0
             )
 
+            window.addEventListener('resize', function () {
+              tl2.to(
+                videoWrap,
+                {
+                  position: 'absolute',
+                  yPercent: -23,
+                  xPercent: 38,
+                  top: 0,
+                  rotate: 0,
+                  right: 0,
+                  width: '89.3rem',
+                  height: '89.3rem',
+                  'border-radius': '50%',
+                  duration: 0,
+                  delay: 0,
+                },
+                0
+              )
+            })
+
             if (window.matchMedia('(min-width: 768px)').matches) {
               tl2.to(
                 video,
@@ -481,72 +511,68 @@ document.addEventListener('DOMContentLoaded', function () {
           }
         })
       }
-      if (!isMobile.any()) {
-        document.addEventListener('click', function (e) {
-          const tl1 = gsap.timeline()
-          const tl2 = gsap.timeline()
-          if (
-            e.target.closest('.content_outer-btn') &&
-            !videoSection.classList.contains('_fw')
-          ) {
-            videoSection.classList.add('_fw')
-            tl2.kill()
-            tl1.to(
-              videoWrap,
-              {
-                width: '100%',
-                height: '100%',
-                yPercent: 0,
-                xPercent: 0,
-                right: 0,
-                top: 0,
-                'border-radius': 0,
-              },
-              0
-            )
-            tl1.to(
-              playBtn,
-              {
-                opacity: 0,
-                visibility: 'hidden',
-                delay: 0,
-              },
-              0
-            )
-          } else if (videoSection.classList.contains('_fw')) {
-            tl1.kill()
-            tl2.to(
-              videoWrap,
-              {
-                yPercent: -17,
-                xPercent: 5,
-                width: '110.9rem',
-                height: '110.9rem',
-                'border-radius': '50%',
-                delay: 0,
-              },
-              0
-            )
-            tl2.to(
-              playBtn,
-              {
-                opacity: 1,
-                visibility: 'visible',
-                delay: 1,
-                onStart: () => {
-                  videoSection.classList.remove('_fw')
-                },
-              },
-              0
-            )
-          }
-        })
-      }
+      // if (!isMobile.any()) {
+      //   document.addEventListener('click', function (e) {
+      //     const tl1 = gsap.timeline()
+      //     const tl2 = gsap.timeline()
+      //     if (
+      //       e.target.closest('.content_outer-btn') &&
+      //       !videoSection.classList.contains('_fw')
+      //     ) {
+      //       videoSection.classList.add('_fw')
+      //       tl2.kill()
+      //       tl1.to(
+      //         videoWrap,
+      //         {
+      //           width: '100%',
+      //           height: '100%',
+      //           yPercent: 0,
+      //           xPercent: 0,
+      //           right: 0,
+      //           top: 0,
+      //           'border-radius': 0,
+      //         },
+      //         0
+      //       )
+      //       tl1.to(
+      //         playBtn,
+      //         {
+      //           opacity: 0,
+      //           visibility: 'hidden',
+      //           delay: 0,
+      //         },
+      //         0
+      //       )
+      //     } else if (videoSection.classList.contains('_fw')) {
+      //       tl1.kill()
+      //       tl2.to(
+      //         videoWrap,
+      //         {
+      //           yPercent: -17,
+      //           xPercent: 5,
+      //           width: '110.9rem',
+      //           height: '110.9rem',
+      //           'border-radius': '50%',
+      //           delay: 0,
+      //         },
+      //         0
+      //       )
+      //       tl2.to(
+      //         playBtn,
+      //         {
+      //           opacity: 1,
+      //           visibility: 'visible',
+      //           delay: 1,
+      //           onStart: () => {
+      //             videoSection.classList.remove('_fw')
+      //           },
+      //         },
+      //         0
+      //       )
+      //     }
+      //   })
+      // }
     }
-
-    // window.addEventListener('resize', function () {
-    //   getScreenOrientation(videoWrap)
-    // })
 
     gsapSet()
     gsapInit()
@@ -599,6 +625,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
         if (isMobile.any()) {
           tl2.kill()
+          openfullscreen()
           videoSection.classList.add('_fw')
 
           tl1.to(
@@ -640,31 +667,10 @@ document.addEventListener('DOMContentLoaded', function () {
             },
             0
           )
-          // tl1.to(
-          //   '.philosophy__section-sixth .content-btn',
-          //   {
-          //     opacity: 0,
-          //     visibility: 'hidden',
-          //   },
-          //   0
-          // )
-          // tl1.to(
-          //   video,
-          //   {
-          //     position: 'fixed',
-          //     top: 0,
-          //     left: 0,
-          //     width: '100vw',
-          //     height: '100vh',
-          //     'z-index': 110,
-          //     duration: 0,
-          //   },
-          //   0
-          // )
           tl1.to('body', { overflow: 'hidden' }, 0)
-          getScreenOrientation(videoWrap)
+          gsapV(videoWrap)
           window.addEventListener('resize', function () {
-            getScreenOrientation(videoWrap)
+            gsapV(videoWrap)
           })
         }
         if (!isMobile.any()) {
@@ -686,6 +692,7 @@ document.addEventListener('DOMContentLoaded', function () {
         isMobile.any()
       ) {
         tl1.kill()
+        closefullscreen()
         tl2.to(closeBtn, { opacity: 0, visibility: 'hidden' }, 0)
         videoSection.classList.remove('_fw')
         tl2.to(
@@ -728,6 +735,24 @@ document.addEventListener('DOMContentLoaded', function () {
           0
         )
         tl2.to('body', { overflow: 'visible' }, 0)
+        window.addEventListener('resize', function () {
+          tl2.to(
+            videoWrap,
+            {
+              position: 'static',
+              top: 0,
+              right: 0,
+              width: '100%',
+              xPercent: 0,
+              rotate: 0,
+              yPercent: 0,
+              height: '99.5rem',
+              'z-index': 1,
+              duration: 0,
+            },
+            0
+          )
+        })
       }
     })
   }
