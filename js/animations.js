@@ -60,10 +60,18 @@ const getScreenOrientation = el => {
 
 document.addEventListener('DOMContentLoaded', function () {
   $('body').on('click touchstart', function () {
-    const videoElement = document.getElementById('video-collection')
-    if (!videoElement.playing) {
-      videoElement.play()
-    }
+    const videos = []
+    const videoYC = document.querySelector('.section_first video')
+    const videoMP = document.querySelector('.video__section video')
+    videos.push(videoYC)
+    videos.push(videoMP)
+    videos.forEach(video => {
+      if (isMobile.iOS()) {
+        if (!video.playing) {
+          video.play()
+        }
+      }
+    })
   })
 
   gsap.defaults({
@@ -240,7 +248,6 @@ document.addEventListener('DOMContentLoaded', function () {
     )
   }
 
-  // yearcolor page
   if (document.querySelector('.section_first')) {
     const videoSection = document.querySelector('.section_first')
     const video = document.getElementById('video-collection')
@@ -806,6 +813,80 @@ document.addEventListener('DOMContentLoaded', function () {
       })
     } else {
       animItems()
+    }
+  }
+
+  if (document.querySelector('.video__section')) {
+    const videoWrap = document.querySelector('.video__section .section_video')
+    const closeVideoBtn = document.querySelector('.video__section #close-video')
+    if (isMobile.any()) {
+      window.addEventListener('resize', function () {
+        if (window.innerHeight < window.innerWidth) {
+          document.querySelector('body').style.overflow = 'hidden'
+          gsap.to(
+            closeVideoBtn,
+            { opacity: 1, visibility: 'visible', duration: 0, delay: 0 },
+            0
+          )
+          gsap.to(
+            videoWrap,
+            {
+              position: 'fixed',
+              'z-index': 200,
+              top: 0,
+              left: 0,
+              width: '100vw',
+              height: '100vh',
+              duration: 0,
+              delay: 0,
+            },
+            0
+          )
+        } else {
+          document.querySelector('body').style.overflow = 'auto'
+          gsap.to(
+            closeVideoBtn,
+            { opacity: 0, visibility: 'hidden', duration: 0, delay: 0 },
+            0
+          )
+          gsap.to(
+            videoWrap,
+            {
+              position: 'relative',
+              'z-index': 2,
+              top: 0,
+              left: 0,
+              width: '100%',
+              height: '100%',
+              duration: 0,
+              delay: 0,
+            },
+            0
+          )
+        }
+      })
+      closeVideoBtn.addEventListener('click', function () {
+        document.querySelector('body').style.overflow = 'auto'
+        gsap.to(
+          closeVideoBtn,
+          { opacity: 0, visibility: 'hidden', duration: 0, delay: 0 },
+          0
+        )
+        gsap.to(
+          videoWrap,
+          {
+            position: 'relative',
+            'z-index': 2,
+            top: 0,
+            left: 0,
+            width: '100%',
+            height: '100%',
+            duration: 0,
+            delay: 0,
+          },
+          0
+        )
+      })
     }
   }
 })

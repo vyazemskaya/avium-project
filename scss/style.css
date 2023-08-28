@@ -828,6 +828,7 @@ section {
   top: 50px;
   right: 30px;
   /* opacity: 0; */
+  visibility: hidden;
   font-size: 18px;
   /* transition: opacity 0.3s ease; */
 }
@@ -10629,9 +10630,7 @@ section {
   border: 1px solid #fff;
   cursor: pointer;
 }
-.philosophy__section-sixth
-  .philosophy__section-content
-  .content_btn {
+.philosophy__section-sixth .philosophy__section-content .content_btn {
   display: flex;
   gap: 1rem;
 }
@@ -12061,6 +12060,18 @@ section {
 .video__section {
   padding-top: 9.1rem;
   margin-bottom: 0;
+}
+.video__section #close-video {
+  content: '';
+  position: absolute;
+  z-index: 112;
+  top: 50px;
+  right: 30px;
+  opacity: 0;
+  font-size: 18px;
+}
+.video__section .section_video {
+  position: relative;
 }
 .video__section .section_video video {
   -o-object-fit: cover;

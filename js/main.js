@@ -1,3 +1,10 @@
+// import {
+//   swiperMainSection1,
+//   swiperMainSection2,
+//   swiperMainSection3,
+//   swiperMainSection4,
+// } from './swiper.js'
+
 wow = new WOW({
   boxClass: 'wow',
   animateClass: 'animate__animated',

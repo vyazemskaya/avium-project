@@ -28,3 +28,15 @@
     }
   }
 }
+.video__section #close-video {
+  content: '';
+  position: absolute;
+  z-index: 112;
+  top: 50px;
+  right: 30px;
+  opacity: 0;
+  font-size: 18px;
+}
+.video__section .section_video {
+  position: relative;
+}
