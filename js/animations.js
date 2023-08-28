@@ -59,24 +59,33 @@ const getScreenOrientation = el => {
 }
 
 document.addEventListener('DOMContentLoaded', function () {
-  $('body').on('click touchstart', function () {
-    const videos = []
-    const videoYC = document.querySelector('.section_first video')
-    const videoMP = document.querySelector('.video__section video')
+  const videos = []
+  const videoYC = document.querySelector('.section_first video')
+  const videoMP = document.querySelector('.video__section video')
+  if (videoYC) {
     videos.push(videoYC)
+  }
+  if (videoMP) {
     videos.push(videoMP)
-    if (videos.length) {
+  }
+  if (videos.length) {
+    $('body').on('click touchstart', function () {
       videos.forEach(video => {
         if (isMobile.iOS()) {
           if (!video.playing) {
             video.play()
           }
-        } else {
+        }
+      })
+    })
+    if (!isMobile.iOS()) {
+      videos.forEach(video => {
+        if (!video.playing) {
           video.play()
         }
       })
     }
-  })
+  }
 
   gsap.defaults({
     duration: 1,
@@ -261,9 +270,9 @@ document.addEventListener('DOMContentLoaded', function () {
     const md = window.matchMedia('(max-width: 768px)').matches
     const mmd = window.matchMedia('(min-width: 768px)').matches
 
-    if (!isMobile.any()) {
-      video.play()
-    }
+    // if (!isMobile.iOS()) {
+    //   video.play()
+    // }
 
     gsap.defaults({ duration: 1 })
     gsap.set(videoWrap, { opacity: 0, visibility: 'hidden' })
