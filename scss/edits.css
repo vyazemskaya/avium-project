@@ -67,6 +67,15 @@
 .purchase__section-third .container .overlay .modal {
   display: none;
 }
+.purchase__section-third .container .purchase__section-content .content_bottom .content_left .places_box .place_info-box .place_title {
+  color: #53565A;
+}
+.purchase__section-third .container .purchase__section-content .content_bottom .content_left .places_box .place_info-box.active .place_title {
+  color: #000;
+}
+.volume_box.mobile {
+  display: none;
+}
 
 
 @media (max-width: 48em) {
@@ -198,5 +207,27 @@
   }
   .purchase__section-third .container .purchase__section-content .content_bottom .content_left .places_box .place_info-box.active .place_phone {
     color: #53565A;
+  }
+  .purchase__section-third .container .purchase__section-content .content_bottom .content_left .places_box .place_info-box.active .place_title {
+    color: #53565A;
+  }
+
+  .details__section-first .container .details__section-content .content_right {
+    gap: 4rem;
+  }
+  .volume_box.mobile {
+    display: block;
+    width: 100%;
+  }
+  .content_volume-text {
+    font-size: 3rem;
+    margin-bottom: 4rem;
+  }
+  .content_volume {
+    display: flex;
+    justify-content: space-between;
+  }
+  .content_volume .btn{
+    padding: 2.4rem 6rem;
   }
 }
