@@ -8,7 +8,9 @@
   background-color: rgba(0, 0, 0, 0.2196078431);
   transition: opacity 1s ease;
 }
-
+.section_first {
+  position: relative;
+}
 .section_first .container_media video {
   -o-object-fit: cover;
   object-fit: cover;

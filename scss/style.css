@@ -11761,6 +11761,10 @@ section {
 .video__section .section_video {
   position: relative;
 }
+
+.section_first {
+  position: relative;
+}
 .section_first .container_media video {
   width: 67%;
   height: 82%;
