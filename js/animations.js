@@ -245,7 +245,7 @@ document.addEventListener('DOMContentLoaded', function () {
     const md = window.matchMedia('(max-width: 768px)').matches
     const mmd = window.matchMedia('(min-width: 768px)').matches
 
-    if (isMobile.any()) {
+    if (!isMobile.any()) {
       video.play()
     }
 
@@ -285,7 +285,7 @@ document.addEventListener('DOMContentLoaded', function () {
     }
     const initVideo = (element, src) => {
       const windowWidth = window.innerWidth
-      if (windowWidth > 768) {
+      if (!isMobile.any()) {
         addSourceToVideo(element, src.dataset.desktopVid)
       } else {
         addSourceToVideo(element, src.dataset.mobileVid)
@@ -602,7 +602,7 @@ document.addEventListener('DOMContentLoaded', function () {
       } else if (
         e.target.closest('.philosophy__section-sixth #close-video') &&
         videoSection.classList.contains('_fw') &&
-        md
+        isMobile.any()
       ) {
         tl1.kill()
         tl2.to(closeBtn, { opacity: 0, visibility: 'hidden' }, 0)
