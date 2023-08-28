@@ -343,6 +343,7 @@ document.addEventListener('DOMContentLoaded', function () {
         } else {
           $('.place_info-box').removeClass('active')
           $('.place_info-box')[0].classList.add('active')
+          e.get('target').options.set('iconImageHref', './img/purchase_section-third/geomark-2.svg');
         }
       })
       placemarkSecondary.events.add('click', function (e) {
