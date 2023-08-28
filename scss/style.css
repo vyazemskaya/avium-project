@@ -828,6 +828,7 @@ section {
   top: 50px;
   right: 30px;
   /* opacity: 0; */
+  visibility: hidden;
   font-size: 18px;
   /* transition: opacity 0.3s ease; */
 }
@@ -10616,7 +10617,7 @@ section {
   -o-object-fit: cover;
   object-fit: cover;
 }
-.philosophy__section-sixth .container .philosophy__section-content {
+.philosophy__section-sixth .philosophy__section-content {
   display: flex;
   align-items: center;
   justify-content: center;
@@ -10629,15 +10630,11 @@ section {
   border: 1px solid #fff;
   cursor: pointer;
 }
-.philosophy__section-sixth
-  .container
-  .philosophy__section-content
-  .content_btn {
+.philosophy__section-sixth .philosophy__section-content .content_btn {
   display: flex;
   gap: 1rem;
 }
 .philosophy__section-sixth
-  .container
   .philosophy__section-content
   .content_btn
   .content_text {
@@ -10647,11 +10644,26 @@ section {
   text-transform: uppercase;
 }
 .philosophy__section-sixth
-  .container
   .philosophy__section-content
   .content_btn
   .content_icon {
   width: 0.8rem;
+}
+.philosophy__section-sixth {
+  position: relative;
+}
+.philosophy__section-sixth #close-video {
+  content: '';
+  position: fixed;
+  z-index: 110;
+  top: 20px;
+  right: 30px;
+  opacity: 0;
+  font-size: 18px;
+  transition: opacity 0.3s ease;
+}
+.philosophy__section-sixth .container-video._fw #close-video {
+  opacity: 1;
 }
 
 @media (max-width: 48em) {
@@ -12049,6 +12061,18 @@ section {
   padding-top: 9.1rem;
   margin-bottom: 0;
 }
+.video__section #close-video {
+  content: '';
+  position: absolute;
+  z-index: 112;
+  top: 50px;
+  right: 30px;
+  opacity: 0;
+  font-size: 18px;
+}
+.video__section .section_video {
+  position: relative;
+}
 .video__section .section_video video {
   -o-object-fit: cover;
   object-fit: cover;
@@ -12920,3 +12944,13 @@ body .swiper_main-section-4 .slide-section-4 {
     flex-direction: column-reverse;
   }
 } /*# sourceMappingURL=style.css.map */
+
+.rotate-icon {
+  position: absolute;
+  z-index: 2;
+  display: none;
+  bottom: 3rem;
+  right: 3rem;
+  width: 9rem;
+  height: 9rem;
+}

@@ -79,21 +79,21 @@ body {
   }
 
   *::-webkit-media-controls-panel {
-  display: none !important;
-  -webkit-appearance: none;
-}
+    display: none !important;
+    -webkit-appearance: none;
+  }
 
-/* Old shadow dom for play button */
-*::-webkit-media-controls-play-button {
-  display: none !important;
-  -webkit-appearance: none;
-}
+  /* Old shadow dom for play button */
+  *::-webkit-media-controls-play-button {
+    display: none !important;
+    -webkit-appearance: none;
+  }
 
-/* New shadow dom for play button */
-*::-webkit-media-controls-start-playback-button {
-  display: none !important;
-  -webkit-appearance: none;
-}
+  /* New shadow dom for play button */
+  *::-webkit-media-controls-start-playback-button {
+    display: none !important;
+    -webkit-appearance: none;
+  }
 
   .swiper {
     overflow: visible;
@@ -204,6 +204,16 @@ body {
       transition: background-color 0.15s ease, color 0.2s ease;
       box-shadow: none;
     }
+  }
+
+  .rotate-icon {
+    position: absolute;
+    z-index: 2;
+    display: none;
+    bottom: 3rem;
+    right: 3rem;
+    width: 9rem;
+    height: 9rem;
   }
 
   .outlined-text {
