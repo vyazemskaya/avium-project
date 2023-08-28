@@ -76,6 +76,9 @@
 .volume_box.mobile {
   display: none;
 }
+.elmar__section-third .container .elmar__section-content .content_box .content_bottom-right .blob {
+  right: -21.8rem;
+}
 
 
 @media (max-width: 48em) {
@@ -229,5 +232,16 @@
   }
   .content_volume .btn{
     padding: 2.4rem 6rem;
+  }
+
+  .elmar__section-third .container .elmar__section-content .content_box .content_bottom-right .blob {
+    right: -4rem;
+  }
+  .purchase__section-first .container .purchase__section-content .content_title {
+    font-size: 5rem;
+  }
+  .purchase__section-first .container .purchase__section-content .content_title strong {
+    margin-top: 2rem;
+    display: block;
   }
 }
