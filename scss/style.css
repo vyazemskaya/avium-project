@@ -7155,9 +7155,15 @@ section {
 .video__section .section_video {
   position: relative;
 }
-
+.section_first .container_media video {
+    width: 67%;
+    height: 82%;
+    position: absolute;
+    left: 0;
+    bottom: 0;
+  }
 .section_first .container_media::after {
-  content: "";
+  content: '';
   position: absolute;
   width: 100%;
   height: 100%;
@@ -7173,7 +7179,9 @@ section {
   width: 100%;
   height: 100%;
 }
-
+.section_first._fw.mobile .container_media {
+  z-index: 200;
+}
 .section_first .container {
   width: 100%;
   /* transition: opacity 3s easy; */
@@ -7207,14 +7215,24 @@ section {
   gap: 1rem;
 }
 
-.section_first .container .section_background .content_outer-btn .content_btn .content_text {
+.section_first
+  .container
+  .section_background
+  .content_outer-btn
+  .content_btn
+  .content_text {
   color: #fff;
   font-size: 2rem;
   font-weight: 700;
   text-transform: uppercase;
 }
 
-.section_first .container .section_background .content_outer-btn .content_btn .content_icon {
+.section_first
+  .container
+  .section_background
+  .content_outer-btn
+  .content_btn
+  .content_icon {
   width: 0.8rem;
 }
 
@@ -7235,7 +7253,11 @@ section {
   margin-bottom: 4rem;
 }
 
-.section_first .container .section_content .content_title .title_name-collection {
+.section_first
+  .container
+  .section_content
+  .content_title
+  .title_name-collection {
   font-weight: 700;
 }
 
@@ -7271,7 +7293,6 @@ section {
   opacity: 0;
   transition: opacity 0.5s ease;
 }
-
 .section_first .video_cover {
   position: absolute;
   width: 110%;
@@ -7290,7 +7311,7 @@ section {
 }
 
 .section_first #close-video {
-  content: "";
+  content: '';
   position: absolute;
   z-index: 112;
   top: 50px;
@@ -7300,9 +7321,8 @@ section {
   font-size: 18px;
   /* transition: opacity 0.3s ease; */
 }
-
 .section_first .container::before {
-  content: "";
+  content: '';
   position: absolute;
   left: 0;
   bottom: -0.2rem;
@@ -7313,11 +7333,9 @@ section {
   clip-path: polygon(0% 0%, 50% 50%, 100% 100%, 0% 100%);
   background-color: #fff;
 }
-
 .section_first.mobile .container::before {
   opacity: 0;
 }
-
 @media (max-width: 48em) {
   .section_first .container_media video {
     width: 67%;
@@ -7364,7 +7382,7 @@ section {
     width: 100%;
   }
   .section_first .container .decoration.decoration_left,
-.section_first .container .decoration.decoration_right {
+  .section_first .container .decoration.decoration_right {
     display: none;
   }
   .section_first .container .decoration.decoration_mobile {
@@ -7373,7 +7391,7 @@ section {
     left: 1.2rem;
   }
   .section_first .container::before {
-    content: "";
+    content: '';
     position: absolute;
     left: 0;
     bottom: 40.5rem;
@@ -7403,24 +7421,47 @@ section {
   gap: 4rem;
 }
 
-.section_second .container .section_content .content_archieves .archieve_box .circle {
+.section_second
+  .container
+  .section_content
+  .content_archieves
+  .archieve_box
+  .circle {
   width: 25rem;
   height: 25rem;
   border-radius: 50%;
-  box-shadow: 9px 10px 10px rgba(88, 88, 88, 0.25), 9px 10px 10px 0px rgba(255, 255, 255, 0.25) inset;
+  box-shadow: 9px 10px 10px rgba(88, 88, 88, 0.25),
+    9px 10px 10px 0px rgba(255, 255, 255, 0.25) inset;
 }
 
-.section_second .container .section_content .content_archieves .archieve_box .circle_info {
+.section_second
+  .container
+  .section_content
+  .content_archieves
+  .archieve_box
+  .circle_info {
   text-align: center;
 }
 
-.section_second .container .section_content .content_archieves .archieve_box .circle_info .circle_year {
+.section_second
+  .container
+  .section_content
+  .content_archieves
+  .archieve_box
+  .circle_info
+  .circle_year {
   color: #000;
   font-size: 5rem;
   font-weight: 700;
 }
 
-.section_second .container .section_content .content_archieves .archieve_box .circle_info .circle_name {
+.section_second
+  .container
+  .section_content
+  .content_archieves
+  .archieve_box
+  .circle_info
+  .circle_name {
   color: #53565a;
   font-size: 3rem;
   font-style: normal;
@@ -7437,7 +7478,12 @@ section {
     flex-direction: column;
     gap: 8rem;
   }
-  .section_second .container .section_content .content_archieves .archieve_box .circle {
+  .section_second
+    .container
+    .section_content
+    .content_archieves
+    .archieve_box
+    .circle {
     width: 40rem;
     height: 40rem;
   }

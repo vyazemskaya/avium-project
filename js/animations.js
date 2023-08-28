@@ -341,6 +341,8 @@ document.addEventListener('DOMContentLoaded', function () {
       gsap.set(
         videoWrap,
         {
+          position: 'absolute',
+          overflow: 'hidden',
           yPercent: isMobile.any() ? -23 : -17,
           xPercent: isMobile.any() ? 38 : 5,
           right: 0,
