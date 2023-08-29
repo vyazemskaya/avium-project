@@ -970,7 +970,7 @@ document.addEventListener('DOMContentLoaded', function () {
           openfullscreen()
           videoWrap.classList.add('_fs')
           document.querySelector('body').style.overflow = 'hidden'
-          window.orientation.lock('landscape')
+          screen.orientation.lock('landscape')
           tl1.to(
             videoWrap,
             {
@@ -1012,7 +1012,7 @@ document.addEventListener('DOMContentLoaded', function () {
           closefullscreen()
           videoWrap.classList.remove('_fs')
           document.querySelector('body').style.overflow = 'auto'
-          window.orientation.unlock()
+          screen.orientation.unlock()
           tl1.to(
             videoWrap,
             {
