@@ -715,6 +715,8 @@ document.addEventListener('DOMContentLoaded', function () {
           gsapV(videoWrap)
           window.addEventListener('resize', function () {
             gsapV(videoWrap)
+
+            openfullscreen()
           })
         }
         if (!isMobile.any()) {
@@ -780,6 +782,7 @@ document.addEventListener('DOMContentLoaded', function () {
         )
         tl2.to('body', { overflow: 'visible' }, 0)
         window.addEventListener('resize', function () {
+          closefullscreen()
           tl2.to(
             videoWrap,
             {
@@ -1004,20 +1007,17 @@ document.addEventListener('DOMContentLoaded', function () {
             0
           )
           if (window.innerHeight < window.innerWidth) {
-              
-            setTimeout(function()
-            {
-                window.scrollTo(0, 1);
-            }, 100); 
-            } 
+            openfullscreen()
+            setTimeout(function () {
+              window.scrollTo(0, 1)
+            }, 100)
+          }
           window.addEventListener('resize', function () {
             if (window.innerHeight < window.innerWidth) {
-              
-            setTimeout(function()
-            {
-                window.scrollTo(0, 1);
-            }, 100); 
-            } 
+              setTimeout(function () {
+                window.scrollTo(0, 1)
+              }, 100)
+            }
           })
         } else {
           tl2.kill()
@@ -1057,6 +1057,7 @@ document.addEventListener('DOMContentLoaded', function () {
             0
           )
           window.addEventListener('resize', function () {
+            closefullscreen()
             tl1.to(
               videoWrap,
               {
