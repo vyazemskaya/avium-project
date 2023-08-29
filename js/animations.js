@@ -127,26 +127,26 @@ const gsapV = videoWrap => {
   }
 }
 
-// const getScreenOrientation = el => {
-//   const tl = gsap.timeline()
-//   if (document.querySelector('._fw')) {
-//     if (window.innerHeight < window.innerWidth) {
-//       tl.to(
-//         el,
-//         {
-//           width: '100vw',
-//           height: '100vh',
-//           rotate: 0,
-//           duration: 0,
-//           delay: 0,
-//         },
-//         0
-//       )
-//     }
-//   } else {
-//     tl.kill()
-//   }
-// }
+const getScreenOrientation = el => {
+  const tl = gsap.timeline()
+  if (document.querySelector('._fw')) {
+    if (window.innerHeight < window.innerWidth) {
+      tl.to(
+        el,
+        {
+          width: '100vw',
+          height: '100vh',
+          rotate: 0,
+          duration: 0,
+          delay: 0,
+        },
+        0
+      )
+    }
+  } else {
+    tl.kill()
+  }
+}
 
 document.addEventListener('DOMContentLoaded', function () {
   const videos = []
