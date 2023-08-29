@@ -10,6 +10,20 @@ if (!document.getElementById('fullpage')) {
   animItems()
 }
 
+const addSourceToVideo = (element, src) => {
+  const source = document.createElement('source')
+  source.src = src
+  source.type = 'video/mp4'
+  element.appendChild(source)
+}
+const initVideo = (element, src) => {
+  if (!isMobile.any()) {
+    addSourceToVideo(element, src.dataset.desktopVid)
+  } else {
+    addSourceToVideo(element, src.dataset.mobileVid)
+  }
+}
+
 const openfullscreen = () => {
   // Trigger fullscreen
   if (document.getElementById('parent').requestFullscreen) {
@@ -317,6 +331,7 @@ document.addEventListener('DOMContentLoaded', function () {
                   document.querySelector('body').style.overflow = 'auto'
                 }
                 sectionAnimate.classList.add('_hidden')
+                sectionAnimate.style.display = 'none'
               },
             },
             0
@@ -362,20 +377,6 @@ document.addEventListener('DOMContentLoaded', function () {
         0
       )
       gsap.set(closeBtn, { opacity: 0, visibility: 'hidden' }, 0)
-    }
-    const addSourceToVideo = (element, src) => {
-      const source = document.createElement('source')
-      source.src = src
-      source.type = 'video/mp4'
-      element.appendChild(source)
-    }
-    const initVideo = (element, src) => {
-      const windowWidth = window.innerWidth
-      if (!isMobile.any()) {
-        addSourceToVideo(element, src.dataset.desktopVid)
-      } else {
-        addSourceToVideo(element, src.dataset.mobileVid)
-      }
     }
     const gsapInit = () => {
       gsap.to(videoWrap, { opacity: 1, visibility: 'visible', delay: 2 })
@@ -936,7 +937,27 @@ document.addEventListener('DOMContentLoaded', function () {
 
   if (document.querySelector('.video__section')) {
     const videoWrap = document.querySelector('.video__section .section_video')
+    const video = document.querySelector('.video__section video')
     const toggleBtn = document.querySelector('.rotate-icon')
+    gsap.set(videoWrap, {
+      position: 'relative',
+      'z-index': 2,
+      top: 0,
+      right: 0,
+      width: '100%',
+      height: '100%',
+      rotate: 0,
+      xPercent: 0,
+      yPercent: 0,
+    })
+    gsap.set(
+      '.video__section .rotate-icon',
+      {
+        bottom: '3rem',
+        right: '3rem',
+      },
+      0
+    )
     if (isMobile.any()) {
       gsap.to('.video__section .rotate-icon', {
         display: 'block',
@@ -945,10 +966,10 @@ document.addEventListener('DOMContentLoaded', function () {
       const tl2 = gsap.timeline()
       toggleBtn.addEventListener('click', function () {
         if (!videoWrap.classList.contains('_fs')) {
+          tl2.kill()
           openfullscreen()
           videoWrap.classList.add('_fs')
           document.querySelector('body').style.overflow = 'hidden'
-          tl2.kill()
           tl1.to(
             videoWrap,
             {
@@ -981,10 +1002,10 @@ document.addEventListener('DOMContentLoaded', function () {
             gsapV(videoWrap)
           })
         } else {
+          tl2.kill()
           closefullscreen()
           videoWrap.classList.remove('_fs')
           document.querySelector('body').style.overflow = 'auto'
-          tl2.kill()
           tl1.to(
             videoWrap,
             {
@@ -1034,5 +1055,7 @@ document.addEventListener('DOMContentLoaded', function () {
         }
       })
     }
+
+    initVideo(video, video)
   }
 })

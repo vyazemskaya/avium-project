@@ -115,22 +115,28 @@
 
       <section class="video__section">
         <div class="section_video">
-          <video class="desktop" loop muted playsinline>
-            <source
+          <video
+            data-video
+            loop
+            muted
+            playsinline
+            data-desktop-vid="./img/video_section-first/section_first-videov2.mp4"
+            data-mobile-vid="./img/video_section-first/section_first-video-mobile.mp4">
+            <!-- <source
               src="./img/video_section-first/section_first-videov2.mp4"
-              type="video/mp4" />
-            <source
+              type="video/mp4" /> -->
+            <!-- <source
               src="./video/webm/section_first-videov2.webm"
-              type="video/webm" />
+              type="video/webm" /> -->
           </video>
-          <video class="mobile" loop muted playsinline>
+          <!-- <video class="mobile" loop muted playsinline>
             <source
               src="./img/video_section-first/section_first-video-mobile.mp4"
               type="video/mp4" />
             <source
               src="./video/webm/section_first-video-mobile.webm"
               type="video/webm" />
-          </video>
+          </video> -->
           <button id="fs" type="button" class="rotate-icon">
             <img aria-hidden="true" src="./img/rotate-screen.svg" alt="" />
           </button>
