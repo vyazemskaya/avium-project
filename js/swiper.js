@@ -207,19 +207,19 @@ export const swiperMainSection1 = new Swiper('.swiper_main-section-1', {
   fadeEffect: { crossFade: true },
   virtualTranslate: true,
   slidesPerView: 1,
-  // loop: true,
+  loop: true,
   spaceBetween: 0,
   autoplay: {
     delay: 4000,
     disableOnInteraction: true,
   },
   effect: 'fade',
-  on: {
-    afterInit: swiper => {
-      swiper.autoplay.stop()
-      swiper.update()
-    },
-  },
+  // on: {
+  //   afterInit: swiper => {
+  //     swiper.autoplay.stop()
+  //     swiper.update()
+  //   },
+  // },
 })
 
 export const swiperMainSection2 = new Swiper('.swiper_main-section-2', {
