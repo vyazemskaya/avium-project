@@ -970,18 +970,24 @@ document.addEventListener('DOMContentLoaded', function () {
           openfullscreen()
           videoWrap.classList.add('_fs')
           document.querySelector('body').style.overflow = 'hidden'
+          window.orientation.lock('landscape')
           tl1.to(
             videoWrap,
             {
               position: 'fixed',
               'z-index': 200,
-              top: '50%',
-              right: '50%',
-              width: '100vh',
-              height: '100vw',
-              rotate: 90,
-              xPercent: 50,
-              yPercent: -50,
+              width: '100vw',
+              height: '100vh',
+              duration: 0,
+              delay: 0,
+            },
+            0
+          )
+
+          tl1.to(
+            video,
+            {
+              height: '100%',
               duration: 0,
               delay: 0,
             },
@@ -997,27 +1003,32 @@ document.addEventListener('DOMContentLoaded', function () {
             },
             0
           )
-          gsapV(videoWrap)
-          window.addEventListener('resize', function () {
-            gsapV(videoWrap)
-          })
+          // gsapV(videoWrap)
+          // window.addEventListener('resize', function () {
+          //   gsapV(videoWrap)
+          // })
         } else {
           tl2.kill()
           closefullscreen()
           videoWrap.classList.remove('_fs')
           document.querySelector('body').style.overflow = 'auto'
+          window.orientation.unlock()
           tl1.to(
             videoWrap,
             {
               position: 'relative',
               'z-index': 2,
-              top: 0,
-              right: 0,
               width: '100%',
               height: '100%',
-              rotate: 0,
-              xPercent: 0,
-              yPercent: 0,
+              duration: 0,
+              delay: 0,
+            },
+            0
+          )
+          tl1.to(
+            video,
+            {
+              height: '99.5rem',
               duration: 0,
               delay: 0,
             },
@@ -1039,13 +1050,18 @@ document.addEventListener('DOMContentLoaded', function () {
               {
                 position: 'relative',
                 'z-index': 2,
-                top: 0,
-                right: 0,
                 width: '100%',
                 height: '100%',
-                rotate: 0,
-                xPercent: 0,
-                yPercent: 0,
+                duration: 0,
+                delay: 0,
+              },
+              0
+            )
+
+            tl1.to(
+              video,
+              {
+                height: '99.5rem',
                 duration: 0,
                 delay: 0,
               },
