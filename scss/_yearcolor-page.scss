@@ -124,9 +124,9 @@
 .section_first .container .decoration.decoration_mobile {
   display: none;
 }
-.section_first._fw .container_media {
-  z-index: 200;
-}
+// .section_first._fw .container_media {
+//   z-index: 200;
+// }
 .section_first._fw .container_media::after {
   opacity: 0;
   transition: opacity 0.5s ease;

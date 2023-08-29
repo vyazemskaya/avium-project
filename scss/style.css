@@ -11803,9 +11803,9 @@ section {
 .section_first._fw .container_media {
   z-index: 90;
 }
-.section_first._fw.mobile .container_media {
+/* .section_first._fw.mobile .container_media {
   z-index: 200;
-}
+} */
 .section_first .container {
   width: 100%;
   /* transition: opacity 3s easy; */
@@ -11913,9 +11913,9 @@ section {
   display: none;
 }
 
-.section_first._fw .container_media {
+/* .section_first._fw .container_media {
   z-index: 200;
-}
+} */
 
 .section_first._fw .container_media::after {
   opacity: 0;
