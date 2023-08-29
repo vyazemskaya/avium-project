@@ -97,17 +97,20 @@
         </div>
       </div>
     </header>
-    <main>
+    <main id="parent">
       <section class="section_first">
         <div class="container">
           <div class="section_background">
-            <div class="container_media">
-              <video id="video-collection" autoplay playsinline muted>
-                <source
-                  src="./img/yearcolor-page/section_first-video.mp4"
-                  type="video/mp4" />
-              </video>
-              <div class="content_outer-btn">
+            <div class="container_media animate__fadeIn animate__delay-2s">
+              <video
+                id="video-collection"
+                loop
+                playsinline
+                muted
+                data-desktop-vid="./img/yearcolor-page/section_first-video.mp4"
+                data-mobile-vid="./img/yearcolor-page/video.mp4"></video>
+              <div
+                class="content_outer-btn wow animate__fadeIn animate__delay-2s">
                 <div class="content_btn">
                   <p class="content_text">Смотреть</p>
                   <img
@@ -116,35 +119,38 @@
                     alt="" />
                 </div>
               </div>
-              <img
-                class="video_cover"
-                src="./img/yearcolor-page/cover.png"
-                alt="" />
+              <button type="button" id="close-video">закрыть</button>
             </div>
           </div>
           <div class="section_content">
-            <div class="content_title">
+            <div
+              class="content_title wow animate__fadeInLeft animate__delay-3s">
               <h3 class="title_year">2024</h3>
               <h3 class="title_name-collection">El Mar</h3>
             </div>
-            <p class="content_text">Дыхание жизни</p>
-            <button class="content_btn btn">Палитра El Mar</button>
+            <p class="content_text wow animate__fadeIn animate__delay-4s">
+              Дыхание жизни
+            </p>
+            <button
+              class="content_btn btn wow animate__fadeIn animate__delay-4s">
+              Палитра El Mar
+            </button>
           </div>
           <img
             style="width: 26.5rem"
             src="./img/yearcolor-page/section_first-decoration_left.svg"
             alt=""
-            class="decoration decoration_left" />
+            class="decoration decoration_left wow animate__fadeIn animate__delay-2s" />
           <img
             style="width: 15.5rem"
             src="./img/yearcolor-page/section_first-decoration_right.svg"
             alt=""
-            class="decoration decoration_right" />
+            class="decoration decoration_right wow animate__fadeIn animate__delay-2s" />
           <img
             style="width: 14.4rem"
             src="./img/yearcolor-page/section_first-decoration_mobile.svg"
             alt=""
-            class="decoration decoration_mobile" />
+            class="decoration decoration_mobile wow animate__fadeIn animate__delay-2s" />
         </div>
       </section>
     </main>
@@ -218,9 +224,10 @@
     </footer>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
     <script src="./js/jquery.nice-select.js"></script>
     <script src="js/wow.min.js"></script>
-    <!-- <script type="module" src="./js/animations.js"></script> -->
+    <script type="module" src="./js/animations.js"></script>
     <script src="./js/main.js"></script>
   </body>
 </html>

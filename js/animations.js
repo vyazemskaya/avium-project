@@ -938,7 +938,9 @@ document.addEventListener('DOMContentLoaded', function () {
     const videoWrap = document.querySelector('.video__section .section_video')
     const toggleBtn = document.querySelector('.rotate-icon')
     if (isMobile.any()) {
-      gsap.to('.video__section .rotate-icon', { display: 'block' })
+      gsap.to('.video__section .rotate-icon', {
+        display: 'block',
+      })
       const tl1 = gsap.timeline()
       const tl2 = gsap.timeline()
       toggleBtn.addEventListener('click', function () {
@@ -959,6 +961,16 @@ document.addEventListener('DOMContentLoaded', function () {
               rotate: 90,
               xPercent: 50,
               yPercent: -50,
+              duration: 0,
+              delay: 0,
+            },
+            0
+          )
+          tl1.to(
+            '.video__section .rotate-icon',
+            {
+              bottom: '6rem',
+              right: '14rem',
               duration: 0,
               delay: 0,
             },
@@ -985,6 +997,16 @@ document.addEventListener('DOMContentLoaded', function () {
               rotate: 0,
               xPercent: 0,
               yPercent: 0,
+              duration: 0,
+              delay: 0,
+            },
+            0
+          )
+          tl1.to(
+            '.video__section .rotate-icon',
+            {
+              bottom: '3rem',
+              right: '3rem',
               duration: 0,
               delay: 0,
             },
