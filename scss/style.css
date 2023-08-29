@@ -11741,7 +11741,7 @@ section {
   }
 }
 .video__section {
-  padding-top: 9.1rem;
+  margin-top: 9.1rem;
   margin-bottom: 0;
 }
 .video__section .section_video video {
@@ -11755,7 +11755,7 @@ section {
 }
 @media (max-width: 48em) {
   .video__section {
-    padding-top: 10.4rem;
+    margin-top: 10.4rem;
   }
   .video__section .section_video .desktop {
     display: none;
