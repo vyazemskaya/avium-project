@@ -8157,6 +8157,9 @@ body .swiper_philosophy-section-3 .swiper-wrapper {
 body .swiper_philosophy-section-3 .swiper-pagination_section-3 {
   display: none;
 }
+body .swiper_main-section-1 {
+  width: 81rem;
+}
 body .swiper_main-section-2 {
   width: 90rem;
   overflow: hidden;
