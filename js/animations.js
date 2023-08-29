@@ -934,150 +934,156 @@ document.addEventListener('DOMContentLoaded', function () {
 
   // video section
   if (document.querySelector('.video__section')) {
-    const videoWrap = document.querySelector('.video__section .section_video')
-    const video = document.querySelector('.video__section video')
-    const toggleBtn = document.querySelector('.rotate-icon')
-    gsap.set(videoWrap, {
-      position: 'relative',
-      'z-index': 2,
-      top: 0,
-      right: 0,
-      width: '100%',
-      height: '100%',
-      rotate: 0,
-      xPercent: 0,
-      yPercent: 0,
-    })
-    gsap.set(
-      '.video__section .rotate-icon',
-      {
-        bottom: '3rem',
-        right: '3rem',
-      },
-      0
-    )
-    if (isMobile.any()) {
-      gsap.to('.video__section .rotate-icon', {
-        display: 'block',
-      })
-      const tl1 = gsap.timeline()
-      const tl2 = gsap.timeline()
-      toggleBtn.addEventListener('click', function () {
-        if (!videoWrap.classList.contains('_fs')) {
-          tl2.kill()
-          openfullscreen()
-          videoWrap.classList.add('_fs')
-          document.querySelector('body').style.overflow = 'hidden'
-          // screen.orientation.lock('landscape')
-          tl1.to(
-            videoWrap,
-            {
-              position: 'fixed',
-              'z-index': 200,
-              width: '100vw',
-              height: '100vh',
-              duration: 0,
-              delay: 0,
-            },
-            0
-          )
+    const video = document.querySelector('[data-video]')
+    const expandBtn = document.querySelector('.expand')
 
-          tl1.to(
-            video,
-            {
-              height: '100%',
-              duration: 0,
-              delay: 0,
-            },
-            0
-          )
-          tl1.to(
-            '.video__section .rotate-icon',
-            {
-              bottom: '6rem',
-              right: '14rem',
-              duration: 0,
-              delay: 0,
-            },
-            0
-          )
-          if (window.innerHeight < window.innerWidth) {
-            openfullscreen()
-            // setTimeout(function () {
-            //   window.scrollTo(0, 1)
-            // }, 100)
-          }
-          // window.addEventListener('resize', function () {
-          //   if (window.innerHeight < window.innerWidth) {
-          //     // setTimeout(function () {
-          //     //   window.scrollTo(0, 1)
-          //     // }, 100)
-          //   }
-          // })
-        } else {
-          tl2.kill()
-          closefullscreen()
-          videoWrap.classList.remove('_fs')
-          document.querySelector('body').style.overflow = 'auto'
-          // screen.orientation.unlock()
-          tl1.to(
-            videoWrap,
-            {
-              position: 'relative',
-              'z-index': 2,
-              width: '100%',
-              height: '100%',
-              duration: 0,
-              delay: 0,
-            },
-            0
-          )
-          tl1.to(
-            video,
-            {
-              height: '99.5rem',
-              duration: 0,
-              delay: 0,
-            },
-            0
-          )
-          tl1.to(
-            '.video__section .rotate-icon',
-            {
-              bottom: '3rem',
-              right: '3rem',
-              duration: 0,
-              delay: 0,
-            },
-            0
-          )
-          window.addEventListener('resize', function () {
-            closefullscreen()
-            tl1.to(
-              videoWrap,
-              {
-                position: 'relative',
-                'z-index': 2,
-                width: '100%',
-                height: '100%',
-                duration: 0,
-                delay: 0,
-              },
-              0
-            )
-            tl1.to(
-              video,
-              {
-                height: '99.5rem',
-                duration: 0,
-                delay: 0,
-              },
-              0
-            )
-          })
-        }
-      })
+    if (isMobile.any()) {
+      expandBtn.style.display = 'inline-block'
     }
+    // const videoWrap = document.querySelector('.video__section .section_video')
+    // const video = document.querySelector('.video__section video')
+    // const toggleBtn = document.querySelector('.rotate-icon')
+    // gsap.set(videoWrap, {
+    //   position: 'relative',
+    //   'z-index': 2,
+    //   top: 0,
+    //   right: 0,
+    //   width: '100%',
+    //   height: '100%',
+    //   rotate: 0,
+    //   xPercent: 0,
+    //   yPercent: 0,
+    // })
+    // gsap.set(
+    //   '.video__section .rotate-icon',
+    //   {
+    //     bottom: '3rem',
+    //     right: '3rem',
+    //   },
+    //   0
+    // )
+    // if (isMobile.any()) {
+    //   gsap.to('.video__section .rotate-icon', {
+    //     display: 'block',
+    //   })
+    //   const tl1 = gsap.timeline()
+    //   const tl2 = gsap.timeline()
+    //   toggleBtn.addEventListener('click', function () {
+    //     if (!videoWrap.classList.contains('_fs')) {
+    //       tl2.kill()
+    //       openfullscreen()
+    //       videoWrap.classList.add('_fs')
+    //       document.querySelector('body').style.overflow = 'hidden'
+    //       // screen.orientation.lock('landscape')
+    //       tl1.to(
+    //         videoWrap,
+    //         {
+    //           position: 'fixed',
+    //           'z-index': 200,
+    //           width: '100vw',
+    //           height: '100vh',
+    //           duration: 0,
+    //           delay: 0,
+    //         },
+    //         0
+    //       )
+
+    //       tl1.to(
+    //         video,
+    //         {
+    //           height: '100%',
+    //           duration: 0,
+    //           delay: 0,
+    //         },
+    //         0
+    //       )
+    //       tl1.to(
+    //         '.video__section .rotate-icon',
+    //         {
+    //           bottom: '6rem',
+    //           right: '14rem',
+    //           duration: 0,
+    //           delay: 0,
+    //         },
+    //         0
+    //       )
+    //       if (window.innerHeight < window.innerWidth) {
+    //         openfullscreen()
+    //         // setTimeout(function () {
+    //         //   window.scrollTo(0, 1)
+    //         // }, 100)
+    //       }
+    //       // window.addEventListener('resize', function () {
+    //       //   if (window.innerHeight < window.innerWidth) {
+    //       //     // setTimeout(function () {
+    //       //     //   window.scrollTo(0, 1)
+    //       //     // }, 100)
+    //       //   }
+    //       // })
+    //     } else {
+    //       tl2.kill()
+    //       closefullscreen()
+    //       videoWrap.classList.remove('_fs')
+    //       document.querySelector('body').style.overflow = 'auto'
+    //       // screen.orientation.unlock()
+    //       tl1.to(
+    //         videoWrap,
+    //         {
+    //           position: 'relative',
+    //           'z-index': 2,
+    //           width: '100%',
+    //           height: '100%',
+    //           duration: 0,
+    //           delay: 0,
+    //         },
+    //         0
+    //       )
+    //       tl1.to(
+    //         video,
+    //         {
+    //           height: '99.5rem',
+    //           duration: 0,
+    //           delay: 0,
+    //         },
+    //         0
+    //       )
+    //       tl1.to(
+    //         '.video__section .rotate-icon',
+    //         {
+    //           bottom: '3rem',
+    //           right: '3rem',
+    //           duration: 0,
+    //           delay: 0,
+    //         },
+    //         0
+    //       )
+    //       window.addEventListener('resize', function () {
+    //         closefullscreen()
+    //         tl1.to(
+    //           videoWrap,
+    //           {
+    //             position: 'relative',
+    //             'z-index': 2,
+    //             width: '100%',
+    //             height: '100%',
+    //             duration: 0,
+    //             delay: 0,
+    //           },
+    //           0
+    //         )
+    //         tl1.to(
+    //           video,
+    //           {
+    //             height: '99.5rem',
+    //             duration: 0,
+    //             delay: 0,
+    //           },
+    //           0
+    //         )
+    //       })
+    //     }
+    //   })
+    // }
 
     initVideo(video, video)
   }

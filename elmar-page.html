@@ -96,9 +96,10 @@
       </div>
     </header>
     <main id="parent">
-      <section class="video__section">
-        <div class="section_video">
+      <section style="position: relative" class="video__section">
+        <div style="height: 99.4rem" class="section_video">
           <video
+            style="position: absolute; width: 100%; height: 100%; z-index: 10"
             data-video
             loop
             muted
@@ -120,7 +121,14 @@
                 src="./video/webm/section_first-video-mobile.webm"
                 type="video/webm" />
             </video> -->
-          <button id="fs" type="button" class="rotate-icon">
+          <button style="z-index: 201" type="button" class="expand rotate-icon">
+            <img aria-hidden="true" src="./img/rotate-screen.svg" alt="" />
+          </button>
+          <button
+            style="z-index: 201"
+            hidden
+            type="button"
+            class="reduce rotate-icon">
             <img aria-hidden="true" src="./img/rotate-screen.svg" alt="" />
           </button>
         </div>
@@ -736,6 +744,7 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.js"></script>
     <script src="./js/wow.min.js"></script>
+    <script src="./js/fullscreen-player.js"></script>
     <script type="module" src="./js/animations.js"></script>
     <script src="./js/main.js"></script>
   </body>

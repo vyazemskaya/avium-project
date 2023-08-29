@@ -12586,7 +12586,7 @@ body .btn:hover {
 body .rotate-icon {
   position: absolute;
   z-index: 2;
-  display: none;
+  /* display: none; */
   bottom: 3rem;
   right: 3rem;
   width: 9rem;
