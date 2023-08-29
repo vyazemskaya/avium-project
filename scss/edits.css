@@ -80,6 +80,28 @@
   right: -21.8rem;
 }
 
+.header .container .menu li {
+  display: block;
+}
+.header .container .menu li:nth-child(1) {
+  width: 12.6rem;
+}
+.header .container .menu li:nth-child(2) {
+  width: 10.7rem;
+}
+.header .container .menu li:nth-child(3) {
+  width: 10.3rem;
+}
+.header .container .menu li:nth-child(4) {
+  width: 20.9rem;
+}
+.header .container .menu li:nth-child(5) {
+  width: 14.5rem;
+}
+.header .container .menu li:nth-child(6) {
+  width: 8.6rem;
+}
+
 
 @media (max-width: 48em) {
   .freedom__section-first .container .freedom__section-video {
