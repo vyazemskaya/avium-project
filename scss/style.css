@@ -1848,6 +1848,10 @@ section {
     top: 35.6rem;
     left: 4rem;
   }
+  .main__section-fifth .container .main__section-content .title {
+    padding-top: 1rem;
+    margin-top: -1rem;
+  }
   .main__section-fifth .container .main__section-content .selects_content {
     display: none;
   }
@@ -9598,6 +9602,7 @@ section {
   height: 10rem;
   border-radius: 50%;
   transition: transform 0.2s;
+  cursor: default;
 }
 .philosophy__section-third
   .container
@@ -10423,6 +10428,19 @@ section {
   .purchase__section-first .container .purchase__section-content {
     padding: 0 4rem;
     position: static;
+  }
+  .purchase__section-first
+    .container
+    .purchase__section-content
+    .content_title {
+    font-size: 5rem;
+  }
+  .purchase__section-first
+    .container
+    .purchase__section-content
+    .content_title
+    strong {
+    font-size: 5.4rem;
   }
   .purchase__section-first .container .purchase__section-content .content_text {
     margin-bottom: 5rem;
@@ -11761,16 +11779,6 @@ section {
   position: relative;
 }
 
-.section_first {
-  position: relative;
-}
-.section_first .container_media video {
-  width: 67%;
-  height: 82%;
-  position: absolute;
-  left: 0;
-  bottom: 0;
-}
 .section_first .container_media::after {
   content: '';
   position: absolute;
@@ -11780,6 +11788,10 @@ section {
   left: 0;
   background-color: rgba(0, 0, 0, 0.2196078431);
   transition: opacity 1s ease;
+}
+
+.section_first {
+  position: relative;
 }
 
 .section_first .container_media video {
@@ -11901,10 +11913,15 @@ section {
   display: none;
 }
 
+.section_first._fw .container_media {
+  z-index: 200;
+}
+
 .section_first._fw .container_media::after {
   opacity: 0;
   transition: opacity 0.5s ease;
 }
+
 .section_first .video_cover {
   position: absolute;
   width: 110%;
@@ -11933,6 +11950,7 @@ section {
   font-size: 18px;
   /* transition: opacity 0.3s ease; */
 }
+
 .section_first .container::before {
   content: '';
   position: absolute;
@@ -11945,9 +11963,11 @@ section {
   clip-path: polygon(0% 0%, 50% 50%, 100% 100%, 0% 100%);
   background-color: #fff;
 }
+
 .section_first.mobile .container::before {
   opacity: 0;
 }
+
 @media (max-width: 48em) {
   .section_first .container_media video {
     width: 67%;
@@ -12824,6 +12844,9 @@ body .swiper_philosophy-section-3 .swiper-wrapper {
 }
 body .swiper_philosophy-section-3 .swiper-pagination_section-3 {
   display: none;
+}
+body .swiper_main-section-1 {
+  width: 81rem;
 }
 body .swiper_main-section-2 {
   width: 90rem;

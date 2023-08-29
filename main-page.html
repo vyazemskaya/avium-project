@@ -13,6 +13,7 @@
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
     <link href="https://vjs.zencdn.net/8.5.2/video-js.css" rel="stylesheet" />
+    <script src="./js/ac_quicktime.js" type="text/javascript"></script>
     <!-- <link href="./scss/jquery.fullPage.css" type="text/css" rel="stylesheet" /> -->
   </head>
   <body style="overflow: hidden">
@@ -114,15 +115,23 @@
 
       <section class="video__section">
         <div class="section_video">
-          <video class="desktop" playsinline loop muted>
+          <video class="desktop" loop muted playsinline>
             <source
               src="./img/video_section-first/section_first-videov2.mp4"
               type="video/mp4" />
+            <source
+            src="./video/webm/section_first-videov2.webm"
+            type="video/webm"
+            />
           </video>
-          <video class="mobile" playsinline loop muted>
+          <video class="mobile" loop muted playsinline>
             <source
               src="./img/video_section-first/section_first-video-mobile.mp4"
               type="video/mp4" />
+              <source
+              src="./video/webm/section_first-video-mobile.webm"
+              type="video/webm"
+              />
           </video>
           <button id="fs" type="button" class="rotate-icon">
             <img aria-hidden="true" src="./img/rotate-screen.svg" alt="" />

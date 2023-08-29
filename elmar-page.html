@@ -9,7 +9,9 @@
     <link rel="stylesheet" href="./scss/edits.css" />
     <link
       rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
+      href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
+    />
+    <script src="./js/ac_quicktime.js" type="text/javascript"></script>
   </head>
   <body>
     <header class="header">
@@ -98,15 +100,25 @@
     <main id="parent">
       <section id="parent" class="video__section">
         <div class="section_video">
-          <video class="desktop" autoplay playsinline loop muted>
+          <video class="desktop" autoplay loop muted playsinline>
             <source
               src="./img/video_section-first/section_first-videov2.mp4"
-              type="video/mp4" />
+              type="video/mp4"
+            />
+            <source
+            src="./video/webm/section_first-videov2.webm"
+            type="video/webm"
+            />
           </video>
-          <video class="mobile" autoplay playsinline loop muted>
+          <video class="mobile" autoplay loop muted playsinline>
             <source
               src="./img/video_section-first/section_first-video-mobile.mp4"
-              type="video/mp4" />
+              type="video/mp4"
+            />
+            <source
+            src="./video/webm/section_first-video-mobile.webm"
+            type="video/webm"
+            />
           </video>
           <button id="fs" type="button" class="rotate-icon">
             <img aria-hidden="true" src="./img/rotate-screen.svg" alt="" />
@@ -152,12 +164,18 @@
                 <video
                   class="inner_circle-video"
                   autoplay
-                  playsinline
                   loop
-                  muted>
+                  muted
+                  playsinline
+                >
                   <source
                     src="./img/elmar_section-second/section_second-videov2.mp4"
-                    type="video/mp4" />
+                    type="video/mp4"
+                  />
+                  <source
+                  src="./video/webm/section_second-videov2.webm"
+                  type="video/webm"
+                  />
                 </video>
               </div>
             </div>

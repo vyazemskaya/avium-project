@@ -32,9 +32,12 @@ document.addEventListener('DOMContentLoaded', function () {
   for (let i = 0; i < videos.length; i++) {
     let video = videos[i]
 
-    if (!video.closest('.section_first')) {
-      video.play()
+    if (!video.playing) {
+      if (!video.closest('.section_first')) {
+        video.play()
+      }
     }
+
   }
 
   const overlays = document.querySelectorAll('.overlay')
@@ -670,3 +673,16 @@ if (document.querySelector('.veripery__section-first')) {
       .setAttribute('data-wow-delay', '0.4s')
   }
 }
+
+
+
+
+function phoneFormatter() {
+  $("input[type='tel']").on('input', function() {
+     var number = $(this).val().replace(/[^\d]/g, '')
+     $(this).val(number)
+     $("input[type='tel']").attr({ maxLength : 15 });
+     
+  });
+};
+$(phoneFormatter);
