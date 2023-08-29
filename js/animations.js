@@ -1,3 +1,4 @@
+// add wow class for animated items
 const animItems = () => {
   const animItems = document.querySelectorAll('[data-animate]')
   if (animItems.length) {
@@ -6,10 +7,8 @@ const animItems = () => {
     })
   }
 }
-if (!document.getElementById('fullpage')) {
-  animItems()
-}
 
+// dynamically change video source
 const addSourceToVideo = (element, src) => {
   const source = document.createElement('source')
   source.src = src
@@ -24,6 +23,7 @@ const initVideo = (element, src) => {
   }
 }
 
+// fullscreen api
 const openfullscreen = () => {
   // Trigger fullscreen
   if (document.getElementById('parent').requestFullscreen) {
@@ -42,7 +42,6 @@ const openfullscreen = () => {
     document.getElementById('parent').msRequestFullscreen()
   }
 }
-
 const closefullscreen = () => {
   if (document.exitFullscreen) {
     document.exitFullscreen()
@@ -61,6 +60,7 @@ const closefullscreen = () => {
   }
 }
 
+// check if browser is mobile
 const isMobile = {
   Android: function () {
     return navigator.userAgent.match(/Android/i)
@@ -87,68 +87,77 @@ const isMobile = {
     )
   },
 }
-const gsapV = videoWrap => {
-  if (window.innerHeight < window.innerWidth) {
-    gsap.to(
-      videoWrap,
-      {
-        position: 'fixed',
-        width: '100vw',
-        height: '100vh',
-        rotate: 0,
-        duration: 0,
-        delay: 0,
-        xPercent: 0,
-        top: 0,
-        right: 0,
-        yPercent: 0,
-        borderRadius: 0,
-      },
-      0
-    )
-  } else {
-    gsap.to(
-      videoWrap,
-      {
-        position: 'fixed',
-        width: '100vh',
-        height: '100vw',
-        rotate: 90,
-        duration: 0,
-        delay: 0,
-        xPercent: 50,
-        yPercent: -50,
-        top: '50%',
-        right: '50%',
-        borderRadius: 0,
-      },
-      0
-    )
-  }
-}
 
-const getScreenOrientation = el => {
-  const tl = gsap.timeline()
-  if (document.querySelector('._fw')) {
-    if (window.innerHeight < window.innerWidth) {
-      tl.to(
-        el,
-        {
-          width: '100vw',
-          height: '100vh',
-          rotate: 0,
-          duration: 0,
-          delay: 0,
-        },
-        0
-      )
-    }
-  } else {
-    tl.kill()
-  }
+// const gsapV = videoWrap => {
+//   if (window.innerHeight < window.innerWidth) {
+//     gsap.to(
+//       videoWrap,
+//       {
+//         position: 'fixed',
+//         width: '100vw',
+//         height: '100vh',
+//         rotate: 0,
+//         duration: 0,
+//         delay: 0,
+//         xPercent: 0,
+//         top: 0,
+//         right: 0,
+//         yPercent: 0,
+//         borderRadius: 0,
+//       },
+//       0
+//     )
+//   } else {
+//     gsap.to(
+//       videoWrap,
+//       {
+//         position: 'fixed',
+//         width: '100vh',
+//         height: '100vw',
+//         rotate: 90,
+//         duration: 0,
+//         delay: 0,
+//         xPercent: 50,
+//         yPercent: -50,
+//         top: '50%',
+//         right: '50%',
+//         borderRadius: 0,
+//       },
+//       0
+//     )
+//   }
+// }
+
+// const getScreenOrientation = el => {
+//   const tl = gsap.timeline()
+//   if (document.querySelector('._fw')) {
+//     if (window.innerHeight < window.innerWidth) {
+//       tl.to(
+//         el,
+//         {
+//           width: '100vw',
+//           height: '100vh',
+//           rotate: 0,
+//           duration: 0,
+//           delay: 0,
+//         },
+//         0
+//       )
+//     }
+//   } else {
+//     tl.kill()
+//   }
+// }
+
+// =============================================================================
+
+// for fullpage.js
+if (!document.getElementById('fullpage')) {
+  animItems()
 }
 
 document.addEventListener('DOMContentLoaded', function () {
+  // for low power mode
   const videos = []
   const videoYC = document.querySelector('.section_first video')
   const videoMP = document.querySelector('.video__section video')
@@ -177,13 +186,15 @@ document.addEventListener('DOMContentLoaded', function () {
     }
   }
 
+  // gsap defaults
   gsap.defaults({
     duration: 1,
     delay: 0.5,
   })
 
-  gsap.registerPlugin(ScrollTrigger)
+  // gsap.registerPlugin(ScrollTrigger)
 
+  // main animation
   if (document.querySelector('.section_animate')) {
     const sectionAnimate = document.querySelector('.section_animate')
     const sectionAnimateWrap = sectionAnimate.querySelector('.section_wrap')
@@ -342,6 +353,7 @@ document.addEventListener('DOMContentLoaded', function () {
     )
   }
 
+  // yearcolor animation
   if (document.querySelector('.section_first')) {
     const videoSection = document.querySelector('.section_first')
     const video = document.getElementById('video-collection')
@@ -416,13 +428,10 @@ document.addEventListener('DOMContentLoaded', function () {
               videoWrap,
               {
                 position: 'fixed',
-                width: '100vh',
-                height: '100vw',
-                yPercent: -50,
-                rotate: 90,
-                xPercent: 50,
-                right: '50%',
-                top: '50%',
+                yPercent: 0,
+                xPercent: 0,
+                width: '100vw',
+                height: '100vh',
                 'border-radius': 0,
                 duration: 0,
                 delay: 0,
@@ -438,10 +447,10 @@ document.addEventListener('DOMContentLoaded', function () {
               },
               0
             )
-            window.addEventListener('resize', function () {
-              gsapV(videoWrap)
-            })
-            gsapV(videoWrap)
+            // window.addEventListener('resize', function () {
+            //   gsapV(videoWrap)
+            // })
+            // gsapV(videoWrap)
           } else if (
             e.target.closest('.section_first #close-video') &&
             videoSection.classList.contains('_fw', 'mobile')
@@ -465,9 +474,6 @@ document.addEventListener('DOMContentLoaded', function () {
                 position: 'absolute',
                 yPercent: -23,
                 xPercent: 38,
-                top: 0,
-                rotate: 0,
-                right: 0,
                 width: '89.3rem',
                 height: '89.3rem',
                 'border-radius': '50%',
@@ -496,9 +502,6 @@ document.addEventListener('DOMContentLoaded', function () {
                   position: 'absolute',
                   yPercent: -23,
                   xPercent: 38,
-                  top: 0,
-                  rotate: 0,
-                  right: 0,
                   width: '89.3rem',
                   height: '89.3rem',
                   'border-radius': '50%',
@@ -623,6 +626,7 @@ document.addEventListener('DOMContentLoaded', function () {
     initVideo(video, video)
   }
 
+  // philosophy page
   if (document.querySelector('.philosophy__section-sixth')) {
     const videoSection = document.querySelector('.philosophy__section-sixth')
     const videoWrap = videoSection.querySelector('.container-video')
@@ -698,13 +702,8 @@ document.addEventListener('DOMContentLoaded', function () {
             videoWrap,
             {
               position: 'fixed',
-              width: '100vh',
-              height: '100vw',
-              yPercent: -50,
-              rotate: 90,
-              xPercent: 50,
-              right: '50%',
-              top: '50%',
+              width: '100vw',
+              height: '100vh',
               'border-radius': 0,
               duration: 0,
               delay: 0,
@@ -712,9 +711,9 @@ document.addEventListener('DOMContentLoaded', function () {
             0
           )
           tl1.to('body', { overflow: 'hidden' }, 0)
-          gsapV(videoWrap)
+          // gsapV(videoWrap)
           window.addEventListener('resize', function () {
-            gsapV(videoWrap)
+            // gsapV(videoWrap)
 
             openfullscreen()
           })
@@ -768,12 +767,7 @@ document.addEventListener('DOMContentLoaded', function () {
           videoWrap,
           {
             position: 'static',
-            top: 0,
-            right: 0,
             width: '100%',
-            xPercent: 0,
-            rotate: 0,
-            yPercent: 0,
             height: '99.5rem',
             'z-index': 1,
             duration: 0,
@@ -938,6 +932,7 @@ document.addEventListener('DOMContentLoaded', function () {
   //   }
   // }
 
+  // video section
   if (document.querySelector('.video__section')) {
     const videoWrap = document.querySelector('.video__section .section_video')
     const video = document.querySelector('.video__section video')
@@ -980,7 +975,7 @@ document.addEventListener('DOMContentLoaded', function () {
               position: 'fixed',
               'z-index': 200,
               width: '100vw',
-              height: '101vh',
+              height: '100vh',
               duration: 0,
               delay: 0,
             },
@@ -1008,17 +1003,17 @@ document.addEventListener('DOMContentLoaded', function () {
           )
           if (window.innerHeight < window.innerWidth) {
             openfullscreen()
-            setTimeout(function () {
-              window.scrollTo(0, 1)
-            }, 100)
+            // setTimeout(function () {
+            //   window.scrollTo(0, 1)
+            // }, 100)
           }
-          window.addEventListener('resize', function () {
-            if (window.innerHeight < window.innerWidth) {
-              setTimeout(function () {
-                window.scrollTo(0, 1)
-              }, 100)
-            }
-          })
+          // window.addEventListener('resize', function () {
+          //   if (window.innerHeight < window.innerWidth) {
+          //     // setTimeout(function () {
+          //     //   window.scrollTo(0, 1)
+          //     // }, 100)
+          //   }
+          // })
         } else {
           tl2.kill()
           closefullscreen()

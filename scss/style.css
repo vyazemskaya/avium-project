@@ -13005,8 +13005,3 @@ body .swiper_main-section-4 .slide-section-4 {
     flex-direction: column-reverse;
   }
 } /*# sourceMappingURL=style.css.map */
-
-body,
-html {
-  height: 100.1% !important;
-}
