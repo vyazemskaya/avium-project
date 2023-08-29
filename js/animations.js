@@ -977,7 +977,7 @@ document.addEventListener('DOMContentLoaded', function () {
               position: 'fixed',
               'z-index': 200,
               width: '100vw',
-              height: '100vh',
+              height: '101vh',
               duration: 0,
               delay: 0,
             },
@@ -1003,10 +1003,22 @@ document.addEventListener('DOMContentLoaded', function () {
             },
             0
           )
-          // gsapV(videoWrap)
-          // window.addEventListener('resize', function () {
-          //   gsapV(videoWrap)
-          // })
+          if (window.innerHeight < window.innerWidth) {
+              
+            setTimeout(function()
+            {
+                window.scrollTo(0, 1);
+            }, 100); 
+            } 
+          window.addEventListener('resize', function () {
+            if (window.innerHeight < window.innerWidth) {
+              
+            setTimeout(function()
+            {
+                window.scrollTo(0, 1);
+            }, 100); 
+            } 
+          })
         } else {
           tl2.kill()
           closefullscreen()
@@ -1057,7 +1069,6 @@ document.addEventListener('DOMContentLoaded', function () {
               },
               0
             )
-
             tl1.to(
               video,
               {
