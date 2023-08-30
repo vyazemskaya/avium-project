@@ -940,15 +940,14 @@ document.addEventListener('DOMContentLoaded', function () {
     if (isMobile.any()) {
       expandBtn.style.display = 'inline-block'
     }
-    const player = videojs('video-collection')
-    player.autoplay('muted')
-    player.landscapeFullscreen({
-      fullscreen: {
-        enterOnRotate: true,
-        alwaysInLandscapeMode: true,
-        iOS: true,
-      },
-    })
+
+    // player.landscapeFullscreen({
+    //   fullscreen: {
+    //     enterOnRotate: true,
+    //     alwaysInLandscapeMode: true,
+    //     iOS: true,
+    //   },
+    // })
     // const videoWrap = document.querySelector('.video__section .section_video')
     // const video = document.querySelector('.video__section video')
     // const toggleBtn = document.querySelector('.rotate-icon')
@@ -1094,7 +1093,27 @@ document.addEventListener('DOMContentLoaded', function () {
     //   })
     // }
 
-    initVideo(video, video)
+    // initVideo(video, video)
+
+    var playVideo = document.querySelector('.expand'),
+      videoPlayer = videojs('video-collection'),
+      vw = Math.max(
+        document.documentElement.clientWidth,
+        window.innerWidth || 0
+      )
+
+    // When the play button is clicked
+    expandBtn.addEventListener('click', function () {
+      var videoPlayer = videojs('video-collection')
+      if (!document.querySelector('body').classList.contains('_fw')) {
+        document.querySelector('body').classList.add('_fw')
+        videoPlayer.requestFullscreen()
+      } else {
+        document.querySelector('body').classList.remove('_fw')
+        videoPlayer.exitFullscreen()
+        // videoPlayer.dispose()
+      }
+    })
   }
 
   // year color

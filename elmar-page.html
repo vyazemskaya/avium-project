@@ -98,15 +98,17 @@
     </header>
     <main id="parent">
       <section class="video__section">
-        <div style="height: 99.4rem" data-vjs-player class="section_video">
-          <video style="object-fit: cover;"
+        <div data-vjs-player class="section_video">
+          <video
+          style="width:100vw"
             id="video-collection"
             data-setup="{}"
             data-video
             loop
             muted
+            height="264"
             playsinline
-            class="video-js vjs-fluid">
+            class="video-js">
             <source
               src="./img/video_section-first/section_first-videov2.mp4"
               type="video/mp4" />
@@ -123,9 +125,6 @@
                 type="video/webm" />
             </video> -->
           <button type="button" class="expand rotate-icon">
-            <img aria-hidden="true" src="./img/rotate-screen.svg" alt="" />
-          </button>
-          <button hidden type="button" class="reduce rotate-icon">
             <img aria-hidden="true" src="./img/rotate-screen.svg" alt="" />
           </button>
         </div>
