@@ -24,41 +24,41 @@ const initVideo = (element, src) => {
 }
 
 // fullscreen api
-const openfullscreen = () => {
-  // Trigger fullscreen
-  if (document.getElementById('parent').requestFullscreen) {
-    document.getElementById('parent').requestFullscreen()
-  } else if (document.getElementById('parent').mozRequestFullScreen) {
-    /* Firefox */
-    document.getElementById('parent').mozRequestFullScreen()
-  } else if (document.getElementById('parent').webkitRequestFullscreen) {
-    /* Chrome, Safari and Opera */
-    document.getElementById('parent').webkitRequestFullscreen()
-  } else if (document.getElementById('parent').webkitRequestFullScreen) {
-    /* Chrome, Safari and Opera */
-    document.getElementById('parent').webkitRequestFullScreen()
-  } else if (document.getElementById('parent').msRequestFullscreen) {
-    /* IE/Edge */
-    document.getElementById('parent').msRequestFullscreen()
-  }
-}
-const closefullscreen = () => {
-  if (document.exitFullscreen) {
-    document.exitFullscreen()
-  } else if (document.mozCancelFullScreen) {
-    /* Firefox */
-    document.mozCancelFullScreen()
-  } else if (document.webkitExitFullscreen) {
-    /* Chrome, Safari and Opera */
-    document.webkitExitFullscreen()
-  } else if (document.webkitExitFullScreen) {
-    /* Chrome, Safari and Opera */
-    document.webkitExitFullScreen()
-  } else if (document.msExitFullscreen) {
-    /* IE/Edge */
-    document.msExitFullscreen()
-  }
-}
+// const openfullscreen = () => {
+//   // Trigger fullscreen
+//   if (document.getElementById('parent').requestFullscreen) {
+//     document.getElementById('parent').requestFullscreen()
+//   } else if (document.getElementById('parent').mozRequestFullScreen) {
+//     /* Firefox */
+//     document.getElementById('parent').mozRequestFullScreen()
+//   } else if (document.getElementById('parent').webkitRequestFullscreen) {
+//     /* Chrome, Safari and Opera */
+//     document.getElementById('parent').webkitRequestFullscreen()
+//   } else if (document.getElementById('parent').webkitRequestFullScreen) {
+//     /* Chrome, Safari and Opera */
+//     document.getElementById('parent').webkitRequestFullScreen()
+//   } else if (document.getElementById('parent').msRequestFullscreen) {
+//     /* IE/Edge */
+//     document.getElementById('parent').msRequestFullscreen()
+//   }
+// }
+// const closefullscreen = () => {
+//   if (document.exitFullscreen) {
+//     document.exitFullscreen()
+//   } else if (document.mozCancelFullScreen) {
+//     /* Firefox */
+//     document.mozCancelFullScreen()
+//   } else if (document.webkitExitFullscreen) {
+//     /* Chrome, Safari and Opera */
+//     document.webkitExitFullscreen()
+//   } else if (document.webkitExitFullScreen) {
+//     /* Chrome, Safari and Opera */
+//     document.webkitExitFullScreen()
+//   } else if (document.msExitFullscreen) {
+//     /* IE/Edge */
+//     document.msExitFullscreen()
+//   }
+// }
 
 // check if browser is mobile
 const isMobile = {
@@ -150,6 +150,19 @@ const isMobile = {
 // }
 
 // =============================================================================
+
+// videos
+const videoM = document.querySelector('[data-video-mobile]')
+const videoD = document.querySelector('[data-video-desk]')
+if (videoD && videoM) {
+  if (isMobile.any()) {
+    videoM.style.display = 'block'
+    videoD.style.display = 'none'
+  } else if (!isMobile.any()) {
+    videoM.style.display = 'none'
+    videoD.style.display = 'block'
+  }
+}
 
 // for fullpage.js
 if (!document.getElementById('fullpage')) {
@@ -1114,6 +1127,8 @@ document.addEventListener('DOMContentLoaded', function () {
         // videoPlayer.dispose()
       }
     })
+
+    // initVideo(video, video)
   }
 
   // year color

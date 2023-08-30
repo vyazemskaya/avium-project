@@ -11750,6 +11750,7 @@ section {
   width: 100%;
   height: 99.5rem;
 }
+
 .video__section .section_video .mobile {
   display: none;
 }
@@ -13005,3 +13006,20 @@ body .swiper_main-section-4 .slide-section-4 {
     flex-direction: column-reverse;
   }
 } /*# sourceMappingURL=style.css.map */
+
+
+.video__section {
+  position: relative;
+}
+.video__section .section_video {
+  position: static;
+}
+.video__section .section_video,
+.video-js {
+  height: 99.5rem;
+  width: 100vw;
+}
+.video__section .section_video video {
+  width: 100vw;height: 100%;
+  object-fit: cover;
+}

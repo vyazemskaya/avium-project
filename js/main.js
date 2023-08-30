@@ -27,18 +27,17 @@ $(document).ready(function () {
 })
 
 document.addEventListener('DOMContentLoaded', function () {
-  // let videos = document.getElementsByTagName('video')
-  // console.log(videos)
-  // for (let i = 0; i < videos.length; i++) {
-  //   let video = videos[i]
+  let videos = document.getElementsByTagName('video')
+  console.log(videos)
+  for (let i = 0; i < videos.length; i++) {
+    let video = videos[i]
 
-  //   if (!video.playing) {
-  //     if (!video.closest('.section_first')) {
-  //       video.play()
-  //     }
-  //   }
-
-  // }
+    if (!video.playing) {
+      if (!video.closest('.section_first')) {
+        video.play()
+      }
+    }
+  }
 
   const overlays = document.querySelectorAll('.overlay')
   overlays.forEach(overlay => {

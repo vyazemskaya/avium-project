@@ -98,36 +98,35 @@
     </header>
     <main id="parent">
       <section class="video__section">
-        <div data-vjs-player class="section_video">
+        <div data-video-desk class="section_video">
           <video
-          style="width:100vw"
             id="video-collection"
             data-setup="{}"
-            data-video
             loop
             muted
-            height="264"
             playsinline
             class="video-js">
             <source
               src="./img/video_section-first/section_first-videov2.mp4"
               type="video/mp4" />
-            <!-- <source
-                src="./video/webm/section_first-videov2.webm"
-                type="video/webm" /> -->
           </video>
-          <!-- <video class="mobile" loop muted playsinline>
-              <source
-                src="./img/video_section-first/section_first-video-mobile.mp4"
-                type="video/mp4" />
-              <source
-                src="./video/webm/section_first-video-mobile.webm"
-                type="video/webm" />
-            </video> -->
-          <button type="button" class="expand rotate-icon">
-            <img aria-hidden="true" src="./img/rotate-screen.svg" alt="" />
-          </button>
         </div>
+        <div data-video-mobile class="section_video">
+          <video
+            id="video-collection"
+            data-setup="{}"
+            loop
+            muted
+            playsinline
+            class="video-js">
+            <source
+              src="./img/video_section-first/section_first-video-mobile.mp4"
+              type="video/mp4" />
+          </video>
+        </div>
+        <button type="button" class="expand rotate-icon">
+          <img aria-hidden="true" src="./img/rotate-screen.svg" alt="" />
+        </button>
       </section>
       <section class="elmar__section-first">
         <div class="container">
