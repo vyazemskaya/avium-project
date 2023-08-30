@@ -27,18 +27,18 @@ $(document).ready(function () {
 })
 
 document.addEventListener('DOMContentLoaded', function () {
-  let videos = document.getElementsByTagName('video')
-  console.log(videos)
-  for (let i = 0; i < videos.length; i++) {
-    let video = videos[i]
+  // let videos = document.getElementsByTagName('video')
+  // console.log(videos)
+  // for (let i = 0; i < videos.length; i++) {
+  //   let video = videos[i]
 
-    if (!video.playing) {
-      if (!video.closest('.section_first')) {
-        video.play()
-      }
-    }
+  //   if (!video.playing) {
+  //     if (!video.closest('.section_first')) {
+  //       video.play()
+  //     }
+  //   }
 
-  }
+  // }
 
   const overlays = document.querySelectorAll('.overlay')
   overlays.forEach(overlay => {
@@ -342,7 +342,10 @@ document.addEventListener('DOMContentLoaded', function () {
         }
       )
       placemarkMain.events.add('click', function (e) {
-        placemarkSecondary.options.set('iconImageHref', './img/purchase_section-third/geomark-2.svg');
+        placemarkSecondary.options.set(
+          'iconImageHref',
+          './img/purchase_section-third/geomark-2.svg'
+        )
         if (window.screen.width < 769) {
           document.querySelector(
             '.purchase__section-third .overlay'
@@ -354,11 +357,13 @@ document.addEventListener('DOMContentLoaded', function () {
         } else {
           $('.place_info-box').removeClass('active')
           $('.place_info-box')[0].classList.add('active')
-          
         }
       })
       placemarkSecondary.events.add('click', function (e) {
-        e.get('target').options.set('iconImageHref', './img/purchase_section-third/geomark-2.svg');
+        e.get('target').options.set(
+          'iconImageHref',
+          './img/purchase_section-third/geomark-2.svg'
+        )
         if (window.screen.width < 769) {
           document.querySelector(
             '.purchase__section-third .overlay'
@@ -370,7 +375,10 @@ document.addEventListener('DOMContentLoaded', function () {
         } else {
           $('.place_info-box').removeClass('active')
           $('.place_info-box')[1].classList.add('active')
-          e.get('target').options.set('iconImageHref', './img/purchase_section-third/geomark-3.svg');
+          e.get('target').options.set(
+            'iconImageHref',
+            './img/purchase_section-third/geomark-3.svg'
+          )
         }
       })
 
@@ -674,15 +682,11 @@ if (document.querySelector('.veripery__section-first')) {
   }
 }
 
-
-
-
 function phoneFormatter() {
-  $("input[type='tel']").on('input', function() {
-     var number = $(this).val().replace(/[^\d]/g, '')
-     $(this).val(number)
-     $("input[type='tel']").attr({ maxLength : 15 });
-     
-  });
-};
-$(phoneFormatter);
+  $("input[type='tel']").on('input', function () {
+    var number = $(this).val().replace(/[^\d]/g, '')
+    $(this).val(number)
+    $("input[type='tel']").attr({ maxLength: 15 })
+  })
+}
+$(phoneFormatter)
