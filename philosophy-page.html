@@ -13,6 +13,7 @@
     <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
+    <link href="https://vjs.zencdn.net/8.5.2/video-js.css" rel="stylesheet" />
     <script src="./js/ac_quicktime.js" type="text/javascript"></script>
   </head>
   <body>
@@ -460,13 +461,19 @@
         </div>
       </section>
 
-      <section id="parent" class="philosophy__section-sixth">
+      <section class="philosophy__section-sixth">
         <div class="container-video">
-          <video id="video-collection" autoplay muted playsinline>
+          <video
+            id="video-collection"
+            data-video
+            data-setup="{}"
+            muted
+            playsinline
+            class="video-js">
             <source
-              src="./img/philosophy_section-sixth/section_sixth-video.mp4" type="video/mp4" />
+              src="./img/philosophy_section-sixth/section_sixth-video.mp4"
+              type="video/mp4" />
           </video>
-          <button type="button" id="close-video">закрыть</button>
         </div>
         <div class="container">
           <div class="philosophy__section-background">
@@ -475,7 +482,7 @@
               alt="" />
           </div>
         </div>
-        <div class="philosophy__section-content">
+        <div id="expand" class="philosophy__section-content">
           <div class="content_btn">
             <p class="content_text">Смотреть</p>
             <img
@@ -563,6 +570,7 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.js"></script>
     <script src="js/wow.min.js"></script>
+    <script src="https://vjs.zencdn.net/8.5.2/video.min.js"></script>
     <script type="module" src="js/swiper.js"></script>
     <script type="module" src="./js/animations.js"></script>
     <script src="js/main.js"></script>

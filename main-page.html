@@ -101,7 +101,7 @@
       </div>
     </header>
 
-    <div id="parent" id="fullpage-n">
+    <div id="fullpage-n">
       <!-- <section class="section video__section fp-auto-height fp-noscroll">
         <div class="section_video">
           <video autoplay playsinline loop muted data-keepplaying>
@@ -116,27 +116,28 @@
       <section data-video-section class="video__section">
         <div class="section_video">
           <video
-            loop
+            data-video-desk
+            data-video
+            data-setup="{}"
             muted
             playsinline
-            data-desktop-vid="./img/video_section-first/section_first-videov2.mp4"
-            data-mobile-vid="./img/video_section-first/section_first-video-mobile.mp4">
-            <!-- <source
+            class="video-js">
+            <source
               src="./img/video_section-first/section_first-videov2.mp4"
-              type="video/mp4" /> -->
-            <!-- <source
-              src="./video/webm/section_first-videov2.webm"
-              type="video/webm" /> -->
+              type="video/mp4" />
           </video>
-          <!-- <video class="mobile" loop muted playsinline>
+          <video
+            data-video-mobile
+            data-video
+            data-setup="{}"
+            muted
+            playsinline
+            class="video-js">
             <source
               src="./img/video_section-first/section_first-video-mobile.mp4"
               type="video/mp4" />
-            <source
-              src="./video/webm/section_first-video-mobile.webm"
-              type="video/webm" />
-          </video> -->
-          <button id="fs" type="button" class="rotate-icon">
+          </video>
+          <button id="expand" type="button" class="rotate-icon expand">
             <img aria-hidden="true" src="./img/rotate-screen.svg" alt="" />
           </button>
         </div>
@@ -542,7 +543,7 @@
         </div>
       </section>
 
-      <section class="section main__section-fourth fp-auto-height fp-noscroll">
+      <!-- <section class="section main__section-fourth fp-auto-height fp-noscroll">
         <div class="container">
           <div class="main__section-content">
             <div class="swiper swiper_main-section-4">
@@ -711,7 +712,7 @@
             </div>
           </div>
         </div>
-      </section>
+      </section> -->
 
       <section id="id" class="section main__section-fifth fp-scroll-down">
         <div
@@ -1100,6 +1101,7 @@
     <!-- <script src="./js/jquery.js"></script> -->
     <script src="./js/jquery.nice-select.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.js"></script>
+    <script src="https://vjs.zencdn.net/8.5.2/video.min.js"></script>
     <script src="js/wow.min.js"></script>
     <script type="module" src="./js/swiper.js"></script>
     <script type="module" src="./js/animations.js"></script>

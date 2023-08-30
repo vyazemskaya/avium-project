@@ -13023,3 +13023,15 @@ body .swiper_main-section-4 .slide-section-4 {
   width: 100vw;height: 100%;
   object-fit: cover;
 }
+.philosophy__section-sixth._fw video {
+  height: 100%;
+} 
+.section_first .video-js {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+}
+.section_first .container_media video {
+  width: 100%;
+  height: 100%;
+}

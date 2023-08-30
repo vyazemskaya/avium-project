@@ -33,7 +33,7 @@ document.addEventListener('DOMContentLoaded', function () {
     let video = videos[i]
 
     if (!video.playing) {
-      if (!video.closest('.section_first')) {
+      if (!video.closest('[data-video]')) {
         video.play()
       }
     }

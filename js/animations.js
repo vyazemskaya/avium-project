@@ -88,113 +88,57 @@ const isMobile = {
   },
 }
 
-// const gsapV = videoWrap => {
-//   if (window.innerHeight < window.innerWidth) {
-//     gsap.to(
-//       videoWrap,
-//       {
-//         position: 'fixed',
-//         width: '100vw',
-//         height: '100vh',
-//         rotate: 0,
-//         duration: 0,
-//         delay: 0,
-//         xPercent: 0,
-//         top: 0,
-//         right: 0,
-//         yPercent: 0,
-//         borderRadius: 0,
-//       },
-//       0
-//     )
-//   } else {
-//     gsap.to(
-//       videoWrap,
-//       {
-//         position: 'fixed',
-//         width: '100vh',
-//         height: '100vw',
-//         rotate: 90,
-//         duration: 0,
-//         delay: 0,
-//         xPercent: 50,
-//         yPercent: -50,
-//         top: '50%',
-//         right: '50%',
-//         borderRadius: 0,
-//       },
-//       0
-//     )
-//   }
-// }
-
-// const getScreenOrientation = el => {
-//   const tl = gsap.timeline()
-//   if (document.querySelector('._fw')) {
-//     if (window.innerHeight < window.innerWidth) {
-//       tl.to(
-//         el,
-//         {
-//           width: '100vw',
-//           height: '100vh',
-//           rotate: 0,
-//           duration: 0,
-//           delay: 0,
-//         },
-//         0
-//       )
-//     }
-//   } else {
-//     tl.kill()
-//   }
-// }
-
 // =============================================================================
 
-// videos
-const videoM = document.querySelector('[data-video-mobile]')
-const videoD = document.querySelector('[data-video-desk]')
-if (videoD && videoM) {
-  if (isMobile.any()) {
-    videoM.style.display = 'block'
-    videoD.style.display = 'none'
-  } else if (!isMobile.any()) {
-    videoM.style.display = 'none'
-    videoD.style.display = 'block'
-  }
-}
-
 // for fullpage.js
-if (!document.getElementById('fullpage')) {
-  animItems()
-}
+// if (!document.getElementById('fullpage')) {
+//   animItems()
+// }
 
 document.addEventListener('DOMContentLoaded', function () {
-  // for low power mode
-  const videos = []
-  const videoYC = document.querySelector('.section_first video')
-  const videoMP = document.querySelector('.video__section video')
-  if (videoYC) {
-    videos.push(videoYC)
+  // videos
+  const videoM = document.querySelector('[data-video-mobile]')
+  const videoD = document.querySelector('[data-video-desk]')
+  if (videoD && videoM) {
+    if (isMobile.any()) {
+      videoM.style.display = 'block'
+      videoD.style.display = 'none'
+      videoM.querySelector('video').setAttribute('id', 'video-collection')
+    } else if (!isMobile.any()) {
+      videoM.style.display = 'none'
+      videoD.style.display = 'block'
+      videoD.querySelector('video').setAttribute('id', 'video-collection')
+    }
   }
-  // if (videoMP) {
-  //   videos.push(videoMP)
-  // }
-  if (videos.length) {
-    $('body').on('click touchstart', function () {
-      videos.forEach(video => {
-        if (isMobile.iOS()) {
-          if (!video.playing) {
-            video.play()
-          }
-        }
-      })
-    })
-    if (!isMobile.iOS()) {
-      videos.forEach(video => {
-        if (!video.playing) {
-          video.play()
-        }
+
+  // for low power mode
+  var videoPlayer = videojs('video-collection')
+  if (videoPlayer) {
+    const promise = videoPlayer.play()
+
+    if (promise !== undefined) {
+      promise
+        .then(function () {
+          videojs('video-collection', { autoplay: true })
+        })
+        .catch(function (error) {
+          videojs('video-collection', { autoplay: false })
+          videoPlayer.pause()
+          $('body').on('click touchstart', function () {
+            videoPlayer.play()
+          })
+        })
+    }
+  }
+
+  // expand button
+  if (document.querySelector('.expand')) {
+    const expandBtn = document.querySelector('.expand')
+    expandBtn.style.display = 'none'
+    if (isMobile.any()) {
+      expandBtn.style.display = 'inline-block'
+      expandBtn.addEventListener('click', function () {
+        videoPlayer.requestFullscreen()
       })
     }
   }
@@ -374,184 +318,69 @@ document.addEventListener('DOMContentLoaded', function () {
     const closeBtn = videoSection.querySelector('#close-video')
     const videoWrap = videoSection.querySelector('.container_media')
 
+    // set
     gsap.defaults({ duration: 1 })
     gsap.set(videoWrap, { opacity: 0, visibility: 'hidden' })
+    gsap.set(
+      videoWrap,
+      {
+        position: 'absolute',
+        overflow: 'hidden',
+        yPercent: isMobile.any() ? -23 : -17,
+        xPercent: isMobile.any() ? 38 : 5,
+        right: 0,
+        top: 0,
+        width: isMobile.any() ? '89.3rem' : '110.9rem',
+        height: isMobile.any() ? '89.3rem' : '110.9rem',
+        'border-radius': '50%',
+      },
+      0
+    )
+    gsap.set(
+      '.section_first .video-js',
+      {
+        width: isMobile.any() ? '67%' : '100%',
+        height: isMobile.any() ? '82%' : '100%',
+      },
+      0
+    )
+    gsap.set(closeBtn, { opacity: 0, visibility: 'hidden' }, 0)
 
-    const gsapSet = () => {
-      gsap.set(
-        videoWrap,
-        {
-          position: 'absolute',
-          overflow: 'hidden',
-          yPercent: isMobile.any() ? -23 : -17,
-          xPercent: isMobile.any() ? 38 : 5,
-          right: 0,
-          top: 0,
-          width: isMobile.any() ? '89.3rem' : '110.9rem',
-          height: isMobile.any() ? '89.3rem' : '110.9rem',
-          'border-radius': '50%',
-        },
-        0
-      )
-      gsap.set(
-        video,
-        {
-          width: isMobile.any() ? '67%' : '100%',
-          height: isMobile.any() ? '82%' : '100%',
-        },
-        0
-      )
-      gsap.set(closeBtn, { opacity: 0, visibility: 'hidden' }, 0)
-    }
-    const gsapInit = () => {
-      gsap.to(videoWrap, { opacity: 1, visibility: 'visible', delay: 2 })
-      // if (isMobile.any()) {
-      //   const tl1 = gsap.timeline()
-      //   const tl2 = gsap.timeline()
-      //   gsap.to(
-      //     video,
-      //     {
-      //       position: 'absolute',
-      //       left: 0,
-      //       bottom: 0,
-      //       width: '67%',
-      //       height: '82%',
-      //       duration: 0,
-      //       delay: 0,
-      //     },
-      //     0
-      //   )
-      //   document.addEventListener('click', function (e) {
-      //     if (
-      //       e.target.closest('.content_outer-btn') &&
-      //       !videoSection.classList.contains('_fw', 'mobile')
-      //     ) {
-      //       openfullscreen()
-      //       videoSection.classList.add('_fw', 'mobile')
-      //       tl2.kill()
-      //       tl1.to(closeBtn, { opacity: 1, visibility: 'visible' }, 0)
-      //       tl1.to(
-      //         video,
-      //         { width: '100%', height: '100%', duration: 0, delay: 0 },
-      //         0
-      //       )
-      //       tl1.to('header', { yPercent: -100, duration: 0, delay: 0 }, 0)
-      //       tl1.to('body', { overflow: 'hidden', duration: 0, delay: 0 }, 0)
-      //       tl1.to(
-      //         videoWrap,
-      //         {
-      //           position: 'fixed',
-      //           yPercent: 0,
-      //           xPercent: 0,
-      //           width: '100vw',
-      //           height: '100vh',
-      //           'border-radius': 0,
-      //           duration: 0,
-      //           delay: 0,
-      //         },
-      //         0
-      //       )
-      //       tl1.to(
-      //         playBtn,
-      //         {
-      //           opacity: 0,
-      //           visibility: 'hidden',
-      //           delay: 0,
-      //         },
-      //         0
-      //       )
-      //       // window.addEventListener('resize', function () {
-      //       //   gsapV(videoWrap)
-      //       // })
-      //       // gsapV(videoWrap)
-      //     } else if (
-      //       e.target.closest('.section_first #close-video') &&
-      //       videoSection.classList.contains('_fw', 'mobile')
-      //     ) {
-      //       closefullscreen()
-      //       videoSection.classList.remove('_fw', 'mobile')
-      //       tl1.kill()
-      //       tl2.to(
-      //         video,
-      //         {
-      //           width: '67%',
-      //           height: '82%',
-      //           duration: 0,
-      //           delay: 0,
-      //         },
-      //         0
-      //       )
-      //       tl2.to(
-      //         videoWrap,
-      //         {
-      //           position: 'absolute',
-      //           yPercent: -23,
-      //           xPercent: 38,
-      //           width: '89.3rem',
-      //           height: '89.3rem',
-      //           'border-radius': '50%',
-      //           duration: 0,
-      //           delay: 0,
-      //         },
-      //         0
-      //       )
-
-      //       tl2.to('header', { yPercent: 0, duration: 0, delay: 0 }, 0)
-      //       tl2.to('body', { overflow: 'visible', duration: 0, delay: 0 }, 0)
-      //       tl2.to(
-      //         playBtn,
-      //         {
-      //           opacity: 1,
-      //           visibility: 'visible',
-      //           delay: 0,
-      //         },
-      //         0
-      //       )
-
-      //       window.addEventListener('resize', function () {
-      //         tl2.to(
-      //           videoWrap,
-      //           {
-      //             position: 'absolute',
-      //             yPercent: -23,
-      //             xPercent: 38,
-      //             width: '89.3rem',
-      //             height: '89.3rem',
-      //             'border-radius': '50%',
-      //             duration: 0,
-      //             delay: 0,
-      //           },
-      //           0
-      //         )
-      //       })
-
-      //       if (window.matchMedia('(min-width: 768px)').matches) {
-      //         tl2.to(
-      //           video,
-      //           {
-      //             width: '100%',
-      //             height: '100%',
-      //             left: 0,
-      //             bottom: 0,
-      //             duration: 0,
-      //             delay: 0,
-      //           },
-      //           0
-      //         )
-      //       }
-      //     }
-      //   })
-      // }
-      if (!isMobile.any()) {
-        document.addEventListener('click', function (e) {
-          const tl1 = gsap.timeline()
-          const tl2 = gsap.timeline()
-          if (
-            e.target.closest('.content_outer-btn') &&
-            !videoSection.classList.contains('_fw')
-          ) {
-            videoSection.classList.add('_fw')
-            tl2.kill()
+    // animation
+    gsap.to(videoWrap, { opacity: 1, visibility: 'visible', delay: 2 })
+    if (!isMobile.any()) {
+      document.addEventListener('click', function (e) {
+        const tl1 = gsap.timeline()
+        const tl2 = gsap.timeline()
+        if (
+          e.target.closest('.content_outer-btn') &&
+          !videoSection.classList.contains('_fw')
+        ) {
+          videoSection.classList.add('_fw')
+          tl2.kill()
+          tl1.to(
+            videoWrap,
+            {
+              width: '100%',
+              height: '100%',
+              yPercent: 0,
+              xPercent: 0,
+              right: 0,
+              top: 0,
+              'border-radius': 0,
+            },
+            0
+          )
+          tl1.to(
+            playBtn,
+            {
+              opacity: 0,
+              visibility: 'hidden',
+              delay: 0,
+            },
+            0
+          )
+          window.addEventListener('resize', function () {
             tl1.to(
               videoWrap,
               {
@@ -565,32 +394,34 @@ document.addEventListener('DOMContentLoaded', function () {
               },
               0
             )
-            tl1.to(
-              playBtn,
-              {
-                opacity: 0,
-                visibility: 'hidden',
-                delay: 0,
+          })
+        } else if (videoSection.classList.contains('_fw')) {
+          tl1.kill()
+          tl2.to(
+            videoWrap,
+            {
+              yPercent: -17,
+              xPercent: 5,
+              width: '110.9rem',
+              height: '110.9rem',
+              'border-radius': '50%',
+              delay: 0,
+            },
+            0
+          )
+          tl2.to(
+            playBtn,
+            {
+              opacity: 1,
+              visibility: 'visible',
+              delay: 1,
+              onStart: () => {
+                videoSection.classList.remove('_fw')
               },
-              0
-            )
-            window.addEventListener('resize', function () {
-              tl1.to(
-                videoWrap,
-                {
-                  width: '100%',
-                  height: '100%',
-                  yPercent: 0,
-                  xPercent: 0,
-                  right: 0,
-                  top: 0,
-                  'border-radius': 0,
-                },
-                0
-              )
-            })
-          } else if (videoSection.classList.contains('_fw')) {
-            tl1.kill()
+            },
+            0
+          )
+          window.addEventListener('resize', function () {
             tl2.to(
               videoWrap,
               {
@@ -603,212 +434,194 @@ document.addEventListener('DOMContentLoaded', function () {
               },
               0
             )
-            tl2.to(
-              playBtn,
-              {
-                opacity: 1,
-                visibility: 'visible',
-                delay: 1,
-                onStart: () => {
-                  videoSection.classList.remove('_fw')
-                },
-              },
-              0
-            )
-            window.addEventListener('resize', function () {
-              tl2.to(
-                videoWrap,
-                {
-                  yPercent: -17,
-                  xPercent: 5,
-                  width: '110.9rem',
-                  height: '110.9rem',
-                  'border-radius': '50%',
-                  delay: 0,
-                },
-                0
-              )
-            })
-          }
-        })
-      }
+          })
+        }
+      })
+    } else if (isMobile.any()) {
+      playBtn.addEventListener('click', function () {
+        videoPlayer.requestFullscreen()
+      })
     }
-
-    gsapSet()
-    gsapInit()
-    initVideo(video, video)
   }
 
   // philosophy page
   if (document.querySelector('.philosophy__section-sixth')) {
     const videoSection = document.querySelector('.philosophy__section-sixth')
     const videoWrap = videoSection.querySelector('.container-video')
-    const video = videoSection.querySelector('video')
-    const closeBtn = videoSection.querySelector('#close-video')
-    const md = window.matchMedia('(max-width: 768px)').matches
-    video.play()
+    const expandBtn = videoSection.querySelector('.philosophy__section-content')
 
-    document
-      .getElementById('video-collection')
-      .addEventListener('ended', () => {
-        gsap.timeline().to('body', { overflow: 'visible' }, 0)
-        document.querySelector(
-          '.philosophy__section-sixth .container-video'
-        ).style.display = 'none'
-        document.querySelector(
-          '.philosophy__section-sixth .container'
-        ).style.display = 'block'
-        gsap.to(
-          '.philosophy__section-sixth .philosophy__section-content',
-          {
-            opacity: 1,
-            visibility: 'visible',
-          },
-          0
-        )
-      })
-
-    document.addEventListener('click', function (e) {
-      const tl1 = gsap.timeline()
-      const tl2 = gsap.timeline()
-      if (
-        e.target.closest(
-          '.philosophy__section-sixth  .philosophy__section-content'
-        )
-      ) {
-        document.querySelector(
-          '.philosophy__section-sixth .container-video'
-        ).style.display = 'block'
-        document.querySelector(
-          '.philosophy__section-sixth .container'
-        ).style.display = 'none'
-        document.getElementById('video-collection').play()
-
-        if (isMobile.any()) {
-          tl2.kill()
-          openfullscreen()
-          videoSection.classList.add('_fw')
-
-          tl1.to(
-            '.philosophy__section-sixth .philosophy__section-content',
-            {
-              opacity: 0,
-              visibility: 'hidden',
-              delay: 0,
-            },
-            0
-          )
-          tl1.to(closeBtn, { opacity: 1, visibility: 'visible' }, 0)
-          tl1.to(
-            video,
-            { width: '100%', height: '100%', duration: 0, delay: 0 },
-            0
-          )
-          tl1.to('header', { yPercent: -100, duration: 0, delay: 0 }, 0)
-          tl1.to('body', { overflow: 'hidden', duration: 0, delay: 0 }, 0)
-          tl1.to(
-            'footer',
-            { opacity: 0, visibility: 'hidden', duration: 0, delay: 0 },
-            0
-          )
-          tl1.to(
-            videoWrap,
-            {
-              position: 'fixed',
-              width: '100vw',
-              height: '100vh',
-              'border-radius': 0,
-              duration: 0,
-              delay: 0,
-            },
-            0
-          )
-          tl1.to('body', { overflow: 'hidden' }, 0)
-          // gsapV(videoWrap)
-          window.addEventListener('resize', function () {
-            // gsapV(videoWrap)
-
-            openfullscreen()
-          })
-        }
-        if (!isMobile.any()) {
-          videoSection.classList.remove('_fw')
-          gsap.timeline().to(
-            '.philosophy__section-sixth .philosophy__section-content',
-            {
-              opacity: 0,
-              visibility: 'hidden',
-              delay: 0,
-              duration: 0,
-            },
-            0
-          )
-        }
-      } else if (
-        e.target.closest('.philosophy__section-sixth #close-video') &&
-        videoSection.classList.contains('_fw') &&
-        isMobile.any()
-      ) {
-        tl1.kill()
-        closefullscreen()
-        tl2.to(closeBtn, { opacity: 0, visibility: 'hidden' }, 0)
-        videoSection.classList.remove('_fw')
-        tl2.to(
-          'footer',
-          { opacity: 1, visibility: 'visible', duration: 0, delay: 0 },
-          0
-        )
-
-        tl2.to(
-          '.philosophy__section-sixth .philosophy__section-content',
-          {
-            opacity: 1,
-            visibility: 'visible',
-          },
-          0
-        )
-        tl2.to(
-          '.philosophy__section-sixth .content_btn',
-          {
-            opacity: 1,
-            visibility: 'visible',
-          },
-          0
-        )
-
-        tl2.to(
-          videoWrap,
-          {
-            position: 'static',
-            width: '100%',
-            height: '99.5rem',
-            'z-index': 1,
-            duration: 0,
-          },
-          0
-        )
-        tl2.to('body', { overflow: 'visible' }, 0)
-        window.addEventListener('resize', function () {
-          closefullscreen()
-          tl2.to(
-            videoWrap,
-            {
-              position: 'static',
-              top: 0,
-              right: 0,
-              width: '100%',
-              xPercent: 0,
-              rotate: 0,
-              yPercent: 0,
-              height: '99.5rem',
-              'z-index': 1,
-              duration: 0,
-            },
-            0
-          )
-        })
+    videoPlayer.on('ended', () => {
+      videoWrap.style.display = 'none'
+      document.querySelector(
+        '.philosophy__section-sixth .container'
+      ).style.display = 'block'
+      if (!isMobile.any()) {
+        expandBtn.style.opacity = 1
+        expandBtn.style.visibility = 'visible'
+      } else if (isMobile.any()) {
+        videoPlayer.exitFullscreen()
       }
     })
+
+    expandBtn.addEventListener('click', function () {
+      videoSection.classList.add('_fw')
+      videoWrap.style.display = 'block'
+      document.querySelector(
+        '.philosophy__section-sixth .container'
+      ).style.display = 'none'
+      if (!isMobile.any()) {
+        expandBtn.style.opacity = 0
+        expandBtn.style.visibility = 'hidden'
+      }
+      if (videoPlayer.paused()) {
+        videoPlayer.currentTime(0)
+        videoPlayer.play()
+      }
+    })
+
+    if (isMobile.any()) {
+      expandBtn.addEventListener('click', function () {
+        videoPlayer.requestFullscreen()
+      })
+    }
+
+    // document.addEventListener('click', function (e) {
+    //   if (
+    //     e.target.closest(
+    //       '.philosophy__section-sixth  .philosophy__section-content'
+    //     )
+    //   ) {
+    //     document.querySelector(
+    //       '.philosophy__section-sixth .container-video'
+    //     ).style.display = 'block'
+
+    //     document.getElementById('video-collection').play()
+
+    //     if (isMobile.any()) {
+    //       tl2.kill()
+    //       openfullscreen()
+    //       videoSection.classList.add('_fw')
+
+    //       tl1.to(
+    //         '.philosophy__section-sixth .philosophy__section-content',
+    //         {
+    //           opacity: 0,
+    //           visibility: 'hidden',
+    //           delay: 0,
+    //         },
+    //         0
+    //       )
+    //       tl1.to(closeBtn, { opacity: 1, visibility: 'visible' }, 0)
+    //       tl1.to(
+    //         video,
+    //         { width: '100%', height: '100%', duration: 0, delay: 0 },
+    //         0
+    //       )
+    //       tl1.to('header', { yPercent: -100, duration: 0, delay: 0 }, 0)
+    //       tl1.to('body', { overflow: 'hidden', duration: 0, delay: 0 }, 0)
+    //       tl1.to(
+    //         'footer',
+    //         { opacity: 0, visibility: 'hidden', duration: 0, delay: 0 },
+    //         0
+    //       )
+    //       tl1.to(
+    //         videoWrap,
+    //         {
+    //           position: 'fixed',
+    //           width: '100vw',
+    //           height: '100vh',
+    //           'border-radius': 0,
+    //           duration: 0,
+    //           delay: 0,
+    //         },
+    //         0
+    //       )
+    //       tl1.to('body', { overflow: 'hidden' }, 0)
+    //       // gsapV(videoWrap)
+    //       window.addEventListener('resize', function () {
+    //         // gsapV(videoWrap)
+
+    //         openfullscreen()
+    //       })
+    //     }
+    //     if (!isMobile.any()) {
+    //       videoSection.classList.remove('_fw')
+    //       gsap.timeline().to(
+    //         '.philosophy__section-sixth .philosophy__section-content',
+    //         {
+    //           opacity: 0,
+    //           visibility: 'hidden',
+    //           delay: 0,
+    //           duration: 0,
+    //         },
+    //         0
+    //       )
+    //     }
+    //   } else if (
+    //     e.target.closest('.philosophy__section-sixth #close-video') &&
+    //     videoSection.classList.contains('_fw') &&
+    //     isMobile.any()
+    //   ) {
+    //     tl1.kill()
+    //     closefullscreen()
+    //     tl2.to(closeBtn, { opacity: 0, visibility: 'hidden' }, 0)
+    //     videoSection.classList.remove('_fw')
+    //     tl2.to(
+    //       'footer',
+    //       { opacity: 1, visibility: 'visible', duration: 0, delay: 0 },
+    //       0
+    //     )
+
+    //     tl2.to(
+    //       '.philosophy__section-sixth .philosophy__section-content',
+    //       {
+    //         opacity: 1,
+    //         visibility: 'visible',
+    //       },
+    //       0
+    //     )
+    //     tl2.to(
+    //       '.philosophy__section-sixth .content_btn',
+    //       {
+    //         opacity: 1,
+    //         visibility: 'visible',
+    //       },
+    //       0
+    //     )
+
+    //     tl2.to(
+    //       videoWrap,
+    //       {
+    //         position: 'static',
+    //         width: '100%',
+    //         height: '99.5rem',
+    //         'z-index': 1,
+    //         duration: 0,
+    //       },
+    //       0
+    //     )
+    //     tl2.to('body', { overflow: 'visible' }, 0)
+    //     window.addEventListener('resize', function () {
+    //       closefullscreen()
+    //       tl2.to(
+    //         videoWrap,
+    //         {
+    //           position: 'static',
+    //           top: 0,
+    //           right: 0,
+    //           width: '100%',
+    //           xPercent: 0,
+    //           rotate: 0,
+    //           yPercent: 0,
+    //           height: '99.5rem',
+    //           'z-index': 1,
+    //           duration: 0,
+    //         },
+    //         0
+    //       )
+    //     })
+    //   }
+    // })
   }
 
   // if (document.getElementById('fullpage')) {
@@ -944,194 +757,4 @@ document.addEventListener('DOMContentLoaded', function () {
   //     animItems()
   //   }
   // }
-
-  // video section
-  if (document.querySelector('.video__section')) {
-    const video = document.querySelector('[data-video]')
-    const expandBtn = document.querySelector('.expand')
-
-    if (isMobile.any()) {
-      expandBtn.style.display = 'inline-block'
-    }
-
-    // player.landscapeFullscreen({
-    //   fullscreen: {
-    //     enterOnRotate: true,
-    //     alwaysInLandscapeMode: true,
-    //     iOS: true,
-    //   },
-    // })
-    // const videoWrap = document.querySelector('.video__section .section_video')
-    // const video = document.querySelector('.video__section video')
-    // const toggleBtn = document.querySelector('.rotate-icon')
-    // gsap.set(videoWrap, {
-    //   position: 'relative',
-    //   'z-index': 2,
-    //   top: 0,
-    //   right: 0,
-    //   width: '100%',
-    //   height: '100%',
-    //   rotate: 0,
-    //   xPercent: 0,
-    //   yPercent: 0,
-    // })
-    // gsap.set(
-    //   '.video__section .rotate-icon',
-    //   {
-    //     bottom: '3rem',
-    //     right: '3rem',
-    //   },
-    //   0
-    // )
-    // if (isMobile.any()) {
-    //   gsap.to('.video__section .rotate-icon', {
-    //     display: 'block',
-    //   })
-    //   const tl1 = gsap.timeline()
-    //   const tl2 = gsap.timeline()
-    //   toggleBtn.addEventListener('click', function () {
-    //     if (!videoWrap.classList.contains('_fs')) {
-    //       tl2.kill()
-    //       openfullscreen()
-    //       videoWrap.classList.add('_fs')
-    //       document.querySelector('body').style.overflow = 'hidden'
-    //       // screen.orientation.lock('landscape')
-    //       tl1.to(
-    //         videoWrap,
-    //         {
-    //           position: 'fixed',
-    //           'z-index': 200,
-    //           width: '100vw',
-    //           height: '100vh',
-    //           duration: 0,
-    //           delay: 0,
-    //         },
-    //         0
-    //       )
-
-    //       tl1.to(
-    //         video,
-    //         {
-    //           height: '100%',
-    //           duration: 0,
-    //           delay: 0,
-    //         },
-    //         0
-    //       )
-    //       tl1.to(
-    //         '.video__section .rotate-icon',
-    //         {
-    //           bottom: '6rem',
-    //           right: '14rem',
-    //           duration: 0,
-    //           delay: 0,
-    //         },
-    //         0
-    //       )
-    //       if (window.innerHeight < window.innerWidth) {
-    //         openfullscreen()
-    //         // setTimeout(function () {
-    //         //   window.scrollTo(0, 1)
-    //         // }, 100)
-    //       }
-    //       // window.addEventListener('resize', function () {
-    //       //   if (window.innerHeight < window.innerWidth) {
-    //       //     // setTimeout(function () {
-    //       //     //   window.scrollTo(0, 1)
-    //       //     // }, 100)
-    //       //   }
-    //       // })
-    //     } else {
-    //       tl2.kill()
-    //       closefullscreen()
-    //       videoWrap.classList.remove('_fs')
-    //       document.querySelector('body').style.overflow = 'auto'
-    //       // screen.orientation.unlock()
-    //       tl1.to(
-    //         videoWrap,
-    //         {
-    //           position: 'relative',
-    //           'z-index': 2,
-    //           width: '100%',
-    //           height: '100%',
-    //           duration: 0,
-    //           delay: 0,
-    //         },
-    //         0
-    //       )
-    //       tl1.to(
-    //         video,
-    //         {
-    //           height: '99.5rem',
-    //           duration: 0,
-    //           delay: 0,
-    //         },
-    //         0
-    //       )
-    //       tl1.to(
-    //         '.video__section .rotate-icon',
-    //         {
-    //           bottom: '3rem',
-    //           right: '3rem',
-    //           duration: 0,
-    //           delay: 0,
-    //         },
-    //         0
-    //       )
-    //       window.addEventListener('resize', function () {
-    //         closefullscreen()
-    //         tl1.to(
-    //           videoWrap,
-    //           {
-    //             position: 'relative',
-    //             'z-index': 2,
-    //             width: '100%',
-    //             height: '100%',
-    //             duration: 0,
-    //             delay: 0,
-    //           },
-    //           0
-    //         )
-    //         tl1.to(
-    //           video,
-    //           {
-    //             height: '99.5rem',
-    //             duration: 0,
-    //             delay: 0,
-    //           },
-    //           0
-    //         )
-    //       })
-    //     }
-    //   })
-    // }
-
-    // initVideo(video, video)
-
-    var playVideo = document.querySelector('.expand'),
-      videoPlayer = videojs('video-collection'),
-      vw = Math.max(
-        document.documentElement.clientWidth,
-        window.innerWidth || 0
-      )
-
-    // When the play button is clicked
-    expandBtn.addEventListener('click', function () {
-      var videoPlayer = videojs('video-collection')
-      if (!document.querySelector('body').classList.contains('_fw')) {
-        document.querySelector('body').classList.add('_fw')
-        videoPlayer.requestFullscreen()
-      } else {
-        document.querySelector('body').classList.remove('_fw')
-        videoPlayer.exitFullscreen()
-        // videoPlayer.dispose()
-      }
-    })
-
-    // initVideo(video, video)
-  }
-
-  // year color
-  if (document.getElementById('video-collection')) {
-  }
 })
